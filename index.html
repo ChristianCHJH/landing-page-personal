@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christian Jara – Soluciones Digitales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav__inner container">
+      <a href="#hero" class="nav__logo">CJ<span>.</span></a>
+      <ul class="nav__links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#credibilidad">Experiencia</a></li>
+        <li><a href="#contacto" class="btn btn--sm">Contáctame</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#credibilidad">Experiencia</a>
+      <a href="#contacto">Contáctame</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-lines" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Hola, soy</p>
+        <h1 class="hero__name">Christian <span>Jara</span></h1>
+        <p class="hero__tagline">Desarrollo soluciones digitales<br>que impulsan negocios</p>
+        <p class="hero__sub">Automatiza procesos, gestiona clientes, ventas o pacientes y conecta tu negocio con pagos y facturación electrónica.</p>
+        <div class="hero__ctas">
+          <a href="https://wa.me/51913412590?text=Hola%20Christian%2C%20quiero%20una%20asesor%C3%ADa" target="_blank" class="btn btn--primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Solicitar asesoría gratis
+          </a>
+          <a href="#portafolio" class="btn btn--outline">Ver proyectos</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <strong>+5</strong>
+            <span>años de experiencia</span>
+          </div>
+          <div class="hero__stat">
+            <strong>Peru</strong>
+            <span>enfoque local</span>
+          </div>
+          <div class="hero__stat">
+            <strong>100%</strong>
+            <span>a medida</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__image-wrap">
+        <div class="hero__image-glow" aria-hidden="true"></div>
+        <img src="foto_portda.png" alt="Christian Jara" class="hero__photo" />
+      </div>
+    </div>
+    <a href="#servicios" class="hero__scroll" aria-label="Ir a servicios">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section servicios" id="servicios">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Lo que hago</p>
+        <h2>Servicios</h2>
+        <p class="section__sub">Soluciones digitales adaptadas a cada tipo de negocio, sin complicaciones.</p>
+      </div>
+      <div class="servicios__grid">
+
+        <div class="card card--service">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Software a Medida</h3>
+          <p>Desarrollamos aplicaciones web adaptadas exactamente a los procesos de tu negocio, sin plantillas genéricas.</p>
+        </div>
+
+        <div class="card card--service">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>Páginas de presentación rápidas, modernas y optimizadas para captar clientes desde el primer día.</p>
+        </div>
+
+        <div class="card card--service">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18v18H3z" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Sistemas de Gestión</h3>
+          <p>Controla clientes, ventas, inventario, citas y pacientes desde un solo sistema centralizado.</p>
+        </div>
+
+        <div class="card card--service">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <h3>Integración de APIs</h3>
+          <p>Conectamos tu sistema con herramientas externas para automatizar y eliminar trabajo manual.</p>
+        </div>
+
+        <div class="card card--service card--service-wide">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <h3>Integraciones de Pago y Facturación</h3>
+          <p>Niubiz · Xopino · Facturación Electrónica — tu negocio listo para cobrar y emitir comprobantes desde el sistema.</p>
+          <div class="integrations-badges">
+            <span class="badge">Niubiz</span>
+            <span class="badge">Xopino</span>
+            <span class="badge">Fact. Electrónica</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section class="section portafolio" id="portafolio">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Proyectos</p>
+        <h2>Portafolio</h2>
+        <p class="section__sub">Sistemas funcionales diseñados para negocios reales.</p>
+      </div>
+      <div class="portafolio__grid">
+
+        <div class="card card--project">
+          <div class="card__project-img card__project-img--spa">
+            <div class="mock-screen">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mock-sidebar"></div>
+                <div class="mock-main">
+                  <div class="mock-title"></div>
+                  <div class="mock-calendar">
+                    <div></div><div></div><div></div><div></div>
+                    <div class="active"></div><div></div><div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__project-body">
+            <span class="card__tag">Spa & Bienestar</span>
+            <h3>Sistema de Agendamiento</h3>
+            <p>Reservas online, gestión de turnos y recordatorios automáticos para centros de estética y spa.</p>
+            <ul class="card__features">
+              <li>Calendario de citas en tiempo real</li>
+              <li>Notificaciones automáticas</li>
+              <li>Panel de control para el negocio</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--project">
+          <div class="card__project-img card__project-img--clinic">
+            <div class="mock-screen">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mock-sidebar"></div>
+                <div class="mock-main">
+                  <div class="mock-title"></div>
+                  <div class="mock-rows">
+                    <div></div><div></div><div></div><div class="highlight"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__project-body">
+            <span class="card__tag">Salud</span>
+            <h3>Gestión de Pacientes</h3>
+            <p>Historial clínico, seguimiento de consultas y control de tratamientos para clínicas y consultorios.</p>
+            <ul class="card__features">
+              <li>Historial médico digital</li>
+              <li>Seguimiento de tratamientos</li>
+              <li>Reportes por paciente</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--project">
+          <div class="card__project-img card__project-img--crm">
+            <div class="mock-screen">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mock-sidebar"></div>
+                <div class="mock-main">
+                  <div class="mock-title"></div>
+                  <div class="mock-stats">
+                    <div class="mock-stat-card"></div>
+                    <div class="mock-stat-card"></div>
+                    <div class="mock-stat-card"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__project-body">
+            <span class="card__tag">Ventas</span>
+            <h3>CRM de Clientes</h3>
+            <p>Gestiona tu cartera de clientes, registra interacciones y lleva el control de tus ventas en un solo lugar.</p>
+            <ul class="card__features">
+              <li>Base de clientes centralizada</li>
+              <li>Seguimiento de ventas</li>
+              <li>Reportes e historial</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card--project">
+          <div class="card__project-img card__project-img--inventory">
+            <div class="mock-screen">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-content">
+                <div class="mock-sidebar"></div>
+                <div class="mock-main">
+                  <div class="mock-title"></div>
+                  <div class="mock-table">
+                    <div class="mock-table-header"></div>
+                    <div></div><div></div><div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__project-body">
+            <span class="card__tag">Inventario</span>
+            <h3>Control de Productos</h3>
+            <p>Kardex digital, control de stock, alertas de reposición y registro de movimientos para tiendas y almacenes.</p>
+            <ul class="card__features">
+              <li>Kardex en tiempo real</li>
+              <li>Alertas de stock mínimo</li>
+              <li>Registro de entradas y salidas</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILIDAD -->
+  <section class="section credibilidad" id="credibilidad">
+    <div class="container">
+      <div class="credibilidad__inner">
+        <div class="credibilidad__text">
+          <p class="section__eyebrow">¿Por qué elegirme?</p>
+          <h2>Experiencia que genera resultados</h2>
+          <p>Desde el 2020 he trabajado en el desarrollo de soluciones digitales para negocios en Perú. Entiendo los procesos reales y construyo sistemas que realmente se usan.</p>
+          <ul class="credibilidad__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Soluciones 100% personalizadas, sin plantillas genéricas
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Integración con pagos y facturación electrónica peruana
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Soporte directo — hablas con quien desarrolla
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Diseño responsive adaptado a móviles y tablets
+            </li>
+          </ul>
+        </div>
+        <div class="credibilidad__stats">
+          <div class="stat-card">
+            <strong>+5</strong>
+            <span>Años desarrollando software</span>
+          </div>
+          <div class="stat-card">
+            <strong>2020</strong>
+            <span>Inicio de trayectoria</span>
+          </div>
+          <div class="stat-card">
+            <strong>Perú</strong>
+            <span>Integración local (Niubiz, SUNAT)</span>
+          </div>
+          <div class="stat-card">
+            <strong>100%</strong>
+            <span>Proyectos a medida</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section contacto" id="contacto">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">¿Listo para empezar?</p>
+        <h2>Hablemos de tu proyecto</h2>
+        <p class="section__sub">Cuéntame qué necesitas y te respondo en menos de 24 horas.</p>
+      </div>
+      <div class="contacto__inner">
+        <div class="contacto__info">
+          <a href="https://wa.me/51913412590?text=Hola%20Christian%2C%20quiero%20una%20asesor%C3%ADa" target="_blank" class="contacto__channel">
+            <div class="contacto__channel-icon contacto__channel-icon--wsp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+51 913 412 590</span>
+            </div>
+            <svg class="contacto__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="mailto:christianjara011215@gmail.com" class="contacto__channel">
+            <div class="contacto__channel-icon contacto__channel-icon--mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Correo</strong>
+              <span>christianjara011215@gmail.com</span>
+            </div>
+            <svg class="contacto__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <form class="contacto__form" id="contactForm">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form__group">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999" />
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required />
+          </div>
+          <div class="form__group">
+            <label for="negocio">Tipo de negocio</label>
+            <select id="negocio" name="negocio">
+              <option value="">Selecciona tu rubro...</option>
+              <option>Clínica / Consultorio</option>
+              <option>Spa / Centro de estética</option>
+              <option>Tienda / Comercio</option>
+              <option>Empresa de servicios</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <label for="mensaje">¿Qué necesitas?</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame brevemente qué sistema o solución necesitas..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Enviar mensaje</button>
+          <p class="form__note">Te respondo en menos de 24 horas. Sin compromisos.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__logo">CJ<em>.</em></span>
+        <p>Soluciones digitales que impulsan negocios.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer__contact">
+        <a href="https://wa.me/51913412590" target="_blank">+51 913 412 590</a>
+        <a href="mailto:christianjara011215@gmail.com">christianjara011215@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Christian Jara. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
