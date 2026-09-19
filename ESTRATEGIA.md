@@ -126,3 +126,17 @@ rubros deslizables, "quién te atiende", pasos, FAQ (con schema), CTA final. SEO
 - [Gestión — emisión electrónica obligatoria desde el primer día](https://gestion.pe/economia/sunat-nuevos-contribuyentes-tendran-emision-electronica-obligatoria-desde-el-primer-dia-noticia/)
 - [SUNAT — modifica normativa de emisores electrónicos](https://www.gob.pe/institucion/sunat/informes-publicaciones/8079009-sunat-modifica-normativa-sobre-emisores-electronicos-y-uso-del-sire)
 - [AnswerForMe — WhatsApp Business en Lima 2026](https://answerforme.io/en/blog/whatsapp-business-lima-guide-2026)
+
+## 9. Plan de prueba social (sin inventar nada)
+
+1. **Clientes fundadores**: los primeros 3 a 5 negocios reciben precio de lanzamiento a cambio de testimonio con nombre, rubro, distrito y foto.
+2. **Medir antes de entregar**: anotar con el cliente cuántas horas o soles pierde hoy (usar la calculadora). A los 30 días, medir de nuevo. Esa cifra es el caso.
+3. **Pedir reseña en Google** apenas el cliente esté contento (Perfil de Empresa en Google).
+4. Recién con 2 casos reales se agrega la sección "Negocios que ya lo usan" debajo del antes/después.
+
+## 10. Cambios v3 (largo y orden)
+
+- Se quitó "Lo que cambia en tu día a día" (repetía el antes/después): 13.7 → 11 pantallas en celular.
+- Rubros pasan justo después del hero ("¿Qué negocio tienes?"); se sumaron veterinarias, spas/barberías y gimnasios (9 rubros).
+- Precio visible: **planes desde S/ 90 al mes**, con gancho SUNAT (emisión electrónica desde el RUC, junio 2026).
+- Celular: tarjetas de dolores, pasos y foto más compactos.
