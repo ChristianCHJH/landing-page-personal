@@ -1,413 +1,577 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Yanapay.tech — Software a medida para negocios peruanos</title>
-  <meta name="description" content="Desarrollamos software a medida para clínicas, tiendas, colegios y empresas en Perú. Automatiza procesos, gestiona clientes y cobra de forma profesional." />
+  <title>Sistema de cobranza, ventas y boletas SUNAT para tu negocio | Yanapay</title>
+  <meta name="description" content="Deja el Excel y el cuaderno. Hacemos el sistema a la medida de tu negocio en Lima: cobros por WhatsApp, ventas, stock y boletas SUNAT desde tu celular. Primera conversación gratis." />
+  <link rel="canonical" href="https://yanapay.tech/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />
+  <meta name="geo.region" content="PE-LIM" />
+  <meta name="geo.placename" content="Lima" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:site_name" content="Yanapay" />
+  <meta property="og:url" content="https://yanapay.tech/" />
+  <meta property="og:title" content="Sabes cuánto vendes. ¿Sabes cuánto te deben?" />
+  <meta property="og:description" content="Sistemas a la medida para negocios peruanos: cobros por WhatsApp, ventas, stock y boletas SUNAT desde tu celular." />
+  <meta property="og:image" content="https://yanapay.tech/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://yanapay.tech/#negocio",
+        "name": "Yanapay",
+        "url": "https://yanapay.tech/",
+        "logo": "https://yanapay.tech/assets/favicon.svg",
+        "image": "https://yanapay.tech/assets/og.jpg",
+        "description": "Desarrollo de sistemas a medida para negocios peruanos: cobranza, ventas, inventario, citas y facturación electrónica SUNAT.",
+        "telephone": "+51913412590",
+        "email": "hola@yanapay.tech",
+        "areaServed": [{ "@type": "City", "name": "Lima" }, { "@type": "Country", "name": "Perú" }],
+        "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
+        "founder": { "@type": "Person", "name": "Christian Jara" },
+        "knowsAbout": ["Sistema de cobranza", "Facturación electrónica SUNAT", "Control de inventario", "Sistema de citas", "Integración con Niubiz", "Automatización con WhatsApp"],
+        "priceRange": "$$"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Necesito saber de computación?", "acceptedAnswer": { "@type": "Answer", "text": "No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseñamos con las palabras que ya usas en tu negocio y te enseñamos a ti y a tu equipo." } },
+          { "@type": "Question", "name": "¿Funciona en el celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés." } },
+          { "@type": "Question", "name": "¿Qué pasa con lo que ya tengo en Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Lo pasamos al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero." } },
+          { "@type": "Question", "name": "¿Emite boletas y facturas electrónicas SUNAT?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Conectamos tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro." } },
+          { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de lo que necesites. Después de la primera conversación, que es gratis, te damos un precio cerrado por escrito antes de empezar." } },
+          { "@type": "Question", "name": "¿Por qué no uso un sistema que ya existe?", "acceptedAnswer": { "@type": "Answer", "text": "Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <!-- NAV -->
-  <nav class="nav" id="navbar">
-    <div class="nav__inner container">
-      <a href="#hero" class="nav__logo">Yanapay<span>.</span></a>
-      <ul class="nav__links">
-        <li><a href="#soluciones">Soluciones</a></li>
-        <li><a href="#casos">Casos reales</a></li>
-        <li><a href="#proceso">Cómo funciona</a></li>
-        <li><a href="#contacto" class="btn btn--sm btn--primary">Hablar por WhatsApp</a></li>
-      </ul>
-      <button class="nav__burger" id="burger" aria-label="Menú">
-        <span></span><span></span><span></span>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="logo" aria-label="Yanapay, ir al inicio">
+        <span class="logo__mark" aria-hidden="true">Y</span>
+        <span class="logo__text">Yanapay</span>
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#dolores">¿Te pasa?</a>
+        <a href="#antes-despues">Antes y después</a>
+        <a href="#rubros">Rubros</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+      <a class="btn btn--primary btn--sm nav__cta" data-wa="Hola Yanapay, quiero saber cómo ordenar mi negocio." data-cta="nav" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+        <span>Escríbenos por WhatsApp</span>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+        <i class="ph ph-list" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="nav__mobile" id="mobileMenu">
-      <a href="#soluciones">Soluciones</a>
-      <a href="#casos">Casos reales</a>
-      <a href="#proceso">Cómo funciona</a>
-      <a href="#contacto">Contáctanos</a>
+    <div class="nav__mobile" id="menuMovil" hidden>
+      <a href="#dolores">¿Te pasa?</a>
+      <a href="#antes-despues">Antes y después</a>
+      <a href="#rubros">Rubros</a>
+      <a href="#preguntas">Preguntas</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__bg-lines" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </div>
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="hero__eyebrow">Software para negocios peruanos</p>
-        <h1 class="hero__name">¿Sigues manejando tu negocio con <span style="color:var(--accent)">Excel y cuadernos?</span></h1>
-        <p class="hero__sub">En Yanapay desarrollamos sistemas a medida para clínicas, tiendas, colegios y empresas. Automatiza tus procesos, ordena tus clientes y cobra de forma profesional.</p>
-        <div class="hero__ctas">
-          <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20quiero%20una%20asesor%C3%ADa%20gratuita" target="_blank" rel="noopener" class="btn btn--primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Asesoría gratis
-          </a>
-          <a href="#soluciones" class="btn btn--outline">Ver soluciones</a>
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__pill"><i class="ph ph-map-pin" aria-hidden="true"></i> Para negocios de Lima y todo el Perú</p>
+          <h1 class="hero__title">Sabes cuánto vendes. <span class="hero__accent">¿Sabes cuánto te deben?</span></h1>
+          <p class="hero__sub">Hacemos el sistema a la medida de tu negocio: cobros, ventas, stock y boletas SUNAT. Todo desde tu celular.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" data-wa="Hola Yanapay, quiero saber cómo ordenar mi negocio." data-cta="hero" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+              <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+              Escríbenos por WhatsApp
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#antes-despues">Mira cómo funciona</a>
+          </div>
         </div>
-        <div class="hero__trust">
-          <span>+5 años de experiencia</span>
-          <span class="trust-dot" aria-hidden="true"></span>
-          <span>SUNAT y Niubiz</span>
-          <span class="trust-dot" aria-hidden="true"></span>
-          <span>100% a medida</span>
-        </div>
-      </div>
-      <div class="hero__image-wrap">
-        <div class="hero__image-glow" aria-hidden="true"></div>
-        <img src="foto_perfil_sin_fondo.png" alt="Christian Jara, fundador de Yanapay.tech" class="hero__photo" />
-      </div>
-    </div>
-    <a href="#soluciones" class="hero__scroll" aria-label="Ver soluciones">
-      <span></span>
-    </a>
-  </section>
 
-  <!-- SOLUCIONES -->
-  <section class="section soluciones" id="soluciones">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">¿Qué tipo de negocio tienes?</p>
-        <h2>Soluciones para tu sector</h2>
-        <p class="section__sub">Selecciona tu rubro y descubre los módulos que podemos desarrollar para ti.</p>
-      </div>
-
-      <div class="sector-tabs" role="tablist" aria-label="Seleccionar sector">
-        <button class="sector-tab active" role="tab" aria-selected="true" aria-controls="panel-clinica" data-sector="clinica">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          Clínica
-        </button>
-        <button class="sector-tab" role="tab" aria-selected="false" aria-controls="panel-tienda" data-sector="tienda">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Tienda
-        </button>
-        <button class="sector-tab" role="tab" aria-selected="false" aria-controls="panel-empresa" data-sector="empresa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          Empresa
-        </button>
-        <button class="sector-tab" role="tab" aria-selected="false" aria-controls="panel-colegio" data-sector="colegio">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          Colegio
-        </button>
-      </div>
-
-      <div class="sector-panels">
-
-        <div class="sector-panel active" role="tabpanel" id="panel-clinica" data-panel="clinica">
-          <div class="sector-panel__content">
-            <div class="sector-panel__features">
-              <h3>Sistema de gestión para clínicas y consultorios</h3>
-              <p>Olvídate del cuaderno de citas y las historias clínicas en papel. Tu clínica ordenada desde un solo sistema, accesible desde el celular.</p>
-              <ul class="feature-list">
-                <li>Agenda de citas online con calendario</li>
-                <li>Historial clínico digital por paciente</li>
-                <li>Seguimiento de tratamientos activos</li>
-                <li>Recordatorios automáticos por WhatsApp</li>
-                <li>Reportes de atenciones por período</li>
-                <li>Control de pagos y deudas pendientes</li>
-              </ul>
-              <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                Me interesa para mi clínica
-              </a>
-            </div>
-            <div class="sector-panel__mock">
-              <div class="mock-screen">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-main">
-                    <div class="mock-title"></div>
-                    <div class="mock-rows">
-                      <div></div><div></div><div></div><div class="highlight"></div>
-                    </div>
-                  </div>
+        <div class="hero__visual">
+          <div class="phone" id="demo" aria-label="Ejemplo de un sistema de cobranza en el celular">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="app">
+              <div class="app__top">
+                <div>
+                  <p class="app__hello">Hola, Rosa</p>
+                  <p class="app__biz">Distribuidora Santa Rosa</p>
                 </div>
+                <span class="app__avatar" aria-hidden="true">R</span>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sector-panel" role="tabpanel" id="panel-tienda" data-panel="tienda">
-          <div class="sector-panel__content">
-            <div class="sector-panel__features">
-              <h3>Control total de tu tienda o comercio</h3>
-              <p>Sabe exactamente qué tienes en stock, cuánto vendes y qué productos son más rentables. Sin más Excel que se desactualiza.</p>
-              <ul class="feature-list">
-                <li>Control de inventario con Kardex digital</li>
-                <li>Registro de ventas y emisión de boletas</li>
-                <li>Alertas de stock mínimo automáticas</li>
-                <li>Gestión de proveedores y compras</li>
-                <li>Reportes de productos más vendidos</li>
-                <li>Integración con pagos (Niubiz, Yape)</li>
-              </ul>
-              <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20tienda%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                Me interesa para mi tienda
-              </a>
-            </div>
-            <div class="sector-panel__mock">
-              <div class="mock-screen">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-main">
-                    <div class="mock-title"></div>
-                    <div class="mock-table">
-                      <div class="mock-table-header"></div>
-                      <div></div><div></div><div></div>
-                    </div>
+              <div class="app__total">
+                <p class="app__label">Por cobrar este mes</p>
+                <p class="app__amount">S/ <span id="demoTotal">1,750</span></p>
+                <p class="app__meta"><span id="demoPend">4</span> clientes pendientes</p>
+              </div>
+              <ul class="app__list" id="demoList">
+                <li class="row" data-monto="350">
+                  <div class="row__who">
+                    <p class="row__name">Bodega Quispe</p>
+                    <p class="row__state row__state--late">Vencido hace 12 días</p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sector-panel" role="tabpanel" id="panel-empresa" data-panel="empresa">
-          <div class="sector-panel__content">
-            <div class="sector-panel__features">
-              <h3>Software de gestión para tu empresa</h3>
-              <p>Centraliza tus clientes, automatiza tus procesos y emite comprobantes electrónicos sin salir del sistema.</p>
-              <ul class="feature-list">
-                <li>CRM de clientes y seguimiento de ventas</li>
-                <li>Facturación electrónica SUNAT</li>
-                <li>Gestión de contratos y proyectos</li>
-                <li>Integración con APIs externas</li>
-                <li>Reportes ejecutivos y dashboards</li>
-                <li>Control de usuarios y permisos por rol</li>
-              </ul>
-              <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20empresa%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                Me interesa para mi empresa
-              </a>
-            </div>
-            <div class="sector-panel__mock">
-              <div class="mock-screen">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-main">
-                    <div class="mock-title"></div>
-                    <div class="mock-stats">
-                      <div class="mock-stat-card"></div>
-                      <div class="mock-stat-card"></div>
-                      <div class="mock-stat-card"></div>
-                    </div>
+                  <p class="row__amount">S/ 350</p>
+                  <button class="row__btn" type="button"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> Recordar</button>
+                </li>
+                <li class="row" data-monto="700">
+                  <div class="row__who">
+                    <p class="row__name">Minimarket Rojas</p>
+                    <p class="row__state row__state--late">Debe 2 facturas</p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="sector-panel" role="tabpanel" id="panel-colegio" data-panel="colegio">
-          <div class="sector-panel__content">
-            <div class="sector-panel__features">
-              <h3>Sistema de gestión para colegios e instituciones</h3>
-              <p>Controla matrículas, pagos de pensiones y comunicaciones con padres desde un solo lugar. Accesible para directores y administradores.</p>
-              <ul class="feature-list">
-                <li>Control de alumnos y matrículas</li>
-                <li>Registro y control de pagos de pensiones</li>
-                <li>Control de asistencia por aula</li>
-                <li>Comunicados automáticos a padres</li>
-                <li>Reportes por sección y período</li>
-                <li>Historial académico digital</li>
-              </ul>
-              <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20colegio%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" class="btn btn--primary btn--sm">
-                Me interesa para mi colegio
-              </a>
-            </div>
-            <div class="sector-panel__mock">
-              <div class="mock-screen">
-                <div class="mock-bar"><span></span><span></span><span></span></div>
-                <div class="mock-content">
-                  <div class="mock-sidebar"></div>
-                  <div class="mock-main">
-                    <div class="mock-title"></div>
-                    <div class="mock-calendar">
-                      <div></div><div></div><div></div><div></div>
-                      <div class="active"></div><div></div><div></div>
-                    </div>
+                  <p class="row__amount">S/ 700</p>
+                  <button class="row__btn" type="button"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> Recordar</button>
+                </li>
+                <li class="row" data-monto="350">
+                  <div class="row__who">
+                    <p class="row__name">Sra. Huamán</p>
+                    <p class="row__state">Vence mañana</p>
                   </div>
-                </div>
-              </div>
+                  <p class="row__amount">S/ 350</p>
+                  <button class="row__btn" type="button"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> Recordar</button>
+                </li>
+                <li class="row" data-monto="350">
+                  <div class="row__who">
+                    <p class="row__name">Ferretería Torres</p>
+                    <p class="row__state">Vence el 30</p>
+                  </div>
+                  <p class="row__amount">S/ 350</p>
+                  <button class="row__btn" type="button"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> Recordar</button>
+                </li>
+              </ul>
+            </div>
+            <div class="toast" id="demoToast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span id="demoToastText">Recordatorio enviado</span>
+            </div>
+          </div>
+          <div class="chip-float" aria-hidden="true">
+            <i class="ph-fill ph-receipt"></i>
+            <div>
+              <p class="chip-float__title">Boleta B001-482</p>
+              <p class="chip-float__sub">Aceptada por SUNAT</p>
             </div>
           </div>
         </div>
-
       </div>
+    </section>
 
-      <div class="integraciones">
-        <p class="integraciones__label">Integramos con:</p>
-        <div class="integraciones__badges">
-          <span class="badge">Niubiz</span>
-          <span class="badge">SUNAT</span>
-          <span class="badge">Yape</span>
-          <span class="badge">Xopino</span>
-          <span class="badge">APIs externas</span>
+    <section class="band" aria-label="Se conecta con lo que ya usas">
+      <p class="band__label">Se conecta con lo que ya usas</p>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>WhatsApp</span>
+          <span><i class="ph ph-qr-code" aria-hidden="true"></i>Yape y Plin</span>
+          <span><i class="ph ph-credit-card" aria-hidden="true"></i>POS Niubiz</span>
+          <span><i class="ph ph-receipt" aria-hidden="true"></i>Boletas y facturas SUNAT</span>
+          <span><i class="ph ph-microsoft-excel-logo" aria-hidden="true"></i>Tu Excel de siempre</span>
+          <span><i class="ph ph-bank" aria-hidden="true"></i>Transferencias bancarias</span>
+          <span><i class="ph ph-device-mobile" aria-hidden="true"></i>Celular, tablet o PC</span>
+          <span aria-hidden="true"><i class="ph-fill ph-whatsapp-logo"></i>WhatsApp</span>
+          <span aria-hidden="true"><i class="ph ph-qr-code"></i>Yape y Plin</span>
+          <span aria-hidden="true"><i class="ph ph-credit-card"></i>POS Niubiz</span>
+          <span aria-hidden="true"><i class="ph ph-receipt"></i>Boletas y facturas SUNAT</span>
+          <span aria-hidden="true"><i class="ph ph-microsoft-excel-logo"></i>Tu Excel de siempre</span>
+          <span aria-hidden="true"><i class="ph ph-bank"></i>Transferencias bancarias</span>
+          <span aria-hidden="true"><i class="ph ph-device-mobile"></i>Celular, tablet o PC</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CASOS REALES -->
-  <section class="section casos" id="casos">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">Resultados reales</p>
-        <h2>Negocios que ya dieron el salto</h2>
-        <p class="section__sub">Empresas peruanas que dejaron los cuadernos y los Excel atrás.</p>
-      </div>
-      <div class="casos__grid">
+    <section class="section dolores" id="dolores">
+      <div class="container">
+        <h2 class="section__title">¿Cuál de estos te pasa?</h2>
+        <p class="section__sub">Marca los que te suenan. Con eso ya sabemos por dónde empezar.</p>
 
-        <article class="caso-card">
-          <div class="caso-card__inner">
-            <span class="caso-card__sector">Clínica / Salud</span>
-            <h3 class="caso-card__title">[Nombre del negocio] — [Ciudad]</h3>
-            <p class="caso-card__desc">Antes gestionaban sus citas por WhatsApp y perdían pacientes por falta de seguimiento. Ahora tienen un sistema propio donde cada paciente tiene su historial y las citas se confirman automáticamente.</p>
-            <p class="caso-card__result">"<strong>[Reemplazar con resultado concreto del cliente 1]</strong>"</p>
-          </div>
-          <div class="caso-card__num" aria-hidden="true">01</div>
-        </article>
-
-        <article class="caso-card">
-          <div class="caso-card__inner">
-            <span class="caso-card__sector">Tienda / Comercio</span>
-            <h3 class="caso-card__title">[Nombre del negocio] — [Ciudad]</h3>
-            <p class="caso-card__desc">Manejaban su inventario en Excel y se quedaban sin stock sin darse cuenta. Con Yanapay ahora tienen alertas automáticas y saben en tiempo real qué productos necesitan reposición.</p>
-            <p class="caso-card__result">"<strong>[Reemplazar con resultado concreto del cliente 2]</strong>"</p>
-          </div>
-          <div class="caso-card__num" aria-hidden="true">02</div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section class="section proceso" id="proceso">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">Simple y sin vueltas</p>
-        <h2>¿Cómo trabajamos?</h2>
-      </div>
-      <div class="proceso__steps">
-        <div class="paso">
-          <div class="paso__num" aria-hidden="true">01</div>
-          <div class="paso__body">
-            <h3>Conversación gratis</h3>
-            <p>Cuéntanos qué necesita tu negocio. Sin tecnicismos, sin compromiso. Solo escuchamos y te orientamos.</p>
-          </div>
-        </div>
-        <div class="paso__connector" aria-hidden="true"></div>
-        <div class="paso">
-          <div class="paso__num" aria-hidden="true">02</div>
-          <div class="paso__body">
-            <h3>Diseñamos juntos</h3>
-            <p>Adaptamos la solución a tus procesos reales, no al revés. Tú validas cada paso antes de construir.</p>
-          </div>
-        </div>
-        <div class="paso__connector" aria-hidden="true"></div>
-        <div class="paso">
-          <div class="paso__num" aria-hidden="true">03</div>
-          <div class="paso__body">
-            <h3>Tu sistema listo</h3>
-            <p>Entregamos, capacitamos y nos quedamos disponibles. Soporte directo del equipo que desarrolló tu sistema.</p>
-          </div>
-        </div>
-      </div>
-      <div class="proceso__cta">
-        <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20quiero%20empezar" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Empezar la conversación
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="section contacto" id="contacto">
-    <div class="container">
-      <div class="contacto__inner">
-        <div class="contacto__left">
-          <p class="section__eyebrow">¿Listo para el cambio?</p>
-          <h2 class="contacto__title">Hablemos de tu <span class="text-accent">negocio</span></h2>
-          <p class="contacto__desc">Cuéntanos qué necesitas y te respondemos en menos de 24 horas. Sin compromiso, sin tecnicismos.</p>
-          <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20quiero%20una%20asesor%C3%ADa" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Escribir por WhatsApp
-          </a>
-          <p class="contacto__note">¿Prefieres email? <a href="mailto:hola@yanapay.tech">hola@yanapay.tech</a></p>
-        </div>
-        <form class="contacto__form" id="contactForm" novalidate>
-          <div class="form__group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
-          </div>
-          <div class="form__group">
-            <label for="negocio">Tipo de negocio</label>
-            <select id="negocio" name="negocio">
-              <option value="">¿Cuál es tu rubro?</option>
-              <option value="Clínica / Consultorio">Clínica / Consultorio</option>
-              <option value="Spa / Estética">Spa / Centro de estética</option>
-              <option value="Tienda / Comercio">Tienda / Comercio</option>
-              <option value="Colegio / Institución">Colegio / Institución</option>
-              <option value="Empresa de servicios">Empresa de servicios</option>
-              <option value="Otro">Otro</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="mensaje">¿Qué necesitas?</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente qué proceso quieres mejorar..."></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--full">
-            Enviar por WhatsApp
+        <div class="pains" role="group" aria-label="Problemas de tu negocio">
+          <button type="button" class="pain pain--wide" aria-pressed="false" data-pain="No sé bien quién me debe ni cuánto" data-fix="Cobranza con recordatorios por WhatsApp">
+            <i class="ph ph-hand-coins pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">No sé bien quién me debe ni cuánto.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
           </button>
-          <p class="form__note">Al enviar, se abre WhatsApp con tu mensaje listo. Sin formularios perdidos.</p>
-        </form>
-      </div>
-    </div>
-  </section>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Todo está en Excel y cada uno tiene su versión" data-fix="Un solo sistema para todo el equipo">
+            <i class="ph ph-microsoft-excel-logo pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Todo está en Excel y cada uno tiene su versión.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Cobro uno por uno por WhatsApp y se me pasan" data-fix="Cobranza con recordatorios por WhatsApp">
+            <i class="ph ph-chat-circle-dots pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Cobro uno por uno por WhatsApp y se me pasan.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Hago boletas y facturas a mano" data-fix="Boletas y facturas SUNAT automáticas">
+            <i class="ph ph-receipt pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Hago boletas y facturas a mano y me toma horas.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Me quedo sin stock y no me entero" data-fix="Inventario con alertas de stock">
+            <i class="ph ph-package pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Me quedo sin stock y me entero cuando el cliente pide.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain pain--wide" aria-pressed="false" data-pain="Vendo, pero no sé cuánto gano de verdad" data-fix="Reporte de ventas y ganancias en el celular">
+            <i class="ph ph-chart-line-down pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Vendo, pero no sé cuánto gano de verdad.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Se me cruzan las citas o los clientes no llegan" data-fix="Agenda de citas con confirmación por WhatsApp">
+            <i class="ph ph-calendar-x pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Se me cruzan las citas o los clientes no llegan.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="pain" aria-pressed="false" data-pain="Si falto un día nadie sabe cómo va el negocio" data-fix="Panel del negocio con permisos por persona">
+            <i class="ph ph-user-circle-dashed pain__icon" aria-hidden="true"></i>
+            <span class="pain__text">Si falto un día, nadie sabe cómo va el negocio.</span>
+            <i class="ph-fill ph-check-circle pain__check" aria-hidden="true"></i>
+          </button>
+        </div>
 
-  <!-- FOOTER -->
+        <div class="pick" id="pick" aria-live="polite">
+          <div class="pick__info">
+            <p class="pick__count" id="pickCount">Toca las tarjetas que te pasan.</p>
+            <ul class="pick__fixes" id="pickFixes"></ul>
+          </div>
+          <a class="btn btn--primary pick__btn is-disabled" id="pickBtn" aria-disabled="true" data-cta="dolores" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            Enviar lo que marqué
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare" id="antes-despues">
+      <div class="container">
+        <h2 class="section__title">El mismo negocio, antes y después</h2>
+        <p class="section__sub">Arrastra la barra. A la izquierda, el Excel de siempre. A la derecha, tu sistema.</p>
+
+        <div class="compare__frame" id="compare" style="--pos: 50%">
+          <div class="compare__layer compare__before" aria-hidden="true">
+            <div class="xl">
+              <div class="xl__bar"><i class="ph ph-microsoft-excel-logo"></i> cobros_FINAL_v3 (2).xlsx</div>
+              <table class="xl__grid">
+                <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+                <tbody>
+                  <tr><th>1</th><td class="b">CLIENTE</td><td class="b">DETALLE</td><td class="b">MONTO</td><td class="b">¿PAGÓ?</td></tr>
+                  <tr><th>2</th><td>Quispe</td><td>fact 231</td><td>350</td><td class="y">creo q sí, ver yape</td></tr>
+                  <tr><th>3</th><td>Rojas</td><td>2 facturas</td><td>700</td><td class="r">NO!!! llamar</td></tr>
+                  <tr><th>4</th><td>Huaman</td><td>pedido</td><td>350</td><td></td></tr>
+                  <tr><th>5</th><td>Torres</td><td>crédito</td><td>35O</td><td class="y">dijo q el lunes</td></tr>
+                  <tr><th>6</th><td>quispe</td><td>fact 198</td><td>350</td><td>ok?</td></tr>
+                  <tr><th>7</th><td></td><td>TOTAL</td><td class="err">#¡VALOR!</td><td></td></tr>
+                </tbody>
+              </table>
+              <p class="xl__note"><i class="ph ph-note-pencil"></i> "El cuaderno lo tiene la señora Carmen"</p>
+            </div>
+          </div>
+
+          <div class="compare__layer compare__after" aria-hidden="true">
+            <div class="sys">
+              <div class="sys__head">
+                <p class="sys__title">Cobros de setiembre</p>
+                <p class="sys__sum">Cobrado <strong>S/ 8,400</strong> de S/ 10,150</p>
+              </div>
+              <ul class="sys__list">
+                <li><span class="sys__name">Bodega Quispe</span><span class="tag tag--ok"><i class="ph-fill ph-check-circle"></i>Pagó con Yape, 12 set</span></li>
+                <li><span class="sys__name">Minimarket Rojas</span><span class="tag tag--late"><i class="ph-fill ph-warning-circle"></i>Debe 2 facturas, S/ 700</span></li>
+                <li><span class="sys__name">Sra. Huamán</span><span class="tag tag--soon"><i class="ph-fill ph-clock"></i>Recordatorio enviado</span></li>
+                <li><span class="sys__name">Ferretería Torres</span><span class="tag tag--soon"><i class="ph-fill ph-calendar-check"></i>Promesa de pago lunes 22</span></li>
+              </ul>
+              <p class="sys__foot"><i class="ph ph-device-mobile"></i> Lo ves tú, lo ve tu equipo, desde el celular.</p>
+            </div>
+          </div>
+
+          <div class="compare__handle" aria-hidden="true"><span><i class="ph ph-arrows-left-right"></i></span></div>
+          <input class="compare__range" id="compareRange" type="range" min="0" max="100" value="50" aria-label="Deslizar entre antes y después" />
+          <span class="compare__tag compare__tag--l">Antes</span>
+          <span class="compare__tag compare__tag--r">Después</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wins" id="resultados">
+      <div class="container wins__grid">
+        <div class="wins__intro">
+          <h2 class="section__title">Lo que cambia en tu día a día</h2>
+          <p class="section__sub">No te vendemos un programa. Te devolvemos las horas que hoy se van en perseguir, anotar y revisar.</p>
+          <a class="btn btn--primary" data-wa="Hola Yanapay, quiero que mi negocio funcione así." data-cta="resultados" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+
+        <div class="wins__list">
+          <article class="win">
+            <div class="win__demo">
+              <div class="wa-bubble">
+                <p>Hola Sr. Quispe, le recordamos su factura F001-231 de S/ 350, vencida el 10. Puede pagar por Yape al 913 412 590. ¡Gracias!</p>
+                <span class="wa-bubble__time">9:02 <i class="ph ph-checks"></i></span>
+              </div>
+            </div>
+            <h3 class="win__title">Cobras sin perseguir a nadie</h3>
+            <p class="win__text">El recordatorio sale solo por WhatsApp el día que toca. Tú solo miras quién ya pagó.</p>
+          </article>
+
+          <article class="win">
+            <div class="win__demo">
+              <div class="stat">
+                <p class="stat__label">Ventas de hoy</p>
+                <p class="stat__value">S/ <span data-count="3284.5">0</span></p>
+                <div class="bars" aria-hidden="true">
+                  <span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:44%"></span><span style="--h:71%"></span><span style="--h:63%"></span><span style="--h:88%"></span><span style="--h:79%"></span>
+                </div>
+              </div>
+            </div>
+            <h3 class="win__title">Sabes cuánto vendiste, estés donde estés</h3>
+            <p class="win__text">Abres el celular y ves la caja del día, lo que ganaste en el mes y qué se vende más.</p>
+          </article>
+
+          <article class="win">
+            <div class="win__demo">
+              <div class="receipt">
+                <p class="receipt__head"><i class="ph ph-receipt"></i> Boleta B001-000482</p>
+                <p class="receipt__line"><span>2 bolsas cemento Sol</span><span>S/ 62.00</span></p>
+                <p class="receipt__line"><span>1 caja clavos 3"</span><span>S/ 14.50</span></p>
+                <p class="receipt__ok"><i class="ph-fill ph-seal-check"></i> Aceptada por SUNAT</p>
+              </div>
+            </div>
+            <h3 class="win__title">Las boletas y facturas salen solas</h3>
+            <p class="win__text">Registras la venta y el comprobante electrónico se emite y se envía al cliente.</p>
+          </article>
+
+          <article class="win">
+            <div class="win__demo">
+              <div class="alert">
+                <i class="ph-fill ph-bell-ringing"></i>
+                <p><strong>Quedan 6 bolsas de cemento.</strong> Con lo que vendes, se acaban el jueves.</p>
+              </div>
+            </div>
+            <h3 class="win__title">Te avisa antes de quedarte sin nada</h3>
+            <p class="win__text">El sistema cuenta por ti y te avisa qué reponer antes de que el cliente se vaya a la competencia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section calc" id="calculadora">
+      <div class="container calc__grid">
+        <div>
+          <h2 class="section__title">¿Cuánto te cuesta seguir con el Excel?</h2>
+          <p class="section__sub">Mueve las barras con tus números. Es solo tiempo, sin contar lo que se pierde por cobros olvidados.</p>
+        </div>
+        <div class="calc__box">
+          <label class="calc__field" for="horas">
+            <span>Horas a la semana ordenando, anotando y cobrando</span>
+            <output id="horasOut" for="horas">8 h</output>
+          </label>
+          <input type="range" id="horas" min="1" max="40" value="8" />
+          <label class="calc__field" for="costo">
+            <span>Lo que vale una hora tuya o de tu equipo</span>
+            <output id="costoOut" for="costo">S/ 15</output>
+          </label>
+          <input type="range" id="costo" min="5" max="80" step="5" value="15" />
+          <div class="calc__result">
+            <p>Al mes se te van</p>
+            <p class="calc__big">S/ <span id="calcMes">520</span></p>
+            <p class="calc__year">Son <strong id="calcHoras">35</strong> horas al mes. Casi <strong id="calcDias">4</strong> días de trabajo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rubros" id="rubros">
+      <div class="container">
+        <h2 class="section__title">Hecho para negocios como el tuyo</h2>
+        <p class="section__sub">Cada rubro tiene su dolor de cabeza. Estos son los que más nos piden.</p>
+      </div>
+      <div class="rubros__track" tabindex="0" aria-label="Rubros, desliza para ver más">
+        <article class="rubro rubro--a">
+          <i class="ph ph-student rubro__icon" aria-hidden="true"></i>
+          <h3>Colegios, nidos y academias</h3>
+          <p class="rubro__pain">"A fin de mes no sé qué familias están al día con la pensión."</p>
+          <p class="rubro__fix">Pensiones, matrículas y recordatorios automáticos a los padres.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, tengo un colegio o academia y quiero ordenar las pensiones." data-cta="rubro-colegio" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="rubro rubro--b">
+          <i class="ph ph-tooth rubro__icon" aria-hidden="true"></i>
+          <h3>Clínicas y consultorios</h3>
+          <p class="rubro__pain">"Los pacientes dejan el tratamiento a medias y nadie les hace seguimiento."</p>
+          <p class="rubro__fix">Citas, historia del paciente, saldos de tratamientos y confirmación por WhatsApp.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, tengo una clínica o consultorio y quiero más información." data-cta="rubro-clinica" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="rubro rubro--c">
+          <i class="ph ph-wrench rubro__icon" aria-hidden="true"></i>
+          <h3>Ferreterías y distribuidoras</h3>
+          <p class="rubro__pain">"Doy crédito a mis clientes y ya no sé quién me debe qué."</p>
+          <p class="rubro__fix">Ventas al crédito, cuentas por cobrar, stock por almacén y facturas SUNAT.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, tengo una ferretería o distribuidora y quiero más información." data-cta="rubro-ferreteria" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="rubro rubro--d">
+          <i class="ph ph-storefront rubro__icon" aria-hidden="true"></i>
+          <h3>Tiendas y bodegas</h3>
+          <p class="rubro__pain">"Cierro caja y nunca me cuadra con lo que vendí."</p>
+          <p class="rubro__fix">Caja diaria, ventas con Yape y POS, inventario y reporte de lo que más sale.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, tengo una tienda y quiero más información." data-cta="rubro-tienda" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="rubro rubro--e">
+          <i class="ph ph-buildings rubro__icon" aria-hidden="true"></i>
+          <h3>Condominios y administradoras</h3>
+          <p class="rubro__pain">"Cobrar el mantenimiento a cada departamento es un trabajo a tiempo completo."</p>
+          <p class="rubro__fix">Cuotas por unidad, morosidad, recibos y avisos a los propietarios.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, administro un condominio y quiero más información." data-cta="rubro-condominio" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="rubro rubro--f">
+          <i class="ph ph-car-profile rubro__icon" aria-hidden="true"></i>
+          <h3>Talleres y servicios técnicos</h3>
+          <p class="rubro__pain">"Los trabajos se anotan en papel y luego no sé cuánto cobrar ni qué falta."</p>
+          <p class="rubro__fix">Órdenes de trabajo, repuestos, avisos al cliente cuando está listo y cobros.</p>
+          <a class="rubro__link" data-wa="Hola Yanapay, tengo un taller y quiero más información." data-cta="rubro-taller" href="https://wa.me/51913412590" target="_blank" rel="noopener">Preguntar por mi rubro <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about" id="quien">
+      <div class="container about__grid">
+        <figure class="about__photo">
+          <picture>
+            <source srcset="assets/christian-480.webp 480w, assets/christian-800.webp 800w" sizes="(min-width: 900px) 420px, 80vw" type="image/webp" />
+            <img src="assets/christian-800.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Christian Jara, fundador de Yanapay" />
+          </picture>
+        </figure>
+        <div class="about__copy">
+          <h2 class="section__title">Hablas directo con quien hace tu sistema</h2>
+          <p class="about__lead">Soy Christian Jara, ingeniero de software. Construyo sistemas para empresas de operación y logística en Lima. Con Yanapay llevo esa experiencia a negocios como el tuyo, explicada sin palabras raras.</p>
+          <ul class="about__promises">
+            <li><i class="ph ph-chat-teardrop-text" aria-hidden="true"></i><span><strong>Te respondo yo</strong>, no un bot ni un call center.</span></li>
+            <li><i class="ph ph-translate" aria-hidden="true"></i><span><strong>Te explico en tu idioma</strong>. Si algo no se entiende, es culpa mía.</span></li>
+            <li><i class="ph ph-shield-check" aria-hidden="true"></i><span><strong>Tus datos son tuyos</strong>. Si un día te vas, te los llevas.</span></li>
+          </ul>
+          <p class="about__meaning"><strong>Yanapay</strong> significa "ayudar" en quechua. Es lo que hacemos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps" id="proceso">
+      <div class="container">
+        <h2 class="section__title">Empezar es fácil</h2>
+        <ol class="steps__list">
+          <li class="step">
+            <span class="step__icon"><i class="ph ph-chats-circle" aria-hidden="true"></i></span>
+            <h3>Conversamos 30 minutos</h3>
+            <p>Por WhatsApp o videollamada, gratis. Me cuentas cómo trabajas hoy y qué te quita tiempo.</p>
+          </li>
+          <li class="step">
+            <span class="step__icon"><i class="ph ph-presentation-chart" aria-hidden="true"></i></span>
+            <h3>Te mostramos cómo quedaría</h3>
+            <p>Ves tu sistema antes de pagar nada, con un precio cerrado por escrito.</p>
+          </li>
+          <li class="step">
+            <span class="step__icon"><i class="ph ph-rocket-launch" aria-hidden="true"></i></span>
+            <h3>Lo usas y te acompañamos</h3>
+            <p>Pasamos tu Excel al sistema, capacitamos a tu equipo y seguimos disponibles.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section faq" id="preguntas">
+      <div class="container faq__grid">
+        <h2 class="section__title">Lo que casi todos nos preguntan</h2>
+        <div class="faq__list">
+          <details>
+            <summary>¿Necesito saber de computación?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseñamos con las palabras que ya usas en tu negocio y te enseñamos a ti y a tu equipo.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en el celular?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa con lo que ya tengo en Excel?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Lo pasamos al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero.</p>
+          </details>
+          <details>
+            <summary>¿Emite boletas y facturas electrónicas SUNAT?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Conectamos tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Depende de lo que necesites. Después de la primera conversación, que es gratis, te damos un precio cerrado por escrito antes de empezar.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no uso un sistema que ya existe?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="contacto">
+      <div class="container final__inner">
+        <h2 class="final__title">Cuéntanos qué te quita el sueño de tu negocio.</h2>
+        <p class="final__sub">Te respondemos hoy mismo. La primera conversación es gratis y sin compromiso.</p>
+        <a class="btn btn--light btn--lg" data-wa="Hola Yanapay, quiero saber cómo ordenar mi negocio." data-cta="final" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+          <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+          Escríbenos por WhatsApp
+        </a>
+        <p class="final__mail">¿Prefieres correo? <a href="mailto:hola@yanapay.tech">hola@yanapay.tech</a></p>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#hero" class="nav__logo">Yanapay<span>.</span></a>
-        <p>Software a medida para negocios peruanos.</p>
+      <div>
+        <a href="#inicio" class="logo">
+          <span class="logo__mark" aria-hidden="true">Y</span>
+          <span class="logo__text">Yanapay</span>
+        </a>
+        <p class="footer__tag">Sistemas a la medida para negocios peruanos.</p>
       </div>
-      <nav class="footer__links" aria-label="Navegación footer">
-        <a href="#soluciones">Soluciones</a>
-        <a href="#casos">Casos reales</a>
-        <a href="#proceso">Cómo funciona</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="footer__links" aria-label="Pie de página">
+        <a href="#dolores">¿Te pasa?</a>
+        <a href="#antes-despues">Antes y después</a>
+        <a href="#rubros">Rubros</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
       <div class="footer__contact">
         <a href="https://wa.me/51913412590" target="_blank" rel="noopener">+51 913 412 590</a>
         <a href="mailto:hola@yanapay.tech">hola@yanapay.tech</a>
+        <span>Lima, Perú</span>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p>&copy; 2026 Yanapay.tech — Todos los derechos reservados.</p>
-    </div>
+    <p class="footer__legal container">© <span id="anio">2026</span> Yanapay.tech</p>
   </footer>
 
-  <!-- FLOATING CTA -->
-  <a href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
-     target="_blank"
-     rel="noopener"
-     class="floating-cta"
-     id="floatingCta"
-     aria-label="Contactar por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a class="fab" id="fab" data-wa="Hola Yanapay, quiero saber cómo ordenar mi negocio." data-cta="flotante" href="https://wa.me/51913412590" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
   </a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
