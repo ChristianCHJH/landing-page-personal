@@ -1,7 +1,6 @@
 const WHATSAPP_NUMBER = "51913412590";
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const formatSoles = new Intl.NumberFormat("es-PE", { maximumFractionDigits: 0 });
-const formatSolesDecimals = new Intl.NumberFormat("es-PE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 function whatsappUrl(message) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -263,9 +262,6 @@ function setupCalculator() {
 function setupAnimations() {
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
-  document.querySelectorAll("[data-count]").forEach((el) => {
-    el.textContent = formatSolesDecimals.format(Number(el.dataset.count));
-  });
   if (!gsap || !ScrollTrigger || prefersReducedMotion) return;
 
   const intro = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
@@ -294,13 +290,13 @@ function setupAnimations() {
 
   document.querySelectorAll(".section__title").forEach((title) => reveal(title, title));
   reveal(".pain", ".pains", { stagger: 0.05 });
-  reveal(".win", ".wins__list", { stagger: 0.12 });
   reveal(".calc__box", ".calc__box");
   reveal(".rubro", ".rubros__track", { x: 40, y: 0 });
   reveal(".about__promises li", ".about__promises", { x: -20, y: 0 });
   reveal(".step", ".steps__list", { stagger: 0.15 });
   reveal(".faq__list details", ".faq__list", { y: 16, stagger: 0.05 });
   reveal(".final__inner > *", ".final", { stagger: 0.1 });
+  reveal(".price", ".price");
 
   gsap.from(".about__photo", {
     rotate: -8,
@@ -309,26 +305,6 @@ function setupAnimations() {
     duration: 1,
     ease: "power3.out",
     scrollTrigger: { trigger: ".about", start: "top 75%", once: true },
-  });
-
-  gsap.from(".bars span", {
-    scaleY: 0,
-    duration: 0.8,
-    ease: "power3.out",
-    stagger: 0.06,
-    scrollTrigger: { trigger: ".bars", start: "top 85%", once: true },
-  });
-
-  document.querySelectorAll("[data-count]").forEach((el) => {
-    const counter = { value: 0 };
-    el.textContent = formatSolesDecimals.format(0);
-    gsap.to(counter, {
-      value: Number(el.dataset.count),
-      duration: 1.6,
-      ease: "power2.out",
-      scrollTrigger: { trigger: el, start: "top 85%", once: true },
-      onUpdate: () => { el.textContent = formatSolesDecimals.format(counter.value); },
-    });
   });
 
   gsap.fromTo(".steps__list", { "--line-progress": 0 }, {
