@@ -1,2 +1,11 @@
 .git
+.gitignore
+.vercelignore
+.playwright-mcp
 *.md
+Dockerfile
+docker-compose.yml
+herramientas
+foto_perfil_2.png
+foto_perfil_sin_fondo.png
+foto_portda.png
