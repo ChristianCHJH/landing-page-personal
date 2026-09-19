@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yanapay.tech/sitemap.xml
+Sitemap: https://landing-page-personal-kappa.vercel.app/sitemap.xml
