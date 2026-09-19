@@ -410,12 +410,21 @@
 
     <section class="section about" id="quien">
       <div class="container about__grid">
-        <figure class="about__photo">
-          <picture>
-            <source srcset="assets/christian-480.webp 480w, assets/christian-800.webp 800w" sizes="(min-width: 900px) 420px, 80vw" type="image/webp" />
-            <img src="assets/christian-800.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Christian Jara, fundador de Yanapay" />
-          </picture>
-        </figure>
+        <div class="about__card">
+          <div class="about__brand">
+            <span class="about__mark" aria-hidden="true">Y</span>
+            <p class="about__name">Yanapay</p>
+            <p class="about__word">“ayudar”, en quechua</p>
+          </div>
+          <div class="about__contact">
+            <span class="about__avatar" aria-hidden="true">CJ</span>
+            <p><span class="about__who">Te atiende</span><strong>Christian Jara</strong><span class="about__role">Ingeniero de software, Lima</span></p>
+          </div>
+          <a class="btn btn--primary about__wa" data-wa="Hola Christian, quiero saber cómo ordenar mi negocio." data-cta="quien" href="https://wa.me/51913412590" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            Escríbeme por WhatsApp
+          </a>
+        </div>
         <div class="about__copy">
           <h2 class="section__title">Hablas directo con quien hace tu sistema</h2>
           <p class="about__lead">Soy Christian Jara, ingeniero de software. Construyo sistemas para empresas de operación y logística en Lima. Con Yanapay llevo esa experiencia a negocios como el tuyo, explicada sin palabras raras.</p>
@@ -424,7 +433,6 @@
             <li><i class="ph ph-translate" aria-hidden="true"></i><span><strong>Te explico en tu idioma</strong>. Si algo no se entiende, es culpa mía.</span></li>
             <li><i class="ph ph-shield-check" aria-hidden="true"></i><span><strong>Tus datos son tuyos</strong>. Si un día te vas, te los llevas.</span></li>
           </ul>
-          <p class="about__meaning"><strong>Yanapay</strong> significa "ayudar" en quechua. Es lo que hacemos.</p>
         </div>
       </div>
     </section>

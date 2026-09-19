@@ -390,7 +390,7 @@ function setupAnimations() {
   reveal(".fix", ".fixes__list", { stagger: 0.12 });
   reveal(".extras__list li", ".extras", { y: 12, stagger: 0.05 });
 
-  if (exists(".about__photo")) gsap.from(".about__photo", {
+  if (exists(".about__card")) gsap.from(".about__card", {
     rotate: -8,
     y: 40,
     opacity: 0,
