@@ -1,270 +1,351 @@
-gsap.registerPlugin(ScrollTrigger);
+const WHATSAPP_NUMBER = "51913412590";
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const formatSoles = new Intl.NumberFormat("es-PE", { maximumFractionDigits: 0 });
+const formatSolesDecimals = new Intl.NumberFormat("es-PE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-/* ── Scroll progress bar ── */
-const progressBar = document.createElement('div');
-progressBar.className = 'scroll-progress';
-document.body.prepend(progressBar);
+function whatsappUrl(message) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
 
-window.addEventListener('scroll', () => {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${window.scrollY / max})`;
-}, { passive: true });
+function trackCta(name) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: "click_whatsapp", cta: name });
+}
 
-/* ── Cursor spotlight (desktop only) ── */
-if (window.matchMedia('(pointer: fine)').matches) {
-  const cursorGlow = document.createElement('div');
-  cursorGlow.className = 'cursor-glow';
-  document.body.appendChild(cursorGlow);
-  document.addEventListener('mousemove', e => {
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top  = e.clientY + 'px';
-    cursorGlow.style.opacity = '1';
+function prepareWhatsappLinks() {
+  document.querySelectorAll("[data-wa]").forEach((link) => {
+    link.href = whatsappUrl(link.dataset.wa);
   });
-  document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
-}
-
-/* ── Hero: inject aurora + particles + photo rings ── */
-const heroEl = document.querySelector('.hero');
-
-const auroraEl = document.createElement('div');
-auroraEl.className = 'hero__aurora';
-auroraEl.setAttribute('aria-hidden', 'true');
-heroEl.prepend(auroraEl);
-
-const particlesEl = document.createElement('div');
-particlesEl.className = 'hero__particles';
-particlesEl.setAttribute('aria-hidden', 'true');
-heroEl.appendChild(particlesEl);
-
-for (let i = 0; i < 20; i++) {
-  const dot = document.createElement('div');
-  dot.className = 'particle';
-  dot.style.left   = Math.random() * 100 + '%';
-  dot.style.bottom = (Math.random() * 45 + 5) + '%';
-  const size = 2 + Math.random() * 3;
-  dot.style.width  = size + 'px';
-  dot.style.height = size + 'px';
-  dot.style.setProperty('--dur',   (5 + Math.random() * 7) + 's');
-  dot.style.setProperty('--delay', (Math.random() * 10) + 's');
-  particlesEl.appendChild(dot);
-}
-
-const imageWrap = document.querySelector('.hero__image-wrap');
-[0, 1].forEach(() => {
-  const ring = document.createElement('div');
-  ring.className = 'hero__image-ring';
-  ring.setAttribute('aria-hidden', 'true');
-  imageWrap.prepend(ring);
-});
-
-/* ── NAV scroll effect ── */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-/* ── Mobile menu ── */
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
-
-/* ── Sector tabs ── */
-const sectorTabs = document.querySelectorAll('.sector-tab');
-const sectorPanels = document.querySelectorAll('.sector-panel');
-
-sectorTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    sectorTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-    sectorPanels.forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    const panel = document.querySelector(`[data-panel="${tab.dataset.sector}"]`);
-    if (panel) {
-      panel.classList.add('active');
-      gsap.from(panel.querySelector('.sector-panel__features'), {
-        opacity: 0, x: -20, duration: 0.4, ease: 'power2.out',
-      });
-    }
+  document.querySelectorAll("[data-cta]").forEach((link) => {
+    link.addEventListener("click", () => trackCta(link.dataset.cta));
   });
-});
-
-/* ── Floating CTA ── */
-const floatingCta = document.getElementById('floatingCta');
-if (heroEl && floatingCta) {
-  const heroObserver = new IntersectionObserver(([entry]) => {
-    floatingCta.classList.toggle('visible', !entry.isIntersecting);
-  }, { threshold: 0 });
-  heroObserver.observe(heroEl);
 }
 
-/* ── Manual SplitText ── */
-function splitChars(el) {
-  const temp = document.createElement('div');
-  temp.innerHTML = el.innerHTML;
-  el.innerHTML = '';
+function setupNavigation() {
+  const nav = document.getElementById("nav");
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menuMovil");
+  const hero = document.getElementById("inicio");
+  const fab = document.getElementById("fab");
+  const painsSection = document.getElementById("dolores");
 
-  temp.childNodes.forEach(node => {
-    if (node.nodeType === Node.TEXT_NODE) {
-      node.textContent.split('').forEach(ch => {
-        const s = document.createElement('span');
-        s.className = 'char';
-        s.textContent = ch === ' ' ? ' ' : ch;
-        el.appendChild(s);
-      });
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      const color = node.style.color || 'var(--accent)';
-      node.textContent.split('').forEach(ch => {
-        const s = document.createElement('span');
-        s.className = 'char';
-        s.style.color = color;
-        s.textContent = ch === ' ' ? ' ' : ch;
-        el.appendChild(s);
-      });
-    }
-  });
-
-  return el.querySelectorAll('.char');
-}
-
-/* ── Manual ScrambleText ── */
-function scrambleText(el, finalText, duration) {
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#@%&?!';
-  const start = performance.now();
-  const tick = now => {
-    const progress = Math.min((now - start) / duration, 1);
-    const revealed = Math.floor(progress * finalText.length);
-    let result = '';
-    for (let i = 0; i < finalText.length; i++) {
-      if (i < revealed || finalText[i] === ' ') {
-        result += finalText[i];
-      } else {
-        result += CHARS[Math.floor(Math.random() * CHARS.length)];
-      }
-    }
-    el.textContent = result;
-    if (progress < 1) requestAnimationFrame(tick);
+  const toggleMenu = (open) => {
+    menu.hidden = !open;
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    burger.innerHTML = open ? '<i class="ph ph-x" aria-hidden="true"></i>' : '<i class="ph ph-list" aria-hidden="true"></i>';
   };
-  requestAnimationFrame(tick);
+
+  burger.addEventListener("click", () => toggleMenu(menu.hidden));
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => toggleMenu(false)));
+
+  let heroVisible = true;
+  let painsVisible = false;
+  const refreshFab = () => fab.classList.toggle("is-on", !heroVisible && !painsVisible);
+
+  new IntersectionObserver(([entry]) => {
+    heroVisible = entry.isIntersecting;
+    nav.classList.toggle("is-scrolled", !entry.isIntersecting || entry.intersectionRatio < 0.9);
+    refreshFab();
+  }, { threshold: [0, 0.9] }).observe(hero);
+
+  new IntersectionObserver(([entry]) => {
+    painsVisible = entry.isIntersecting;
+    refreshFab();
+  }, { threshold: 0.15 }).observe(painsSection);
 }
 
-/* ── HERO animations ── */
-const nameEl = document.querySelector('.hero__name');
-const chars  = splitChars(nameEl);
+function setupCollectionDemo() {
+  const demo = document.getElementById("demo");
+  const rows = Array.from(demo.querySelectorAll(".row"));
+  const totalEl = document.getElementById("demoTotal");
+  const pendingEl = document.getElementById("demoPend");
+  const toast = document.getElementById("demoToast");
+  const toastText = document.getElementById("demoToastText");
+  const initialTotal = rows.reduce((sum, row) => sum + Number(row.dataset.monto), 0);
 
-gsap.set(chars, { opacity: 0, y: 55, rotateX: -90 });
-gsap.set(['.hero__sub', '.hero__ctas', '.hero__trust'], { y: 30, opacity: 0 });
-gsap.set('.hero__image-wrap', { x: 60, opacity: 0 });
-gsap.set('.hero__eyebrow', { opacity: 0 });
+  let total = initialTotal;
+  let pending = rows.length;
+  let timers = [];
+  let autoplayIndex = 0;
+  let visible = false;
+  let userTookControl = false;
 
-const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' }, delay: 0.2 });
+  const later = (fn, ms) => timers.push(setTimeout(fn, ms));
+  const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
 
-heroTl
-  .call(() => {
-    const eyebrow = document.querySelector('.hero__eyebrow');
-    gsap.set(eyebrow, { opacity: 1 });
-    scrambleText(eyebrow, 'Software para negocios peruanos', 2000);
-  })
-  .to(chars, {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    stagger: { amount: 0.6, from: 'start' },
-    duration: 0.65,
-    ease: 'back.out(1.6)',
-  }, 0.3)
-  .to('.hero__sub',   { opacity: 1, y: 0, duration: 0.65 }, '-=0.3')
-  .to('.hero__ctas',  { opacity: 1, y: 0, duration: 0.55 }, '-=0.4')
-  .to('.hero__trust', { opacity: 1, y: 0, duration: 0.5  }, '-=0.3')
-  .to('.hero__image-wrap', { opacity: 1, x: 0, duration: 1.1, ease: 'power2.out' }, '-=0.8')
-  .to('.hero__image-wrap', {
-    y: -14, duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true,
-  }, '>+0.1');
+  const showToast = (text) => {
+    toastText.textContent = text;
+    toast.classList.add("is-on");
+    later(() => toast.classList.remove("is-on"), 1900);
+  };
 
-/* ── Hero photo: parallax suave con el mouse ── */
-if (window.matchMedia('(pointer: fine)').matches) {
-  let lerpX = 0, lerpY = 0, rawX = 0, rawY = 0;
-  const heroPhoto = document.querySelector('.hero__photo');
+  const animateTotal = (from, to) => {
+    if (prefersReducedMotion || !window.gsap) {
+      totalEl.textContent = formatSoles.format(to);
+      return;
+    }
+    const counter = { value: from };
+    window.gsap.to(counter, {
+      value: to,
+      duration: 0.9,
+      ease: "power2.out",
+      onUpdate: () => { totalEl.textContent = formatSoles.format(counter.value); },
+    });
+  };
 
-  document.addEventListener('mousemove', e => {
-    rawX = (e.clientX / window.innerWidth  - 0.5) * 2;
-    rawY = (e.clientY / window.innerHeight - 0.5) * 2;
+  const familyName = (row) => row.querySelector(".row__name").textContent;
+
+  const collect = (row) => {
+    if (row.classList.contains("is-sent")) return;
+    const button = row.querySelector(".row__btn");
+    button.classList.add("is-press");
+    later(() => button.classList.remove("is-press"), 160);
+    row.classList.add("is-sent");
+    button.innerHTML = '<i class="ph ph-checks" aria-hidden="true"></i> Enviado';
+    showToast(`Recordatorio enviado a ${familyName(row)}`);
+
+    later(() => {
+      const amount = Number(row.dataset.monto);
+      row.classList.add("is-paid");
+      row.querySelector(".row__state").textContent = "Pagó con Yape, recién";
+      animateTotal(total, total - amount);
+      total -= amount;
+      pending -= 1;
+      pendingEl.textContent = String(pending);
+      showToast(`Nuevo pago: S/ ${amount} de ${familyName(row)}`);
+    }, 2300);
+  };
+
+  const originalStates = rows.map((row) => row.querySelector(".row__state").textContent);
+
+  const reset = () => {
+    rows.forEach((row, i) => {
+      row.classList.remove("is-sent", "is-paid");
+      row.querySelector(".row__state").textContent = originalStates[i];
+      row.querySelector(".row__btn").innerHTML = '<i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> Recordar';
+    });
+    total = initialTotal;
+    pending = rows.length;
+    totalEl.textContent = formatSoles.format(total);
+    pendingEl.textContent = String(pending);
+    autoplayIndex = 0;
+  };
+
+  const autoplayStep = () => {
+    if (!visible || userTookControl) return;
+    if (autoplayIndex >= 2) {
+      later(() => { reset(); later(autoplayStep, 1200); }, 3200);
+      return;
+    }
+    collect(rows[autoplayIndex]);
+    autoplayIndex += 1;
+    later(autoplayStep, 4200);
+  };
+
+  rows.forEach((row) => {
+    row.querySelector(".row__btn").addEventListener("click", () => {
+      if (!userTookControl) {
+        userTookControl = true;
+        clearTimers();
+      }
+      collect(row);
+      if (rows.every((r) => r.classList.contains("is-sent"))) later(reset, 5200);
+    });
   });
 
-  gsap.ticker.add(() => {
-    lerpX += (rawX - lerpX) * 0.05;
-    lerpY += (rawY - lerpY) * 0.05;
-    heroPhoto.style.transform = `translateX(calc(-50% + ${lerpX * 9}px)) translateY(${lerpY * 5}px)`;
+  if (prefersReducedMotion) return;
+
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible && !userTookControl && timers.length === 0) later(autoplayStep, 1400);
+    if (!visible && !userTookControl) { clearTimers(); reset(); }
+  }, { threshold: 0.5 }).observe(demo);
+}
+
+function setupPainPicker() {
+  const pains = Array.from(document.querySelectorAll(".pain"));
+  const count = document.getElementById("pickCount");
+  const fixes = document.getElementById("pickFixes");
+  const button = document.getElementById("pickBtn");
+
+  const refresh = () => {
+    const selected = pains.filter((p) => p.getAttribute("aria-pressed") === "true");
+    const uniqueFixes = [...new Set(selected.map((p) => p.dataset.fix))];
+
+    fixes.innerHTML = "";
+    uniqueFixes.forEach((fix) => {
+      const item = document.createElement("li");
+      item.textContent = fix;
+      fixes.appendChild(item);
+    });
+
+    if (selected.length === 0) {
+      count.textContent = "Toca las tarjetas que te pasan.";
+      button.classList.add("is-disabled");
+      button.setAttribute("aria-disabled", "true");
+      button.href = whatsappUrl("Hola Yanapay, quiero ordenar mi negocio.");
+      return;
+    }
+
+    count.textContent = selected.length === 1 ? "Marcaste 1. Esto te ayudaría:" : `Marcaste ${selected.length}. Esto te ayudaría:`;
+    button.classList.remove("is-disabled");
+    button.removeAttribute("aria-disabled");
+    const lines = selected.map((p) => `- ${p.dataset.pain}`).join("\n");
+    button.href = whatsappUrl(`Hola Yanapay, en mi negocio me pasa esto:\n${lines}\n¿Cómo me pueden ayudar?`);
+  };
+
+  pains.forEach((pain) => {
+    pain.addEventListener("click", () => {
+      const pressed = pain.getAttribute("aria-pressed") === "true";
+      pain.setAttribute("aria-pressed", String(!pressed));
+      if (!pressed && window.gsap && !prefersReducedMotion) {
+        window.gsap.fromTo(pain.querySelector(".pain__icon"), { rotate: -14, scale: 0.8 }, { rotate: 0, scale: 1, duration: 0.5, ease: "back.out(3)" });
+      }
+      refresh();
+    });
+  });
+
+  refresh();
+}
+
+function setupCompare() {
+  const frame = document.getElementById("compare");
+  const range = document.getElementById("compareRange");
+  const apply = (value) => {
+    frame.style.setProperty("--pos", `${value}%`);
+  };
+  range.addEventListener("input", () => apply(range.value));
+  apply(range.value);
+
+  if (prefersReducedMotion || !window.gsap || !window.ScrollTrigger) return;
+
+  const hint = { value: 88 };
+  apply(hint.value);
+  range.value = hint.value;
+  window.gsap.to(hint, {
+    value: 50,
+    duration: 1.6,
+    ease: "power3.inOut",
+    scrollTrigger: { trigger: frame, start: "top 70%", once: true },
+    onUpdate: () => {
+      apply(hint.value);
+      range.value = Math.round(hint.value);
+    },
   });
 }
 
-/* ── Scroll animations ── */
-document.querySelectorAll('.section__header').forEach(el => {
-  gsap.from(el, {
-    scrollTrigger: { trigger: el, start: 'top 85%', onEnter: () => el.classList.add('in-view') },
-    opacity: 0, y: 30, duration: 0.7, ease: 'power2.out',
+function setupCalculator() {
+  const hours = document.getElementById("horas");
+  const cost = document.getElementById("costo");
+  const hoursOut = document.getElementById("horasOut");
+  const costOut = document.getElementById("costoOut");
+  const monthly = document.getElementById("calcMes");
+  const monthlyHours = document.getElementById("calcHoras");
+  const days = document.getElementById("calcDias");
+  const WEEKS_PER_MONTH = 4.33;
+  const HOURS_PER_WORKDAY = 8;
+
+  const refresh = () => {
+    const hoursPerMonth = Number(hours.value) * WEEKS_PER_MONTH;
+    hoursOut.textContent = `${hours.value} h`;
+    costOut.textContent = `S/ ${cost.value}`;
+    monthly.textContent = formatSoles.format(Math.round(hoursPerMonth * Number(cost.value) / 10) * 10);
+    monthlyHours.textContent = String(Math.round(hoursPerMonth));
+    days.textContent = String(Math.max(1, Math.round(hoursPerMonth / HOURS_PER_WORKDAY)));
+  };
+
+  hours.addEventListener("input", refresh);
+  cost.addEventListener("input", refresh);
+  refresh();
+}
+
+function setupAnimations() {
+  const gsap = window.gsap;
+  const ScrollTrigger = window.ScrollTrigger;
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    el.textContent = formatSolesDecimals.format(Number(el.dataset.count));
   });
-});
+  if (!gsap || !ScrollTrigger || prefersReducedMotion) return;
 
-gsap.from('.sector-tab', {
-  scrollTrigger: { trigger: '.sector-tabs', start: 'top 85%' },
-  opacity: 0, y: 20, duration: 0.5, ease: 'power2.out', stagger: 0.08,
-});
+  const intro = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+  intro
+    .from(".hero__pill", { y: 16, opacity: 0, duration: 0.6 })
+    .from(".hero__title", { y: 28, opacity: 0 }, "-=0.35")
+    .from(".hero__sub", { y: 20, opacity: 0 }, "-=0.55")
+    .from(".hero__ctas .btn", { y: 16, opacity: 0, stagger: 0.08 }, "-=0.55")
+    .from(".phone", { y: 60, opacity: 0, rotate: 4, duration: 1.1 }, "-=0.9")
+    .from(".phone .row", { y: 14, opacity: 0, stagger: 0.07, duration: 0.5 }, "-=0.6")
+    .from(".chip-float", { x: -24, opacity: 0, duration: 0.6 }, "-=0.3");
 
-gsap.from('.sector-panel__content', {
-  scrollTrigger: { trigger: '.sector-panels', start: 'top 80%' },
-  opacity: 0, y: 30, duration: 0.7, ease: 'power2.out',
-});
+  gsap.to(".chip-float", { y: -10, duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.8 });
 
-gsap.from('.caso-card', {
-  scrollTrigger: { trigger: '.casos__grid', start: 'top 80%' },
-  opacity: 0, y: 50, duration: 0.7, ease: 'power2.out', stagger: 0.15,
-});
+  const reveal = (targets, trigger, extra = {}) => {
+    gsap.from(targets, {
+      y: 32,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger: 0.07,
+      scrollTrigger: { trigger, start: "top 80%", once: true },
+      ...extra,
+    });
+  };
 
-gsap.from('.paso', {
-  scrollTrigger: { trigger: '.proceso__steps', start: 'top 80%' },
-  opacity: 0, y: 40, duration: 0.65, ease: 'back.out(1.4)', stagger: 0.15,
-});
+  document.querySelectorAll(".section__title").forEach((title) => reveal(title, title));
+  reveal(".pain", ".pains", { stagger: 0.05 });
+  reveal(".win", ".wins__list", { stagger: 0.12 });
+  reveal(".calc__box", ".calc__box");
+  reveal(".rubro", ".rubros__track", { x: 40, y: 0 });
+  reveal(".about__promises li", ".about__promises", { x: -20, y: 0 });
+  reveal(".step", ".steps__list", { stagger: 0.15 });
+  reveal(".faq__list details", ".faq__list", { y: 16, stagger: 0.05 });
+  reveal(".final__inner > *", ".final", { stagger: 0.1 });
 
-gsap.from('.contacto__left', {
-  scrollTrigger: { trigger: '.contacto__inner', start: 'top 80%' },
-  opacity: 0, x: -30, duration: 0.7, ease: 'power2.out',
-});
-
-gsap.from('.contacto__form', {
-  scrollTrigger: { trigger: '.contacto__inner', start: 'top 80%' },
-  opacity: 0, x: 30, duration: 0.7, ease: 'power2.out',
-});
-
-gsap.from('.footer__inner > *', {
-  scrollTrigger: { trigger: '.footer__inner', start: 'top 90%' },
-  opacity: 0, y: 20, duration: 0.5, ease: 'power2.out', stagger: 0.1,
-});
-
-/* ── Form: abrir WhatsApp con mensaje ── */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const nombre  = this.nombre.value.trim();
-  const negocio = this.negocio.value;
-  const mensaje = this.mensaje.value.trim();
-  const texto = `Hola Yanapay, soy ${nombre}${negocio ? ` (${negocio})` : ''}. ${mensaje || 'Quiero información sobre sus servicios.'}`;
-  window.open(`https://wa.me/51913412590?text=${encodeURIComponent(texto)}`, '_blank');
-});
-
-/* ── Active nav link highlight ── */
-const sections  = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav__links a[href^="#"]');
-
-const navObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const link = document.querySelector(`.nav__links a[href="#${entry.target.id}"]`);
-    if (!link) return;
-    navLinks.forEach(l => l.classList.remove('active-link'));
-    link.classList.add('active-link');
+  gsap.from(".about__photo", {
+    rotate: -8,
+    y: 40,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".about", start: "top 75%", once: true },
   });
-}, { rootMargin: '-30% 0px -60% 0px' });
 
-sections.forEach(s => navObserver.observe(s));
+  gsap.from(".bars span", {
+    scaleY: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    stagger: 0.06,
+    scrollTrigger: { trigger: ".bars", start: "top 85%", once: true },
+  });
+
+  document.querySelectorAll("[data-count]").forEach((el) => {
+    const counter = { value: 0 };
+    el.textContent = formatSolesDecimals.format(0);
+    gsap.to(counter, {
+      value: Number(el.dataset.count),
+      duration: 1.6,
+      ease: "power2.out",
+      scrollTrigger: { trigger: el, start: "top 85%", once: true },
+      onUpdate: () => { el.textContent = formatSolesDecimals.format(counter.value); },
+    });
+  });
+
+  gsap.fromTo(".steps__list", { "--line-progress": 0 }, {
+    "--line-progress": 1,
+    ease: "none",
+    scrollTrigger: { trigger: ".steps__list", start: "top 75%", end: "bottom 60%", scrub: true },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.gsap && window.ScrollTrigger) window.gsap.registerPlugin(window.ScrollTrigger);
+  document.getElementById("anio").textContent = String(new Date().getFullYear());
+  prepareWhatsappLinks();
+  setupNavigation();
+  setupPainPicker();
+  setupCalculator();
+  setupCompare();
+  setupCollectionDemo();
+  setupAnimations();
+});
