@@ -125,10 +125,32 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-barbell"></i>Gym Fuerza Norte</span>
+                <span class="tablet__title">Hoy en el gimnasio</span>
+              </div>
+              <div class="tablet__body">
+          <div class="pn">
+            <div class="pn__stats">
+              <div class="pn__stat"><p class="row__detail">Ingresaron hoy</p><p class="pn__value">148</p></div><div class="pn__stat"><p class="row__detail">Socios activos</p><p class="pn__value">612</p></div><div class="pn__stat"><p class="row__detail">Vencen esta semana</p><p class="pn__value">23</p></div>
+            </div>
+            <p class="pn__label">Ingresos por hora</p>
+            <div class="pn__bars">
+              <span style="--h:22%;--i:0"></span><span style="--h:48%;--i:1"></span><span style="--h:70%;--i:2"></span><span style="--h:40%;--i:3"></span><span style="--h:26%;--i:4"></span><span style="--h:34%;--i:5"></span><span style="--h:58%;--i:6"></span><span style="--h:86%;--i:7"></span><span style="--h:64%;--i:8" class="is-now"></span>
+            </div>
+            <div class="pn__axis"><span>6 am</span><span>9 am</span><span>12 m</span><span>3 pm</span><span>6 pm</span><span>9 pm</span></div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Coach Renzo</p>
@@ -136,36 +158,120 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-barbell"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Membresías que vencen esta semana</p>
-                <p class="app__amount">23</p>
-                <p class="app__meta">Aviso enviado por WhatsApp</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Carlos Vega ingresó: membresía al día" data-toast-icon="check-circle">
+        <p class="scene__title">Control en la entrada</p>
+        <div class="pass">
+          <div class="pass__card pass__card--ok">
+            <div class="pass__top">
+              <span class="pass__brand">Gym Fuerza Norte</span>
+              <span class="pass__state">Al día</span>
+            </div>
+            <div class="pass__who">
+              <span class="pass__avatar">C</span>
+              <div>
+                <p class="pass__name">Carlos Vega</p>
+                <p class="pass__plan">Plan mensual</p>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Carlos Vega</p>
-                    <p class="row__detail">Vence hoy</p>
-                  </div>
-                  <span class="tag tag--soon">Aviso enviado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Lucía Ramos</p>
-                    <p class="row__detail">Vencida hace 5 días</p>
-                  </div>
-                  <span class="tag tag--late">No pasa</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Diego Salas</p>
-                    <p class="row__detail">No viene hace 2 semanas</p>
-                  </div>
-                  <span class="tag tag--late">Llamar</span>
-                </li>
-              </ul>
+            </div>
+            <div class="pass__bottom">
+              <div>
+                <p class="pass__small">Vence</p>
+                <p class="pass__date">19 de octubre</p>
+              </div>
+              <span class="pass__qr" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i></span>
             </div>
           </div>
+          <ul class="app__list">
+            <li class="row row--tag">
+              <div class="row__who">
+                <p class="row__name">Carlos Vega</p>
+                <p class="row__detail">Ingresó 7:12 am</p>
+              </div>
+              <span class="tag tag--ok">Al día</span>
+            </li>
+            <li class="row row--tag">
+              <div class="row__who">
+                <p class="row__name">Lucía Ramos</p>
+                <p class="row__detail">Intentó ingresar 7:20 am</p>
+              </div>
+              <span class="tag tag--late">Vencida</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Lucía Ramos renovó su membresía" data-toast-icon="check-circle">
+        <p class="scene__title">Aviso antes de vencer</p>
+        <div class="chat">
+          <div class="chat__head">
+            <span class="chat__avatar">L</span>
+            <div>
+              <p class="chat__name">Lucía Ramos</p>
+              <p class="chat__status">por WhatsApp</p>
+            </div>
+          </div>
+          <div class="chat__body">
+            <p class="chat__msg chat__msg--yo" style="--i:0">Hola Lucía, tu membresía vence este viernes. Renueva por Yape y sigue entrenando sin parar.<span>9:00 am <i class="ph ph-checks"></i></span></p>
+            <p class="chat__msg chat__msg--ellos" style="--i:1">Listo, ya renové. Gracias!<span>9:20 am</span></p>
+            <p class="chat__system" style="--i:2"><i class="ph-fill ph-check-circle"></i>Membresía renovada hasta el 19 de octubre</p>
+          </div>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Lista de llamadas de hoy lista" data-toast-icon="check-circle">
+        <p class="scene__title">Socios por recuperar</p>
+        <div class="app__total">
+          <p class="app__label">Dejaron de venir</p>
+          <p class="app__amount">9 socios</p>
+          <p class="app__meta">Más de 2 semanas sin entrenar</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Diego Salas</p>
+              <p class="row__detail">Sin venir hace 16 días</p>
+            </div>
+            <span class="tag tag--late">Llamar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Fiorella Cruz</p>
+              <p class="row__detail">Sin venir hace 14 días</p>
+            </div>
+            <span class="tag tag--late">Llamar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Martín Rojas</p>
+              <p class="row__detail">Volvió ayer</p>
+            </div>
+            <span class="tag tag--ok">Recuperado</span>
+          </li>
+        </ul>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Control en la entrada"></button><button type="button" class="scene-dot" aria-label="Ver Aviso antes de vencer"></button><button type="button" class="scene-dot" aria-label="Ver Socios por recuperar"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Entrenan con la membresía vencida y nadie se da cuenta.">
+              <i class="ph ph-identification-card" aria-hidden="true"></i>Entrenan sin pagar
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Cobrar a los que deben me da vergüenza.">
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Me da vergüenza cobrar
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Se van sin avisar y no los recupero.">
+              <i class="ph ph-users-three" aria-hidden="true"></i>Se van sin avisar
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Entrenan con la membresía vencida y nadie se da cuenta.”</p>
         </div>
       </div>
     </section>

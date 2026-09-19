@@ -125,10 +125,36 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-scissors"></i>Salón Bella Lima</span>
+                <span class="tablet__title">Agenda del sábado</span>
+              </div>
+              <div class="tablet__body">
+          <div class="ag" style="--cols:3;--rows:6">
+            <div class="ag__head"><span></span><span>Kevin</span><span>Andrea</span><span>Rosa</span></div>
+            <div class="ag__body">
+              <div class="ag__hours"><span>10:00</span><span>11:00</span><span>12:00</span><span>1:00</span><span>2:00</span><span>3:00</span></div>
+              <div class="ag__grid">
+                <span class="ag__block ag__block--ok" style="--c:0;--s:0;--d:1">Juan, corte</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:0;--d:2">Andrea G., tinte</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:2;--d:1">Patricia, corte</span>
+                <span class="ag__block ag__block--ok" style="--c:2;--s:1;--d:1">Lucía, manicure</span>
+                <span class="ag__block ag__block--ok" style="--c:2;--s:3;--d:1.5">Sofía, pedicure</span>
+                <span class="ag__block ag__block--soon ag__block--nuevo" style="--c:0;--s:4;--d:1">Nueva: Marco, barba</span>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Sra. Milagros</p>
@@ -136,36 +162,132 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-scissors"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Comisiones de la semana</p>
-                <p class="app__amount">S/ 2,960</p>
-                <p class="app__meta">Calculadas solas, sin discusiones</p>
-              </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Kevin</p>
-                    <p class="row__detail">18 cortes</p>
-                  </div>
-                  <span class="tag tag--ok">S/ 540</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Andrea G.</p>
-                    <p class="row__detail">Tinte, 5:00 pm</p>
-                  </div>
-                  <span class="tag tag--ok">Confirmó</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Patricia M.</p>
-                    <p class="row__detail">Le toca su corte</p>
-                  </div>
-                  <span class="tag tag--soon">Aviso enviado</span>
-                </li>
-              </ul>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Los datos de Patricia quedan en tu salón" data-toast-icon="check-circle">
+        <p class="scene__title">Ficha de la clienta</p>
+        <div class="pet">
+          <div class="pet__head">
+            <span class="pet__avatar"><i class="ph ph-user"></i></span>
+            <div>
+              <p class="pet__name">Patricia Montes</p>
+              <p class="row__detail">Clienta desde 2023, viene cada 5 semanas</p>
             </div>
           </div>
+          <p class="pet__label">Su historial</p>
+          <ul class="pet__items">
+            <li class="pet__item pet__item--ok">
+              <i class="ph-fill ph-check-circle"></i>
+              <div>
+                <p class="row__name">Corte y brushing</p>
+                <p class="row__detail">Hace 5 semanas, con Andrea</p>
+              </div>
+            </li>
+            <li class="pet__item pet__item--ok">
+              <i class="ph-fill ph-check-circle"></i>
+              <div>
+                <p class="row__name">Tinte castaño 6.3</p>
+                <p class="row__detail">Julio, con Andrea</p>
+              </div>
+            </li>
+            <li class="pet__item pet__item--soon">
+              <i class="ph-fill ph-clock"></i>
+              <div>
+                <p class="row__name">Le toca su corte</p>
+                <p class="row__detail">Esta semana</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Comisiones calculadas solas" data-toast-icon="check-circle">
+        <p class="scene__title">Comisiones de la semana</p>
+        <div class="app__total">
+          <p class="app__label">A pagar el sábado</p>
+          <p class="app__amount">S/ 2,960</p>
+          <p class="app__meta">Según lo que atendió cada uno</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Kevin</p>
+              <p class="row__detail">18 cortes, 4 barbas</p>
+            </div>
+            <span class="tag tag--ok">S/ 590</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Andrea</p>
+              <p class="row__detail">6 tintes, 9 cortes</p>
+            </div>
+            <span class="tag tag--ok">S/ 1,120</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Rosa</p>
+              <p class="row__detail">14 manicures</p>
+            </div>
+            <span class="tag tag--ok">S/ 420</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Nueva reserva: Marco Díaz, 2:00 pm" data-toast-icon="check-circle">
+        <p class="scene__title">Reservas con recordatorio</p>
+        <div class="cal">
+          <div class="cal__days">
+            <span class="cal__day"><small>L</small>15</span><span class="cal__day"><small>M</small>16</span><span class="cal__day"><small>M</small>17</span><span class="cal__day"><small>J</small>18</span><span class="cal__day"><small>V</small>19</span><span class="cal__day is-on"><small>S</small>20</span>
+          </div>
+          <ul class="cal__slots">
+            <li class="slot slot--ok">
+              <span class="slot__time">10:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Juan Pérez</p>
+                <p class="slot__detail">Corte con Kevin</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--ok">
+              <span class="slot__time">11:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Patricia Montes</p>
+                <p class="slot__detail">Corte con Andrea</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--soon">
+              <span class="slot__time">2:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Marco Díaz</p>
+                <p class="slot__detail">Barba con Kevin</p>
+              </div>
+              <span class="tag tag--soon">Nueva</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Ficha de la clienta"></button><button type="button" class="scene-dot" aria-label="Ver Comisiones de la semana"></button><button type="button" class="scene-dot" aria-label="Ver Reservas con recordatorio"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Mis estilistas se van y se llevan a mis clientas.">
+              <i class="ph ph-users-three" aria-hidden="true"></i>Se llevan a mis clientas
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Siempre hay pelea por las comisiones.">
+              <i class="ph ph-calculator" aria-hidden="true"></i>Peleas por comisión
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Me reservan y no llegan.">
+              <i class="ph ph-calendar-check" aria-hidden="true"></i>Reservan y no llegan
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Mis estilistas se van y se llevan a mis clientas.”</p>
         </div>
       </div>
     </section>

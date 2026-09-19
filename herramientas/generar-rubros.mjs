@@ -1,15 +1,17 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { celular, tablet, escapar } from "./dispositivos.mjs";
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITIO = "https://landing-page-personal-kappa.vercel.app";
 const WHATSAPP = "51913412590";
 const FECHA = new Date().toISOString().slice(0, 10);
-const rubros = JSON.parse(readFileSync(join(RAIZ, "herramientas", "rubros.json"), "utf-8"));
-
-const escapar = (texto) =>
-  String(texto).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const dispositivos = JSON.parse(readFileSync(join(RAIZ, "herramientas", "dispositivos.json"), "utf-8"));
+const rubros = JSON.parse(readFileSync(join(RAIZ, "herramientas", "rubros.json"), "utf-8")).map((rubro) => {
+  if (!dispositivos[rubro.slug]) throw new Error(`Faltan pantallas para ${rubro.slug}`);
+  return { ...rubro, dispositivos: dispositivos[rubro.slug] };
+});
 
 const enlaceWhatsapp = (mensaje) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
@@ -18,13 +20,16 @@ const botonWhatsapp = (rubro, cta, clases = "btn btn--primary") => `<a class="${
             Escríbenos por WhatsApp
           </a>`;
 
-const filaCelular = ([nombre, detalle, etiqueta, tono]) => `<li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">${escapar(nombre)}</p>
-                    <p class="row__detail">${escapar(detalle)}</p>
-                  </div>
-                  <span class="tag tag--${tono}">${escapar(etiqueta)}</span>
-                </li>`;
+const pestañasProblema = (rubro) => `<div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            ${rubro.dispositivos.celular.escenas
+              .map(
+                (escena, i) => `<button type="button" role="tab" class="problem${i === 0 ? " is-on" : ""}" aria-selected="${i === 0}" data-quote="${escapar(rubro.soluciones[i][0])}">
+              <i class="ph ph-${rubro.soluciones[i][2]}" aria-hidden="true"></i>${escapar(escena.problema)}
+            </button>`,
+              )
+              .join("\n            ")}
+          </div>
+          <p class="problems__quote" aria-live="polite">“${escapar(rubro.soluciones[0][0])}”</p>`;
 
 const solucion = ([dolor, respuesta, icono]) => `<li class="fix">
             <p class="fix__pain">“${escapar(dolor)}”</p>
@@ -139,27 +144,14 @@ ${datosEstructurados(rubro)}
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
-            <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
-              <div class="app__top">
-                <div>
-                  <p class="app__hello">${escapar(rubro.celular.saludo)}</p>
-                  <p class="app__biz">${escapar(rubro.celular.negocio)}</p>
-                </div>
-                <span class="app__avatar" aria-hidden="true"><i class="ph ph-${rubro.icono}"></i></span>
-              </div>
-              <div class="app__total">
-                <p class="app__label">${escapar(rubro.celular.etiqueta)}</p>
-                <p class="app__amount">${escapar(rubro.celular.valor)}</p>
-                <p class="app__meta">${escapar(rubro.celular.meta)}</p>
-              </div>
-              <ul class="app__list">
-                ${rubro.celular.filas.map(filaCelular).join("\n                ")}
-              </ul>
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          ${tablet(rubro)}
+          ${celular(rubro)}
             </div>
           </div>
+          ${pestañasProblema(rubro)}
         </div>
       </div>
     </section>

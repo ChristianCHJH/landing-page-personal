@@ -125,10 +125,35 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-tooth"></i>Consultorio Dental Sonrisa</span>
+                <span class="tablet__title">Agenda del jueves</span>
+              </div>
+              <div class="tablet__body">
+          <div class="ag" style="--cols:2;--rows:6">
+            <div class="ag__head"><span></span><span>Dra. Paredes</span><span>Dr. Ruiz</span></div>
+            <div class="ag__body">
+              <div class="ag__hours"><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>3:00</span><span>4:00</span></div>
+              <div class="ag__grid">
+                <span class="ag__block ag__block--ok" style="--c:0;--s:0;--d:1">Ana Torres, limpieza</span>
+                <span class="ag__block ag__block--late" style="--c:0;--s:1.5;--d:1">Luis Medina, ortodoncia</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:0.5;--d:1.5">Rosa Cárdenas, curación</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:3;--d:1">Pedro Salas, evaluación</span>
+                <span class="ag__block ag__block--soon ag__block--nuevo" style="--c:0;--s:4;--d:1">Nueva cita: Carla Ríos</span>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Dra. Paredes</p>
@@ -136,36 +161,149 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-tooth"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Citas de mañana</p>
-                <p class="app__amount">9 citas</p>
-                <p class="app__meta">7 ya confirmaron por WhatsApp</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="7 de 9 pacientes ya confirmaron" data-toast-icon="check-circle">
+        <p class="scene__title">Citas de mañana</p>
+        <div class="cal">
+          <div class="cal__days">
+            <span class="cal__day"><small>L</small>15</span><span class="cal__day"><small>M</small>16</span><span class="cal__day"><small>M</small>17</span><span class="cal__day is-on"><small>J</small>18</span><span class="cal__day"><small>V</small>19</span><span class="cal__day"><small>S</small>20</span>
+          </div>
+          <ul class="cal__slots">
+            <li class="slot slot--ok">
+              <span class="slot__time">9:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Ana Torres</p>
+                <p class="slot__detail">Limpieza</p>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Ana Torres</p>
-                    <p class="row__detail">9:00 am, limpieza</p>
-                  </div>
-                  <span class="tag tag--ok">Confirmó</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Luis Medina</p>
-                    <p class="row__detail">10:30 am, ortodoncia</p>
-                  </div>
-                  <span class="tag tag--late">Sin respuesta</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Rosa Cárdenas</p>
-                    <p class="row__detail">12:00 pm, curación</p>
-                  </div>
-                  <span class="tag tag--ok">Confirmó</span>
-                </li>
-              </ul>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--late">
+              <span class="slot__time">10:30</span>
+              <div class="slot__info">
+                <p class="slot__name">Luis Medina</p>
+                <p class="slot__detail">Ortodoncia</p>
+              </div>
+              <span class="tag tag--late">Sin respuesta</span>
+            </li>
+            <li class="slot slot--ok">
+              <span class="slot__time">12:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Rosa Cárdenas</p>
+                <p class="slot__detail">Curación</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--ok">
+              <span class="slot__time">3:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Pedro Salas</p>
+                <p class="slot__detail">Evaluación</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Recordatorio de cuota enviado a Luis Medina" data-toast-icon="check-circle">
+        <p class="scene__title">Tratamientos en curso</p>
+        <div class="app__total">
+          <p class="app__label">Cuotas por cobrar</p>
+          <p class="app__amount">S/ 3,480</p>
+          <p class="app__meta">Este mes, 11 pacientes</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Luis Medina</p>
+              <p class="row__detail">Ortodoncia, cuota 6 de 18</p>
+            </div>
+            <span class="tag tag--soon">Aviso enviado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Carmen Vela</p>
+              <p class="row__detail">Implante, cuota 2 de 4</p>
+            </div>
+            <span class="tag tag--ok">Pagó</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Diego Ramos</p>
+              <p class="row__detail">Ortodoncia, cuota 3 de 18</p>
+            </div>
+            <span class="tag tag--late">Atrasada</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Sofía León</p>
+              <p class="row__detail">Blanqueamiento</p>
+            </div>
+            <span class="tag tag--ok">Pagó</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Hoy toca llamar a Jorge Ramos" data-toast-icon="check-circle">
+        <p class="scene__title">Presupuestos por seguir</p>
+        <div class="app__total">
+          <p class="app__label">Sin respuesta</p>
+          <p class="app__amount">4 presupuestos</p>
+          <p class="app__meta">S/ 6,900 que no se deben enfriar</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Jorge Ramos</p>
+              <p class="row__detail">Implante, enviado hace 7 días</p>
+            </div>
+            <span class="tag tag--late">Llamar hoy</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">María Salas</p>
+              <p class="row__detail">Ortodoncia, hace 3 días</p>
+            </div>
+            <span class="tag tag--soon">Esperar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Iván Chávez</p>
+              <p class="row__detail">Carillas, hace 1 día</p>
+            </div>
+            <span class="tag tag--soon">Esperar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Lucía Paz</p>
+              <p class="row__detail">Endodoncia</p>
+            </div>
+            <span class="tag tag--ok">Aceptó</span>
+          </li>
+        </ul>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Citas de mañana"></button><button type="button" class="scene-dot" aria-label="Ver Tratamientos en curso"></button><button type="button" class="scene-dot" aria-label="Ver Presupuestos por seguir"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
             </div>
           </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="El paciente no viene y el sillón se queda vacío.">
+              <i class="ph ph-calendar-check" aria-hidden="true"></i>Sillón vacío
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Empieza la ortodoncia, deja de pagar y desaparece.">
+              <i class="ph ph-hand-coins" aria-hidden="true"></i>Cuotas perdidas
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Le doy el presupuesto y nunca me contesta.">
+              <i class="ph ph-phone-call" aria-hidden="true"></i>Presupuestos
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“El paciente no viene y el sillón se queda vacío.”</p>
         </div>
       </div>
     </section>

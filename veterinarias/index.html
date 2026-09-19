@@ -125,10 +125,36 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-paw-print"></i>Veterinaria Patitas</span>
+                <span class="tablet__title">Agenda de hoy</span>
+              </div>
+              <div class="tablet__body">
+          <div class="ag" style="--cols:2;--rows:6">
+            <div class="ag__head"><span></span><span>Consultas</span><span>Baños y corte</span></div>
+            <div class="ag__body">
+              <div class="ag__hours"><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>3:00</span><span>4:00</span></div>
+              <div class="ag__grid">
+                <span class="ag__block ag__block--ok" style="--c:0;--s:0;--d:1">Luna, vacuna séxtuple</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:0;--d:1.5">Toby, baño medicado</span>
+                <span class="ag__block ag__block--ok" style="--c:0;--s:2;--d:1">Max, control</span>
+                <span class="ag__block ag__block--ok" style="--c:1;--s:2;--d:1">Canela, corte</span>
+                <span class="ag__block ag__block--ok" style="--c:0;--s:3.5;--d:1">Mishi, desparasitación</span>
+                <span class="ag__block ag__block--soon ag__block--nuevo" style="--c:1;--s:4;--d:1">Nueva: Rocky, baño</span>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Dr. Salazar</p>
@@ -136,36 +162,147 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-paw-print"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Vacunas de esta semana</p>
-                <p class="app__amount">14</p>
-                <p class="app__meta">Avisos enviados a los dueños</p>
-              </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Firulais</p>
-                    <p class="row__detail">Antirrábica, jueves</p>
-                  </div>
-                  <span class="tag tag--ok">Aviso enviado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Luna</p>
-                    <p class="row__detail">Desparasitación, hoy</p>
-                  </div>
-                  <span class="tag tag--soon">Por avisar</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Rocky</p>
-                    <p class="row__detail">Baño, 4:00 pm</p>
-                  </div>
-                  <span class="tag tag--ok">Confirmado</span>
-                </li>
-              </ul>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Aviso enviado a la Sra. Elena: vacuna de Firulais" data-toast-icon="check-circle">
+        <p class="scene__title">Ficha de la mascota</p>
+        <div class="pet">
+          <div class="pet__head">
+            <span class="pet__avatar"><i class="ph ph-dog"></i></span>
+            <div>
+              <p class="pet__name">Firulais</p>
+              <p class="row__detail">Mestizo, 3 años. Dueña: Sra. Elena</p>
             </div>
           </div>
+          <p class="pet__label">Vacunas y desparasitación</p>
+          <ul class="pet__items">
+            <li class="pet__item pet__item--soon">
+              <i class="ph-fill ph-clock"></i>
+              <div>
+                <p class="row__name">Antirrábica</p>
+                <p class="row__detail">Le toca el jueves 18</p>
+              </div>
+            </li>
+            <li class="pet__item pet__item--ok">
+              <i class="ph-fill ph-check-circle"></i>
+              <div>
+                <p class="row__name">Séxtuple</p>
+                <p class="row__detail">Aplicada el 2 de junio</p>
+              </div>
+            </li>
+            <li class="pet__item pet__item--ok">
+              <i class="ph-fill ph-check-circle"></i>
+              <div>
+                <p class="row__name">Desparasitación</p>
+                <p class="row__detail">Aplicada el 5 de agosto</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Nueva cita de baño: Rocky, 4:00 pm" data-toast-icon="check-circle">
+        <p class="scene__title">Baños y consultas</p>
+        <div class="cal">
+          <div class="cal__days">
+            <span class="cal__day"><small>L</small>15</span><span class="cal__day"><small>M</small>16</span><span class="cal__day"><small>M</small>17</span><span class="cal__day"><small>J</small>18</span><span class="cal__day is-on"><small>V</small>19</span><span class="cal__day"><small>S</small>20</span>
+          </div>
+          <ul class="cal__slots">
+            <li class="slot slot--ok">
+              <span class="slot__time">9:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Luna</p>
+                <p class="slot__detail">Vacuna séxtuple</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--ok">
+              <span class="slot__time">10:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Toby</p>
+                <p class="slot__detail">Baño medicado</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--ok">
+              <span class="slot__time">12:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Max</p>
+                <p class="slot__detail">Control</p>
+              </div>
+              <span class="tag tag--ok">Confirmó</span>
+            </li>
+            <li class="slot slot--soon">
+              <span class="slot__time">4:00</span>
+              <div class="slot__info">
+                <p class="slot__name">Rocky</p>
+                <p class="slot__detail">Baño y corte</p>
+              </div>
+              <span class="tag tag--soon">Nueva</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Stock bajo: quedan 3 vacunas séxtuple" data-toast-icon="check-circle">
+        <p class="scene__title">Stock y vencimientos</p>
+        <div class="app__total">
+          <p class="app__label">Por vencer o por acabarse</p>
+          <p class="app__amount">5 productos</p>
+          <p class="app__meta">Revísalos antes de que se pierdan</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Vacuna séxtuple</p>
+              <p class="row__detail">Quedan 3 dosis</p>
+            </div>
+            <span class="tag tag--late">Reponer</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Alimento cachorro 15 kg</p>
+              <p class="row__detail">Vence el 30</p>
+            </div>
+            <span class="tag tag--soon">Ofertar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Pipeta antipulgas</p>
+              <p class="row__detail">Vence en marzo</p>
+            </div>
+            <span class="tag tag--ok">Al día</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Shampoo medicado</p>
+              <p class="row__detail">Quedan 4</p>
+            </div>
+            <span class="tag tag--soon">Reponer</span>
+          </li>
+        </ul>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Ficha de la mascota"></button><button type="button" class="scene-dot" aria-label="Ver Baños y consultas"></button><button type="button" class="scene-dot" aria-label="Ver Stock y vencimientos"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Se olvidan de la vacuna y ya no vuelven.">
+              <i class="ph ph-syringe" aria-hidden="true"></i>Vacunas olvidadas
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Las citas de baño se me cruzan.">
+              <i class="ph ph-calendar-blank" aria-hidden="true"></i>Citas cruzadas
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Se me vencen el alimento y los remedios.">
+              <i class="ph ph-package" aria-hidden="true"></i>Productos vencidos
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Se olvidan de la vacuna y ya no vuelven.”</p>
         </div>
       </div>
     </section>

@@ -125,10 +125,42 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-car-profile"></i>Taller Mecánico Chávez</span>
+                <span class="tablet__title">Autos en el taller</span>
+              </div>
+              <div class="tablet__body">
+          <div class="kb">
+            <div class="kb__col">
+              <p class="kb__title">Recibido<span>1</span></p>
+              <p class="kb__card">Hyundai Accent, revisión</p>
+              
+              
+            </div>
+            <div class="kb__col">
+              <p class="kb__title">En trabajo<span>1</span></p>
+              <p class="kb__card">Toyota Yaris, afinamiento</p>
+              <p class="kb__card kb__card--sale">Kia Rio, pastillas</p>
+              
+            </div>
+            <div class="kb__col">
+              <p class="kb__title">Listo<span>2</span></p>
+              <p class="kb__card">Nissan Sentra, aceite</p>
+              
+              <p class="kb__card kb__card--entra"><i class="ph-fill ph-whatsapp-logo"></i>Kia Rio, pastillas</p>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Maestro Chávez</p>
@@ -136,36 +168,77 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-car-profile"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Autos en taller</p>
-                <p class="app__amount">6</p>
-                <p class="app__meta">2 listos, cliente avisado</p>
-              </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Toyota Yaris ABX-721</p>
-                    <p class="row__detail">Presupuesto S/ 480</p>
-                  </div>
-                  <span class="tag tag--ok">Aprobado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Kia Rio BCD-330</p>
-                    <p class="row__detail">Cambio de pastillas</p>
-                  </div>
-                  <span class="tag tag--ok">Listo, avisado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Hyundai Accent</p>
-                    <p class="row__detail">Trabajo extra S/ 150</p>
-                  </div>
-                  <span class="tag tag--soon">Esperando OK</span>
-                </li>
-              </ul>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="El cliente aprobó el presupuesto" data-toast-icon="check-circle">
+        <p class="scene__title">Presupuesto por WhatsApp</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-file-text"></i>Presupuesto P-0412</p>
+          <p class="doc__code">Toyota Yaris ABX-721</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>Afinamiento</span><span>S/ 280.00</span></p>
+            <p class="doc__line"><span>Filtro de aire</span><span>S/ 60.00</span></p>
+            <p class="doc__line"><span>Bujías (4)</span><span>S/ 140.00</span></p>
+          </div>
+          <p class="doc__total"><span>Total</span><span>S/ 480.00</span></p>
+          
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>Aprobado por el cliente, 10:15 am</p>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Fotos del antes y después guardadas" data-toast-icon="check-circle">
+        <p class="scene__title">Orden con fotos</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-wrench"></i>Orden de trabajo OT-1187</p>
+          <p class="doc__code">Kia Rio BCD-330</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>Pastillas de freno</span><span>Cambiadas</span></p>
+            <p class="doc__line"><span>Repuesto</span><span>Original, con boleta</span></p>
+          </div>
+          
+          <div class="doc__photos"><span class="doc__photo"><i class="ph ph-camera"></i>Antes</span><span class="doc__photo"><i class="ph ph-camera"></i>Después</span></div>
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>El cliente puede ver las fotos</p>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Aviso enviado: el Kia Rio está listo" data-toast-icon="check-circle">
+        <p class="scene__title">Aviso cuando está listo</p>
+        <div class="chat">
+          <div class="chat__head">
+            <span class="chat__avatar">S</span>
+            <div>
+              <p class="chat__name">Sr. Gómez</p>
+              <p class="chat__status">por WhatsApp</p>
             </div>
           </div>
+          <div class="chat__body">
+            <p class="chat__msg chat__msg--yo" style="--i:0">Hola Sr. Gómez, su Kia Rio ya está listo. Puede recogerlo hoy hasta las 7 pm.<span>4:32 pm <i class="ph ph-checks"></i></span></p>
+            <p class="chat__msg chat__msg--ellos" style="--i:1">Perfecto, paso a las 6.<span>4:40 pm</span></p>
+            <p class="chat__system" style="--i:2"><i class="ph-fill ph-check-circle"></i>Cliente avisado, sin llamadas</p>
+          </div>
+        </div>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Presupuesto por WhatsApp"></button><button type="button" class="scene-dot" aria-label="Ver Orden con fotos"></button><button type="button" class="scene-dot" aria-label="Ver Aviso cuando está listo"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Le presupuesté 1,500 y al final eran 3,000.">
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>Presupuesto que sube
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Dice que le cambié el repuesto.">
+              <i class="ph ph-camera" aria-hidden="true"></i>¿Me cambió el repuesto?
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Me llaman todo el día: ¿ya está?">
+              <i class="ph ph-bell-ringing" aria-hidden="true"></i>¿Ya está mi carro?
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Le presupuesté 1,500 y al final eran 3,000.”</p>
         </div>
       </div>
     </section>

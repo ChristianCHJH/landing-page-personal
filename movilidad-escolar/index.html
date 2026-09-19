@@ -125,10 +125,51 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-bus"></i>Movilidad Tío Beto</span>
+                <span class="tablet__title">Ruta de la mañana</span>
+              </div>
+              <div class="tablet__body">
+          <div class="tmap">
+            <ul class="tmap__list">
+              <li>
+                <p class="row__name">Valentina</p>
+                <p class="row__detail">Llegó al colegio</p>
+                <span class="tag tag--ok">Avisado</span>
+              </li>
+              <li>
+                <p class="row__name">Thiago</p>
+                <p class="row__detail">En la movilidad</p>
+                <span class="tag tag--soon">En ruta</span>
+              </li>
+              <li>
+                <p class="row__name">Sofía</p>
+                <p class="row__detail">Sube a las 7:40</p>
+                <span class="tag tag--soon">Esperando</span>
+              </li>
+            </ul>
+            <svg class="map__svg tmap__svg" viewBox="0 0 300 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g class="map__streets">
+            <path d="M0 60 H300 M0 130 H300 M0 200 H300 M60 0 V260 M150 0 V260 M230 0 V260" />
+            <path class="map__avenue" d="M0 95 H300 M190 0 V260" />
+          </g>
+          <rect class="map__park" x="72" y="142" width="64" height="44" rx="8" />
+          <rect class="map__park" x="238" y="208" width="52" height="40" rx="8" />
+              <path id="tr-movilidad-escolar-0" class="map__route" d="M30 238 L30 200 Q30 190 40 190 L140 190 Q150 190 150 180 L150 108 Q150 98 160 98 L262 98 Q272 98 272 88 L272 30" />
+              <g class="map__vehicle"><circle r="9" /><circle class="map__vehicle-core" r="4" /><animateMotion dur="11s" repeatCount="indefinite" begin="0s"><mpath href="#tr-movilidad-escolar-0" /></animateMotion></g>
+            </svg>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Beto</p>
@@ -136,36 +177,141 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-bus"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Ruta de la mañana</p>
-                <p class="app__amount">12 de 15</p>
-                <p class="app__meta">niños ya llegaron al colegio</p>
-              </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Valentina</p>
-                    <p class="row__detail">Llegó al colegio, 7:42 am</p>
-                  </div>
-                  <span class="tag tag--ok">Papá avisado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Thiago</p>
-                    <p class="row__detail">Subió a la movilidad, 7:31 am</p>
-                  </div>
-                  <span class="tag tag--soon">En camino</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Familia Díaz</p>
-                    <p class="row__detail">Mensualidad de setiembre</p>
-                  </div>
-                  <span class="tag tag--late">Por cobrar</span>
-                </li>
-              </ul>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Papá de Valentina avisado: llegó al colegio" data-toast-icon="check-circle">
+        <p class="scene__title">Lo que ve el papá</p>
+        <div class="trip">
+          <div class="pet__head">
+            <span class="pet__avatar"><i class="ph ph-student"></i></span>
+            <div>
+              <p class="pet__name">Valentina</p>
+              <p class="row__detail">Colegio San Martín, 3.° A</p>
             </div>
           </div>
+          <ol class="trip__steps">
+            <li class="trip__step is-done">
+              <span class="trip__dot"><i class="ph-fill ph-check"></i></span>
+              <div>
+                <p class="row__name">Subió a la movilidad</p>
+                <p class="row__detail">7:31 am</p>
+              </div>
+            </li>
+            <li class="trip__step is-done">
+              <span class="trip__dot"><i class="ph-fill ph-check"></i></span>
+              <div>
+                <p class="row__name">Llegó al colegio</p>
+                <p class="row__detail">7:42 am</p>
+              </div>
+            </li>
+            <li class="trip__step">
+              <span class="trip__dot"><i class="ph-fill ph-check"></i></span>
+              <div>
+                <p class="row__name">Salió del colegio</p>
+                <p class="row__detail">Pendiente</p>
+              </div>
+            </li>
+            <li class="trip__step">
+              <span class="trip__dot"><i class="ph-fill ph-check"></i></span>
+              <div>
+                <p class="row__name">Llegó a casa</p>
+                <p class="row__detail">Pendiente</p>
+              </div>
+            </li>
+          </ol>
+          <p class="trip__note"><i class="ph-fill ph-whatsapp-logo"></i>Aviso enviado al papá a las 7:42 am</p>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Solo los papás autorizados ven la ruta" data-toast-icon="check-circle">
+        <p class="scene__title">Ubicación en vivo</p>
+        <div class="map">
+          <svg class="map__svg" viewBox="0 0 300 260" aria-hidden="true">
+          <g class="map__streets">
+            <path d="M0 60 H300 M0 130 H300 M0 200 H300 M60 0 V260 M150 0 V260 M230 0 V260" />
+            <path class="map__avenue" d="M0 95 H300 M190 0 V260" />
+          </g>
+          <rect class="map__park" x="72" y="142" width="64" height="44" rx="8" />
+          <rect class="map__park" x="238" y="208" width="52" height="40" rx="8" />
+          <path id="ruta-movilidad-escolar-1" class="map__route" d="M30 238 L30 200 Q30 190 40 190 L140 190 Q150 190 150 180 L150 108 Q150 98 160 98 L262 98 Q272 98 272 88 L272 30" />
+          <g class="map__stop"><circle cx="30" cy="238" r="6" /><text x="40" y="242">Casa de Thiago</text></g>
+          <g class="map__stop"><circle cx="150" cy="140" r="6" /><text x="160" y="144">Casa de Sofía</text></g>
+          <g class="map__stop"><circle cx="272" cy="30" r="6" /><text x="262" y="34" text-anchor="end">Colegio</text></g>
+          <g class="map__vehicle">
+            <circle r="11" />
+            <circle class="map__vehicle-core" r="5" />
+            <animateMotion dur="11s" repeatCount="indefinite" rotate="0"><mpath href="#ruta-movilidad-escolar-1" /></animateMotion>
+          </g>
+          </svg>
+          <div class="map__card">
+            <div>
+              <p class="row__name">Movilidad Tío Beto</p>
+              <p class="row__detail">Llega al colegio en 6 min</p>
+            </div>
+            <span class="tag tag--soon">En ruta</span>
+          </div>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Recordatorio enviado a la Familia Díaz" data-toast-icon="check-circle">
+        <p class="scene__title">Mensualidades</p>
+        <div class="app__total">
+          <p class="app__label">Setiembre</p>
+          <p class="app__amount">13 de 15</p>
+          <p class="app__meta">familias al día</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Díaz</p>
+              <p class="row__detail">S/ 300, setiembre</p>
+            </div>
+            <span class="tag tag--late">Por cobrar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia León</p>
+              <p class="row__detail">Pagó por Yape</p>
+            </div>
+            <span class="tag tag--ok">Pagado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Soto</p>
+              <p class="row__detail">Pagó por Plin</p>
+            </div>
+            <span class="tag tag--ok">Pagado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Paredes</p>
+              <p class="row__detail">Vence el 30</p>
+            </div>
+            <span class="tag tag--soon">Aviso listo</span>
+          </li>
+        </ul>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Lo que ve el papá"></button><button type="button" class="scene-dot" aria-label="Ver Ubicación en vivo"></button><button type="button" class="scene-dot" aria-label="Ver Mensualidades"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="¿Dónde está la movilidad? ¿Mi hijo ya llegó?">
+              <i class="ph ph-bus" aria-hidden="true"></i>¿Ya llegó mi hijo?
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Contesto 30 llamadas cada mañana.">
+              <i class="ph ph-device-mobile" aria-hidden="true"></i>30 llamadas al día
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Cobrarle a cada papá y acordarme quién pagó.">
+              <i class="ph ph-hand-coins" aria-hidden="true"></i>Cobrar mensualidades
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“¿Dónde está la movilidad? ¿Mi hijo ya llegó?”</p>
         </div>
       </div>
     </section>

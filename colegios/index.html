@@ -125,10 +125,32 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-student"></i>Colegio San Martín</span>
+                <span class="tablet__title">Pensiones por aula</span>
+              </div>
+              <div class="tablet__body">
+          <table class="tt">
+            <thead><tr><th>Aula</th><th>Alumnos</th><th>Al día</th><th>Deben</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr class="is-live"><td>1.° A</td><td>28</td><td>25</td><td>3</td><td><span class="swap"><span class="swap__a"><span class="tag tag--soon">Aviso enviado</span></span><span class="swap__b"><span class="tag tag--ok">Pagaron hoy</span></span></span></td></tr>
+              <tr><td>2.° B</td><td>30</td><td>30</td><td>0</td><td><span class="tag tag--ok">Completo</span></td></tr>
+              <tr><td>3.° A</td><td>27</td><td>22</td><td>5</td><td><span class="tag tag--soon">Aviso enviado</span></td></tr>
+              <tr><td>4.° B</td><td>29</td><td>27</td><td>2</td><td><span class="tag tag--soon">Aviso enviado</span></td></tr>
+              <tr><td>5.° A</td><td>31</td><td>31</td><td>0</td><td><span class="tag tag--ok">Completo</span></td></tr>
+            </tbody>
+          </table>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Miss Carmen</p>
@@ -136,36 +158,101 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-student"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Pensiones por cobrar</p>
-                <p class="app__amount">S/ 4,200</p>
-                <p class="app__meta">12 familias con aviso enviado</p>
-              </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Familia Quispe</p>
-                    <p class="row__detail">Setiembre</p>
-                  </div>
-                  <span class="tag tag--ok">Pagó con Yape</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Familia Rojas</p>
-                    <p class="row__detail">Agosto y setiembre</p>
-                  </div>
-                  <span class="tag tag--soon">Aviso enviado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Familia Huamán</p>
-                    <p class="row__detail">Octubre</p>
-                  </div>
-                  <span class="tag tag--ok">Al día</span>
-                </li>
-              </ul>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Pago de la Familia Quispe registrado" data-toast-icon="check-circle">
+        <p class="scene__title">Aviso privado al padre</p>
+        <div class="chat">
+          <div class="chat__head">
+            <span class="chat__avatar">S</span>
+            <div>
+              <p class="chat__name">Sra. Quispe, mamá de Mateo</p>
+              <p class="chat__status">por WhatsApp</p>
             </div>
           </div>
+          <div class="chat__body">
+            <p class="chat__msg chat__msg--yo" style="--i:0">Hola Sra. Quispe, le recordamos la pensión de setiembre de Mateo: S/ 350. Puede pagar por Yape o en el banco.<span>8:00 am <i class="ph ph-checks"></i></span></p>
+            <p class="chat__msg chat__msg--ellos" style="--i:1">Gracias miss, ya pagué por Yape.<span>8:14 am</span></p>
+            <p class="chat__system" style="--i:2"><i class="ph-fill ph-check-circle"></i>Pago de S/ 350 registrado</p>
+          </div>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Aviso privado enviado a 12 familias" data-toast-icon="check-circle">
+        <p class="scene__title">Pensiones de setiembre</p>
+        <div class="app__total">
+          <p class="app__label">Por cobrar</p>
+          <p class="app__amount">S/ 4,200</p>
+          <p class="app__meta">12 familias con aviso enviado</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Rojas</p>
+              <p class="row__detail">Agosto y setiembre</p>
+            </div>
+            <span class="tag tag--soon">Aviso enviado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Quispe</p>
+              <p class="row__detail">Setiembre</p>
+            </div>
+            <span class="tag tag--ok">Pagó con Yape</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Huamán</p>
+              <p class="row__detail">Setiembre</p>
+            </div>
+            <span class="tag tag--ok">Pagó en banco</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Familia Torres</p>
+              <p class="row__detail">Setiembre</p>
+            </div>
+            <span class="tag tag--soon">Vence el 30</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="142 padres ya leyeron el comunicado" data-toast-icon="check-circle">
+        <p class="scene__title">Comunicado a los padres</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-megaphone"></i>Comunicado</p>
+          <p class="doc__code">Día de la Familia, sábado 28</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>Enviado a</span><span>180 padres</span></p>
+            <p class="doc__line"><span>Lo leyeron</span><span>142</span></p>
+            <p class="doc__line"><span>Confirmaron asistencia</span><span>118</span></p>
+          </div>
+          
+          
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>Llegó a cada padre por WhatsApp</p>
+        </div>
+      </div>
+              </div>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Aviso privado al padre"></button><button type="button" class="scene-dot" aria-label="Ver Pensiones de setiembre"></button><button type="button" class="scene-dot" aria-label="Ver Comunicado a los padres"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Me deben 3 meses y yo igual pago planilla.">
+              <i class="ph ph-bell-ringing" aria-hidden="true"></i>Cobrar sin perseguir
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="La secretaria se pasa el día revisando quién pagó.">
+              <i class="ph ph-list-checks" aria-hidden="true"></i>Quién debe
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="El comunicado se pierde en el grupo de WhatsApp.">
+              <i class="ph ph-megaphone" aria-hidden="true"></i>Comunicados
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Me deben 3 meses y yo igual pago planilla.”</p>
         </div>
       </div>
     </section>

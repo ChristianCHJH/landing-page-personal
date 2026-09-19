@@ -125,10 +125,31 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-buildings"></i>Residencial Las Palmeras</span>
+                <span class="tablet__title">Gastos del edificio</span>
+              </div>
+              <div class="tablet__body">
+          <table class="tt">
+            <thead><tr><th>Concepto</th><th>Proveedor</th><th>Monto</th><th>Sustento</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>Ascensor</td><td>Ascensores Lima</td><td>S/ 650</td><td>Factura</td><td><span class="tag tag--ok">Publicado</span></td></tr>
+              <tr><td>Limpieza</td><td>Servicios Clean</td><td>S/ 1,200</td><td>Factura</td><td><span class="tag tag--ok">Publicado</span></td></tr>
+              <tr><td>Agua común</td><td>Sedapal</td><td>S/ 438</td><td>Recibo</td><td><span class="tag tag--ok">Publicado</span></td></tr>
+              <tr class="is-live"><td>Jardinería</td><td>Jardines Sur</td><td>S/ 300</td><td>Factura</td><td><span class="swap"><span class="swap__a"><span class="tag tag--soon">Por publicar</span></span><span class="swap__b"><span class="tag tag--ok">Publicado</span></span></span></td></tr>
+            </tbody>
+          </table>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Sr. Ríos</p>
@@ -136,36 +157,115 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-buildings"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Mantenimiento de setiembre</p>
-                <p class="app__amount">82% cobrado</p>
-                <p class="app__meta">Recibos enviados a 48 departamentos</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Recordatorio privado enviado al Dpto. 504" data-toast-icon="check-circle">
+        <p class="scene__title">Recibo del mes</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-receipt"></i>Recibo de mantenimiento</p>
+          <p class="doc__code">Dpto. 504, setiembre</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>Cuota ordinaria</span><span>S/ 180.00</span></p>
+            <p class="doc__line"><span>Fondo de reserva</span><span>S/ 20.00</span></p>
+            <p class="doc__line"><span>Vence</span><span>15 de setiembre</span></p>
+          </div>
+          <p class="doc__total"><span>Total</span><span>S/ 200.00</span></p>
+          
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>Enviado por WhatsApp</p>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Cada vecino ve los gastos desde su celular" data-toast-icon="check-circle">
+        <p class="scene__title">En qué se gastó</p>
+        <div class="app__total">
+          <p class="app__label">Gastos de setiembre</p>
+          <p class="app__amount">S/ 2,588</p>
+          <p class="app__meta">Con factura o recibo, a la vista de todos</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Mantenimiento ascensor</p>
+              <p class="row__detail">Factura F001-2231</p>
+            </div>
+            <span class="tag tag--ok">S/ 650</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Limpieza</p>
+              <p class="row__detail">Factura E001-87</p>
+            </div>
+            <span class="tag tag--ok">S/ 1,200</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Agua de áreas comunes</p>
+              <p class="row__detail">Recibo Sedapal</p>
+            </div>
+            <span class="tag tag--ok">S/ 438</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Jardinería</p>
+              <p class="row__detail">Factura F002-19</p>
+            </div>
+            <span class="tag tag--ok">S/ 300</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="48 recibos enviados a la vez" data-toast-icon="check-circle">
+        <p class="scene__title">Recibos de setiembre</p>
+        <div class="app__total">
+          <p class="app__label">Cobrado</p>
+          <p class="app__amount">82%</p>
+          <p class="app__meta">39 de 48 departamentos</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Dpto. 301</p>
+              <p class="row__detail">Transferencia, 3 set</p>
+            </div>
+            <span class="tag tag--ok">Pagado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Dpto. 702</p>
+              <p class="row__detail">Yape, hoy</p>
+            </div>
+            <span class="tag tag--ok">Pagado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Dpto. 504</p>
+              <p class="row__detail">Recordatorio enviado</p>
+            </div>
+            <span class="tag tag--soon">Pendiente</span>
+          </li>
+        </ul>
+      </div>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Dpto. 301</p>
-                    <p class="row__detail">Pagó por transferencia</p>
-                  </div>
-                  <span class="tag tag--ok">Pagado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Dpto. 504</p>
-                    <p class="row__detail">Recordatorio enviado</p>
-                  </div>
-                  <span class="tag tag--soon">Pendiente</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Gasto: ascensor</p>
-                    <p class="row__detail">S/ 650 con factura</p>
-                  </div>
-                  <span class="tag tag--ok">Publicado</span>
-                </li>
-              </ul>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Recibo del mes"></button><button type="button" class="scene-dot" aria-label="Ver En qué se gastó"></button><button type="button" class="scene-dot" aria-label="Ver Recibos de setiembre"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
             </div>
           </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Se olvidan de pagar el mantenimiento.">
+              <i class="ph ph-bell-ringing" aria-hidden="true"></i>Se olvidan de pagar
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Me acusan de no rendir cuentas.">
+              <i class="ph ph-eye" aria-hidden="true"></i>Rendir cuentas
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Hacer los recibos me toma días.">
+              <i class="ph ph-receipt" aria-hidden="true"></i>Recibos a mano
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Se olvidan de pagar el mantenimiento.”</p>
         </div>
       </div>
     </section>

@@ -125,10 +125,32 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-storefront"></i>Minimarket Doña Carmen</span>
+                <span class="tablet__title">Ventas de hoy</span>
+              </div>
+              <div class="tablet__body">
+          <div class="pn">
+            <div class="pn__stats">
+              <div class="pn__stat"><p class="row__detail">Vendido hoy</p><p class="pn__value">S/ 1,284.50</p></div><div class="pn__stat"><p class="row__detail">Boletas emitidas</p><p class="pn__value">86</p></div><div class="pn__stat"><p class="row__detail">Fiados por cobrar</p><p class="pn__value">S/ 312</p></div>
+            </div>
+            <p class="pn__label">Ventas por hora</p>
+            <div class="pn__bars">
+              <span style="--h:18%;--i:0"></span><span style="--h:30%;--i:1"></span><span style="--h:44%;--i:2"></span><span style="--h:36%;--i:3"></span><span style="--h:28%;--i:4"></span><span style="--h:40%;--i:5"></span><span style="--h:62%;--i:6"></span><span style="--h:80%;--i:7"></span><span style="--h:54%;--i:8" class="is-now"></span>
+            </div>
+            <div class="pn__axis"><span>7 am</span><span>10 am</span><span>1 pm</span><span>4 pm</span><span>7 pm</span><span>10 pm</span></div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Sra. Carmen</p>
@@ -136,36 +158,116 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-storefront"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Caja de hoy</p>
-                <p class="app__amount">S/ 1,284.50</p>
-                <p class="app__meta">Efectivo, Yape y Plin por separado</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Caja cuadrada en 2 minutos" data-toast-icon="check-circle">
+        <p class="scene__title">Cierre de caja</p>
+        <div class="app__total">
+          <p class="app__label">Vendido hoy</p>
+          <p class="app__amount">S/ 1,284.50</p>
+          <p class="app__meta">86 ventas, cierre a las 10:00 pm</p>
+        </div>
+        <ul class="split">
+          <li class="split__row">
+            <div class="split__top"><span>Yape</span><strong>S/ 811.00</strong></div>
+            <span class="split__bar" style="--p:63%"></span>
+          </li>
+          <li class="split__row">
+            <div class="split__top"><span>Efectivo</span><strong>S/ 342.00</strong></div>
+            <span class="split__bar" style="--p:27%"></span>
+          </li>
+          <li class="split__row">
+            <div class="split__top"><span>Plin</span><strong>S/ 131.50</strong></div>
+            <span class="split__bar" style="--p:10%"></span>
+          </li>
+        </ul>
+        <p class="split__note"><i class="ph-fill ph-check-circle"></i>Todo cuadra con lo que llegó a tu cuenta</p>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Don Pepe pagó su fiado" data-toast-icon="check-circle">
+        <p class="scene__title">Cuaderno de fiados</p>
+        <div class="app__total">
+          <p class="app__label">Por cobrar</p>
+          <p class="app__amount">S/ 312</p>
+          <p class="app__meta">9 vecinos</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Sra. Rosa</p>
+              <p class="row__detail">Debe S/ 64, hace 15 días</p>
+            </div>
+            <span class="tag tag--late">Recordar</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Sra. Lucha</p>
+              <p class="row__detail">Debe S/ 46</p>
+            </div>
+            <span class="tag tag--soon">Recordado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Don Pepe</p>
+              <p class="row__detail">Debía S/ 18</p>
+            </div>
+            <span class="tag tag--ok">Pagó hoy</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="El arroz se acaba mañana" data-toast-icon="check-circle">
+        <p class="scene__title">Por reponer</p>
+        <div class="app__total">
+          <p class="app__label">Antes de que te lo pidan</p>
+          <p class="app__amount">6 productos</p>
+          <p class="app__meta">Según lo que vendes cada día</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Arroz 5 kg</p>
+              <p class="row__detail">Quedan 3 bolsas</p>
+            </div>
+            <span class="tag tag--late">Reponer</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Leche evaporada</p>
+              <p class="row__detail">Quedan 10 latas</p>
+            </div>
+            <span class="tag tag--soon">Esta semana</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Aceite 1 L</p>
+              <p class="row__detail">Quedan 18</p>
+            </div>
+            <span class="tag tag--ok">Al día</span>
+          </li>
+        </ul>
+      </div>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Fiado: Sra. Lucha</p>
-                    <p class="row__detail">Debe S/ 46</p>
-                  </div>
-                  <span class="tag tag--soon">Recordado</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Arroz 5 kg</p>
-                    <p class="row__detail">Quedan 3 bolsas</p>
-                  </div>
-                  <span class="tag tag--late">Reponer</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Yape de Jorge</p>
-                    <p class="row__detail">S/ 18.50</p>
-                  </div>
-                  <span class="tag tag--ok">Llegó</span>
-                </li>
-              </ul>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Cierre de caja"></button><button type="button" class="scene-dot" aria-label="Ver Cuaderno de fiados"></button><button type="button" class="scene-dot" aria-label="Ver Por reponer"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
             </div>
           </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="La caja no me cuadra.">
+              <i class="ph ph-cash-register" aria-hidden="true"></i>La caja no cuadra
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Fían y no pagan, y el cuaderno se pierde.">
+              <i class="ph ph-notebook" aria-hidden="true"></i>Fiados perdidos
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="No sé qué se me acabó hasta que me lo piden.">
+              <i class="ph ph-shopping-cart" aria-hidden="true"></i>Me quedo sin stock
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“La caja no me cuadra.”</p>
         </div>
       </div>
     </section>

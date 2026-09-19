@@ -266,6 +266,83 @@ function setupCalculator() {
   refresh();
 }
 
+function setupDevices() {
+  const visual = document.querySelector(".hero__visual--devices");
+  if (!visual) return;
+  const scenes = Array.from(visual.querySelectorAll(".scene"));
+  const dots = Array.from(visual.querySelectorAll(".scene-dot"));
+  const problems = Array.from(visual.querySelectorAll(".problem"));
+  const quote = visual.querySelector(".problems__quote");
+  const toast = visual.querySelector(".phone .toast");
+  const toastText = toast ? toast.querySelector("span") : null;
+  const SCENE_MS = 5600;
+  const USER_PAUSE_MS = 9000;
+
+  let current = 0;
+  let cycleTimer = null;
+  let toastTimers = [];
+  let visible = false;
+
+  if (prefersReducedMotion) {
+    visual.querySelectorAll("svg").forEach((svg) => svg.pauseAnimations && svg.pauseAnimations());
+  }
+
+  const showToast = (text) => {
+    if (!toast || !toastText || !text) return;
+    toastTimers.forEach(clearTimeout);
+    toast.classList.remove("is-on");
+    toastTimers = [
+      setTimeout(() => {
+        toastText.textContent = text;
+        toast.classList.add("is-on");
+      }, prefersReducedMotion ? 0 : 1300),
+      setTimeout(() => toast.classList.remove("is-on"), prefersReducedMotion ? 3500 : 4600),
+    ];
+  };
+
+  const show = (index) => {
+    current = (index + scenes.length) % scenes.length;
+    scenes.forEach((scene, i) => {
+      scene.classList.toggle("is-on", i === current);
+      scene.toggleAttribute("aria-hidden", i !== current);
+    });
+    dots.forEach((dot, i) => dot.classList.toggle("is-on", i === current));
+    problems.forEach((button, i) => {
+      button.classList.toggle("is-on", i === current);
+      button.setAttribute("aria-selected", String(i === current));
+    });
+    if (quote && problems[current]) quote.textContent = `“${problems[current].dataset.quote}”`;
+    showToast(scenes[current].dataset.toast);
+  };
+
+  const schedule = (delay) => {
+    clearTimeout(cycleTimer);
+    if (prefersReducedMotion || !visible) return;
+    cycleTimer = setTimeout(() => {
+      show(current + 1);
+      schedule(SCENE_MS);
+    }, delay);
+  };
+
+  const choose = (index) => {
+    show(index);
+    schedule(USER_PAUSE_MS);
+  };
+
+  problems.forEach((button, i) => button.addEventListener("click", () => choose(i)));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => choose(i)));
+
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    if (visible) {
+      show(current);
+      schedule(SCENE_MS);
+    } else {
+      clearTimeout(cycleTimer);
+    }
+  }, { threshold: 0.35 }).observe(visual);
+}
+
 function setupAnimations() {
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
@@ -281,7 +358,8 @@ function setupAnimations() {
     .from(".hero__title", { y: 28, opacity: 0 }, "-=0.35")
     .from(".hero__sub", { y: 20, opacity: 0 }, "-=0.55")
     .from(".hero__ctas .btn", { y: 16, opacity: 0, stagger: 0.08 }, "-=0.55")
-    .from(".phone", { y: 60, opacity: 0, rotate: 4, duration: 1.1 }, "-=0.9")
+    .from(".tablet", { x: 50, opacity: 0, duration: 1 }, "-=0.9")
+    .from(".phone", { y: 60, opacity: 0, rotate: 4, duration: 1.1 }, "<0.1")
     .from(".phone .row", { y: 14, opacity: 0, stagger: 0.07, duration: 0.5 }, "-=0.6")
     .from(".chip-float", { x: -24, opacity: 0, duration: 0.6 }, "-=0.3");
 
@@ -337,5 +415,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCalculator();
   setupCompare();
   setupCollectionDemo();
+  setupDevices();
   setupAnimations();
 });

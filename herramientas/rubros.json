@@ -9,24 +9,28 @@
     "gancho": "Cobra tus pensiones sin perseguir a nadie.",
     "sub": "Aviso privado a cada padre, quién debe en un toque y comunicados que sí se leen.",
     "whatsapp": "Hola Yanapay, tengo un colegio o academia y quiero ordenar el cobro de pensiones.",
-    "celular": {
-      "negocio": "Colegio San Martín",
-      "saludo": "Hola, Miss Carmen",
-      "etiqueta": "Pensiones por cobrar",
-      "valor": "S/ 4,200",
-      "meta": "12 familias con aviso enviado",
-      "filas": [
-        ["Familia Quispe", "Setiembre", "Pagó con Yape", "ok"],
-        ["Familia Rojas", "Agosto y setiembre", "Aviso enviado", "soon"],
-        ["Familia Huamán", "Octubre", "Al día", "ok"]
-      ]
-    },
     "soluciones": [
-      ["Me deben 3 meses y yo igual pago planilla.", "Cada padre recibe un aviso privado por WhatsApp antes y después del vencimiento. Sin exponer a ningún alumno.", "bell-ringing"],
-      ["La secretaria se pasa el día revisando quién pagó.", "Ves quién debe, cuánto y desde cuándo en un toque, con los pagos de Yape y banco ya marcados.", "list-checks"],
-      ["El comunicado se pierde en el grupo de WhatsApp.", "Los avisos llegan a cada padre y sabes quién ya los leyó.", "megaphone"]
+      [
+        "Me deben 3 meses y yo igual pago planilla.",
+        "Cada padre recibe un aviso privado por WhatsApp antes y después del vencimiento. Sin exponer a ningún alumno.",
+        "bell-ringing"
+      ],
+      [
+        "La secretaria se pasa el día revisando quién pagó.",
+        "Ves quién debe, cuánto y desde cuándo en un toque, con los pagos de Yape y banco ya marcados.",
+        "list-checks"
+      ],
+      [
+        "El comunicado se pierde en el grupo de WhatsApp.",
+        "Los avisos llegan a cada padre y sabes quién ya los leyó.",
+        "megaphone"
+      ]
     ],
-    "extras": ["Matrícula en línea", "Descuento por pronto pago", "Boletas SUNAT"]
+    "extras": [
+      "Matrícula en línea",
+      "Descuento por pronto pago",
+      "Boletas SUNAT"
+    ]
   },
   {
     "slug": "clinicas",
@@ -38,24 +42,28 @@
     "gancho": "Menos sillones vacíos, menos cuotas perdidas.",
     "sub": "Citas confirmadas por WhatsApp, saldos de tratamientos al día y presupuestos que no se olvidan.",
     "whatsapp": "Hola Yanapay, tengo una clínica o consultorio y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Consultorio Dental Sonrisa",
-      "saludo": "Hola, Dra. Paredes",
-      "etiqueta": "Citas de mañana",
-      "valor": "9 citas",
-      "meta": "7 ya confirmaron por WhatsApp",
-      "filas": [
-        ["Ana Torres", "9:00 am, limpieza", "Confirmó", "ok"],
-        ["Luis Medina", "10:30 am, ortodoncia", "Sin respuesta", "late"],
-        ["Rosa Cárdenas", "12:00 pm, curación", "Confirmó", "ok"]
-      ]
-    },
     "soluciones": [
-      ["El paciente no viene y el sillón se queda vacío.", "Cada cita se confirma por WhatsApp un día antes y te avisa quién no respondió.", "calendar-check"],
-      ["Empieza la ortodoncia, deja de pagar y desaparece.", "Ves el saldo de cada tratamiento y el paciente recibe el recordatorio de su cuota.", "hand-coins"],
-      ["Le doy el presupuesto y nunca me contesta.", "Te recuerda a quién volver a llamar para que ningún presupuesto se enfríe.", "phone-call"]
+      [
+        "El paciente no viene y el sillón se queda vacío.",
+        "Cada cita se confirma por WhatsApp un día antes y te avisa quién no respondió.",
+        "calendar-check"
+      ],
+      [
+        "Empieza la ortodoncia, deja de pagar y desaparece.",
+        "Ves el saldo de cada tratamiento y el paciente recibe el recordatorio de su cuota.",
+        "hand-coins"
+      ],
+      [
+        "Le doy el presupuesto y nunca me contesta.",
+        "Te recuerda a quién volver a llamar para que ningún presupuesto se enfríe.",
+        "phone-call"
+      ]
     ],
-    "extras": ["Historial de cada paciente", "Aviso de limpieza cada 6 meses", "Boletas SUNAT"]
+    "extras": [
+      "Historial de cada paciente",
+      "Aviso de limpieza cada 6 meses",
+      "Boletas SUNAT"
+    ]
   },
   {
     "slug": "veterinarias",
@@ -67,24 +75,28 @@
     "gancho": "Que ninguna vacuna se pase, ni ningún cliente se vaya.",
     "sub": "Avisamos al dueño cuando le toca la vacuna, ordenamos tus citas y cuidamos tu stock.",
     "whatsapp": "Hola Yanapay, tengo una veterinaria y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Veterinaria Patitas",
-      "saludo": "Hola, Dr. Salazar",
-      "etiqueta": "Vacunas de esta semana",
-      "valor": "14",
-      "meta": "Avisos enviados a los dueños",
-      "filas": [
-        ["Firulais", "Antirrábica, jueves", "Aviso enviado", "ok"],
-        ["Luna", "Desparasitación, hoy", "Por avisar", "soon"],
-        ["Rocky", "Baño, 4:00 pm", "Confirmado", "ok"]
-      ]
-    },
     "soluciones": [
-      ["Se olvidan de la vacuna y ya no vuelven.", "El dueño recibe un aviso por WhatsApp cuando a su mascota le toca vacuna o desparasitación.", "syringe"],
-      ["Las citas de baño se me cruzan.", "Una agenda de baños y consultas que no deja cruzar dos citas a la misma hora.", "calendar-blank"],
-      ["Se me vencen el alimento y los remedios.", "Te avisa qué productos vencen este mes y qué se está acabando.", "package"]
+      [
+        "Se olvidan de la vacuna y ya no vuelven.",
+        "El dueño recibe un aviso por WhatsApp cuando a su mascota le toca vacuna o desparasitación.",
+        "syringe"
+      ],
+      [
+        "Las citas de baño se me cruzan.",
+        "Una agenda de baños y consultas que no deja cruzar dos citas a la misma hora.",
+        "calendar-blank"
+      ],
+      [
+        "Se me vencen el alimento y los remedios.",
+        "Te avisa qué productos vencen este mes y qué se está acabando.",
+        "package"
+      ]
     ],
-    "extras": ["Ficha de cada mascota con fotos", "Venta de alimento por kilo", "Boletas SUNAT"]
+    "extras": [
+      "Ficha de cada mascota con fotos",
+      "Venta de alimento por kilo",
+      "Boletas SUNAT"
+    ]
   },
   {
     "slug": "ferreterias",
@@ -96,24 +108,28 @@
     "gancho": "Deja de fiarle a ciegas al maestro de obra.",
     "sub": "Sabes quién te debe y desde cuándo, tu stock cuadra y facturas en un clic.",
     "whatsapp": "Hola Yanapay, tengo una ferretería o distribuidora y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Ferretería El Maestro",
-      "saludo": "Hola, Don Julio",
-      "etiqueta": "Te deben",
-      "valor": "S/ 8,730",
-      "meta": "5 clientes con crédito vencido",
-      "filas": [
-        ["Maestro Wilber", "Obra en Los Olivos, 20 días", "Vencido", "late"],
-        ["Constructora Andina", "Factura F001-88", "Vence el 25", "soon"],
-        ["Sr. Pérez", "Boleta B001-412", "Pagó", "ok"]
-      ]
-    },
     "soluciones": [
-      ["Se lleva al crédito y paga cuando termina la obra, o nunca.", "Ves quién te debe, cuánto y desde cuándo, y le llega un recordatorio por WhatsApp.", "hand-coins"],
-      ["El inventario nunca cuadra.", "Cada venta descuenta el stock y te avisa lo que se está acabando.", "package"],
-      ["Las cotizaciones y facturas me toman horas.", "Armas la cotización y la factura en un clic, con precio por mayor y por menor.", "receipt"]
+      [
+        "Se lleva al crédito y paga cuando termina la obra, o nunca.",
+        "Ves quién te debe, cuánto y desde cuándo, y le llega un recordatorio por WhatsApp.",
+        "hand-coins"
+      ],
+      [
+        "El inventario nunca cuadra.",
+        "Cada venta descuenta el stock y te avisa lo que se está acabando.",
+        "package"
+      ],
+      [
+        "Las cotizaciones y facturas me toman horas.",
+        "Armas la cotización y la factura en un clic, con precio por mayor y por menor.",
+        "receipt"
+      ]
     ],
-    "extras": ["Tope de crédito por cliente", "Guía de remisión", "Qué producto deja más ganancia"]
+    "extras": [
+      "Tope de crédito por cliente",
+      "Guía de remisión",
+      "Qué producto deja más ganancia"
+    ]
   },
   {
     "slug": "transporte",
@@ -125,24 +141,28 @@
     "gancho": "Sabe cuánto te dejó cada viaje, antes de que el camión vuelva.",
     "sub": "Dónde va cada camión, qué lleva, cuánto gastó y la guía de remisión lista antes de salir.",
     "whatsapp": "Hola Yanapay, tengo una empresa de transporte y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Transportes Rímac",
-      "saludo": "Hola, Sr. Ccori",
-      "etiqueta": "Viaje Lima a Huancayo",
-      "valor": "S/ 1,840",
-      "meta": "Te quedó después de gastos",
-      "filas": [
-        ["Camión ABC-123", "Pasando La Oroya", "En ruta", "soon"],
-        ["Guía EG01-552", "Emitida antes de salir", "SUNAT ok", "ok"],
-        ["Combustible", "S/ 860 en 2 tanqueos", "Registrado", "ok"]
-      ]
-    },
     "soluciones": [
-      ["No sé cuánto gano por viaje.", "Cada viaje con su flete, combustible, peajes y viáticos: ves lo que de verdad te quedó.", "gas-pump"],
-      ["El cliente pregunta dónde está su carga y nadie sabe.", "Ves dónde va el camión y qué lleva, y tu cliente lo sigue con un link.", "map-pin"],
-      ["Si SUNAT me para sin guía, pierdo la carga.", "La guía de remisión electrónica sale desde el celular antes de salir.", "file-text"]
+      [
+        "No sé cuánto gano por viaje.",
+        "Cada viaje con su flete, combustible, peajes y viáticos: ves lo que de verdad te quedó.",
+        "gas-pump"
+      ],
+      [
+        "El cliente pregunta dónde está su carga y nadie sabe.",
+        "Ves dónde va el camión y qué lleva, y tu cliente lo sigue con un link.",
+        "map-pin"
+      ],
+      [
+        "Si SUNAT me para sin guía, pierdo la carga.",
+        "La guía de remisión electrónica sale desde el celular antes de salir.",
+        "file-text"
+      ]
     ],
-    "extras": ["Planificación de viajes y cargas", "Aviso de mantenimiento y SOAT", "Cobros por cliente"],
+    "extras": [
+      "Planificación de viajes y cargas",
+      "Aviso de mantenimiento y SOAT",
+      "Cobros por cliente"
+    ],
     "nota": "La guía de remisión electrónica ya es obligatoria. Tenerla lista antes de salir evita multas y cargas retenidas."
   },
   {
@@ -155,24 +175,28 @@
     "gancho": "Que ningún lote se venda dos veces y ninguna cuota se escape.",
     "sub": "Plano al día, cuotas de cada cliente bajo control y comisiones sin peleas.",
     "whatsapp": "Hola Yanapay, tengo una inmobiliaria y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Lotes Valle Sur",
-      "saludo": "Hola, Sra. Vargas",
-      "etiqueta": "Lotes disponibles",
-      "valor": "37 de 120",
-      "meta": "Plano actualizado al momento",
-      "filas": [
-        ["Mz. B, lote 14", "Separado por Carla", "Separado", "soon"],
-        ["Sr. Mendoza", "Cuota 8 de 24", "Vence el 5", "soon"],
-        ["Comisión de Jorge", "3 ventas cobradas", "S/ 1,350", "ok"]
-      ]
-    },
     "soluciones": [
-      ["Dos vendedores separaron el mismo lote.", "Un plano con colores: libre, separado y vendido, que se actualiza al momento.", "map-trifold"],
-      ["Tengo cientos de cuotas en Excel.", "Cada cliente con su cronograma, aviso de vencimiento y estado de cuenta al instante.", "calendar-check"],
-      ["Los vendedores pelean por la comisión.", "La comisión de cada vendedor se calcula sola sobre lo que ya se cobró.", "calculator"]
+      [
+        "Dos vendedores separaron el mismo lote.",
+        "Un plano con colores: libre, separado y vendido, que se actualiza al momento.",
+        "map-trifold"
+      ],
+      [
+        "Tengo cientos de cuotas en Excel.",
+        "Cada cliente con su cronograma, aviso de vencimiento y estado de cuenta al instante.",
+        "calendar-check"
+      ],
+      [
+        "Los vendedores pelean por la comisión.",
+        "La comisión de cada vendedor se calcula sola sobre lo que ya se cobró.",
+        "calculator"
+      ]
     ],
-    "extras": ["Interesados por vendedor", "Contratos y recibos automáticos", "Recordatorios por WhatsApp"]
+    "extras": [
+      "Interesados por vendedor",
+      "Contratos y recibos automáticos",
+      "Recordatorios por WhatsApp"
+    ]
   },
   {
     "slug": "condominios",
@@ -184,24 +208,28 @@
     "gancho": "Que el vecino pague a tiempo porque ve en qué se gasta su plata.",
     "sub": "Recibos que salen solos, recordatorios privados y cuentas claras para cada vecino.",
     "whatsapp": "Hola Yanapay, administro un edificio o condominio y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Residencial Las Palmeras",
-      "saludo": "Hola, Sr. Ríos",
-      "etiqueta": "Mantenimiento de setiembre",
-      "valor": "82% cobrado",
-      "meta": "Recibos enviados a 48 departamentos",
-      "filas": [
-        ["Dpto. 301", "Pagó por transferencia", "Pagado", "ok"],
-        ["Dpto. 504", "Recordatorio enviado", "Pendiente", "soon"],
-        ["Gasto: ascensor", "S/ 650 con factura", "Publicado", "ok"]
-      ]
-    },
     "soluciones": [
-      ["Se olvidan de pagar el mantenimiento.", "Cada departamento recibe su recibo del mes y un recordatorio privado por WhatsApp.", "bell-ringing"],
-      ["Me acusan de no rendir cuentas.", "Cada vecino ve cuánto debe y en qué se gastó el dinero del edificio.", "eye"],
-      ["Hacer los recibos me toma días.", "Los recibos de todos los departamentos salen solos, a la vez.", "receipt"]
+      [
+        "Se olvidan de pagar el mantenimiento.",
+        "Cada departamento recibe su recibo del mes y un recordatorio privado por WhatsApp.",
+        "bell-ringing"
+      ],
+      [
+        "Me acusan de no rendir cuentas.",
+        "Cada vecino ve cuánto debe y en qué se gastó el dinero del edificio.",
+        "eye"
+      ],
+      [
+        "Hacer los recibos me toma días.",
+        "Los recibos de todos los departamentos salen solos, a la vez.",
+        "receipt"
+      ]
     ],
-    "extras": ["Reserva de áreas comunes", "Registro de visitas", "Votaciones de la junta"]
+    "extras": [
+      "Reserva de áreas comunes",
+      "Registro de visitas",
+      "Votaciones de la junta"
+    ]
   },
   {
     "slug": "movilidad-escolar",
@@ -213,24 +241,28 @@
     "gancho": "Que el papá sepa que su hijo llegó, sin tener que llamarte.",
     "sub": "Aviso automático de subida y llegada, ubicación para los padres y mensualidades en orden.",
     "whatsapp": "Hola Yanapay, tengo una movilidad escolar y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Movilidad Tío Beto",
-      "saludo": "Hola, Beto",
-      "etiqueta": "Ruta de la mañana",
-      "valor": "12 de 15",
-      "meta": "niños ya llegaron al colegio",
-      "filas": [
-        ["Valentina", "Llegó al colegio, 7:42 am", "Papá avisado", "ok"],
-        ["Thiago", "Subió a la movilidad, 7:31 am", "En camino", "soon"],
-        ["Familia Díaz", "Mensualidad de setiembre", "Por cobrar", "late"]
-      ]
-    },
     "soluciones": [
-      ["¿Dónde está la movilidad? ¿Mi hijo ya llegó?", "El papá recibe un aviso cuando su hijo sube, llega al colegio y llega a casa.", "bus"],
-      ["Contesto 30 llamadas cada mañana.", "Los papás autorizados ven la ubicación de la movilidad en su celular.", "device-mobile"],
-      ["Cobrarle a cada papá y acordarme quién pagó.", "Mensualidades de cada familia con recordatorio por WhatsApp.", "hand-coins"]
+      [
+        "¿Dónde está la movilidad? ¿Mi hijo ya llegó?",
+        "El papá recibe un aviso cuando su hijo sube, llega al colegio y llega a casa.",
+        "bus"
+      ],
+      [
+        "Contesto 30 llamadas cada mañana.",
+        "Los papás autorizados ven la ubicación de la movilidad en su celular.",
+        "device-mobile"
+      ],
+      [
+        "Cobrarle a cada papá y acordarme quién pagó.",
+        "Mensualidades de cada familia con recordatorio por WhatsApp.",
+        "hand-coins"
+      ]
     ],
-    "extras": ["Aviso de retraso o de hoy no pasa", "Mostrar tu permiso ATU y SOAT", "Lista de niños por ruta"]
+    "extras": [
+      "Aviso de retraso o de hoy no pasa",
+      "Mostrar tu permiso ATU y SOAT",
+      "Lista de niños por ruta"
+    ]
   },
   {
     "slug": "gimnasios",
@@ -242,24 +274,28 @@
     "gancho": "Que nadie entrene gratis en tu gimnasio.",
     "sub": "En la entrada ves quién está al día, avisamos antes del vencimiento y recuperas a los que se fueron.",
     "whatsapp": "Hola Yanapay, tengo un gimnasio y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Gym Fuerza Norte",
-      "saludo": "Hola, Coach Renzo",
-      "etiqueta": "Membresías que vencen esta semana",
-      "valor": "23",
-      "meta": "Aviso enviado por WhatsApp",
-      "filas": [
-        ["Carlos Vega", "Vence hoy", "Aviso enviado", "soon"],
-        ["Lucía Ramos", "Vencida hace 5 días", "No pasa", "late"],
-        ["Diego Salas", "No viene hace 2 semanas", "Llamar", "late"]
-      ]
-    },
     "soluciones": [
-      ["Entrenan con la membresía vencida y nadie se da cuenta.", "En la entrada ves al instante quién está al día y quién no.", "identification-card"],
-      ["Cobrar a los que deben me da vergüenza.", "El socio recibe un aviso por WhatsApp antes de que venza su membresía.", "whatsapp-logo"],
-      ["Se van sin avisar y no los recupero.", "Te muestra quién dejó de venir hace 2 semanas, para llamarlo a tiempo.", "users-three"]
+      [
+        "Entrenan con la membresía vencida y nadie se da cuenta.",
+        "En la entrada ves al instante quién está al día y quién no.",
+        "identification-card"
+      ],
+      [
+        "Cobrar a los que deben me da vergüenza.",
+        "El socio recibe un aviso por WhatsApp antes de que venza su membresía.",
+        "whatsapp-logo"
+      ],
+      [
+        "Se van sin avisar y no los recupero.",
+        "Te muestra quién dejó de venir hace 2 semanas, para llamarlo a tiempo.",
+        "users-three"
+      ]
     ],
-    "extras": ["Reserva de clases", "Asistencia por socio", "Boletas SUNAT"]
+    "extras": [
+      "Reserva de clases",
+      "Asistencia por socio",
+      "Boletas SUNAT"
+    ]
   },
   {
     "slug": "spas",
@@ -271,24 +307,28 @@
     "gancho": "Tus clientes son tuyos, no de tu estilista.",
     "sub": "Clientes guardados en tu negocio, comisiones sin peleas y reservas que sí llegan.",
     "whatsapp": "Hola Yanapay, tengo un spa, salón o barbería y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Salón Bella Lima",
-      "saludo": "Hola, Sra. Milagros",
-      "etiqueta": "Comisiones de la semana",
-      "valor": "S/ 2,960",
-      "meta": "Calculadas solas, sin discusiones",
-      "filas": [
-        ["Kevin", "18 cortes", "S/ 540", "ok"],
-        ["Andrea G.", "Tinte, 5:00 pm", "Confirmó", "ok"],
-        ["Patricia M.", "Le toca su corte", "Aviso enviado", "soon"]
-      ]
-    },
     "soluciones": [
-      ["Mis estilistas se van y se llevan a mis clientas.", "Los datos de cada cliente quedan en tu negocio, no en el celular del estilista.", "users-three"],
-      ["Siempre hay pelea por las comisiones.", "La comisión de cada uno se calcula sola con lo que atendió.", "calculator"],
-      ["Me reservan y no llegan.", "El cliente reserva y recibe su recordatorio por WhatsApp.", "calendar-check"]
+      [
+        "Mis estilistas se van y se llevan a mis clientas.",
+        "Los datos de cada cliente quedan en tu negocio, no en el celular del estilista.",
+        "users-three"
+      ],
+      [
+        "Siempre hay pelea por las comisiones.",
+        "La comisión de cada uno se calcula sola con lo que atendió.",
+        "calculator"
+      ],
+      [
+        "Me reservan y no llegan.",
+        "El cliente reserva y recibe su recordatorio por WhatsApp.",
+        "calendar-check"
+      ]
     ],
-    "extras": ["Aviso de te toca tu corte", "Control de productos", "Cierre de caja con Yape"]
+    "extras": [
+      "Aviso de te toca tu corte",
+      "Control de productos",
+      "Cierre de caja con Yape"
+    ]
   },
   {
     "slug": "talleres",
@@ -300,24 +340,28 @@
     "gancho": "Que el cliente apruebe el presupuesto por WhatsApp. Cero reclamos.",
     "sub": "Órdenes con fotos, presupuestos aprobados antes de trabajar y aviso cuando está listo.",
     "whatsapp": "Hola Yanapay, tengo un taller y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Taller Mecánico Chávez",
-      "saludo": "Hola, Maestro Chávez",
-      "etiqueta": "Autos en taller",
-      "valor": "6",
-      "meta": "2 listos, cliente avisado",
-      "filas": [
-        ["Toyota Yaris ABX-721", "Presupuesto S/ 480", "Aprobado", "ok"],
-        ["Kia Rio BCD-330", "Cambio de pastillas", "Listo, avisado", "ok"],
-        ["Hyundai Accent", "Trabajo extra S/ 150", "Esperando OK", "soon"]
-      ]
-    },
     "soluciones": [
-      ["Le presupuesté 1,500 y al final eran 3,000.", "El presupuesto llega por WhatsApp y el cliente lo aprueba antes de cualquier trabajo extra.", "whatsapp-logo"],
-      ["Dice que le cambié el repuesto.", "Cada orden guarda fotos del antes y el después y los repuestos usados.", "camera"],
-      ["Me llaman todo el día: ¿ya está?", "El cliente recibe un aviso automático cuando su carro está listo.", "bell-ringing"]
+      [
+        "Le presupuesté 1,500 y al final eran 3,000.",
+        "El presupuesto llega por WhatsApp y el cliente lo aprueba antes de cualquier trabajo extra.",
+        "whatsapp-logo"
+      ],
+      [
+        "Dice que le cambié el repuesto.",
+        "Cada orden guarda fotos del antes y el después y los repuestos usados.",
+        "camera"
+      ],
+      [
+        "Me llaman todo el día: ¿ya está?",
+        "El cliente recibe un aviso automático cuando su carro está listo.",
+        "bell-ringing"
+      ]
     ],
-    "extras": ["Historial de cada vehículo", "Recordatorio del próximo mantenimiento", "Control de repuestos"]
+    "extras": [
+      "Historial de cada vehículo",
+      "Recordatorio del próximo mantenimiento",
+      "Control de repuestos"
+    ]
   },
   {
     "slug": "minimarkets",
@@ -329,23 +373,27 @@
     "gancho": "Cierra la caja en minutos, con Yape y todo.",
     "sub": "Caja cuadrada por efectivo, Yape y Plin, fiados en el celular y aviso de qué reponer.",
     "whatsapp": "Hola Yanapay, tengo un minimarket o tienda y quiero saber cómo me pueden ayudar.",
-    "celular": {
-      "negocio": "Minimarket Doña Carmen",
-      "saludo": "Hola, Sra. Carmen",
-      "etiqueta": "Caja de hoy",
-      "valor": "S/ 1,284.50",
-      "meta": "Efectivo, Yape y Plin por separado",
-      "filas": [
-        ["Fiado: Sra. Lucha", "Debe S/ 46", "Recordado", "soon"],
-        ["Arroz 5 kg", "Quedan 3 bolsas", "Reponer", "late"],
-        ["Yape de Jorge", "S/ 18.50", "Llegó", "ok"]
-      ]
-    },
     "soluciones": [
-      ["La caja no me cuadra.", "El cuadre separa efectivo, Yape y Plin, y te muestra qué pago no llegó.", "cash-register"],
-      ["Fían y no pagan, y el cuaderno se pierde.", "Un cuaderno de fiados en el celular, con el saldo de cada cliente.", "notebook"],
-      ["No sé qué se me acabó hasta que me lo piden.", "Te avisa qué productos reponer antes de quedarte sin ellos.", "shopping-cart"]
+      [
+        "La caja no me cuadra.",
+        "El cuadre separa efectivo, Yape y Plin, y te muestra qué pago no llegó.",
+        "cash-register"
+      ],
+      [
+        "Fían y no pagan, y el cuaderno se pierde.",
+        "Un cuaderno de fiados en el celular, con el saldo de cada cliente.",
+        "notebook"
+      ],
+      [
+        "No sé qué se me acabó hasta que me lo piden.",
+        "Te avisa qué productos reponer antes de quedarte sin ellos.",
+        "shopping-cart"
+      ]
     ],
-    "extras": ["Boletas SUNAT", "Lo que más se vende", "Ganancia del día"]
+    "extras": [
+      "Boletas SUNAT",
+      "Lo que más se vende",
+      "Ganancia del día"
+    ]
   }
 ]

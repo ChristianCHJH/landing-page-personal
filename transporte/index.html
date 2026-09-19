@@ -125,10 +125,53 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-truck"></i>Transportes Rímac</span>
+                <span class="tablet__title">Flota en ruta</span>
+              </div>
+              <div class="tablet__body">
+          <div class="tmap">
+            <ul class="tmap__list">
+              <li>
+                <p class="row__name">ABC-123</p>
+                <p class="row__detail">Lima a Huancayo</p>
+                <span class="tag tag--soon">En ruta</span>
+              </li>
+              <li>
+                <p class="row__name">D4F-778</p>
+                <p class="row__detail">Lima a Ica</p>
+                <span class="tag tag--soon">En ruta</span>
+              </li>
+              <li>
+                <p class="row__name">B7K-310</p>
+                <p class="row__detail">Callao a Lurín</p>
+                <span class="tag tag--ok">Llegó</span>
+              </li>
+            </ul>
+            <svg class="map__svg tmap__svg" viewBox="0 0 300 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g class="map__hills">
+            <path d="M0 120 Q60 80 110 110 T220 90 T300 70" />
+            <path d="M0 170 Q70 140 130 160 T240 140 T300 130" />
+            <path d="M0 215 Q80 195 150 210 T300 190" />
+          </g>
+          <path class="map__river" d="M-10 250 Q70 220 120 235 T260 205 T320 190" />
+              <path id="tr-transporte-0" class="map__route" d="M36 226 C 80 206, 96 164, 138 150 S 214 110, 238 78 S 262 46, 270 32" />
+              <path id="tr-transporte-1" class="map__route map__route--soft" d="M36 226 C 60 238, 120 246, 170 240 S 250 232, 290 244" />
+              <g class="map__vehicle"><circle r="9" /><circle class="map__vehicle-core" r="4" /><animateMotion dur="10s" repeatCount="indefinite" begin="0s"><mpath href="#tr-transporte-0" /></animateMotion></g>
+              <g class="map__vehicle map__vehicle--soft"><circle r="9" /><circle class="map__vehicle-core" r="4" /><animateMotion dur="8s" repeatCount="indefinite" begin="1.3s"><mpath href="#tr-transporte-1" /></animateMotion></g>
+            </svg>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Sr. Ccori</p>
@@ -136,36 +179,103 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-truck"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Viaje Lima a Huancayo</p>
-                <p class="app__amount">S/ 1,840</p>
-                <p class="app__meta">Te quedó después de gastos</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Viaje cerrado: te quedaron S/ 1,840" data-toast-icon="check-circle">
+        <p class="scene__title">Viaje Lima a Huancayo</p>
+        <div class="app__total">
+          <p class="app__label">Te quedó de este viaje</p>
+          <p class="app__amount">S/ 1,840</p>
+          <p class="app__meta">Camión ABC-123, 18 de setiembre</p>
+        </div>
+        <ul class="split">
+          <li class="split__row">
+            <div class="split__top"><span>Flete cobrado</span><strong>S/ 3,200</strong></div>
+            <span class="split__bar" style="--p:100%"></span>
+          </li>
+          <li class="split__row">
+            <div class="split__top"><span>Combustible</span><strong>- S/ 860</strong></div>
+            <span class="split__bar" style="--p:27%"></span>
+          </li>
+          <li class="split__row">
+            <div class="split__top"><span>Viáticos del chofer</span><strong>- S/ 260</strong></div>
+            <span class="split__bar" style="--p:8%"></span>
+          </li>
+          <li class="split__row">
+            <div class="split__top"><span>Peajes</span><strong>- S/ 240</strong></div>
+            <span class="split__bar" style="--p:8%"></span>
+          </li>
+        </ul>
+        <p class="split__note"><i class="ph-fill ph-check-circle"></i>Gastos registrados desde el celular del chofer</p>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Tu cliente ya ve dónde va su carga" data-toast-icon="check-circle">
+        <p class="scene__title">Camión en ruta</p>
+        <div class="map">
+          <svg class="map__svg" viewBox="0 0 300 260" aria-hidden="true">
+          <g class="map__hills">
+            <path d="M0 120 Q60 80 110 110 T220 90 T300 70" />
+            <path d="M0 170 Q70 140 130 160 T240 140 T300 130" />
+            <path d="M0 215 Q80 195 150 210 T300 190" />
+          </g>
+          <path class="map__river" d="M-10 250 Q70 220 120 235 T260 205 T320 190" />
+          <path id="ruta-transporte-1" class="map__route" d="M36 226 C 80 206, 96 164, 138 150 S 214 110, 238 78 S 262 46, 270 32" />
+          <g class="map__stop"><circle cx="36" cy="226" r="6" /><text x="46" y="230">Lima</text></g>
+          <g class="map__stop"><circle cx="138" cy="150" r="6" /><text x="148" y="154">La Oroya</text></g>
+          <g class="map__stop"><circle cx="270" cy="32" r="6" /><text x="260" y="36" text-anchor="end">Huancayo</text></g>
+          <g class="map__vehicle">
+            <circle r="11" />
+            <circle class="map__vehicle-core" r="5" />
+            <animateMotion dur="10s" repeatCount="indefinite" rotate="0"><mpath href="#ruta-transporte-1" /></animateMotion>
+          </g>
+          </svg>
+          <div class="map__card">
+            <div>
+              <p class="row__name">Camión ABC-123</p>
+              <p class="row__detail">120 sacos de harina, llega 4:30 pm</p>
+            </div>
+            <span class="tag tag--soon">En ruta</span>
+          </div>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Guía emitida y aceptada por SUNAT" data-toast-icon="check-circle">
+        <p class="scene__title">Guía antes de salir</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-file-text"></i>Guía de remisión electrónica</p>
+          <p class="doc__code">EG01-552</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>Origen</span><span>Ate, Lima</span></p>
+            <p class="doc__line"><span>Destino</span><span>Huancayo</span></p>
+            <p class="doc__line"><span>Carga</span><span>120 sacos de harina</span></p>
+            <p class="doc__line"><span>Vehículo</span><span>ABC-123</span></p>
+          </div>
+          
+          
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>Aceptada por SUNAT</p>
+        </div>
+      </div>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Camión ABC-123</p>
-                    <p class="row__detail">Pasando La Oroya</p>
-                  </div>
-                  <span class="tag tag--soon">En ruta</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Guía EG01-552</p>
-                    <p class="row__detail">Emitida antes de salir</p>
-                  </div>
-                  <span class="tag tag--ok">SUNAT ok</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Combustible</p>
-                    <p class="row__detail">S/ 860 en 2 tanqueos</p>
-                  </div>
-                  <span class="tag tag--ok">Registrado</span>
-                </li>
-              </ul>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Viaje Lima a Huancayo"></button><button type="button" class="scene-dot" aria-label="Ver Camión en ruta"></button><button type="button" class="scene-dot" aria-label="Ver Guía antes de salir"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
             </div>
           </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="No sé cuánto gano por viaje.">
+              <i class="ph ph-gas-pump" aria-hidden="true"></i>Ganancia por viaje
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="El cliente pregunta dónde está su carga y nadie sabe.">
+              <i class="ph ph-map-pin" aria-hidden="true"></i>Dónde va la carga
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Si SUNAT me para sin guía, pierdo la carga.">
+              <i class="ph ph-file-text" aria-hidden="true"></i>Guía de remisión
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“No sé cuánto gano por viaje.”</p>
         </div>
       </div>
     </section>

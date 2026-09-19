@@ -125,10 +125,31 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="phone" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
+        <div class="hero__visual hero__visual--devices">
+          <div class="devices">
+            <div class="devices__stage">
+          <div class="tablet" aria-hidden="true">
+            <div class="tablet__screen">
+              <div class="tablet__bar">
+                <span class="tablet__brand"><i class="ph ph-wrench"></i>Ferretería El Maestro</span>
+                <span class="tablet__title">Cuentas por cobrar</span>
+              </div>
+              <div class="tablet__body">
+          <table class="tt">
+            <thead><tr><th>Cliente</th><th>Documento</th><th>Monto</th><th>Días</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr class="is-live"><td>Maestro Wilber</td><td>B001-398</td><td>S/ 1,240</td><td>20</td><td><span class="swap"><span class="swap__a"><span class="tag tag--late">Vencido</span></span><span class="swap__b"><span class="tag tag--ok">Abonó S/ 500</span></span></span></td></tr>
+              <tr><td>Constructora Andina</td><td>F001-88</td><td>S/ 4,560</td><td>5</td><td><span class="tag tag--soon">Por vencer</span></td></tr>
+              <tr><td>Inversiones Lara</td><td>F001-91</td><td>S/ 2,550</td><td>12</td><td><span class="tag tag--soon">Aviso enviado</span></td></tr>
+              <tr><td>Sr. Pérez</td><td>B001-412</td><td>S/ 380</td><td>0</td><td><span class="tag tag--ok">Pagó</span></td></tr>
+            </tbody>
+          </table>
+              </div>
+            </div>
+          </div>
+          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
             <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--rubro">
+            <div class="app app--scenes">
               <div class="app__top">
                 <div>
                   <p class="app__hello">Hola, Don Julio</p>
@@ -136,36 +157,122 @@
                 </div>
                 <span class="app__avatar" aria-hidden="true"><i class="ph ph-wrench"></i></span>
               </div>
-              <div class="app__total">
-                <p class="app__label">Te deben</p>
-                <p class="app__amount">S/ 8,730</p>
-                <p class="app__meta">5 clientes con crédito vencido</p>
+              <div class="scenes">
+      <div class="scene is-on" data-toast="Recordatorio enviado al Maestro Wilber" data-toast-icon="check-circle">
+        <p class="scene__title">Cuentas por cobrar</p>
+        <div class="app__total">
+          <p class="app__label">Te deben</p>
+          <p class="app__amount">S/ 8,730</p>
+          <p class="app__meta">5 clientes con crédito vencido</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Maestro Wilber</p>
+              <p class="row__detail">Obra en Los Olivos, 20 días</p>
+            </div>
+            <span class="tag tag--late">Vencido</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Constructora Andina</p>
+              <p class="row__detail">Factura F001-88</p>
+            </div>
+            <span class="tag tag--soon">Vence el 25</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Inversiones Lara</p>
+              <p class="row__detail">Factura F001-91</p>
+            </div>
+            <span class="tag tag--soon">Aviso enviado</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Sr. Pérez</p>
+              <p class="row__detail">Boleta B001-412</p>
+            </div>
+            <span class="tag tag--ok">Pagó</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="El cemento se acaba el jueves" data-toast-icon="check-circle">
+        <p class="scene__title">Stock que se acaba</p>
+        <div class="app__total">
+          <p class="app__label">Pide antes de que te falte</p>
+          <p class="app__amount">4 productos</p>
+          <p class="app__meta">Según lo que vendes cada semana</p>
+        </div>
+        <ul class="app__list">
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Cemento Sol 42.5 kg</p>
+              <p class="row__detail">Quedan 6 bolsas</p>
+            </div>
+            <span class="tag tag--late">Pedir hoy</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Tubo PVC 1/2&quot;</p>
+              <p class="row__detail">Quedan 14</p>
+            </div>
+            <span class="tag tag--soon">Esta semana</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Fierro de 1/2&quot;</p>
+              <p class="row__detail">Quedan 40</p>
+            </div>
+            <span class="tag tag--ok">Al día</span>
+          </li>
+          <li class="row row--tag">
+            <div class="row__who">
+              <p class="row__name">Pintura látex blanca</p>
+              <p class="row__detail">Quedan 22</p>
+            </div>
+            <span class="tag tag--ok">Al día</span>
+          </li>
+        </ul>
+      </div>
+      <div class="scene" aria-hidden="true" data-toast="Cotización enviada en 1 minuto" data-toast-icon="check-circle">
+        <p class="scene__title">Cotización en un clic</p>
+        <div class="doc">
+          <p class="doc__head"><i class="ph ph-file-text"></i>Cotización COT-0231</p>
+          <p class="doc__code">Constructora Andina</p>
+          <div class="doc__lines">
+            <p class="doc__line"><span>20 bolsas cemento Sol</span><span>S/ 620.00</span></p>
+            <p class="doc__line"><span>6 fierros de 1/2&quot;</span><span>S/ 294.00</span></p>
+            <p class="doc__line"><span>1 caja clavos 3&quot;</span><span>S/ 14.50</span></p>
+          </div>
+          <p class="doc__total"><span>Total</span><span>S/ 928.50</span></p>
+          
+          <p class="doc__seal doc__seal--ok"><i class="ph-fill ph-seal-check"></i>Enviada por WhatsApp</p>
+        </div>
+      </div>
               </div>
-              <ul class="app__list">
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Maestro Wilber</p>
-                    <p class="row__detail">Obra en Los Olivos, 20 días</p>
-                  </div>
-                  <span class="tag tag--late">Vencido</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Constructora Andina</p>
-                    <p class="row__detail">Factura F001-88</p>
-                  </div>
-                  <span class="tag tag--soon">Vence el 25</span>
-                </li>
-                <li class="row row--tag">
-                  <div class="row__who">
-                    <p class="row__name">Sr. Pérez</p>
-                    <p class="row__detail">Boleta B001-412</p>
-                  </div>
-                  <span class="tag tag--ok">Pagó</span>
-                </li>
-              </ul>
+              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
+                <button type="button" class="scene-dot is-on" aria-label="Ver Cuentas por cobrar"></button><button type="button" class="scene-dot" aria-label="Ver Stock que se acaba"></button><button type="button" class="scene-dot" aria-label="Ver Cotización en un clic"></button>
+              </div>
+            </div>
+            <div class="toast" role="status" aria-live="polite">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <span></span>
             </div>
           </div>
+            </div>
+          </div>
+          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
+            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Se lleva al crédito y paga cuando termina la obra, o nunca.">
+              <i class="ph ph-hand-coins" aria-hidden="true"></i>Crédito sin control
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="El inventario nunca cuadra.">
+              <i class="ph ph-package" aria-hidden="true"></i>Stock que no cuadra
+            </button>
+            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Las cotizaciones y facturas me toman horas.">
+              <i class="ph ph-receipt" aria-hidden="true"></i>Cotizar toma horas
+            </button>
+          </div>
+          <p class="problems__quote" aria-live="polite">“Se lleva al crédito y paga cuando termina la obra, o nunca.”</p>
         </div>
       </div>
     </section>

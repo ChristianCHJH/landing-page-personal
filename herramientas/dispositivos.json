@@ -1,0 +1,1686 @@
+{
+  "colegios": {
+    "celular": {
+      "saludo": "Hola, Miss Carmen",
+      "negocio": "Colegio San Martín",
+      "escenas": [
+        {
+          "problema": "Cobrar sin perseguir",
+          "tipo": "chat",
+          "titulo": "Aviso privado al padre",
+          "toast": "Pago de la Familia Quispe registrado",
+          "contacto": "Sra. Quispe, mamá de Mateo",
+          "mensajes": [
+            [
+              "yo",
+              "Hola Sra. Quispe, le recordamos la pensión de setiembre de Mateo: S/ 350. Puede pagar por Yape o en el banco.",
+              "8:00 am"
+            ],
+            [
+              "ellos",
+              "Gracias miss, ya pagué por Yape.",
+              "8:14 am"
+            ],
+            [
+              "sistema",
+              "Pago de S/ 350 registrado",
+              ""
+            ]
+          ]
+        },
+        {
+          "problema": "Quién debe",
+          "tipo": "lista",
+          "titulo": "Pensiones de setiembre",
+          "toast": "Aviso privado enviado a 12 familias",
+          "etiqueta": "Por cobrar",
+          "valor": "S/ 4,200",
+          "meta": "12 familias con aviso enviado",
+          "filas": [
+            [
+              "Familia Rojas",
+              "Agosto y setiembre",
+              "Aviso enviado",
+              "soon"
+            ],
+            [
+              "Familia Quispe",
+              "Setiembre",
+              "Pagó con Yape",
+              "ok"
+            ],
+            [
+              "Familia Huamán",
+              "Setiembre",
+              "Pagó en banco",
+              "ok"
+            ],
+            [
+              "Familia Torres",
+              "Setiembre",
+              "Vence el 30",
+              "soon"
+            ]
+          ]
+        },
+        {
+          "problema": "Comunicados",
+          "tipo": "documento",
+          "titulo": "Comunicado a los padres",
+          "toast": "142 padres ya leyeron el comunicado",
+          "icono": "megaphone",
+          "encabezado": "Comunicado",
+          "codigo": "Día de la Familia, sábado 28",
+          "lineas": [
+            [
+              "Enviado a",
+              "180 padres"
+            ],
+            [
+              "Lo leyeron",
+              "142"
+            ],
+            [
+              "Confirmaron asistencia",
+              "118"
+            ]
+          ],
+          "sello": "Llegó a cada padre por WhatsApp",
+          "tono": "ok"
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "tabla",
+      "titulo": "Pensiones por aula",
+      "columnas": [
+        "Aula",
+        "Alumnos",
+        "Al día",
+        "Deben",
+        "Estado"
+      ],
+      "filas": [
+        [
+          "1.° A",
+          "28",
+          "25",
+          "3",
+          "Aviso enviado",
+          "soon"
+        ],
+        [
+          "2.° B",
+          "30",
+          "30",
+          "0",
+          "Completo",
+          "ok"
+        ],
+        [
+          "3.° A",
+          "27",
+          "22",
+          "5",
+          "Aviso enviado",
+          "soon"
+        ],
+        [
+          "4.° B",
+          "29",
+          "27",
+          "2",
+          "Aviso enviado",
+          "soon"
+        ],
+        [
+          "5.° A",
+          "31",
+          "31",
+          "0",
+          "Completo",
+          "ok"
+        ]
+      ],
+      "vivo": 0,
+      "vivoTag": "Pagaron hoy"
+    }
+  },
+  "clinicas": {
+    "celular": {
+      "saludo": "Hola, Dra. Paredes",
+      "negocio": "Consultorio Dental Sonrisa",
+      "escenas": [
+        {
+          "problema": "Sillón vacío",
+          "tipo": "calendario",
+          "titulo": "Citas de mañana",
+          "toast": "7 de 9 pacientes ya confirmaron",
+          "dias": [
+            "L 15",
+            "M 16",
+            "M 17",
+            "J 18",
+            "V 19",
+            "S 20"
+          ],
+          "activo": 3,
+          "citas": [
+            [
+              "9:00",
+              "Ana Torres",
+              "Limpieza",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "10:30",
+              "Luis Medina",
+              "Ortodoncia",
+              "late",
+              "Sin respuesta"
+            ],
+            [
+              "12:00",
+              "Rosa Cárdenas",
+              "Curación",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "3:00",
+              "Pedro Salas",
+              "Evaluación",
+              "ok",
+              "Confirmó"
+            ]
+          ]
+        },
+        {
+          "problema": "Cuotas perdidas",
+          "tipo": "lista",
+          "titulo": "Tratamientos en curso",
+          "toast": "Recordatorio de cuota enviado a Luis Medina",
+          "etiqueta": "Cuotas por cobrar",
+          "valor": "S/ 3,480",
+          "meta": "Este mes, 11 pacientes",
+          "filas": [
+            [
+              "Luis Medina",
+              "Ortodoncia, cuota 6 de 18",
+              "Aviso enviado",
+              "soon"
+            ],
+            [
+              "Carmen Vela",
+              "Implante, cuota 2 de 4",
+              "Pagó",
+              "ok"
+            ],
+            [
+              "Diego Ramos",
+              "Ortodoncia, cuota 3 de 18",
+              "Atrasada",
+              "late"
+            ],
+            [
+              "Sofía León",
+              "Blanqueamiento",
+              "Pagó",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Presupuestos",
+          "tipo": "lista",
+          "titulo": "Presupuestos por seguir",
+          "toast": "Hoy toca llamar a Jorge Ramos",
+          "etiqueta": "Sin respuesta",
+          "valor": "4 presupuestos",
+          "meta": "S/ 6,900 que no se deben enfriar",
+          "filas": [
+            [
+              "Jorge Ramos",
+              "Implante, enviado hace 7 días",
+              "Llamar hoy",
+              "late"
+            ],
+            [
+              "María Salas",
+              "Ortodoncia, hace 3 días",
+              "Esperar",
+              "soon"
+            ],
+            [
+              "Iván Chávez",
+              "Carillas, hace 1 día",
+              "Esperar",
+              "soon"
+            ],
+            [
+              "Lucía Paz",
+              "Endodoncia",
+              "Aceptó",
+              "ok"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "agenda",
+      "titulo": "Agenda del jueves",
+      "columnas": [
+        "Dra. Paredes",
+        "Dr. Ruiz"
+      ],
+      "horas": [
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "3:00",
+        "4:00"
+      ],
+      "bloques": [
+        [
+          0,
+          0,
+          1,
+          "Ana Torres, limpieza",
+          "ok"
+        ],
+        [
+          0,
+          1.5,
+          1,
+          "Luis Medina, ortodoncia",
+          "late"
+        ],
+        [
+          1,
+          0.5,
+          1.5,
+          "Rosa Cárdenas, curación",
+          "ok"
+        ],
+        [
+          1,
+          3,
+          1,
+          "Pedro Salas, evaluación",
+          "ok"
+        ],
+        [
+          0,
+          4,
+          1,
+          "Nueva cita: Carla Ríos",
+          "soon"
+        ]
+      ],
+      "nuevo": 4
+    }
+  },
+  "veterinarias": {
+    "celular": {
+      "saludo": "Hola, Dr. Salazar",
+      "negocio": "Veterinaria Patitas",
+      "escenas": [
+        {
+          "problema": "Vacunas olvidadas",
+          "tipo": "ficha",
+          "titulo": "Ficha de la mascota",
+          "toast": "Aviso enviado a la Sra. Elena: vacuna de Firulais",
+          "icono": "dog",
+          "nombre": "Firulais",
+          "detalle": "Mestizo, 3 años. Dueña: Sra. Elena",
+          "titulo_items": "Vacunas y desparasitación",
+          "items": [
+            [
+              "Antirrábica",
+              "Le toca el jueves 18",
+              "soon"
+            ],
+            [
+              "Séxtuple",
+              "Aplicada el 2 de junio",
+              "ok"
+            ],
+            [
+              "Desparasitación",
+              "Aplicada el 5 de agosto",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Citas cruzadas",
+          "tipo": "calendario",
+          "titulo": "Baños y consultas",
+          "toast": "Nueva cita de baño: Rocky, 4:00 pm",
+          "dias": [
+            "L 15",
+            "M 16",
+            "M 17",
+            "J 18",
+            "V 19",
+            "S 20"
+          ],
+          "activo": 4,
+          "citas": [
+            [
+              "9:00",
+              "Luna",
+              "Vacuna séxtuple",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "10:00",
+              "Toby",
+              "Baño medicado",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "12:00",
+              "Max",
+              "Control",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "4:00",
+              "Rocky",
+              "Baño y corte",
+              "soon",
+              "Nueva"
+            ]
+          ]
+        },
+        {
+          "problema": "Productos vencidos",
+          "tipo": "lista",
+          "titulo": "Stock y vencimientos",
+          "toast": "Stock bajo: quedan 3 vacunas séxtuple",
+          "etiqueta": "Por vencer o por acabarse",
+          "valor": "5 productos",
+          "meta": "Revísalos antes de que se pierdan",
+          "filas": [
+            [
+              "Vacuna séxtuple",
+              "Quedan 3 dosis",
+              "Reponer",
+              "late"
+            ],
+            [
+              "Alimento cachorro 15 kg",
+              "Vence el 30",
+              "Ofertar",
+              "soon"
+            ],
+            [
+              "Pipeta antipulgas",
+              "Vence en marzo",
+              "Al día",
+              "ok"
+            ],
+            [
+              "Shampoo medicado",
+              "Quedan 4",
+              "Reponer",
+              "soon"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "agenda",
+      "titulo": "Agenda de hoy",
+      "columnas": [
+        "Consultas",
+        "Baños y corte"
+      ],
+      "horas": [
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "3:00",
+        "4:00"
+      ],
+      "bloques": [
+        [
+          0,
+          0,
+          1,
+          "Luna, vacuna séxtuple",
+          "ok"
+        ],
+        [
+          1,
+          0,
+          1.5,
+          "Toby, baño medicado",
+          "ok"
+        ],
+        [
+          0,
+          2,
+          1,
+          "Max, control",
+          "ok"
+        ],
+        [
+          1,
+          2,
+          1,
+          "Canela, corte",
+          "ok"
+        ],
+        [
+          0,
+          3.5,
+          1,
+          "Mishi, desparasitación",
+          "ok"
+        ],
+        [
+          1,
+          4,
+          1,
+          "Nueva: Rocky, baño",
+          "soon"
+        ]
+      ],
+      "nuevo": 5
+    }
+  },
+  "ferreterias": {
+    "celular": {
+      "saludo": "Hola, Don Julio",
+      "negocio": "Ferretería El Maestro",
+      "escenas": [
+        {
+          "problema": "Crédito sin control",
+          "tipo": "lista",
+          "titulo": "Cuentas por cobrar",
+          "toast": "Recordatorio enviado al Maestro Wilber",
+          "etiqueta": "Te deben",
+          "valor": "S/ 8,730",
+          "meta": "5 clientes con crédito vencido",
+          "filas": [
+            [
+              "Maestro Wilber",
+              "Obra en Los Olivos, 20 días",
+              "Vencido",
+              "late"
+            ],
+            [
+              "Constructora Andina",
+              "Factura F001-88",
+              "Vence el 25",
+              "soon"
+            ],
+            [
+              "Inversiones Lara",
+              "Factura F001-91",
+              "Aviso enviado",
+              "soon"
+            ],
+            [
+              "Sr. Pérez",
+              "Boleta B001-412",
+              "Pagó",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Stock que no cuadra",
+          "tipo": "lista",
+          "titulo": "Stock que se acaba",
+          "toast": "El cemento se acaba el jueves",
+          "etiqueta": "Pide antes de que te falte",
+          "valor": "4 productos",
+          "meta": "Según lo que vendes cada semana",
+          "filas": [
+            [
+              "Cemento Sol 42.5 kg",
+              "Quedan 6 bolsas",
+              "Pedir hoy",
+              "late"
+            ],
+            [
+              "Tubo PVC 1/2\"",
+              "Quedan 14",
+              "Esta semana",
+              "soon"
+            ],
+            [
+              "Fierro de 1/2\"",
+              "Quedan 40",
+              "Al día",
+              "ok"
+            ],
+            [
+              "Pintura látex blanca",
+              "Quedan 22",
+              "Al día",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Cotizar toma horas",
+          "tipo": "documento",
+          "titulo": "Cotización en un clic",
+          "toast": "Cotización enviada en 1 minuto",
+          "icono": "file-text",
+          "encabezado": "Cotización COT-0231",
+          "codigo": "Constructora Andina",
+          "lineas": [
+            [
+              "20 bolsas cemento Sol",
+              "S/ 620.00"
+            ],
+            [
+              "6 fierros de 1/2\"",
+              "S/ 294.00"
+            ],
+            [
+              "1 caja clavos 3\"",
+              "S/ 14.50"
+            ]
+          ],
+          "total": "S/ 928.50",
+          "sello": "Enviada por WhatsApp",
+          "tono": "ok"
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "tabla",
+      "titulo": "Cuentas por cobrar",
+      "columnas": [
+        "Cliente",
+        "Documento",
+        "Monto",
+        "Días",
+        "Estado"
+      ],
+      "filas": [
+        [
+          "Maestro Wilber",
+          "B001-398",
+          "S/ 1,240",
+          "20",
+          "Vencido",
+          "late"
+        ],
+        [
+          "Constructora Andina",
+          "F001-88",
+          "S/ 4,560",
+          "5",
+          "Por vencer",
+          "soon"
+        ],
+        [
+          "Inversiones Lara",
+          "F001-91",
+          "S/ 2,550",
+          "12",
+          "Aviso enviado",
+          "soon"
+        ],
+        [
+          "Sr. Pérez",
+          "B001-412",
+          "S/ 380",
+          "0",
+          "Pagó",
+          "ok"
+        ]
+      ],
+      "vivo": 0,
+      "vivoTag": "Abonó S/ 500"
+    }
+  },
+  "transporte": {
+    "celular": {
+      "saludo": "Hola, Sr. Ccori",
+      "negocio": "Transportes Rímac",
+      "escenas": [
+        {
+          "problema": "Ganancia por viaje",
+          "tipo": "caja",
+          "titulo": "Viaje Lima a Huancayo",
+          "toast": "Viaje cerrado: te quedaron S/ 1,840",
+          "etiqueta": "Te quedó de este viaje",
+          "total": "S/ 1,840",
+          "meta": "Camión ABC-123, 18 de setiembre",
+          "partes": [
+            [
+              "Flete cobrado",
+              "S/ 3,200",
+              100
+            ],
+            [
+              "Combustible",
+              "- S/ 860",
+              27
+            ],
+            [
+              "Viáticos del chofer",
+              "- S/ 260",
+              8
+            ],
+            [
+              "Peajes",
+              "- S/ 240",
+              8
+            ]
+          ],
+          "nota": "Gastos registrados desde el celular del chofer"
+        },
+        {
+          "problema": "Dónde va la carga",
+          "tipo": "mapa",
+          "titulo": "Camión en ruta",
+          "toast": "Tu cliente ya ve dónde va su carga",
+          "fondo": "carretera",
+          "ruta": "M36 226 C 80 206, 96 164, 138 150 S 214 110, 238 78 S 262 46, 270 32",
+          "paradas": [
+            [
+              36,
+              226,
+              "Lima"
+            ],
+            [
+              138,
+              150,
+              "La Oroya"
+            ],
+            [
+              270,
+              32,
+              "Huancayo"
+            ]
+          ],
+          "duracion": 10,
+          "eta": {
+            "titulo": "Camión ABC-123",
+            "detalle": "120 sacos de harina, llega 4:30 pm",
+            "tag": "En ruta",
+            "tono": "soon"
+          }
+        },
+        {
+          "problema": "Guía de remisión",
+          "tipo": "documento",
+          "titulo": "Guía antes de salir",
+          "toast": "Guía emitida y aceptada por SUNAT",
+          "icono": "file-text",
+          "encabezado": "Guía de remisión electrónica",
+          "codigo": "EG01-552",
+          "lineas": [
+            [
+              "Origen",
+              "Ate, Lima"
+            ],
+            [
+              "Destino",
+              "Huancayo"
+            ],
+            [
+              "Carga",
+              "120 sacos de harina"
+            ],
+            [
+              "Vehículo",
+              "ABC-123"
+            ]
+          ],
+          "sello": "Aceptada por SUNAT",
+          "tono": "ok"
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "mapa",
+      "titulo": "Flota en ruta",
+      "fondo": "carretera",
+      "rutas": [
+        {
+          "d": "M36 226 C 80 206, 96 164, 138 150 S 214 110, 238 78 S 262 46, 270 32",
+          "duracion": 10
+        },
+        {
+          "d": "M36 226 C 60 238, 120 246, 170 240 S 250 232, 290 244",
+          "duracion": 8
+        }
+      ],
+      "lista": [
+        [
+          "ABC-123",
+          "Lima a Huancayo",
+          "En ruta",
+          "soon"
+        ],
+        [
+          "D4F-778",
+          "Lima a Ica",
+          "En ruta",
+          "soon"
+        ],
+        [
+          "B7K-310",
+          "Callao a Lurín",
+          "Llegó",
+          "ok"
+        ]
+      ]
+    }
+  },
+  "inmobiliarias": {
+    "celular": {
+      "saludo": "Hola, Sra. Vargas",
+      "negocio": "Lotes Valle Sur",
+      "escenas": [
+        {
+          "problema": "Lote vendido dos veces",
+          "tipo": "plano",
+          "titulo": "Plano de la etapa 2",
+          "toast": "Carla separó el lote B-14",
+          "columnas": 6,
+          "estados": "vvlvsvlvvlllvllsvvlsvvlvvvllsvvlvvsl",
+          "cambia": 14,
+          "codigo": "B-14"
+        },
+        {
+          "problema": "Cuotas en Excel",
+          "tipo": "lista",
+          "titulo": "Cliente: Sr. Mendoza",
+          "toast": "Estado de cuenta enviado al Sr. Mendoza",
+          "etiqueta": "Cuotas pagadas",
+          "valor": "8 de 24",
+          "meta": "Próxima: S/ 850 el 5 de octubre",
+          "filas": [
+            [
+              "Cuota 8",
+              "Pagada el 5 de setiembre",
+              "Pagada",
+              "ok"
+            ],
+            [
+              "Cuota 9",
+              "Vence el 5 de octubre",
+              "Aviso listo",
+              "soon"
+            ],
+            [
+              "Estado de cuenta",
+              "Al día, sin moras",
+              "Enviado",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Peleas por comisión",
+          "tipo": "lista",
+          "titulo": "Comisiones de setiembre",
+          "toast": "Comisiones calculadas solas",
+          "etiqueta": "A pagar este mes",
+          "valor": "S/ 2,250",
+          "meta": "Solo sobre lo que ya se cobró",
+          "filas": [
+            [
+              "Jorge",
+              "3 ventas cobradas",
+              "S/ 1,350",
+              "ok"
+            ],
+            [
+              "Carla",
+              "2 ventas cobradas",
+              "S/ 900",
+              "ok"
+            ],
+            [
+              "Miguel",
+              "1 venta por cobrar",
+              "Pendiente",
+              "soon"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "plano",
+      "titulo": "Plano en vivo, etapa 2",
+      "columnas": 10,
+      "estados": "vvlvsvlvvlllvllsvvlsvvlvvvllsvvlvvslvlvvsvllvvlvsv",
+      "cambia": 14,
+      "codigo": "B-14"
+    }
+  },
+  "condominios": {
+    "celular": {
+      "saludo": "Hola, Sr. Ríos",
+      "negocio": "Residencial Las Palmeras",
+      "escenas": [
+        {
+          "problema": "Se olvidan de pagar",
+          "tipo": "documento",
+          "titulo": "Recibo del mes",
+          "toast": "Recordatorio privado enviado al Dpto. 504",
+          "icono": "receipt",
+          "encabezado": "Recibo de mantenimiento",
+          "codigo": "Dpto. 504, setiembre",
+          "lineas": [
+            [
+              "Cuota ordinaria",
+              "S/ 180.00"
+            ],
+            [
+              "Fondo de reserva",
+              "S/ 20.00"
+            ],
+            [
+              "Vence",
+              "15 de setiembre"
+            ]
+          ],
+          "total": "S/ 200.00",
+          "sello": "Enviado por WhatsApp",
+          "tono": "ok"
+        },
+        {
+          "problema": "Rendir cuentas",
+          "tipo": "lista",
+          "titulo": "En qué se gastó",
+          "toast": "Cada vecino ve los gastos desde su celular",
+          "etiqueta": "Gastos de setiembre",
+          "valor": "S/ 2,588",
+          "meta": "Con factura o recibo, a la vista de todos",
+          "filas": [
+            [
+              "Mantenimiento ascensor",
+              "Factura F001-2231",
+              "S/ 650",
+              "ok"
+            ],
+            [
+              "Limpieza",
+              "Factura E001-87",
+              "S/ 1,200",
+              "ok"
+            ],
+            [
+              "Agua de áreas comunes",
+              "Recibo Sedapal",
+              "S/ 438",
+              "ok"
+            ],
+            [
+              "Jardinería",
+              "Factura F002-19",
+              "S/ 300",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Recibos a mano",
+          "tipo": "lista",
+          "titulo": "Recibos de setiembre",
+          "toast": "48 recibos enviados a la vez",
+          "etiqueta": "Cobrado",
+          "valor": "82%",
+          "meta": "39 de 48 departamentos",
+          "filas": [
+            [
+              "Dpto. 301",
+              "Transferencia, 3 set",
+              "Pagado",
+              "ok"
+            ],
+            [
+              "Dpto. 702",
+              "Yape, hoy",
+              "Pagado",
+              "ok"
+            ],
+            [
+              "Dpto. 504",
+              "Recordatorio enviado",
+              "Pendiente",
+              "soon"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "tabla",
+      "titulo": "Gastos del edificio",
+      "columnas": [
+        "Concepto",
+        "Proveedor",
+        "Monto",
+        "Sustento",
+        "Estado"
+      ],
+      "filas": [
+        [
+          "Ascensor",
+          "Ascensores Lima",
+          "S/ 650",
+          "Factura",
+          "Publicado",
+          "ok"
+        ],
+        [
+          "Limpieza",
+          "Servicios Clean",
+          "S/ 1,200",
+          "Factura",
+          "Publicado",
+          "ok"
+        ],
+        [
+          "Agua común",
+          "Sedapal",
+          "S/ 438",
+          "Recibo",
+          "Publicado",
+          "ok"
+        ],
+        [
+          "Jardinería",
+          "Jardines Sur",
+          "S/ 300",
+          "Factura",
+          "Por publicar",
+          "soon"
+        ]
+      ],
+      "vivo": 3,
+      "vivoTag": "Publicado"
+    }
+  },
+  "movilidad-escolar": {
+    "celular": {
+      "saludo": "Hola, Beto",
+      "negocio": "Movilidad Tío Beto",
+      "escenas": [
+        {
+          "problema": "¿Ya llegó mi hijo?",
+          "tipo": "linea",
+          "titulo": "Lo que ve el papá",
+          "toast": "Papá de Valentina avisado: llegó al colegio",
+          "icono": "student",
+          "nombre": "Valentina",
+          "detalle": "Colegio San Martín, 3.° A",
+          "pasos": [
+            [
+              "Subió a la movilidad",
+              "7:31 am",
+              true
+            ],
+            [
+              "Llegó al colegio",
+              "7:42 am",
+              true
+            ],
+            [
+              "Salió del colegio",
+              "",
+              false
+            ],
+            [
+              "Llegó a casa",
+              "",
+              false
+            ]
+          ],
+          "nota": "Aviso enviado al papá a las 7:42 am"
+        },
+        {
+          "problema": "30 llamadas al día",
+          "tipo": "mapa",
+          "titulo": "Ubicación en vivo",
+          "toast": "Solo los papás autorizados ven la ruta",
+          "fondo": "ciudad",
+          "ruta": "M30 238 L30 200 Q30 190 40 190 L140 190 Q150 190 150 180 L150 108 Q150 98 160 98 L262 98 Q272 98 272 88 L272 30",
+          "paradas": [
+            [
+              30,
+              238,
+              "Casa de Thiago"
+            ],
+            [
+              150,
+              140,
+              "Casa de Sofía"
+            ],
+            [
+              272,
+              30,
+              "Colegio"
+            ]
+          ],
+          "duracion": 11,
+          "eta": {
+            "titulo": "Movilidad Tío Beto",
+            "detalle": "Llega al colegio en 6 min",
+            "tag": "En ruta",
+            "tono": "soon"
+          }
+        },
+        {
+          "problema": "Cobrar mensualidades",
+          "tipo": "lista",
+          "titulo": "Mensualidades",
+          "toast": "Recordatorio enviado a la Familia Díaz",
+          "etiqueta": "Setiembre",
+          "valor": "13 de 15",
+          "meta": "familias al día",
+          "filas": [
+            [
+              "Familia Díaz",
+              "S/ 300, setiembre",
+              "Por cobrar",
+              "late"
+            ],
+            [
+              "Familia León",
+              "Pagó por Yape",
+              "Pagado",
+              "ok"
+            ],
+            [
+              "Familia Soto",
+              "Pagó por Plin",
+              "Pagado",
+              "ok"
+            ],
+            [
+              "Familia Paredes",
+              "Vence el 30",
+              "Aviso listo",
+              "soon"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "mapa",
+      "titulo": "Ruta de la mañana",
+      "fondo": "ciudad",
+      "rutas": [
+        {
+          "d": "M30 238 L30 200 Q30 190 40 190 L140 190 Q150 190 150 180 L150 108 Q150 98 160 98 L262 98 Q272 98 272 88 L272 30",
+          "duracion": 11
+        }
+      ],
+      "lista": [
+        [
+          "Valentina",
+          "Llegó al colegio",
+          "Avisado",
+          "ok"
+        ],
+        [
+          "Thiago",
+          "En la movilidad",
+          "En ruta",
+          "soon"
+        ],
+        [
+          "Sofía",
+          "Sube a las 7:40",
+          "Esperando",
+          "soon"
+        ]
+      ]
+    }
+  },
+  "gimnasios": {
+    "celular": {
+      "saludo": "Hola, Coach Renzo",
+      "negocio": "Gym Fuerza Norte",
+      "escenas": [
+        {
+          "problema": "Entrenan sin pagar",
+          "tipo": "carnet",
+          "titulo": "Control en la entrada",
+          "toast": "Carlos Vega ingresó: membresía al día",
+          "marca": "Gym Fuerza Norte",
+          "estado": "Al día",
+          "tono": "ok",
+          "nombre": "Carlos Vega",
+          "plan": "Plan mensual",
+          "vence": "19 de octubre",
+          "filas": [
+            [
+              "Carlos Vega",
+              "Ingresó 7:12 am",
+              "Al día",
+              "ok"
+            ],
+            [
+              "Lucía Ramos",
+              "Intentó ingresar 7:20 am",
+              "Vencida",
+              "late"
+            ]
+          ]
+        },
+        {
+          "problema": "Me da vergüenza cobrar",
+          "tipo": "chat",
+          "titulo": "Aviso antes de vencer",
+          "toast": "Lucía Ramos renovó su membresía",
+          "contacto": "Lucía Ramos",
+          "mensajes": [
+            [
+              "yo",
+              "Hola Lucía, tu membresía vence este viernes. Renueva por Yape y sigue entrenando sin parar.",
+              "9:00 am"
+            ],
+            [
+              "ellos",
+              "Listo, ya renové. Gracias!",
+              "9:20 am"
+            ],
+            [
+              "sistema",
+              "Membresía renovada hasta el 19 de octubre",
+              ""
+            ]
+          ]
+        },
+        {
+          "problema": "Se van sin avisar",
+          "tipo": "lista",
+          "titulo": "Socios por recuperar",
+          "toast": "Lista de llamadas de hoy lista",
+          "etiqueta": "Dejaron de venir",
+          "valor": "9 socios",
+          "meta": "Más de 2 semanas sin entrenar",
+          "filas": [
+            [
+              "Diego Salas",
+              "Sin venir hace 16 días",
+              "Llamar",
+              "late"
+            ],
+            [
+              "Fiorella Cruz",
+              "Sin venir hace 14 días",
+              "Llamar",
+              "late"
+            ],
+            [
+              "Martín Rojas",
+              "Volvió ayer",
+              "Recuperado",
+              "ok"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "panel",
+      "titulo": "Hoy en el gimnasio",
+      "stats": [
+        [
+          "Ingresaron hoy",
+          "148"
+        ],
+        [
+          "Socios activos",
+          "612"
+        ],
+        [
+          "Vencen esta semana",
+          "23"
+        ]
+      ],
+      "barrasTitulo": "Ingresos por hora",
+      "barras": [
+        22,
+        48,
+        70,
+        40,
+        26,
+        34,
+        58,
+        86,
+        64
+      ],
+      "ejes": [
+        "6 am",
+        "9 am",
+        "12 m",
+        "3 pm",
+        "6 pm",
+        "9 pm"
+      ]
+    }
+  },
+  "spas": {
+    "celular": {
+      "saludo": "Hola, Sra. Milagros",
+      "negocio": "Salón Bella Lima",
+      "escenas": [
+        {
+          "problema": "Se llevan a mis clientas",
+          "tipo": "ficha",
+          "titulo": "Ficha de la clienta",
+          "toast": "Los datos de Patricia quedan en tu salón",
+          "icono": "user",
+          "nombre": "Patricia Montes",
+          "detalle": "Clienta desde 2023, viene cada 5 semanas",
+          "titulo_items": "Su historial",
+          "items": [
+            [
+              "Corte y brushing",
+              "Hace 5 semanas, con Andrea",
+              "ok"
+            ],
+            [
+              "Tinte castaño 6.3",
+              "Julio, con Andrea",
+              "ok"
+            ],
+            [
+              "Le toca su corte",
+              "Esta semana",
+              "soon"
+            ]
+          ]
+        },
+        {
+          "problema": "Peleas por comisión",
+          "tipo": "lista",
+          "titulo": "Comisiones de la semana",
+          "toast": "Comisiones calculadas solas",
+          "etiqueta": "A pagar el sábado",
+          "valor": "S/ 2,960",
+          "meta": "Según lo que atendió cada uno",
+          "filas": [
+            [
+              "Kevin",
+              "18 cortes, 4 barbas",
+              "S/ 590",
+              "ok"
+            ],
+            [
+              "Andrea",
+              "6 tintes, 9 cortes",
+              "S/ 1,120",
+              "ok"
+            ],
+            [
+              "Rosa",
+              "14 manicures",
+              "S/ 420",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Reservan y no llegan",
+          "tipo": "calendario",
+          "titulo": "Reservas con recordatorio",
+          "toast": "Nueva reserva: Marco Díaz, 2:00 pm",
+          "dias": [
+            "L 15",
+            "M 16",
+            "M 17",
+            "J 18",
+            "V 19",
+            "S 20"
+          ],
+          "activo": 5,
+          "citas": [
+            [
+              "10:00",
+              "Juan Pérez",
+              "Corte con Kevin",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "11:00",
+              "Patricia Montes",
+              "Corte con Andrea",
+              "ok",
+              "Confirmó"
+            ],
+            [
+              "2:00",
+              "Marco Díaz",
+              "Barba con Kevin",
+              "soon",
+              "Nueva"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "agenda",
+      "titulo": "Agenda del sábado",
+      "columnas": [
+        "Kevin",
+        "Andrea",
+        "Rosa"
+      ],
+      "horas": [
+        "10:00",
+        "11:00",
+        "12:00",
+        "1:00",
+        "2:00",
+        "3:00"
+      ],
+      "bloques": [
+        [
+          0,
+          0,
+          1,
+          "Juan, corte",
+          "ok"
+        ],
+        [
+          1,
+          0,
+          2,
+          "Andrea G., tinte",
+          "ok"
+        ],
+        [
+          1,
+          2,
+          1,
+          "Patricia, corte",
+          "ok"
+        ],
+        [
+          2,
+          1,
+          1,
+          "Lucía, manicure",
+          "ok"
+        ],
+        [
+          2,
+          3,
+          1.5,
+          "Sofía, pedicure",
+          "ok"
+        ],
+        [
+          0,
+          4,
+          1,
+          "Nueva: Marco, barba",
+          "soon"
+        ]
+      ],
+      "nuevo": 5
+    }
+  },
+  "talleres": {
+    "celular": {
+      "saludo": "Hola, Maestro Chávez",
+      "negocio": "Taller Mecánico Chávez",
+      "escenas": [
+        {
+          "problema": "Presupuesto que sube",
+          "tipo": "documento",
+          "titulo": "Presupuesto por WhatsApp",
+          "toast": "El cliente aprobó el presupuesto",
+          "icono": "file-text",
+          "encabezado": "Presupuesto P-0412",
+          "codigo": "Toyota Yaris ABX-721",
+          "lineas": [
+            [
+              "Afinamiento",
+              "S/ 280.00"
+            ],
+            [
+              "Filtro de aire",
+              "S/ 60.00"
+            ],
+            [
+              "Bujías (4)",
+              "S/ 140.00"
+            ]
+          ],
+          "total": "S/ 480.00",
+          "sello": "Aprobado por el cliente, 10:15 am",
+          "tono": "ok"
+        },
+        {
+          "problema": "¿Me cambió el repuesto?",
+          "tipo": "documento",
+          "titulo": "Orden con fotos",
+          "toast": "Fotos del antes y después guardadas",
+          "icono": "wrench",
+          "encabezado": "Orden de trabajo OT-1187",
+          "codigo": "Kia Rio BCD-330",
+          "lineas": [
+            [
+              "Pastillas de freno",
+              "Cambiadas"
+            ],
+            [
+              "Repuesto",
+              "Original, con boleta"
+            ]
+          ],
+          "fotos": [
+            "Antes",
+            "Después"
+          ],
+          "sello": "El cliente puede ver las fotos",
+          "tono": "ok"
+        },
+        {
+          "problema": "¿Ya está mi carro?",
+          "tipo": "chat",
+          "titulo": "Aviso cuando está listo",
+          "toast": "Aviso enviado: el Kia Rio está listo",
+          "contacto": "Sr. Gómez",
+          "mensajes": [
+            [
+              "yo",
+              "Hola Sr. Gómez, su Kia Rio ya está listo. Puede recogerlo hoy hasta las 7 pm.",
+              "4:32 pm"
+            ],
+            [
+              "ellos",
+              "Perfecto, paso a las 6.",
+              "4:40 pm"
+            ],
+            [
+              "sistema",
+              "Cliente avisado, sin llamadas",
+              ""
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "kanban",
+      "titulo": "Autos en el taller",
+      "columnas": [
+        [
+          "Recibido",
+          [
+            "Hyundai Accent, revisión"
+          ]
+        ],
+        [
+          "En trabajo",
+          [
+            "Toyota Yaris, afinamiento"
+          ]
+        ],
+        [
+          "Listo",
+          [
+            "Nissan Sentra, aceite"
+          ]
+        ]
+      ],
+      "origen": 1,
+      "destino": 2,
+      "tarjeta": "Kia Rio, pastillas"
+    }
+  },
+  "minimarkets": {
+    "celular": {
+      "saludo": "Hola, Sra. Carmen",
+      "negocio": "Minimarket Doña Carmen",
+      "escenas": [
+        {
+          "problema": "La caja no cuadra",
+          "tipo": "caja",
+          "titulo": "Cierre de caja",
+          "toast": "Caja cuadrada en 2 minutos",
+          "etiqueta": "Vendido hoy",
+          "total": "S/ 1,284.50",
+          "meta": "86 ventas, cierre a las 10:00 pm",
+          "partes": [
+            [
+              "Yape",
+              "S/ 811.00",
+              63
+            ],
+            [
+              "Efectivo",
+              "S/ 342.00",
+              27
+            ],
+            [
+              "Plin",
+              "S/ 131.50",
+              10
+            ]
+          ],
+          "nota": "Todo cuadra con lo que llegó a tu cuenta"
+        },
+        {
+          "problema": "Fiados perdidos",
+          "tipo": "lista",
+          "titulo": "Cuaderno de fiados",
+          "toast": "Don Pepe pagó su fiado",
+          "etiqueta": "Por cobrar",
+          "valor": "S/ 312",
+          "meta": "9 vecinos",
+          "filas": [
+            [
+              "Sra. Rosa",
+              "Debe S/ 64, hace 15 días",
+              "Recordar",
+              "late"
+            ],
+            [
+              "Sra. Lucha",
+              "Debe S/ 46",
+              "Recordado",
+              "soon"
+            ],
+            [
+              "Don Pepe",
+              "Debía S/ 18",
+              "Pagó hoy",
+              "ok"
+            ]
+          ]
+        },
+        {
+          "problema": "Me quedo sin stock",
+          "tipo": "lista",
+          "titulo": "Por reponer",
+          "toast": "El arroz se acaba mañana",
+          "etiqueta": "Antes de que te lo pidan",
+          "valor": "6 productos",
+          "meta": "Según lo que vendes cada día",
+          "filas": [
+            [
+              "Arroz 5 kg",
+              "Quedan 3 bolsas",
+              "Reponer",
+              "late"
+            ],
+            [
+              "Leche evaporada",
+              "Quedan 10 latas",
+              "Esta semana",
+              "soon"
+            ],
+            [
+              "Aceite 1 L",
+              "Quedan 18",
+              "Al día",
+              "ok"
+            ]
+          ]
+        }
+      ]
+    },
+    "tablet": {
+      "tipo": "panel",
+      "titulo": "Ventas de hoy",
+      "stats": [
+        [
+          "Vendido hoy",
+          "S/ 1,284.50"
+        ],
+        [
+          "Boletas emitidas",
+          "86"
+        ],
+        [
+          "Fiados por cobrar",
+          "S/ 312"
+        ]
+      ],
+      "barrasTitulo": "Ventas por hora",
+      "barras": [
+        18,
+        30,
+        44,
+        36,
+        28,
+        40,
+        62,
+        80,
+        54
+      ],
+      "ejes": [
+        "7 am",
+        "10 am",
+        "1 pm",
+        "4 pm",
+        "7 pm",
+        "10 pm"
+      ]
+    }
+  }
+}
