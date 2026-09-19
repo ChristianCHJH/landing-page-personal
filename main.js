@@ -27,6 +27,7 @@ function setupNavigation() {
   const hero = document.getElementById("inicio");
   const fab = document.getElementById("fab");
   const painsSection = document.getElementById("dolores");
+  if (!nav || !burger || !menu || !hero || !fab) return;
 
   const toggleMenu = (open) => {
     menu.hidden = !open;
@@ -48,14 +49,17 @@ function setupNavigation() {
     refreshFab();
   }, { threshold: [0, 0.9] }).observe(hero);
 
-  new IntersectionObserver(([entry]) => {
-    painsVisible = entry.isIntersecting;
-    refreshFab();
-  }, { threshold: 0.15 }).observe(painsSection);
+  if (painsSection) {
+    new IntersectionObserver(([entry]) => {
+      painsVisible = entry.isIntersecting;
+      refreshFab();
+    }, { threshold: 0.15 }).observe(painsSection);
+  }
 }
 
 function setupCollectionDemo() {
   const demo = document.getElementById("demo");
+  if (!demo) return;
   const rows = Array.from(demo.querySelectorAll(".row"));
   const totalEl = document.getElementById("demoTotal");
   const pendingEl = document.getElementById("demoPend");
@@ -167,6 +171,7 @@ function setupPainPicker() {
   const count = document.getElementById("pickCount");
   const fixes = document.getElementById("pickFixes");
   const button = document.getElementById("pickBtn");
+  if (!button || pains.length === 0) return;
 
   const refresh = () => {
     const selected = pains.filter((p) => p.getAttribute("aria-pressed") === "true");
@@ -211,6 +216,7 @@ function setupPainPicker() {
 function setupCompare() {
   const frame = document.getElementById("compare");
   const range = document.getElementById("compareRange");
+  if (!frame || !range) return;
   const apply = (value) => {
     frame.style.setProperty("--pos", `${value}%`);
   };
@@ -242,6 +248,7 @@ function setupCalculator() {
   const monthly = document.getElementById("calcMes");
   const monthlyHours = document.getElementById("calcHoras");
   const days = document.getElementById("calcDias");
+  if (!hours || !cost) return;
   const WEEKS_PER_MONTH = 4.33;
   const HOURS_PER_WORKDAY = 8;
 
@@ -263,6 +270,10 @@ function setupAnimations() {
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   if (!gsap || !ScrollTrigger || prefersReducedMotion) return;
+  gsap.config({ nullTargetWarn: false });
+
+  const exists = (selectorOrElement) =>
+    typeof selectorOrElement === "string" ? document.querySelector(selectorOrElement) !== null : Boolean(selectorOrElement);
 
   const intro = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
   intro
@@ -274,9 +285,10 @@ function setupAnimations() {
     .from(".phone .row", { y: 14, opacity: 0, stagger: 0.07, duration: 0.5 }, "-=0.6")
     .from(".chip-float", { x: -24, opacity: 0, duration: 0.6 }, "-=0.3");
 
-  gsap.to(".chip-float", { y: -10, duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.8 });
+  if (exists(".chip-float")) gsap.to(".chip-float", { y: -10, duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1.8 });
 
   const reveal = (targets, trigger, extra = {}) => {
+    if (!exists(targets) || !exists(trigger)) return;
     gsap.from(targets, {
       y: 32,
       opacity: 0,
@@ -291,14 +303,16 @@ function setupAnimations() {
   document.querySelectorAll(".section__title").forEach((title) => reveal(title, title));
   reveal(".pain", ".pains", { stagger: 0.05 });
   reveal(".calc__box", ".calc__box");
-  reveal(".rubro", ".rubros__track", { x: 40, y: 0 });
   reveal(".about__promises li", ".about__promises", { x: -20, y: 0 });
   reveal(".step", ".steps__list", { stagger: 0.15 });
   reveal(".faq__list details", ".faq__list", { y: 16, stagger: 0.05 });
   reveal(".final__inner > *", ".final", { stagger: 0.1 });
   reveal(".price", ".price");
+  reveal(".rubro-chip", ".rubro-grid", { y: 20, stagger: 0.04 });
+  reveal(".fix", ".fixes__list", { stagger: 0.12 });
+  reveal(".extras__list li", ".extras", { y: 12, stagger: 0.05 });
 
-  gsap.from(".about__photo", {
+  if (exists(".about__photo")) gsap.from(".about__photo", {
     rotate: -8,
     y: 40,
     opacity: 0,
@@ -307,7 +321,7 @@ function setupAnimations() {
     scrollTrigger: { trigger: ".about", start: "top 75%", once: true },
   });
 
-  gsap.fromTo(".steps__list", { "--line-progress": 0 }, {
+  if (exists(".steps__list")) gsap.fromTo(".steps__list", { "--line-progress": 0 }, {
     "--line-progress": 1,
     ease: "none",
     scrollTrigger: { trigger: ".steps__list", start: "top 75%", end: "bottom 60%", scrub: true },
