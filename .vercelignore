@@ -1,0 +1,8 @@
+*.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+foto_perfil_2.png
+foto_perfil_sin_fondo.png
+foto_portda.png
+.playwright-mcp
