@@ -243,7 +243,7 @@ components:
 
 # Design System: Abiel
 
-> **Alcance.** Este sistema cubre la portada (`index.html` + `portada.css` + `portada.js`) y las 12 páginas de rubro (`/colegios/`, `/clinicas/`, `/veterinarias/`, `/ferreterias/`, `/transporte/`, `/inmobiliarias/`, `/condominios/`, `/movilidad-escolar/`, `/gimnasios/`, `/spas/`, `/talleres/`, `/minimarkets/`), que genera `herramientas/generar-rubros.mjs` con `portada.css` + `rubro.css` + `rubro.js`. Los rubros dependen de las clases de `portada.css`: renombrarlas rompe las 12 páginas. `style.css` y `main.js` ya no los usa ninguna página.
+> **Alcance.** Este sistema cubre solo la portada (`index.html` + `portada.css` + `portada.js`). Desde el 2026-10-17 la web es una sola página: las 12 páginas de rubro, `rubro.css`, `rubro.js`, `assets/og/` y `herramientas/` se eliminaron (quedan en el historial de git) y `vercel.json` redirige sus rutas viejas a `/`. Los tipos de negocio solo se mencionan como texto en la sección `#rubros`. `style.css` y `main.js` ya no los usa ninguna página.
 
 ## Overview
 
@@ -295,8 +295,6 @@ Hoja fría casi blanca, tinta casi negra y una familia de azules de lapicero y d
 
 El comparador «Antes y después» usa a propósito una paleta ajena, la de una hoja de cálculo genérica (`#E1E4E8`, `#ECEEF1`, `#DADDE2`, `#EEF0F3`, `#F1EBDA`). Es material local del Excel de mentira, no forma parte del sistema y no se usa fuera de ese panel.
 
-**Tintes del rubro.** `rubro.css` declara en `:root` unos tintes claros que solo usan los papeles de rubro y la hoja del sistema, todos de la familia renglón/lapicero: `--renglon-suave` (`#E3E8F0`, línea interior de tablas, listas y agenda sobre papel), `--papel-hover` (`#EAF0FF`, cita confirmada), `--papel-sombra` (`#F2F6FC`, columna del tablero), `--lapicero-claro` (`#8C9BD3`, contornos discontinuos de lo que no se confirma), `--lapicero-seco` y los seis `--mapa-*` del mapa. La cita sin respuesta de la agenda usa `hoja` y `renglon`, no la paleta gris del Excel.
-
 ### Named Rules
 **The Un Marcador, Un Significado Rule.** El rojo solo tacha y el amarillo solo resalta lo que se hizo solo. Ninguno se usa para alertas, errores, etiquetas ni decoración. Si algo amarillo no lo hizo el sistema, sobra.
 
@@ -339,7 +337,7 @@ La cuadrícula es material, no una rejilla de maquetación: los espacios no se a
 
 **Ritmo vertical.** Secciones sobre la hoja con `clamp(56px, 6vw, 80px)` arriba y `clamp(40px, 4.5vw, 60px)` abajo. Antes y después de cada tapa el aire sube a `clamp(80px, 10vw, 128px)`, y la tapa misma lleva `clamp(80px, 10vw, 136px)` de relleno vertical. Separaciones internas habituales: 8, 12, 16, 22–24, 28, 32, 40, 48, 64, 72 y 80px.
 
-**Columnas.** Todo es una columna en celular. Desde 1024px las secciones parten en dos columnas asimétricas: 1.12fr/0.88fr en la portada, 4fr/8fr en rubros (con la introducción fija al hacer scroll), 7fr/5fr en casos (invertido en el segundo), y 5fr/7fr o 7fr/5fr en calculadora, «Por qué hago esto», pasos, FAQ y cierre, con 64–88px entre columnas. Los renglones de dolores pasan a dos columnas desde 900px y el índice de rubros desde 768px.
+**Columnas.** Todo es una columna en celular. Desde 1024px las secciones parten en dos columnas asimétricas: 1.12fr/0.88fr en la portada, 4fr/8fr en la mención de rubros, 7fr/5fr en casos (invertido en el segundo), y 5fr/7fr o 7fr/5fr en calculadora, «Por qué hago esto», pasos, FAQ y cierre, con 64–88px entre columnas. Los renglones de dolores pasan a dos columnas desde 900px.
 
 **Puntos de quiebre usados:** 360 (se oculta la fecha), 480 (botones de la portada a todo el ancho por debajo), 560 (la hora pasa delante del texto en la demo), 600 (el Excel pierde una columna), 640, 768, 900, 1024, 1200 (enlaces del encabezado visibles, menú oculto) y 1400 (los números de paso se escriben en la columna del margen).
 
@@ -372,7 +370,6 @@ Formas propias del mundo:
 - **Rotación de papel pegado:** −1.4°, 1.2° y −0.8° en las fotos; −1.5° en la etiqueta y en la nota del Excel; 1.2° en el precio.
 - **Cinta adhesiva:** rectángulo de 104×28px (84×24px en celular) en `rgba(232, 228, 214, 0.9)` con bordes rasgados mediante `clip-path: polygon(3% 0, 97% 5%, 100% 48%, 96% 100%, 2% 95%, 0 52%)`, cruzado a −34° o 32° en las esquinas, o a −3° centrado arriba.
 - **Resaltador:** radio irregular `0.25em 0.6em 0.3em 0.5em / 0.5em 0.3em 0.6em 0.35em`, con el trazo al 84% de alto y centrado al 60%.
-- **Puntos de índice:** línea punteada de 2px en `#9AAAC4` entre el nombre del rubro y la flecha, como en el índice de un cuaderno.
 - **Líneas a mano:** el tachón, el visto y la raya de la suma son trazos SVG con `stroke-linecap: round` (2.6px, 3.2px y 2.2px).
 
 ## Components
@@ -390,7 +387,6 @@ Botones de tapa: sólidos, con poco brillo y firmes al pulsarlos.
 Toda lista es una serie de renglones. Cada uno lleva borde inferior de 1px en `renglon`, sin fondo y sin radio. Variantes:
 - **Renglón tachable (demo):** línea manuscrita Kalam 400 en `lapicero`; debajo, la línea en limpio (Schibsted 600, `tinta`) con flecha de codo, el texto resaltado y la hora en `tinta-3`. En celular la hora va delante, como en un registro.
 - **Renglón con casilla (dolores):** botón de ancho completo con `aria-pressed` y alto mínimo de 60px. Al pasar el cursor el fondo se tiñe de `rgba(31,63,191,0.045)`. Al marcarlo el texto sube a 650 y debajo se despliega la solución en Kalam (de `0fr` a `1fr` en 0.35s).
-- **Renglón de índice (rubros):** ícono en `lapicero`, nombre, puntos de índice y flecha. Al pasar el cursor el nombre se subraya en `lapicero` y la flecha avanza 4px.
 - **Renglón de paso:** número Kalam de 2.5rem a la izquierda. Desde 1400px el número se escribe en la columna del margen, a 66px del texto.
 - **Renglón de pregunta (FAQ):** `<details>` con alto mínimo de 62px y ícono «+» en `lapicero` que gira 45° al abrirse.
 
@@ -431,13 +427,8 @@ Hoja incrustada de radio 14px y borde de 1.5px en `renglon` con dos capas: un Ex
 ### Botón flotante
 Círculo cobalto de 58px con el logo de WhatsApp. Está oculto mientras se ve la primera pantalla o la sección de dolores, que ya tiene su propia barra de envío. Aparece subiendo 14px desde 0.92 de escala (opacidad 0.3s y transformación 0.4s con `--ease`).
 
-### Papel del rubro
-La primera pantalla de un rubro muestra el papel propio de su negocio en vez de la lista de hoy, cuando `rubros.json` le declara `papel` (`familia` + `escena` de `dispositivos.json`). Cada familia es un papel pegado (blanco, cinta, rotación entre −1.2° y 1.2°, sombra «papel pegado») con la mecánica «pasar en limpio»: lo anotado en Kalam se tacha en rojo, debajo aparece la línea en limpio y el resaltador va solo en lo que se hizo solo.
-- **Libreta:** hoja rayada con su propio margen rojo a 38px; título Kalam subrayado, nombre y nota a mano por renglón, pie en limpio con la cifra de la escena.
-- **Agenda:** semana con mañana encerrada a mano, hora en limpio, paciente a mano y casilla con visto por cita; al pie, el pendiente tachado y el total resaltado.
-- **Talonario:** hoja con el borde de arriba picado (máscara), número y líneas en limpio, total en Archivo y el pendiente tachado al pie. Con libreta, se monta sobre el pie de la libreta.
-- **Carnet:** tarjeta de radio 12px con banda cobalto, rótulos impresos en mayúsculas como la etiqueta y el estado tachado y pasado en limpio.
-La hoja del sistema puede leer también una escena (`hoja`): **cuenta** (cuenta a mano con operadores Kalam, raya de suma y total en Archivo) o **lista** (renglones en limpio con lo que se hizo solo resaltado). El orden de las secciones bajo la primera pantalla sale de `orden`; el precio queda siempre antes de la mitad de la página. La agenda del sistema dibuja un corte discontinuo cuando entre dos horas seguidas hay más de una hora.
+### Mención de rubros
+La sección `#rubros` ya no enlaza a nada: es el titular «Negocios que puedo atender» y un párrafo `seccion__sub` con los 12 tipos de negocio separados por punto, en la rejilla 4fr/8fr. Sin íconos, fotos ni flechas: no debe parecer un índice que se pueda tocar.
 
 ### Movimiento
 - **Curva base:** `--ease: cubic-bezier(0.16, 1, 0.3, 1)` para todas las transiciones de CSS. En GSAP los equivalentes son `expo.out` para revelados, `power2.inOut` para trazos y `power2.out` para el resaltador.

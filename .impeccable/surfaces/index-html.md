@@ -9,6 +9,8 @@ related_targets: []
 
 Modo: Persuade. Visitante: dueño de negocio pequeño en Perú, desde el celular. Acción: escribir por WhatsApp contando qué hace a mano. Prueba: 3 casos reales (inmobiliaria anónima "Horizonte", movilidad escolar, tienda/catálogo) con capturas sin datos reales. Restricciones: sin datos ni testimonios inventados; precio "desde S/ 90"; WhatsApp +51 913 412 590; voz en primera persona singular.
 
+Página única (desde 2026-10-17): ya no hay páginas de rubro; la sección `#rubros` solo menciona los tipos de negocio como texto, sin enlaces, y `vercel.json` redirige las rutas viejas a `/`.
+
 ## Direction contract
 
 THESIS: El cuaderno de cuentas que se pasa en limpio solo. Rechaza la portada SaaS de titular a la izquierda y celular a la derecha sobre fondo crema con mancha de degradado.

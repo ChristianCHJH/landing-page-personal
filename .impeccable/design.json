@@ -4,7 +4,7 @@
   "title": "Design System: Abiel",
   "scope": {
     "surface": "index.html + portada.css + portada.js",
-    "pending": "Las 12 páginas de rubro (/colegios/, /clinicas/, /veterinarias/, /ferreterias/, /transporte/, /inmobiliarias/, /condominios/, /movilidad-escolar/, /gimnasios/, /spas/, /talleres/, /minimarkets/), generadas por herramientas/generar-rubros.mjs con style.css y main.js, siguen en el sistema visual anterior (Bricolage Grotesque + Onest, fondo #F5F5F2, acento #C2410C, modo oscuro). Migrarlas al cuaderno es trabajo pendiente."
+    "pending": "Ninguno. Desde el 2026-10-17 la web es solo la portada: las 12 páginas de rubro, rubro.css, rubro.js, assets/og y el generador se eliminaron, y vercel.json redirige sus rutas a /."
   },
   "extensions": {
     "colorMeta": {
