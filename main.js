@@ -188,7 +188,7 @@ function setupPainPicker() {
       count.textContent = "Toca las tarjetas que te pasan.";
       button.classList.add("is-disabled");
       button.setAttribute("aria-disabled", "true");
-      button.href = whatsappUrl("Hola Yanapay, quiero ordenar mi negocio.");
+      button.href = whatsappUrl("Hola Christian, hago algo a mano en mi negocio y quiero automatizarlo.");
       return;
     }
 
@@ -196,7 +196,7 @@ function setupPainPicker() {
     button.classList.remove("is-disabled");
     button.removeAttribute("aria-disabled");
     const lines = selected.map((p) => `- ${p.dataset.pain}`).join("\n");
-    button.href = whatsappUrl(`Hola Yanapay, en mi negocio me pasa esto:\n${lines}\n¿Cómo me pueden ayudar?`);
+    button.href = whatsappUrl(`Hola Christian, en mi negocio me pasa esto:\n${lines}\n¿Cómo me puedes ayudar?`);
   };
 
   pains.forEach((pain) => {
