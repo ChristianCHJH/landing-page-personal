@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T15:54:41.460Z",
+  "title": "Design System: Yanapay",
+  "scope": {
+    "surface": "index.html + portada.css + portada.js",
+    "pending": "Las 12 páginas de rubro (/colegios/, /clinicas/, /veterinarias/, /ferreterias/, /transporte/, /inmobiliarias/, /condominios/, /movilidad-escolar/, /gimnasios/, /spas/, /talleres/, /minimarkets/), generadas por herramientas/generar-rubros.mjs con style.css y main.js, siguen en el sistema visual anterior (Bricolage Grotesque + Onest, fondo #F5F5F2, acento #C2410C, modo oscuro). Migrarlas al cuaderno es trabajo pendiente."
+  },
+  "extensions": {
+    "colorMeta": {
+      "cobalto": {
+        "role": "primary",
+        "displayName": "Cobalto de tapa",
+        "purpose": "Tapas del cuaderno, botón principal, flotante, manija y perillas.",
+        "canonical": "#1D3FAE",
+        "oklch": "oklch(42.1% 0.181 265.6)",
+        "cssVar": "--cobalto",
+        "tonalRamp": [
+          "oklch(15% 0.181 265.6)",
+          "oklch(26% 0.181 265.6)",
+          "oklch(38% 0.181 265.6)",
+          "oklch(50% 0.181 265.6)",
+          "oklch(62% 0.181 265.6)",
+          "oklch(74% 0.181 265.6)",
+          "oklch(85% 0.090 265.6)",
+          "oklch(95% 0.090 265.6)"
+        ]
+      },
+      "cobalto-osc": {
+        "role": "primary",
+        "displayName": "Cobalto oscuro",
+        "purpose": "Solo hover del botón principal y del flotante.",
+        "canonical": "#16318C",
+        "oklch": "oklch(35.9% 0.154 265.8)",
+        "cssVar": "--cobalto-osc",
+        "tonalRamp": [
+          "oklch(15% 0.154 265.8)",
+          "oklch(26% 0.154 265.8)",
+          "oklch(38% 0.154 265.8)",
+          "oklch(50% 0.154 265.8)",
+          "oklch(62% 0.154 265.8)",
+          "oklch(74% 0.154 265.8)",
+          "oklch(85% 0.077 265.8)",
+          "oklch(95% 0.077 265.8)"
+        ]
+      },
+      "cobalto-hondo": {
+        "role": "primary",
+        "displayName": "Cobalto hondo",
+        "purpose": "Contratapa (pie) y texto del botón etiqueta.",
+        "canonical": "#10266E",
+        "oklch": "oklch(30.5% 0.128 265.8)",
+        "cssVar": "--cobalto-hondo",
+        "tonalRamp": [
+          "oklch(15% 0.128 265.8)",
+          "oklch(26% 0.128 265.8)",
+          "oklch(38% 0.128 265.8)",
+          "oklch(50% 0.128 265.8)",
+          "oklch(62% 0.128 265.8)",
+          "oklch(74% 0.128 265.8)",
+          "oklch(85% 0.064 265.8)",
+          "oklch(95% 0.064 265.8)"
+        ]
+      },
+      "sobre-tapa": {
+        "role": "primary",
+        "displayName": "Azul sobre tapa",
+        "purpose": "Texto de cuerpo sobre cobalto.",
+        "canonical": "#DDE5FF",
+        "oklch": "oklch(92.4% 0.036 272.1)",
+        "cssVar": "--sobre-tapa",
+        "tonalRamp": [
+          "oklch(15% 0.036 272.1)",
+          "oklch(26% 0.036 272.1)",
+          "oklch(38% 0.036 272.1)",
+          "oklch(50% 0.036 272.1)",
+          "oklch(62% 0.036 272.1)",
+          "oklch(74% 0.036 272.1)",
+          "oklch(85% 0.018 272.1)",
+          "oklch(95% 0.018 272.1)"
+        ]
+      },
+      "lapicero": {
+        "role": "secondary",
+        "displayName": "Tinta de lapicero",
+        "purpose": "Todo lo manuscrito, enlaces, visto, foco y selección.",
+        "canonical": "#1F3FBF",
+        "oklch": "oklch(43.8% 0.202 266.3)",
+        "cssVar": "--lapicero",
+        "tonalRamp": [
+          "oklch(15% 0.200 266.3)",
+          "oklch(26% 0.200 266.3)",
+          "oklch(38% 0.200 266.3)",
+          "oklch(50% 0.200 266.3)",
+          "oklch(62% 0.200 266.3)",
+          "oklch(74% 0.200 266.3)",
+          "oklch(85% 0.100 266.3)",
+          "oklch(95% 0.100 266.3)"
+        ]
+      },
+      "lapicero-seco": {
+        "role": "secondary",
+        "displayName": "Lapicero sin tinta",
+        "purpose": "Texto del botón desactivado del pick.",
+        "canonical": "#4A5BA8",
+        "oklch": "oklch(49.6% 0.124 271.8)",
+        "cssVar": null,
+        "tonalRamp": [
+          "oklch(15% 0.124 271.8)",
+          "oklch(26% 0.124 271.8)",
+          "oklch(38% 0.124 271.8)",
+          "oklch(50% 0.124 271.8)",
+          "oklch(62% 0.124 271.8)",
+          "oklch(74% 0.124 271.8)",
+          "oklch(85% 0.062 271.8)",
+          "oklch(95% 0.062 271.8)"
+        ]
+      },
+      "rojo": {
+        "role": "tertiary",
+        "displayName": "Lapicero rojo",
+        "purpose": "Solo el tachón de la demo.",
+        "canonical": "#D9312B",
+        "oklch": "oklch(58.0% 0.205 27.9)",
+        "cssVar": "--rojo",
+        "tonalRamp": [
+          "oklch(15% 0.200 27.9)",
+          "oklch(26% 0.200 27.9)",
+          "oklch(38% 0.200 27.9)",
+          "oklch(50% 0.200 27.9)",
+          "oklch(62% 0.200 27.9)",
+          "oklch(74% 0.200 27.9)",
+          "oklch(85% 0.100 27.9)",
+          "oklch(95% 0.100 27.9)"
+        ]
+      },
+      "margen": {
+        "role": "tertiary",
+        "displayName": "Margen rojo",
+        "purpose": "Solo la línea vertical del margen de la hoja (opacidad 0.8).",
+        "canonical": "#E0605A",
+        "oklch": "oklch(64.9% 0.161 25.3)",
+        "cssVar": "--margen",
+        "tonalRamp": [
+          "oklch(15% 0.161 25.3)",
+          "oklch(26% 0.161 25.3)",
+          "oklch(38% 0.161 25.3)",
+          "oklch(50% 0.161 25.3)",
+          "oklch(62% 0.161 25.3)",
+          "oklch(74% 0.161 25.3)",
+          "oklch(85% 0.081 25.3)",
+          "oklch(95% 0.081 25.3)"
+        ]
+      },
+      "resaltador": {
+        "role": "tertiary",
+        "displayName": "Resaltador amarillo",
+        "purpose": "Solo lo que se hizo solo.",
+        "canonical": "#FFE14D",
+        "oklch": "oklch(90.9% 0.163 97.5)",
+        "cssVar": "--resaltador",
+        "tonalRamp": [
+          "oklch(15% 0.163 97.5)",
+          "oklch(26% 0.163 97.5)",
+          "oklch(38% 0.163 97.5)",
+          "oklch(50% 0.163 97.5)",
+          "oklch(62% 0.163 97.5)",
+          "oklch(74% 0.163 97.5)",
+          "oklch(85% 0.081 97.5)",
+          "oklch(95% 0.081 97.5)"
+        ]
+      },
+      "hoja": {
+        "role": "neutral",
+        "displayName": "Hoja",
+        "purpose": "Fondo de página, encabezado al bajar, menú móvil, pick.",
+        "canonical": "#FAFCFF",
+        "oklch": "oklch(99.0% 0.005 258.3)",
+        "cssVar": "--hoja",
+        "tonalRamp": [
+          "oklch(15% 0.005 258.3)",
+          "oklch(26% 0.005 258.3)",
+          "oklch(38% 0.005 258.3)",
+          "oklch(50% 0.005 258.3)",
+          "oklch(62% 0.005 258.3)",
+          "oklch(74% 0.005 258.3)",
+          "oklch(85% 0.005 258.3)",
+          "oklch(95% 0.005 258.3)"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "purpose": "Objetos pegados: fotos, etiqueta, precio, casillas, panel del sistema.",
+        "canonical": "#FFFFFF",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "cssVar": "--papel",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(38% 0.000 89.9)",
+          "oklch(50% 0.000 89.9)",
+          "oklch(62% 0.000 89.9)",
+          "oklch(74% 0.000 89.9)",
+          "oklch(85% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "papel-hover": {
+        "role": "neutral",
+        "displayName": "Papel al pasar",
+        "purpose": "Hover de objetos de papel pulsables.",
+        "canonical": "#EAF0FF",
+        "oklch": "oklch(95.5% 0.021 268.4)",
+        "cssVar": null,
+        "tonalRamp": [
+          "oklch(15% 0.021 268.4)",
+          "oklch(26% 0.021 268.4)",
+          "oklch(38% 0.021 268.4)",
+          "oklch(50% 0.021 268.4)",
+          "oklch(62% 0.021 268.4)",
+          "oklch(74% 0.021 268.4)",
+          "oklch(85% 0.011 268.4)",
+          "oklch(95% 0.011 268.4)"
+        ]
+      },
+      "cuadro": {
+        "role": "neutral",
+        "displayName": "Cuadro",
+        "purpose": "Líneas de la cuadrícula de 24px.",
+        "canonical": "#D5E5F5",
+        "oklch": "oklch(91.5% 0.028 248.1)",
+        "cssVar": "--cuadro",
+        "tonalRamp": [
+          "oklch(15% 0.028 248.1)",
+          "oklch(26% 0.028 248.1)",
+          "oklch(38% 0.028 248.1)",
+          "oklch(50% 0.028 248.1)",
+          "oklch(62% 0.028 248.1)",
+          "oklch(74% 0.028 248.1)",
+          "oklch(85% 0.014 248.1)",
+          "oklch(95% 0.014 248.1)"
+        ]
+      },
+      "renglon": {
+        "role": "neutral",
+        "displayName": "Renglón",
+        "purpose": "Línea de cada renglón y bordes de 1.5px.",
+        "canonical": "#B9D0E8",
+        "oklch": "oklch(84.8% 0.042 249.4)",
+        "cssVar": "--renglon",
+        "tonalRamp": [
+          "oklch(15% 0.042 249.4)",
+          "oklch(26% 0.042 249.4)",
+          "oklch(38% 0.042 249.4)",
+          "oklch(50% 0.042 249.4)",
+          "oklch(62% 0.042 249.4)",
+          "oklch(74% 0.042 249.4)",
+          "oklch(85% 0.021 249.4)",
+          "oklch(95% 0.021 249.4)"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "purpose": "Texto en limpio y titulares.",
+        "canonical": "#111318",
+        "oklch": "oklch(18.7% 0.011 268.1)",
+        "cssVar": "--tinta",
+        "tonalRamp": [
+          "oklch(15% 0.011 268.1)",
+          "oklch(26% 0.011 268.1)",
+          "oklch(38% 0.011 268.1)",
+          "oklch(50% 0.011 268.1)",
+          "oklch(62% 0.011 268.1)",
+          "oklch(74% 0.011 268.1)",
+          "oklch(85% 0.005 268.1)",
+          "oklch(95% 0.005 268.1)"
+        ]
+      },
+      "tinta-2": {
+        "role": "neutral",
+        "displayName": "Tinta 2",
+        "purpose": "Subtítulos y texto secundario.",
+        "canonical": "#394150",
+        "oklch": "oklch(37.4% 0.028 262.9)",
+        "cssVar": "--tinta-2",
+        "tonalRamp": [
+          "oklch(15% 0.028 262.9)",
+          "oklch(26% 0.028 262.9)",
+          "oklch(38% 0.028 262.9)",
+          "oklch(50% 0.028 262.9)",
+          "oklch(62% 0.028 262.9)",
+          "oklch(74% 0.028 262.9)",
+          "oklch(85% 0.014 262.9)",
+          "oklch(95% 0.014 262.9)"
+        ]
+      },
+      "tinta-3": {
+        "role": "neutral",
+        "displayName": "Tinta 3",
+        "purpose": "Notas, horas, rótulos.",
+        "canonical": "#586173",
+        "oklch": "oklch(49.2% 0.031 264.2)",
+        "cssVar": "--tinta-3",
+        "tonalRamp": [
+          "oklch(15% 0.031 264.2)",
+          "oklch(26% 0.031 264.2)",
+          "oklch(38% 0.031 264.2)",
+          "oklch(50% 0.031 264.2)",
+          "oklch(62% 0.031 264.2)",
+          "oklch(74% 0.031 264.2)",
+          "oklch(85% 0.015 264.2)",
+          "oklch(95% 0.015 264.2)"
+        ]
+      }
+    },
+    "localPalettes": {
+      "excel-comparador": {
+        "purpose": "Solo dentro del comparador: imita una hoja de cálculo genérica. No es parte del sistema.",
+        "values": [
+          "#FFFFFF",
+          "#E1E4E8",
+          "#ECEEF1",
+          "#D7DBE0",
+          "#DADDE2",
+          "#EEF0F3",
+          "#F1EBDA"
+        ]
+      },
+      "literales-reusados": {
+        "purpose": "Valores escritos sin variable en portada.css.",
+        "values": {
+          "lapicero-seco-borde": "#8C9BD3",
+          "puntos-indice": "#9AAAC4",
+          "riel-deslizador": "#C5D3E8",
+          "fila-sistema": "#E3E8F0",
+          "fondo-media": "#E7EDF6",
+          "barra-scroll": "#9FB4DE",
+          "cinta": "rgba(232, 228, 214, 0.9)",
+          "pain-hover": "rgba(31, 63, 191, 0.045)",
+          "filete-sobre-tapa": "rgba(255, 255, 255, 0.24)",
+          "filete-pie": "rgba(255, 255, 255, 0.18)"
+        }
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titular de la portada; ancho 110% y 116% desde 1024px; text-wrap balance."
+      },
+      "display-cierre": {
+        "displayName": "Display cierre",
+        "purpose": "Pregunta final sobre la tapa."
+      },
+      "cifra": {
+        "displayName": "Cifra",
+        "purpose": "Precio; la calculadora usa clamp(3rem, 2rem + 4vw, 5rem) con ancho 112%."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título de sección, máximo 20ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título de caso."
+      },
+      "title-paso": {
+        "displayName": "Título de paso",
+        "purpose": "Pasos de «Empezar es fácil»."
+      },
+      "marca": {
+        "displayName": "Marca",
+        "purpose": "Logotipo «Yanapay»; 1.5rem en la etiqueta."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrido, 17px."
+      },
+      "body-lead": {
+        "displayName": "Body lead",
+        "purpose": "Subtítulo de la portada y párrafo de «Por qué hago esto»."
+      },
+      "body-limpio": {
+        "displayName": "Body limpio",
+        "purpose": "Línea en limpio bajo cada renglón manuscrito."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botones."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Notas al pie en tinta-3."
+      },
+      "mano-titulo": {
+        "displayName": "Mano título",
+        "purpose": "Título manuscrito de la demo, subrayado."
+      },
+      "mano-renglon": {
+        "displayName": "Mano renglón",
+        "purpose": "Renglón manuscrito tachable."
+      },
+      "mano-nota": {
+        "displayName": "Mano nota",
+        "purpose": "Notas, enlaces a mano, pestañas, valores de etiqueta, contador del pick (1.15–1.35rem)."
+      },
+      "mano-numero": {
+        "displayName": "Mano número",
+        "purpose": "Números de paso (2.5rem) y de la cuenta (1.8–1.9rem)."
+      }
+    },
+    "fonts": {
+      "source": "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..800&family=Kalam:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap",
+      "archivo": {
+        "axes": {
+          "wdth": "100–125",
+          "wght": "700–800"
+        },
+        "widthsUsed": {
+          "108%": "título de paso",
+          "110%": "titular de portada (<1024px), título de caso",
+          "112%": "títulos de sección, cifra de calculadora, cabecera del sistema, rótulo «Ahora:»",
+          "116%": "titular de portada (≥1024px), precio, cierre",
+          "120%": "logotipo y marca de la etiqueta"
+        }
+      },
+      "schibsted": {
+        "axes": {
+          "wght": "400–700"
+        },
+        "weightsUsed": [
+          400,
+          500,
+          600,
+          650,
+          700
+        ]
+      },
+      "kalam": {
+        "weights": [
+          400,
+          700
+        ]
+      },
+      "icons": "Phosphor Icons 2.1.1 (regular y fill) desde jsDelivr"
+    },
+    "shadows": [
+      {
+        "name": "papel-pegado",
+        "value": "0 20px 34px -22px rgba(17, 25, 60, 0.5), 0 2px 6px rgba(17, 25, 60, 0.12)",
+        "purpose": "Fotos de casos."
+      },
+      {
+        "name": "papel-precio",
+        "value": "0 24px 40px -24px rgba(17, 25, 60, 0.55), 0 2px 6px rgba(17, 25, 60, 0.1)",
+        "purpose": "Tarjeta de precio."
+      },
+      {
+        "name": "etiqueta",
+        "value": "0 22px 40px -20px rgba(0, 0, 30, 0.6)",
+        "purpose": "Etiqueta de nombre sobre la tapa."
+      },
+      {
+        "name": "boton-etiqueta",
+        "value": "0 10px 22px -12px rgba(0, 0, 30, 0.6)",
+        "purpose": "Botón papel sobre tapa."
+      },
+      {
+        "name": "boton-tapa",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 14px -8px rgba(29, 63, 174, 0.75)",
+        "purpose": "Botón principal."
+      },
+      {
+        "name": "hoja-incrustada",
+        "value": "0 20px 40px -28px rgba(17, 25, 60, 0.5)",
+        "purpose": "Marco del comparador."
+      },
+      {
+        "name": "flotante",
+        "value": "0 12px 24px -10px rgba(17, 30, 100, 0.65)",
+        "purpose": "Botón flotante de WhatsApp."
+      },
+      {
+        "name": "nav-scrolled",
+        "value": "0 10px 22px -16px rgba(17, 30, 80, 0.4)",
+        "purpose": "Encabezado tras scrollY > 8."
+      },
+      {
+        "name": "pick",
+        "value": "0 -10px 18px -14px rgba(17, 30, 80, 0.35)",
+        "purpose": "Barra pick pegada abajo."
+      },
+      {
+        "name": "perilla",
+        "value": "0 2px 8px rgba(17, 30, 80, 0.4)",
+        "purpose": "Perilla del control deslizante."
+      },
+      {
+        "name": "manija",
+        "value": "0 6px 14px -6px rgba(17, 30, 80, 0.6)",
+        "purpose": "Manija del comparador."
+      },
+      {
+        "name": "control-video",
+        "value": "0 4px 12px -4px rgba(17, 30, 80, 0.5)",
+        "purpose": "Botón reproducir/pausar."
+      },
+      {
+        "name": "tag-comparador",
+        "value": "0 2px 8px rgba(17, 30, 80, 0.16)",
+        "purpose": "Etiquetas Antes/Después."
+      },
+      {
+        "name": "cinta",
+        "value": "0 1px 2px rgba(0, 0, 0, 0.08)",
+        "purpose": "Cinta adhesiva."
+      }
+    ],
+    "materials": [
+      {
+        "name": "hoja-cuadriculada",
+        "value": "linear-gradient(#D5E5F5 1px, transparent 1px), linear-gradient(90deg, #D5E5F5 1px, transparent 1px) / 24px 24px sobre #FAFCFF",
+        "purpose": "Fondo de body y de la barra pick."
+      },
+      {
+        "name": "margen-rojo",
+        "value": "body::before, 2px, #E0605A, opacity 0.8, left: var(--m), toda la altura",
+        "purpose": "Margen continuo de la hoja."
+      },
+      {
+        "name": "grano-tapa",
+        "value": "SVG feTurbulence fractalNoise baseFrequency .85, 2 octavas, alfa .07, tesela 180px + linear-gradient(160deg, rgba(255,255,255,.08) 0%, transparent 38%, transparent 62%, rgba(0,0,0,.14) 100%)",
+        "purpose": "Cartulina de la tapa cobalto."
+      },
+      {
+        "name": "lomo",
+        "value": "::before de ancho calc(var(--m) + 2px), rgba(0,0,20,0.16), inset -1px 0 0 rgba(255,255,255,0.12)",
+        "purpose": "Lomo en tapa y contratapa."
+      },
+      {
+        "name": "cinta-adhesiva",
+        "value": "104×28px (84×24px <768px), rgba(232,228,214,0.9), clip-path polygon(3% 0, 97% 5%, 100% 48%, 96% 100%, 2% 95%, 0 52%)",
+        "purpose": "Pegar fotos y precio."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva base de todas las transiciones CSS (--ease)."
+      },
+      {
+        "name": "ease-visto",
+        "value": "cubic-bezier(0.55, 0, 0.25, 1)",
+        "purpose": "Dibujo del visto en la casilla, 0.36s."
+      },
+      {
+        "name": "pulsar",
+        "value": "transform 0.15s var(--ease); translateY(1px)",
+        "purpose": "Botón al pulsar."
+      },
+      {
+        "name": "color",
+        "value": "0.2s var(--ease)",
+        "purpose": "Fondo y color de botones; hover de renglones."
+      },
+      {
+        "name": "subrayado",
+        "value": "text-decoration-color 0.25s var(--ease)",
+        "purpose": "Enlaces del encabezado."
+      },
+      {
+        "name": "nav-fondo",
+        "value": "background-color 0.25s, box-shadow 0.3s var(--ease)",
+        "purpose": "Encabezado al bajar."
+      },
+      {
+        "name": "flecha-indice",
+        "value": "transform 0.25s var(--ease); translateX(4px)",
+        "purpose": "Hover del índice de rubros."
+      },
+      {
+        "name": "faq-giro",
+        "value": "rotate 0.3s var(--ease); 45deg",
+        "purpose": "Ícono + del FAQ."
+      },
+      {
+        "name": "despliegue",
+        "value": "grid-template-rows 0fr→1fr 0.35s var(--ease)",
+        "purpose": "Solución bajo el renglón marcado."
+      },
+      {
+        "name": "fab-entrada",
+        "value": "opacity 0.3s, transform 0.4s var(--ease) desde translateY(14px) scale(0.92)",
+        "purpose": "Botón flotante."
+      },
+      {
+        "name": "demo-tachon",
+        "value": "GSAP strokeDashoffset 1→0, 0.5s power2.inOut, inicio 0.6 + i×1.55s",
+        "purpose": "Tachón rojo."
+      },
+      {
+        "name": "demo-limpio",
+        "value": "GSAP clipPath inset(-10% 100% -10% 0)→inset(-10% 0% -10% 0), 0.7s expo.out, +0.42s",
+        "purpose": "Revelado de la línea en limpio."
+      },
+      {
+        "name": "demo-resaltador",
+        "value": "GSAP backgroundSize 0%→100% 84%, 0.55s power2.out, +0.7s",
+        "purpose": "Resaltador en la demo."
+      },
+      {
+        "name": "demo-contador",
+        "value": "GSAP 0.9s expo.out, +0.6s",
+        "purpose": "«Te ahorraste» sube."
+      },
+      {
+        "name": "casos-resaltador",
+        "value": "GSAP backgroundSize 0.6s power2.out, stagger 0.35, delay 0.2, umbral 0.6",
+        "purpose": "Resaltador en «Ahora:» de los casos."
+      },
+      {
+        "name": "comparador-pista",
+        "value": "GSAP --pos 88%→50%, 1.4s expo.out, umbral 0.5, solo ≥1024px",
+        "purpose": "Pista del deslizador."
+      },
+      {
+        "name": "calculadora-cifra",
+        "value": "GSAP 0.35s expo.out, overwrite",
+        "purpose": "Resultado mensual."
+      },
+      {
+        "name": "reducido",
+        "value": "opacidad lineal 0.3–0.4s; renglones cada 0.7s; sin trazos, recortes, desplazamientos, scroll suave, pista ni autoplay",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sin-fecha",
+        "value": "max-width: 359px"
+      },
+      {
+        "name": "ctas-ancho-completo",
+        "value": "max-width: 479px"
+      },
+      {
+        "name": "hora-delante",
+        "value": "max-width: 559px"
+      },
+      {
+        "name": "excel-compacto",
+        "value": "max-width: 599px"
+      },
+      {
+        "name": "pick-btn-fijo",
+        "value": "min-width: 640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "dos-renglones",
+        "value": "900px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "nav-completa",
+        "value": "1200px"
+      },
+      {
+        "name": "numeros-en-margen",
+        "value": "1400px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid var(--lapicero); outline-offset: 3px; border-radius: 6px",
+      "onTapa": "outline-color: #fff"
+    }
+  },
+  "components": [
+    {
+      "name": "Botón principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción de WhatsApp en cobalto de tapa. Única acción principal de la página.",
+      "html": "<a class=\"ds-btn-primario\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z\"/></svg> Cuéntame qué haces a mano</a>",
+      "css": ".ds-btn-primario { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 22px; border-radius: 10px; background: var(--cobalto, #1D3FAE); color: #fff; font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); font-size: 1rem; font-weight: 700; line-height: 1.2; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(29,63,174,0.75); transition: background-color 0.2s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), transform 0.15s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-btn-primario:hover { background: var(--cobalto-osc, #16318C); } .ds-btn-primario:active { transform: translateY(1px); } .ds-btn-primario:focus-visible { outline: 3px solid var(--lapicero, #1F3FBF); outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón etiqueta (sobre tapa)",
+      "kind": "button",
+      "refersTo": "button-etiqueta",
+      "description": "Acción principal encima de una tapa cobalto: papel blanco con texto cobalto hondo.",
+      "html": "<div class=\"ds-tapa-mini\"><a class=\"ds-btn-etiqueta\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z\"/></svg> Escríbeme por WhatsApp</a></div>",
+      "css": ".ds-tapa-mini { padding: 32px; background-color: var(--cobalto, #1D3FAE); background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\"), linear-gradient(160deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.14) 100%); } .ds-btn-etiqueta { display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 16px 28px; border-radius: 10px; background: var(--papel, #FFFFFF); color: var(--cobalto-hondo, #10266E); font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); font-size: 1.0625rem; font-weight: 700; text-decoration: none; box-shadow: 0 10px 22px -12px rgba(0,0,30,0.6); transition: background-color 0.2s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), transform 0.15s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-btn-etiqueta:hover { background: #EAF0FF; } .ds-btn-etiqueta:active { transform: translateY(1px); } .ds-btn-etiqueta:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Enlace a mano",
+      "kind": "button",
+      "refersTo": "enlace-mano",
+      "description": "Acción secundaria escrita con lapicero: Kalam, subrayado que se vuelve ondulado.",
+      "html": "<a class=\"ds-enlace-mano\" href=\"#\"><span>Mira un ejemplo</span> <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7l10 10M17 9v8H9\"/></svg></a>",
+      "css": ".ds-enlace-mano { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding-inline: 4px; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.3rem; font-weight: 700; color: var(--lapicero, #1F3FBF); text-decoration: none; } .ds-enlace-mano span { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.22em; } .ds-enlace-mano:hover span { text-decoration-style: wavy; } .ds-enlace-mano:focus-visible { outline: 3px solid var(--lapicero, #1F3FBF); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Nav-renglón",
+      "kind": "nav",
+      "refersTo": "nav-renglon",
+      "description": "Encabezado como renglón de fecha de la hoja: logo, fecha a mano, enlaces con subrayado al pasar.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><svg viewBox=\"0 0 64 64\" width=\"30\" height=\"30\" aria-hidden=\"true\"><rect width=\"64\" height=\"64\" rx=\"14\" fill=\"#1D3FAE\"/><path d=\"M18 16h8l6 12 6-12h8L36 34v14h-8V34z\" fill=\"#fff\"/></svg><span>Yanapay</span></a><p class=\"ds-nav-fecha\">Fecha: 17/10</p><nav class=\"ds-nav-enlaces\"><a href=\"#\">Rubros</a><a href=\"#\">¿Te pasa?</a><a href=\"#\">Precios</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; min-height: 64px; padding: 0 24px; border-bottom: 1.5px solid var(--renglon, #B9D0E8); background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); } .ds-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--tinta, #111318); text-decoration: none; font-family: var(--f-titular, \"Archivo\", \"Schibsted Grotesk\", sans-serif); font-size: 1.3rem; font-weight: 800; font-stretch: 120%; letter-spacing: -0.01em; } .ds-nav-fecha { margin: 0; padding-top: 4px; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.1rem; line-height: 1; color: var(--lapicero, #1F3FBF); } .ds-nav-enlaces { display: flex; gap: 28px; margin-left: auto; } .ds-nav-enlaces a { padding-block: 8px; color: var(--tinta, #111318); font-weight: 600; font-size: 0.98rem; text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: transparent; text-underline-offset: 0.3em; transition: text-decoration-color 0.25s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), color 0.2s; } .ds-nav-enlaces a:hover { color: var(--lapicero, #1F3FBF); text-decoration-color: var(--lapicero, #1F3FBF); } .ds-nav-enlaces a:focus-visible, .ds-logo:focus-visible { outline: 3px solid var(--lapicero, #1F3FBF); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Renglón con casilla",
+      "kind": "custom",
+      "refersTo": "renglon-casilla",
+      "description": "Dolor marcable: renglón con casilla de 26px; el visto de lapicero se dibuja y la solución se despliega en Kalam.",
+      "html": "<div class=\"ds-hoja\"><button type=\"button\" class=\"ds-pain\" aria-pressed=\"false\" onclick=\"this.setAttribute('aria-pressed', String(this.getAttribute('aria-pressed') !== 'true'))\"><span class=\"ds-casilla\"><svg viewBox=\"0 0 36 34\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M7 18.5 C 9.5 20.5, 12 23.5, 14.2 27 C 18 18, 24 10.5, 32.5 3.5\"/></svg></span><span class=\"ds-pain-text\">No sé bien quién me debe ni cuánto.</span><span class=\"ds-pain-fix\"><span><span>Cobranza con recordatorios por WhatsApp</span></span></span></button><button type=\"button\" class=\"ds-pain\" aria-pressed=\"true\" onclick=\"this.setAttribute('aria-pressed', String(this.getAttribute('aria-pressed') !== 'true'))\"><span class=\"ds-casilla\"><svg viewBox=\"0 0 36 34\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M7 18.5 C 9.5 20.5, 12 23.5, 14.2 27 C 18 18, 24 10.5, 32.5 3.5\"/></svg></span><span class=\"ds-pain-text\">Hago boletas y facturas a mano.</span><span class=\"ds-pain-fix\"><span><span>Boletas y facturas SUNAT automáticas</span></span></span></button></div>",
+      "css": ".ds-hoja { padding: 8px 16px; background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; } .ds-pain { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: start; width: 100%; min-height: 60px; padding: 16px 6px 14px; border: 0; border-bottom: 1px solid var(--renglon, #B9D0E8); background: transparent; color: var(--tinta, #111318); font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); text-align: left; cursor: pointer; transition: background-color 0.2s; } .ds-pain:hover { background: rgba(31,63,191,0.045); } .ds-pain:focus-visible { outline: 3px solid var(--lapicero, #1F3FBF); outline-offset: 3px; border-radius: 6px; } .ds-casilla { position: relative; grid-row: 1 / span 2; width: 26px; height: 26px; border: 2px solid var(--tinta-2, #394150); border-radius: 4px; background: #fff; transition: border-color 0.2s; } .ds-pain:hover .ds-casilla { border-color: var(--lapicero, #1F3FBF); } .ds-casilla svg { position: absolute; left: -2px; top: -10px; width: 36px; height: 34px; overflow: visible; } .ds-casilla path { fill: none; stroke: var(--lapicero, #1F3FBF); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; stroke-dashoffset: 1; transition: stroke-dashoffset 0.36s cubic-bezier(0.55, 0, 0.25, 1); } .ds-pain[aria-pressed=\"true\"] .ds-casilla path { stroke-dashoffset: 0; } .ds-pain-text { padding-top: 1px; font-size: 1.0625rem; font-weight: 500; line-height: 1.45; } .ds-pain[aria-pressed=\"true\"] .ds-pain-text { font-weight: 650; } .ds-pain-fix { display: grid; grid-column: 2; grid-template-rows: 0fr; transition: grid-template-rows 0.35s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-pain-fix > span { min-height: 0; overflow: hidden; } .ds-pain-fix > span > span { display: block; padding-top: 4px; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.15rem; line-height: 1.35; color: var(--lapicero, #1F3FBF); } .ds-pain[aria-pressed=\"true\"] .ds-pain-fix { grid-template-rows: 1fr; } @media (prefers-reduced-motion: reduce) { .ds-casilla path { stroke-dashoffset: 0; opacity: 0; transition: opacity 0.2s linear; } .ds-pain[aria-pressed=\"true\"] .ds-casilla path { opacity: 1; } .ds-pain-fix { transition: none; } }"
+    },
+    {
+      "name": "Renglón tachable con resaltador",
+      "kind": "custom",
+      "refersTo": "resaltador",
+      "description": "El momento autoral: renglón manuscrito tachado en rojo y, debajo, la línea en limpio resaltada con la hora.",
+      "html": "<div class=\"ds-hoja-t\"><p class=\"ds-demo-titulo\">Lo que se hizo solo hoy</p><div class=\"ds-tarea\"><span class=\"ds-mano\">Cobrar a Bodega Quispe S/ 350<svg class=\"ds-tachon\" viewBox=\"0 0 100 18\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9\"/></svg></span><span class=\"ds-limpio\">↳ <span class=\"ds-resalte\">Recordatorio enviado por WhatsApp</span> <span class=\"ds-hora\">· 8:00</span></span></div></div>",
+      "css": ".ds-hoja-t { padding: 16px 20px; background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; } .ds-demo-titulo { margin: 0 0 10px; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.6rem; font-weight: 700; line-height: 1.2; color: var(--lapicero, #1F3FBF); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; } .ds-tarea { display: grid; gap: 2px; padding: 8px 0 12px; border-bottom: 1px solid var(--renglon, #B9D0E8); } .ds-mano { position: relative; justify-self: start; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.4rem; line-height: 1.35; color: var(--lapicero, #1F3FBF); white-space: nowrap; } .ds-tachon { position: absolute; left: -3%; top: calc(50% - 9px); width: 106%; height: 18px; overflow: visible; } .ds-tachon path { fill: none; stroke: var(--rojo, #D9312B); stroke-width: 2.6; stroke-linecap: round; } .ds-limpio { font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); font-size: 1.04rem; font-weight: 600; line-height: 1.5; color: var(--tinta, #111318); } .ds-resalte { padding: 0 0.18em; margin: 0 -0.08em; border-radius: 0.25em 0.6em 0.3em 0.5em / 0.5em 0.3em 0.6em 0.35em; background-image: linear-gradient(100deg, rgba(255,225,77,0.45) 0, var(--resaltador, #FFE14D) 0.35em, var(--resaltador, #FFE14D) calc(100% - 0.4em), rgba(255,225,77,0.6) 100%); background-repeat: no-repeat; background-position: 0 60%; background-size: 100% 84%; } .ds-hora { color: var(--tinta-3, #586173); font-weight: 500; }"
+    },
+    {
+      "name": "Tapa cobalto con etiqueta de nombre",
+      "kind": "card",
+      "refersTo": "etiqueta-nombre",
+      "description": "Tapa del cuaderno con grano y lomo; encima, la etiqueta escolar con campos impresos y valores a mano.",
+      "html": "<section class=\"ds-tapa\"><div class=\"ds-etiqueta\"><div class=\"ds-etiqueta-marca\"><svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\" aria-hidden=\"true\"><rect width=\"64\" height=\"64\" rx=\"14\" fill=\"#1D3FAE\"/><path d=\"M18 16h8l6 12 6-12h8L36 34v14h-8V34z\" fill=\"#fff\"/></svg><p><strong>Yanapay</strong><span>“ayudar”, en quechua</span></p></div><p class=\"ds-campo\"><span class=\"ds-rotulo\">Te atiende</span><span class=\"ds-valor\">Christian Jara</span></p><p class=\"ds-campo\"><span class=\"ds-rotulo\">Oficio</span><span class=\"ds-valor\">Ingeniero de software, Lima</span></p></div></section>",
+      "css": ".ds-tapa { position: relative; padding: 48px 24px 48px 56px; background-color: var(--cobalto, #1D3FAE); background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\"), linear-gradient(160deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.14) 100%); color: #fff; } .ds-tapa::before { content: \"\"; position: absolute; top: 0; bottom: 0; left: 0; width: 22px; background: rgba(0,0,20,0.16); box-shadow: inset -1px 0 0 rgba(255,255,255,0.12); } .ds-etiqueta { position: relative; max-width: 440px; padding: 26px 26px 28px; border-radius: 18px; background: var(--papel, #FFFFFF); color: var(--tinta, #111318); box-shadow: 0 22px 40px -20px rgba(0,0,30,0.6); rotate: -1.5deg; font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); } .ds-etiqueta::before { content: \"\"; position: absolute; inset: 8px; border: 1.5px solid var(--cobalto, #1D3FAE); border-radius: 12px; pointer-events: none; } .ds-etiqueta-marca { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; margin-bottom: 6px; border-bottom: 2px solid var(--cobalto, #1D3FAE); } .ds-etiqueta-marca p { display: grid; margin: 0; } .ds-etiqueta-marca strong { font-family: var(--f-titular, \"Archivo\", \"Schibsted Grotesk\", sans-serif); font-weight: 800; font-stretch: 120%; font-size: 1.5rem; line-height: 1.1; } .ds-etiqueta-marca span { color: var(--tinta-2, #394150); font-size: 0.92rem; } .ds-campo { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); align-items: end; gap: 8px; margin: 0; padding: 12px 0 4px; border-bottom: 1.5px solid var(--renglon, #B9D0E8); } .ds-rotulo { padding-bottom: 6px; color: var(--tinta-3, #586173); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; } .ds-valor { font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.35rem; font-weight: 700; line-height: 1.25; color: var(--lapicero, #1F3FBF); }"
+    },
+    {
+      "name": "Foto con cinta",
+      "kind": "card",
+      "refersTo": "foto-cinta",
+      "description": "Captura de un trabajo pegada en la hoja: marco blanco, rotación leve, dos cintas y sombra de papel.",
+      "html": "<div class=\"ds-hoja-f\"><figure class=\"ds-foto\"><span class=\"ds-cinta ds-cinta-izq\"></span><span class=\"ds-cinta ds-cinta-der\"></span><div class=\"ds-media\"></div></figure></div>",
+      "css": ".ds-hoja-f { padding: 40px 48px; background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; } .ds-foto { position: relative; max-width: 360px; margin: 0; padding: 10px 10px 12px; border-radius: 3px; background: var(--papel, #FFFFFF); box-shadow: 0 20px 34px -22px rgba(17,25,60,0.5), 0 2px 6px rgba(17,25,60,0.12); rotate: -1.4deg; } .ds-media { aspect-ratio: 4 / 3; background: #E7EDF6; } .ds-cinta { position: absolute; z-index: 2; width: 104px; height: 28px; background: rgba(232,228,214,0.9); box-shadow: 0 1px 2px rgba(0,0,0,0.08); clip-path: polygon(3% 0, 97% 5%, 100% 48%, 96% 100%, 2% 95%, 0 52%); } .ds-cinta-izq { top: -8px; left: -26px; rotate: -34deg; } .ds-cinta-der { top: -8px; right: -26px; rotate: 32deg; }"
+    },
+    {
+      "name": "Pick",
+      "kind": "custom",
+      "refersTo": "pick",
+      "description": "Barra pegada abajo que junta lo marcado: trozo de hoja con contador a mano y botón que se entinta.",
+      "html": "<div class=\"ds-pick\"><p class=\"ds-pick-count\">Toca los renglones que te pasan.</p><a class=\"ds-pick-btn\" href=\"#\" aria-disabled=\"true\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z\"/></svg> Enviar lo que marqué</a></div><div class=\"ds-pick\"><p class=\"ds-pick-count\">Marcaste 2.</p><a class=\"ds-pick-btn ds-on\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\" fill=\"currentColor\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z\"/></svg> Enviar lo que marqué</a></div>",
+      "css": ".ds-pick { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 20px; margin-top: 16px; padding: 10px 6px 10px 10px; border-top: 1.5px solid var(--renglon, #B9D0E8); border-bottom: 1.5px solid var(--renglon, #B9D0E8); border-radius: 2px; background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; box-shadow: 0 -10px 18px -14px rgba(17,30,80,0.35); } .ds-pick-count { margin: 0; font-family: var(--f-mano, \"Kalam\", \"Schibsted Grotesk\", cursive); font-size: 1.3rem; font-weight: 700; line-height: 1.3; color: var(--lapicero, #1F3FBF); } .ds-pick-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 22px; border-radius: 10px; background: transparent; color: #4A5BA8; outline: 1.5px dashed #8C9BD3; outline-offset: -1.5px; font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); font-size: 1rem; font-weight: 700; text-decoration: none; transition: background-color 0.2s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), color 0.2s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-pick-btn.ds-on { background: var(--cobalto, #1D3FAE); color: #fff; outline: 0; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(29,63,174,0.75); } .ds-pick-btn.ds-on:hover { background: var(--cobalto-osc, #16318C); } .ds-pick-btn:focus-visible { outline: 3px solid var(--lapicero, #1F3FBF); outline-offset: 3px; }"
+    },
+    {
+      "name": "Tarjeta de precio",
+      "kind": "card",
+      "refersTo": "tarjeta-precio",
+      "description": "Papel pegado con cinta centrada, cifra en Archivo ancho y nota tras un filete discontinuo.",
+      "html": "<div class=\"ds-hoja-p\"><aside class=\"ds-precio\"><span class=\"ds-cinta-c\"></span><p class=\"ds-precio-label\">Planes desde</p><p class=\"ds-precio-valor\">S/ 90 <span>al mes</span></p><p class=\"ds-precio-nota\">El precio final depende de lo que necesite tu negocio.</p></aside></div>",
+      "css": ".ds-hoja-p { padding: 40px 32px; background-color: var(--hoja, #FAFCFF); background-image: linear-gradient(var(--cuadro, #D5E5F5) 1px, transparent 1px), linear-gradient(90deg, var(--cuadro, #D5E5F5) 1px, transparent 1px); background-size: 24px 24px; } .ds-precio { position: relative; max-width: 460px; padding: 38px 28px 28px; border-radius: 4px; background: var(--papel, #FFFFFF); color: var(--tinta, #111318); box-shadow: 0 24px 40px -24px rgba(17,25,60,0.55), 0 2px 6px rgba(17,25,60,0.1); rotate: 1.2deg; font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); } .ds-cinta-c { position: absolute; top: -14px; left: calc(50% - 52px); width: 104px; height: 28px; background: rgba(232,228,214,0.9); box-shadow: 0 1px 2px rgba(0,0,0,0.08); clip-path: polygon(3% 0, 97% 5%, 100% 48%, 96% 100%, 2% 95%, 0 52%); rotate: -3deg; } .ds-precio-label { margin: 0; color: var(--tinta-2, #394150); font-weight: 700; } .ds-precio-valor { margin: 6px 0 14px; font-family: var(--f-titular, \"Archivo\", \"Schibsted Grotesk\", sans-serif); font-weight: 800; font-stretch: 116%; font-size: clamp(3.2rem, 2.4rem + 3vw, 4.75rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; } .ds-precio-valor span { font-family: var(--f-texto, \"Schibsted Grotesk\", system-ui, sans-serif); font-size: 1.1rem; font-weight: 600; font-stretch: 100%; letter-spacing: 0; color: var(--tinta-2, #394150); } .ds-precio-nota { margin: 0; padding-top: 16px; border-top: 1.5px dashed var(--renglon, #B9D0E8); color: var(--tinta-2, #394150); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El cuaderno de cuentas que se pasa en limpio solo",
+    "overview": "La página entera es una hoja de cuaderno cuadriculado peruano: blanco frío, cuadrícula celeste de 24px y una sola línea de margen roja que baja por toda la página, de arriba abajo. Sobre esa hoja hay dos clases de escritura. La **manuscrita** (Kalam, tinta de lapicero azul) es lo que el dueño del negocio anota hoy: deudas, pendientes, «cobrar a Quispe». La **en limpio** (Archivo ancho para titulares y Schibsted Grotesk para el texto, en tinta negra nítida) es lo que el sistema ya hizo. El gesto que lo explica todo está en la primera pantalla: cada renglón manuscrito se tacha con lapicero rojo y debajo aparece su versión en limpio, con el resaltador amarillo marcando lo que se hizo solo.\n\nLas secciones de peso no van sobre la hoja: son **tapas de cuaderno** en cobalto saturado, a todo el ancho, con grano de cartulina y un lomo oscuro a la altura del margen. Encima de la tapa va la etiqueta de nombre del cuaderno escolar. El pie es la contratapa, en un cobalto más hondo. Los objetos que se pegan a la hoja (capturas de trabajos, tarjeta de precio) son papeles blancos un poco torcidos, con cinta adhesiva y una sombra suave de papel levantado. La densidad es la de un cuaderno: renglones con su línea, listas en vez de tarjetas, mucho aire entre bloques.\n\nRechazo confirmado (contrato de dirección): la portada SaaS de titular a la izquierda y celular a la derecha sobre fondo crema con mancha de degradado. Solo tema claro; la portada declara `color-scheme: light` y no tiene modo oscuro.",
+    "keyCharacteristics": [
+      "Hoja cuadriculada (celda de 24px) con margen rojo continuo como fondo de toda la página.",
+      "Dos escrituras con funciones distintas: manuscrita en lapicero azul para lo pendiente o anotado, y grotesca negra en limpio para lo resuelto.",
+      "Tres marcas con un solo uso cada una: lapicero rojo para tachar, resaltador amarillo para lo que se hizo solo y visto de lapicero para marcar.",
+      "Tapas de cuaderno en cobalto a todo el ancho para «Por qué hago esto» y el cierre; contratapa en cobalto hondo para el pie.",
+      "Papeles pegados con cinta, rotados entre −1.5° y 1.2°, con sombra difusa.",
+      "Listas como renglones (borde inferior de 1px en color renglón), sin tarjetas con borde ni rejillas de íconos.",
+      "Movimiento de escritura: trazos que se dibujan, recortes que se revelan de izquierda a derecha y resaltador que se pinta. Todo tiene versión de solo opacidad."
+    ],
+    "rules": [
+      {
+        "name": "The Un Marcador, Un Significado Rule",
+        "body": "El rojo solo tacha y el amarillo solo resalta lo que se hizo solo. Ninguno se usa para alertas, errores, etiquetas ni decoración. Si algo amarillo no lo hizo el sistema, sobra.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lapicero Escribe, Cobalto Cubre Rule",
+        "body": "El lapicero (`lapicero`) es tinta: texto, trazos, foco. El cobalto (`cobalto`) es material: tapas, botones, manijas. No se intercambian aunque sean casi el mismo azul.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dos Escrituras Rule",
+        "body": "Kalam solo para lo que una persona escribe a mano en su cuaderno: lo pendiente, las notas, los números de la cuenta, los enlaces que invitan. Lo que el sistema ya resolvió va en Schibsted o Archivo, en tinta negra. Un titular de sección nunca va en Kalam.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ancho Por Peso Rule",
+        "body": "Los titulares no ganan jerarquía con más peso (todo es 800), sino con más tamaño y más ancho. Para destacar un titular se sube `font-stretch` dentro de 108–120%; no se cambia el peso.",
+        "section": "typography"
+      },
+      {
+        "name": "The Papel Levanta, Hoja No Rule",
+        "body": "Solo lo que es un objeto pegado o un control flotante lleva sombra. Los renglones, las listas, el índice y el FAQ son tinta sobre la hoja y no tienen sombra ni fondo propio.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Sombra Azul Rule",
+        "body": "Toda sombra es difusa, con *spread* negativo y teñida de azul tinta. No hay sombras duras desplazadas ni negras.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** dibujar toda superficie nueva sobre la hoja: fondo `hoja` con cuadrícula de 1px en `cuadro` cada 24px y el margen rojo de 2px continuo en `left: var(--m)`.",
+      "**Do** alinear el contenido con `--izq` y `--der`, no con un contenedor centrado de ancho fijo.",
+      "**Do** escribir en Kalam y en `lapicero` lo que una persona anota a mano, y en Archivo o Schibsted y en `tinta` lo que el sistema ya resolvió.",
+      "**Do** reservar el `rojo` para tachar y el `resaltador` para lo que se hizo solo.",
+      "**Do** construir listas como renglones con borde inferior de 1px en `renglon`.",
+      "**Do** usar una tapa cobalto a todo el ancho, con grano y lomo, para las secciones de peso, con el texto en `sobre-tapa` y los titulares en blanco.",
+      "**Do** presentar las capturas como fotos pegadas: marco blanco, radio de 3px, rotación entre −1.5° y 1.5°, cinta y sombra «papel pegado».",
+      "**Do** animar como se escribe (trazo, revelado de izquierda a derecha, resaltador que se pinta) con `--ease` y dejar el estado final en el HTML.",
+      "**Do** dar a cada animación una versión de solo opacidad para `prefers-reduced-motion: reduce`.",
+      "**Do** mantener los objetivos táctiles en 44px o más y el contorno de foco de 3px en `lapicero` (blanco sobre tapas)."
+    ],
+    "donts": [
+      "**Don't** hacer la portada SaaS de titular a la izquierda y celular a la derecha sobre fondo crema con mancha de degradado (rechazo del contrato de dirección).",
+      "**Don't** usar el rojo o el amarillo para alertas, errores, insignias o decoración.",
+      "**Don't** poner titulares de sección en Kalam, ni texto manuscrito en tinta negra.",
+      "**Don't** usar sombras duras desplazadas ni sombras negras; toda sombra es difusa y teñida de azul tinta.",
+      "**Don't** meter los renglones en tarjetas con borde y fondo. Solo los objetos pegados (foto, etiqueta, precio) son papel.",
+      "**Don't** usar un gris de sistema para el estado desactivado; se usa el lapicero sin tinta.",
+      "**Don't** reutilizar fuera del comparador la paleta gris del Excel.",
+      "**Don't** copiar tokens, tipos (Bricolage Grotesque, Onest) ni el acento naranja de `style.css`: pertenecen al sistema anterior de las páginas de rubro, que falta migrar."
+    ]
+  }
+}
