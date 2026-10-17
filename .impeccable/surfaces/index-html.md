@@ -5,7 +5,7 @@ primary_target: "index.html"
 related_targets: []
 ---
 
-# Portada Yanapay (index.html)
+# Portada Abiel (index.html)
 
 Modo: Persuade. Visitante: dueño de negocio pequeño en Perú, desde el celular. Acción: escribir por WhatsApp contando qué hace a mano. Prueba: 3 casos reales (inmobiliaria anónima "Horizonte", movilidad escolar, tienda/catálogo) con capturas sin datos reales. Restricciones: sin datos ni testimonios inventados; precio "desde S/ 90"; WhatsApp +51 913 412 590; voz en primera persona singular.
 

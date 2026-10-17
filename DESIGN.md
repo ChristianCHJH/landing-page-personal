@@ -1,5 +1,5 @@
 ---
-name: Yanapay
+name: Abiel
 description: El cuaderno de cuentas que se pasa en limpio solo. Portada de automatización para negocios pequeños del Perú.
 colors:
   cobalto: "#1D3FAE"
@@ -246,9 +246,9 @@ components:
     size: "58px"
 ---
 
-# Design System: Yanapay
+# Design System: Abiel
 
-> **Alcance.** Este sistema describe la portada (`index.html` + `portada.css` + `portada.js`), que es la única superficie construida en el mundo «Cuaderno de cuentas». Las 12 páginas de rubro (`/colegios/`, `/clinicas/`, `/veterinarias/`, `/ferreterias/`, `/transporte/`, `/inmobiliarias/`, `/condominios/`, `/movilidad-escolar/`, `/gimnasios/`, `/spas/`, `/talleres/`, `/minimarkets/`) las genera `herramientas/generar-rubros.mjs` con `style.css` y `main.js`, y **siguen en el sistema visual anterior**: fondo gris cálido, acento naranja, Bricolage Grotesque y Onest, modo oscuro. No cumplen este documento. **Migrarlas al cuaderno es trabajo pendiente.** Mientras tanto, quien pasa del índice de rubros de la portada a una página de rubro cambia de mundo. No copies nada de `style.css` a superficies nuevas.
+> **Alcance.** Este sistema cubre la portada (`index.html` + `portada.css` + `portada.js`) y las 12 páginas de rubro (`/colegios/`, `/clinicas/`, `/veterinarias/`, `/ferreterias/`, `/transporte/`, `/inmobiliarias/`, `/condominios/`, `/movilidad-escolar/`, `/gimnasios/`, `/spas/`, `/talleres/`, `/minimarkets/`), que genera `herramientas/generar-rubros.mjs` con `portada.css` + `rubro.css` + `rubro.js`. Los rubros dependen de las clases de `portada.css`: renombrarlas rompe las 12 páginas. `style.css` y `main.js` ya no los usa ninguna página.
 
 ## Overview
 
@@ -410,7 +410,7 @@ Trazo SVG ondulado en `rojo` de 2.6px y puntas redondas, que cubre el 106% del r
 Sección de ancho completo en `cobalto` con grano, brillo y lomo. El texto va en `sobre-tapa`, los titulares y énfasis en blanco y los separadores en `rgba(255,255,255,0.24)`. Se usa dos veces: «Por qué hago esto» y el cierre. La contratapa (pie) es la misma idea en `cobalto-hondo`, con lomo pero sin grano.
 
 ### Etiqueta de nombre
-La etiqueta escolar pegada en la tapa: papel blanco de 440px de ancho máximo, radio de 18px, línea interior cobalto y rotación de −1.5°. Arriba, la marca (logo de 44px, «Yanapay» en Archivo 800 al 120% y «“ayudar”, en quechua»), con filete de 2px en cobalto. Debajo, campos de formulario impreso: rótulo en Schibsted 700 a 0.78rem en mayúsculas con 0.06em de espaciado y `tinta-3`, y valor manuscrito en Kalam 700 a 1.35rem en `lapicero`, sobre una línea de 1.5px en `renglon`. Cierra con un botón principal a todo el ancho. Las mayúsculas pequeñas del rótulo son propias de esta etiqueta impresa y no son un estilo de rótulo general.
+La etiqueta escolar pegada en la tapa: papel blanco de 440px de ancho máximo, radio de 18px, línea interior cobalto y rotación de −1.5°. Arriba, la marca (logo de 44px, «Abiel» en Archivo 800 al 120% y «por mis dos hijos»), con filete de 2px en cobalto. Debajo, campos de formulario impreso: rótulo en Schibsted 700 a 0.78rem en mayúsculas con 0.06em de espaciado y `tinta-3`, y valor manuscrito en Kalam 700 a 1.35rem en `lapicero`, sobre una línea de 1.5px en `renglon`. Cierra con un botón principal a todo el ancho. Las mayúsculas pequeñas del rótulo son propias de esta etiqueta impresa y no son un estilo de rótulo general.
 
 ### Foto con cinta
 Captura de un trabajo como foto pegada: marco blanco de 10px (12px abajo), radio de 3px, sombra «papel pegado», rotación leve y una o dos cintas adhesivas. El medio va a 4:3 con `object-fit: cover`. Si es video, un control circular blanco de 44px abajo a la derecha alterna reproducir, pausar y volver a ver.
@@ -425,7 +425,7 @@ Hoja incrustada de radio 14px y borde de 1.5px en `renglon` con dos capas: un Ex
 **La cuenta a mano (calculadora).** Cada fila tiene un operador Kalam de 1.9rem («+», «×»), una etiqueta, el número Kalam de 1.8rem en `lapicero` a la derecha y un control deslizante. El riel mide 4px, va en `#C5D3E8` y se rellena en `lapicero` hasta `--lleno`. La perilla es un círculo cobalto con borde blanco de 3px: 28px en WebKit y 22px en Firefox. Una raya de suma SVG cierra la cuenta y el resultado sale como cifra en Archivo.
 
 ### Navigation
-**Nav-renglón.** El encabezado es el renglón de fecha de la hoja: fijo, de 64px, transparente sobre la cuadrícula y con borde inferior de 1.5px en `renglon`. Al bajar más de 8px toma fondo `hoja` y sombra suave (0.25 y 0.3s). Contiene el logo (cuadro cobalto de 30px y «Yanapay» en Archivo 800 al 120%), «Fecha: dd/mm» en Kalam `lapicero` con la fecha real del día (oculto por debajo de 360px), los enlaces en Schibsted 600 con subrayado de 2px que aparece al pasar el cursor (visibles desde 1200px), el botón principal chico (desde 768px) y un botón de menú de 48px con borde en `renglon` y radio de 10px. El menú móvil es una lista de renglones sobre `hoja`, se cierra con Escape y termina en el botón principal.
+**Nav-renglón.** El encabezado es el renglón de fecha de la hoja: fijo, de 64px, transparente sobre la cuadrícula y con borde inferior de 1.5px en `renglon`. Al bajar más de 8px toma fondo `hoja` y sombra suave (0.25 y 0.3s). Contiene el logo (cuadro cobalto de 30px y «Abiel» en Archivo 800 al 120%), «Fecha: dd/mm» en Kalam `lapicero` con la fecha real del día (oculto por debajo de 360px), los enlaces en Schibsted 600 con subrayado de 2px que aparece al pasar el cursor (visibles desde 1200px), el botón principal chico (desde 768px) y un botón de menú de 48px con borde en `renglon` y radio de 10px. El menú móvil es una lista de renglones sobre `hoja`, se cierra con Escape y termina en el botón principal.
 
 ### Botón flotante
 Círculo cobalto de 58px con el logo de WhatsApp. Está oculto mientras se ve la primera pantalla o la sección de dolores, que ya tiene su propia barra de envío. Aparece subiendo 14px desde 0.92 de escala (opacidad 0.3s y transformación 0.4s con `--ease`).
@@ -458,4 +458,4 @@ Círculo cobalto de 58px con el logo de WhatsApp. Está oculto mientras se ve la
 - **Don't** meter los renglones en tarjetas con borde y fondo. Solo los objetos pegados (foto, etiqueta, precio) son papel.
 - **Don't** usar un gris de sistema para el estado desactivado; se usa el lapicero sin tinta.
 - **Don't** reutilizar fuera del comparador la paleta gris del Excel.
-- **Don't** copiar tokens, tipos (Bricolage Grotesque, Onest) ni el acento naranja de `style.css`: pertenecen al sistema anterior de las páginas de rubro, que falta migrar.
+- **Don't** copiar tokens, tipos (Bricolage Grotesque, Onest) ni el acento naranja de `style.css`: pertenecen al sistema anterior, que ya ninguna página usa.
