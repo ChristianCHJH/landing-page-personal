@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Portada Yanapay · «Cuaderno de cuentas»
+   Portada Abiel · «Cuaderno de cuentas»
    Hoja cuadriculada, tapas de cuaderno en cobalto, tinta de lapicero.
-   Solo la usa index.html; las páginas de rubro siguen con style.css.
+   La usan index.html y las 12 páginas de rubro (estas suman rubro.css).
    ========================================================================== */
 
 :root {
@@ -345,7 +345,13 @@ body::before {
   letter-spacing: -0.028em;
   text-wrap: balance;
 }
-.hero__quiebre { display: block; }
+/* Acento: «lo que se repite» subrayado con lapicero, también si se parte en dos renglones */
+.hero__acento {
+  padding-bottom: 0.04em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7.5 C 40 4.5, 90 9.5, 140 6 S 188 5, 198 6.5' fill='none' stroke='%231F3FBF' stroke-width='3.2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") no-repeat 0 100% / 100% 0.22em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
 
 .hero__sub {
   max-width: 36em;
@@ -365,13 +371,50 @@ body::before {
 
 @media (max-width: 479px) {
   .hero__ctas .btn { width: 100%; padding-inline: 18px; }
+  /* En el celular los tres datos van pegados al botón; «Mira un ejemplo» baja después */
+  .hero__copy { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero__ctas { display: contents; }
+  .hero__ctas .btn { order: 3; margin-top: 26px; }
+  .hero__datos { order: 4; }
+  .hero__ctas .enlace-mano { order: 5; margin-top: 4px; }
+  .hero__lugar { order: 6; margin-top: 4px; }
+}
+
+/* Tres datos bajo el botón: anotados a mano, con su visto de lapicero */
+.hero__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 20px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--f-mano);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--lapicero);
+}
+.hero__datos li { display: inline-flex; align-items: center; gap: 7px; }
+/* En pantalla ancha se anota en un solo renglón, separado por puntos */
+@media (min-width: 1024px) {
+  .hero__datos { gap: 0 8px; font-size: 0.98rem; }
+  .hero__datos li { gap: 8px; white-space: nowrap; }
+  .hero__datos li:first-child::before { width: 15px; height: 14px; }
+  .hero__datos li + li::before { content: "·"; width: auto; height: auto; background: none; }
+}
+.hero__datos li::before {
+  content: "";
+  flex: none;
+  width: 17px;
+  height: 15px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 34'%3E%3Cpath d='M5 18.5 C 8 20.5, 11 23.5, 13.5 28 C 18 18, 24 10.5, 33 3.5' fill='none' stroke='%231F3FBF' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 .hero__lugar {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 18px;
+  margin-top: 14px;
   color: var(--tinta-3);
   font-size: 0.95rem;
   font-weight: 600;
@@ -381,7 +424,7 @@ body::before {
 @media (min-width: 1024px) {
   .hero { padding: 48px 0 56px; }
   .hero__grid {
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
     gap: clamp(40px, 5vw, 88px);
     align-items: center;
   }
@@ -569,9 +612,9 @@ body::before {
   padding-bottom: clamp(40px, 4.5vw, 60px);
 }
 /* Más aire solo antes y después de las tapas cobalto */
-.calc,
+.pasos,
 .faq { padding-bottom: clamp(80px, 10vw, 128px); }
-.pasos { padding-top: clamp(80px, 10vw, 128px); }
+.rubros { padding-top: clamp(80px, 10vw, 128px); }
 
 .seccion__titulo {
   max-width: 20ch;
@@ -768,6 +811,12 @@ body::before {
 }
 .pick__btn.is-disabled:focus-visible { outline: 3px solid var(--lapicero); outline-offset: 3px; }
 .pick__btn { flex: 1 1 auto; }
+.pick__calma {
+  flex: 1 0 100%;
+  color: var(--tinta-2);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
 
 @media (min-width: 640px) {
   .pick__btn { flex: 0 0 auto; }
@@ -1250,6 +1299,10 @@ body::before {
   font-variant-numeric: tabular-nums;
 }
 .calc__year { color: var(--tinta-2); }
+.calc__wa { margin-top: 22px; }
+@media (max-width: 479px) {
+  .calc__wa { width: 100%; }
+}
 .calc__year strong { color: var(--tinta); }
 
 @media (min-width: 1024px) {
@@ -1550,8 +1603,8 @@ body::before {
   z-index: 30;
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--cobalto);
   color: #fff;
@@ -1571,8 +1624,9 @@ body::before {
   transition-delay: 0s;
 }
 
-@media (min-width: 1024px) {
-  .fab { right: 28px; bottom: 28px; }
+/* Desde 768 px el botón de WhatsApp ya vive en el encabezado: el flotante sobra */
+@media (min-width: 768px) {
+  .fab { display: none; }
 }
 
 /* ---------- Movimiento reducido ---------- */

@@ -1,4 +1,4 @@
-/* Portada Yanapay · comportamiento propio de index.html.
+/* Portada Abiel · comportamiento propio de index.html.
    Las páginas de rubro siguen usando main.js; esto no las toca. */
 
 const WHATSAPP_NUMBER = "51913412590";
@@ -50,9 +50,22 @@ function setupNavigation() {
     }
   });
 
+  // El flotante solo aparece cuando no hay otro botón de WhatsApp a la vista
+  // (primera pantalla, barra de dolores, calculadora, precio, etiqueta, cierre ni pie).
   let heroVisible = true;
   let painsVisible = false;
-  const refreshFab = () => fab.classList.toggle("is-on", !heroVisible && !painsVisible);
+  const otrosVisibles = new Set();
+  const refreshFab = () => fab.classList.toggle("is-on", !heroVisible && !painsVisible && otrosVisibles.size === 0);
+
+  const otros = Array.from(document.querySelectorAll("main a[data-cta], .pie"));
+  const observadorOtros = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) otrosVisibles.add(entry.target);
+      else otrosVisibles.delete(entry.target);
+    });
+    refreshFab();
+  });
+  otros.forEach((el) => observadorOtros.observe(el));
 
   new IntersectionObserver(([entry]) => {
     heroVisible = entry.isIntersecting;
@@ -337,6 +350,8 @@ function setupCalculator() {
   const monthly = document.getElementById("calcMes");
   const monthlyHours = document.getElementById("calcHoras");
   const days = document.getElementById("calcDias");
+  const wa = document.getElementById("calcWa");
+  const waMonto = document.getElementById("calcWaMonto");
   if (!hours || !cost) return;
   const WEEKS_PER_MONTH = 4.33;
   const HOURS_PER_WORKDAY = 8;
@@ -358,6 +373,12 @@ function setupCalculator() {
     days.textContent = String(Math.max(1, Math.round(hoursPerMonth / HOURS_PER_WORKDAY)));
     lleno(hours);
     lleno(cost);
+
+    // Botón de WhatsApp con la cifra y las horas de la cuenta
+    const montoTexto = formatSoles.format(mes);
+    const horasMes = Math.round(hoursPerMonth);
+    if (waMonto) waMonto.textContent = montoTexto;
+    if (wa) wa.href = whatsappUrl(`Hola Christian, calculé que pierdo S/ ${montoTexto} al mes (${horasMes} horas) en tareas que hago a mano. ¿Cómo lo automatizo?`);
 
     if (mostrado.mes === null || prefersReducedMotion || !gsap) {
       mostrado.mes = mes;
