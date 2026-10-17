@@ -1,1 +1,4 @@
 .playwright-mcp/
+.impeccable/review/
+.impeccable/questions/
+.impeccable/config.local.json
