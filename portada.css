@@ -275,17 +275,9 @@ body::before {
   text-decoration: none;
   border-radius: 8px;
 }
-.logo__marca { width: 30px; height: 30px; flex: none; fill: var(--cobalto); }
-.logo__texto {
-  font-family: var(--f-titular);
-  font-size: 1.3rem;
-  font-weight: 800;
-  font-stretch: 120%;
-  letter-spacing: -0.01em;
-}
+/* Logotipo «La casilla marcada» (assets/logo.svg y logo-claro.svg, proporción 3,045:1) */
+.logo__img { display: block; width: auto; height: 32px; flex: none; }
 .logo--claro { color: #fff; }
-.logo--claro .logo__marca { fill: #fff; }
-.logo--claro .logo__marca path { fill: var(--cobalto-hondo); }
 
 .nav__enlaces { display: none; gap: 28px; margin-left: auto; }
 .nav__enlaces a {
@@ -1487,15 +1479,8 @@ body::before {
   margin-bottom: 6px;
   border-bottom: 2px solid var(--cobalto);
 }
-.etiqueta__marca .logo__marca { width: 44px; height: 44px; }
-.etiqueta__marca p { display: grid; }
-.etiqueta__nombre-marca {
-  font-family: var(--f-titular);
-  font-weight: 800;
-  font-stretch: 120%;
-  font-size: 1.5rem;
-  line-height: 1.1;
-}
+.etiqueta__marca p { display: grid; gap: 4px; }
+.etiqueta__logo { display: block; width: auto; height: 38px; }
 .etiqueta__palabra { color: var(--tinta-2); font-size: 0.92rem; }
 .etiqueta__campo {
   display: grid;

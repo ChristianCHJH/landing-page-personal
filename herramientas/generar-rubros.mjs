@@ -31,8 +31,8 @@ const PREGUNTAS = [
   ["¿Por qué no uso un sistema que ya existe?", "Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites."],
 ];
 
-const LOGO = `<svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" fill="#fff" /></svg>`;
-const LOGO_CLARO = `<svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" /></svg>`;
+const LOGO = `<img class="logo__img" src="/assets/logo.svg" alt="" width="97" height="32" />`;
+const LOGO_CLARO = `<img class="logo__img" src="/assets/logo-claro.svg" alt="" width="97" height="32" />`;
 
 const enlaceWhatsapp = (mensaje) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
 
@@ -255,6 +255,7 @@ const pagina = (rubro) => `<!DOCTYPE html>
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="${FUENTES}" rel="stylesheet" />
@@ -275,7 +276,6 @@ ${datosEstructurados(rubro)}
     <div class="contenedor nav__fila">
       <a href="/" class="logo" aria-label="Abiel, ir a la portada">
         ${LOGO}
-        <span class="logo__texto">Abiel</span>
       </a>
       <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
       <nav class="nav__enlaces" aria-label="Principal">
@@ -335,7 +335,6 @@ ${datosEstructurados(rubro)}
       <div>
         <a href="/" class="logo logo--claro" aria-label="Abiel, ir a la portada">
           ${LOGO_CLARO}
-          <span class="logo__texto">Abiel</span>
         </a>
         <p class="pie__frase">Automatizo el trabajo manual y repetitivo de negocios peruanos.</p>
       </div>
