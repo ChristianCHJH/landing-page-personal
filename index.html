@@ -81,7 +81,6 @@
       <nav class="nav__enlaces" aria-label="Principal">
         <a href="#dolores">¿Te pasa?</a>
         <a href="#precio">Precios</a>
-        <a href="#rubros">Rubros</a>
         <a href="#preguntas">Preguntas</a>
       </nav>
       <a class="btn btn--primario btn--chico nav__cta" data-wa="Hola Christian, hago algo a mano en mi negocio y quiero automatizarlo." data-cta="nav" href="https://wa.me/51913412590" target="_blank" rel="noopener">
@@ -95,7 +94,6 @@
     <div class="nav__movil" id="menuMovil" hidden>
       <a href="#dolores">¿Te pasa?</a>
       <a href="#precio">Precios</a>
-      <a href="#rubros">Rubros</a>
       <a href="#preguntas">Preguntas</a>
       <a class="btn btn--primario" data-wa="Hola Christian, hago algo a mano en mi negocio y quiero automatizarlo." data-cta="menu" href="https://wa.me/51913412590" target="_blank" rel="noopener">
         <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
@@ -419,46 +417,14 @@
       </div>
     </section>
 
-    <!-- Rubros: el índice del cuaderno -->
-    <section class="seccion rubros" id="rubros">
+    <!-- Rubros: solo la mención de los tipos de negocio, sin enlaces -->
+    <section class="seccion rubros" id="rubros" aria-labelledby="rubrosTitulo">
       <div class="contenedor rubros__grid">
         <div class="rubros__intro">
-          <h2 class="seccion__titulo">¿Quieres verlo para tu rubro?</h2>
-          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
+          <h2 class="seccion__titulo" id="rubrosTitulo">Negocios que puedo atender</h2>
         </div>
         <div class="rubros__cuerpo">
-        <!-- Tira de fotos pegadas: tipos de negocio -->
-        <div class="rubros__fotos" aria-label="Algunos tipos de negocio" role="group">
-          <figure class="foto-pegada foto-pegada--tira foto-pegada--t1">
-            <span class="cinta cinta--centro" aria-hidden="true"></span>
-            <img class="foto-pegada__img" src="assets/fotos/ferreteria-600.webp" srcset="assets/fotos/ferreteria-600.webp 600w, assets/fotos/ferreteria-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Pared de una ferretería con alicates, llaves y herramientas colgadas a la venta" />
-            <figcaption class="foto-pegada__pie">Ferretería</figcaption>
-          </figure>
-          <figure class="foto-pegada foto-pegada--tira foto-pegada--t2">
-            <span class="cinta cinta--centro" aria-hidden="true"></span>
-            <img class="foto-pegada__img" src="assets/fotos/taller-600.webp" srcset="assets/fotos/taller-600.webp 600w, assets/fotos/taller-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Banco de trabajo de un taller con herramientas colgadas en la pared y una máquina de soldar" />
-            <figcaption class="foto-pegada__pie">Taller</figcaption>
-          </figure>
-          <figure class="foto-pegada foto-pegada--tira foto-pegada--t3">
-            <span class="cinta cinta--centro" aria-hidden="true"></span>
-            <img class="foto-pegada__img" src="assets/fotos/puesto-mercado-600.webp" srcset="assets/fotos/puesto-mercado-600.webp 600w, assets/fotos/puesto-mercado-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Puesto de bebidas de un mercado en Huanchaco, Perú, con botellas ordenadas en los estantes" />
-            <figcaption class="foto-pegada__pie">Puesto de mercado</figcaption>
-          </figure>
-        </div>
-        <ul class="indice">
-          <li><a class="indice__item" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i><span class="indice__nombre">Colegios, nidos y academias</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i><span class="indice__nombre">Clínicas dentales y consultorios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i><span class="indice__nombre">Veterinarias y pet shops</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i><span class="indice__nombre">Ferreterías y distribuidoras</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i><span class="indice__nombre">Transporte de carga</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/inmobiliarias/"><i class="ph ph-map-trifold" aria-hidden="true"></i><span class="indice__nombre">Inmobiliarias y venta de lotes</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i><span class="indice__nombre">Condominios y edificios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i><span class="indice__nombre">Movilidad escolar</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i><span class="indice__nombre">Gimnasios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/spas/"><i class="ph ph-scissors" aria-hidden="true"></i><span class="indice__nombre">Spas, salones y barberías</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i><span class="indice__nombre">Talleres y servicio técnico</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-          <li><a class="indice__item" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i><span class="indice__nombre">Minimarkets y tiendas</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
-        </ul>
+          <p class="seccion__sub">Colegios, nidos y academias. Clínicas dentales y consultorios. Veterinarias y pet shops. Ferreterías y distribuidoras. Transporte de carga. Inmobiliarias y venta de lotes. Condominios y edificios. Movilidad escolar. Gimnasios. Spas, salones y barberías. Talleres y servicio técnico. Minimarkets y tiendas.</p>
         </div>
       </div>
     </section>
@@ -541,7 +507,6 @@
       <nav class="pie__enlaces" aria-label="Pie de página">
         <a href="#dolores">¿Te pasa?</a>
         <a href="#precio">Precios</a>
-        <a href="#rubros">Rubros</a>
         <a href="#preguntas">Preguntas</a>
       </nav>
       <div class="pie__contacto">

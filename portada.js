@@ -1,5 +1,4 @@
-/* Portada Abiel · comportamiento propio de index.html.
-   Las páginas de rubro siguen usando main.js; esto no las toca. */
+/* Portada Abiel · comportamiento propio de index.html, la única página del sitio. */
 
 const WHATSAPP_NUMBER = "51913412590";
 const MENSAJE_BASE = "Hola Christian, hago algo a mano en mi negocio y quiero automatizarlo.";

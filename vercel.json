@@ -1,4 +1,185 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/clinicas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clinicas/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clinicas/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/colegios",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/colegios/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/colegios/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/condominios",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/condominios/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/condominios/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ferreterias",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ferreterias/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ferreterias/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gimnasios",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gimnasios/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gimnasios/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inmobiliarias",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inmobiliarias/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inmobiliarias/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/minimarkets",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/minimarkets/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/minimarkets/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/movilidad-escolar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/movilidad-escolar/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/movilidad-escolar/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spas/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spas/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/talleres",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/talleres/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/talleres/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/transporte",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/transporte/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/transporte/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/veterinarias",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/veterinarias/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/veterinarias/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
-
