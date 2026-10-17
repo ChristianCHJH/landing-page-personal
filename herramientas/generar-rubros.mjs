@@ -233,6 +233,7 @@ const pagina = (rubro) => `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>document.documentElement.classList.add("js");</script>
   <title>${escapar(rubro.titulo)}</title>
   <meta name="description" content="${escapar(rubro.descripcion)}" />
   <link rel="canonical" href="${SITIO}/${rubro.slug}/" />

@@ -4,6 +4,22 @@
    La usan index.html y las 12 páginas de rubro (estas suman rubro.css).
    ========================================================================== */
 
+/* ---------- Respaldo de fuentes con medidas igualadas (CLS) ----------
+   Mientras Archivo, Schibsted Grotesk y Kalam llegan de Google Fonts, el texto se
+   pinta con Arial ajustada al ancho y a la altura de cada una. Así, al cambiar a la
+   fuente real, los renglones no se parten distinto y nada salta. Las cifras salen
+   de medir el texto de la portada y los rubros con cada fuente frente a Arial.
+   Archivo lleva una cara por cada ancho (font-stretch) que usan los titulares. */
+@font-face { font-family: "Schibsted Fallback"; src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo"); font-weight: 100 500; size-adjust: 103.5%; ascent-override: 94.7%; descent-override: 25.1%; line-gap-override: 0%; }
+@font-face { font-family: "Schibsted Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 600 900; size-adjust: 100.3%; ascent-override: 97.7%; descent-override: 25.9%; line-gap-override: 0%; }
+@font-face { font-family: "Kalam Fallback"; src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("Arimo"); font-weight: 400; size-adjust: 94.7%; ascent-override: 111.9%; descent-override: 56.0%; line-gap-override: 0%; }
+@font-face { font-family: "Kalam Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700; size-adjust: 92.8%; ascent-override: 114.2%; descent-override: 57.1%; line-gap-override: 0%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700 800; font-stretch: 108%; size-adjust: 111.8%; ascent-override: 78.7%; descent-override: 18.8%; line-gap-override: 0%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700 800; font-stretch: 110%; size-adjust: 113.3%; ascent-override: 77.7%; descent-override: 18.5%; line-gap-override: 0%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700 800; font-stretch: 112%; size-adjust: 115.0%; ascent-override: 76.5%; descent-override: 18.3%; line-gap-override: 0%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700 800; font-stretch: 116%; size-adjust: 120.3%; ascent-override: 73.2%; descent-override: 17.5%; line-gap-override: 0%; }
+@font-face { font-family: "Archivo Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Arimo Bold"); font-weight: 700 800; font-stretch: 120%; size-adjust: 122.8%; ascent-override: 71.7%; descent-override: 17.1%; line-gap-override: 0%; }
+
 :root {
   /* Hoja */
   --hoja: #FAFCFF;
@@ -29,9 +45,9 @@
   --sobre-tapa: #DDE5FF;
 
   /* Tipos */
-  --f-titular: "Archivo", "Schibsted Grotesk", sans-serif;
-  --f-texto: "Schibsted Grotesk", system-ui, sans-serif;
-  --f-mano: "Kalam", "Schibsted Grotesk", cursive;
+  --f-titular: "Archivo", "Archivo Fallback", "Schibsted Grotesk", sans-serif;
+  --f-texto: "Schibsted Grotesk", "Schibsted Fallback", system-ui, sans-serif;
+  --f-mano: "Kalam", "Kalam Fallback", "Schibsted Grotesk", cursive;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --celda: 24px;
@@ -468,6 +484,9 @@ body::before {
   cursor: pointer;
 }
 .demo__otra[hidden] { display: none; }
+/* Con JS el botón aparece al montar la demo: su lugar queda reservado desde el inicio
+   para que la demo no crezca ni se mueva (CLS). La clase «js» la pone el <head>. */
+.js .demo__otra[hidden] { display: inline-flex; visibility: hidden; }
 .demo__otra span { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.22em; }
 .demo__otra:hover span { text-decoration-style: wavy; }
 
