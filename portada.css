@@ -907,6 +907,84 @@ body::before {
   .cinta--der { right: -12px; }
 }
 
+/* ---------- Fotos pegadas: lugares de trabajo (no son clientes) ---------- */
+.foto-pegada {
+  position: relative;
+  margin: 0;
+  padding: 8px 8px 6px;
+  border-radius: 3px;
+  background: var(--papel);
+  box-shadow: 0 20px 34px -22px rgba(17, 25, 60, 0.5), 0 2px 6px rgba(17, 25, 60, 0.12);
+}
+.foto-pegada__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #E7EDF6;
+}
+.foto-pegada__pie {
+  padding: 6px 2px 0;
+  font-family: var(--f-mano);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--lapicero);
+  text-align: center;
+  text-wrap: balance;
+}
+.foto-pegada .cinta { width: 76px; height: 22px; }
+.foto-pegada .cinta--centro { top: -11px; left: calc(50% - 38px); }
+.foto-pegada .cinta--izq { top: -4px; left: -20px; }
+
+/* Dolores: la cabecera junta el titular y dos fotos del mostrador */
+.dolores__cabeza { display: grid; }
+.dolores__cabeza .seccion__sub { margin-bottom: 28px; }
+.dolores__fotos {
+  display: flex;
+  align-items: flex-start;
+  max-width: 520px;
+  margin-bottom: 36px;
+  padding-top: 6px;
+}
+.foto-pegada--a { flex: 0 0 57%; rotate: -1.4deg; z-index: 1; }
+.foto-pegada--b { flex: 0 0 40%; margin-left: -3%; margin-top: 22px; rotate: 1.2deg; z-index: 2; }
+.foto-pegada--b .foto-pegada__img { aspect-ratio: 4 / 5; }
+
+@media (min-width: 1024px) {
+  .dolores__cabeza {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: 64px;
+    align-items: center;
+  }
+  .dolores__fotos { justify-self: end; width: 100%; margin-top: -24px; margin-bottom: 36px; }
+}
+
+/* Rubros: tira de fotos pegadas encima del índice */
+.rubros__cuerpo { min-width: 0; }
+.rubros__fotos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 14px;
+  max-width: 760px;
+  margin: 8px 0 36px;
+  padding-top: 8px;
+}
+.foto-pegada--t1 { rotate: -1.2deg; }
+.foto-pegada--t2 { rotate: 1deg; margin-top: 10px; }
+.foto-pegada--t3 { rotate: -0.6deg; }
+
+@media (max-width: 767px) {
+  .foto-pegada--tira { padding: 5px 5px 4px; }
+  .foto-pegada--tira .foto-pegada__pie { padding-top: 4px; font-size: 0.98rem; }
+  .foto-pegada--tira .cinta { width: 54px; height: 16px; top: -8px; left: calc(50% - 27px); }
+}
+@media (min-width: 1024px) {
+  .rubros__fotos { gap: 28px; margin-top: 0; margin-bottom: 40px; }
+}
+
 .caso__titulo {
   margin-bottom: 18px;
   font-family: var(--f-titular);

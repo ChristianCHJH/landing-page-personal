@@ -158,8 +158,25 @@
     <!-- Dolores: renglones que el visitante marca -->
     <section class="seccion dolores" id="dolores">
       <div class="contenedor">
-        <h2 class="seccion__titulo">¿Qué haces a mano que se repite?</h2>
-        <p class="seccion__sub">Marca lo que te pasa. Con eso sé por dónde empezar.</p>
+        <div class="dolores__cabeza">
+          <div class="dolores__texto">
+            <h2 class="seccion__titulo">¿Qué haces a mano que se repite?</h2>
+            <p class="seccion__sub">Marca lo que te pasa. Con eso sé por dónde empezar.</p>
+          </div>
+          <!-- Fotos pegadas: dónde pasa lo manual -->
+          <div class="dolores__fotos">
+            <figure class="foto-pegada foto-pegada--a">
+              <span class="cinta cinta--izq" aria-hidden="true"></span>
+              <img class="foto-pegada__img" src="assets/fotos/mostrador-cuaderno-600.webp" srcset="assets/fotos/mostrador-cuaderno-600.webp 600w, assets/fotos/mostrador-cuaderno-1200.webp 1200w" sizes="(min-width: 1024px) 300px, 54vw" width="1200" height="900" loading="lazy" decoding="async" alt="Manos de un vendedor anotando a mano sobre el mostrador de su puesto, junto a una calculadora" />
+              <figcaption class="foto-pegada__pie">Las cuentas, a mano</figcaption>
+            </figure>
+            <figure class="foto-pegada foto-pegada--b">
+              <span class="cinta cinta--centro" aria-hidden="true"></span>
+              <img class="foto-pegada__img" src="assets/fotos/bodega-mostrador-600.webp" srcset="assets/fotos/bodega-mostrador-600.webp 480w, assets/fotos/bodega-mostrador-1200.webp 960w" sizes="(min-width: 1024px) 210px, 38vw" width="960" height="1200" loading="lazy" decoding="async" alt="Interior de una bodega de barrio, con estantes llenos de productos y un mostrador largo" />
+              <figcaption class="foto-pegada__pie">Bodega de barrio</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <div class="pains-wrap">
         <div role="group" aria-label="Tareas manuales de tu negocio">
@@ -409,6 +426,25 @@
           <h2 class="seccion__titulo">¿Quieres verlo para tu rubro?</h2>
           <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
         </div>
+        <div class="rubros__cuerpo">
+        <!-- Tira de fotos pegadas: tipos de negocio -->
+        <div class="rubros__fotos" aria-label="Algunos tipos de negocio" role="group">
+          <figure class="foto-pegada foto-pegada--tira foto-pegada--t1">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <img class="foto-pegada__img" src="assets/fotos/ferreteria-600.webp" srcset="assets/fotos/ferreteria-600.webp 600w, assets/fotos/ferreteria-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Pared de una ferretería con alicates, llaves y herramientas colgadas a la venta" />
+            <figcaption class="foto-pegada__pie">Ferretería</figcaption>
+          </figure>
+          <figure class="foto-pegada foto-pegada--tira foto-pegada--t2">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <img class="foto-pegada__img" src="assets/fotos/taller-600.webp" srcset="assets/fotos/taller-600.webp 600w, assets/fotos/taller-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Banco de trabajo de un taller con herramientas colgadas en la pared y una máquina de soldar" />
+            <figcaption class="foto-pegada__pie">Taller</figcaption>
+          </figure>
+          <figure class="foto-pegada foto-pegada--tira foto-pegada--t3">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <img class="foto-pegada__img" src="assets/fotos/puesto-mercado-600.webp" srcset="assets/fotos/puesto-mercado-600.webp 600w, assets/fotos/puesto-mercado-1200.webp 1200w" sizes="(min-width: 1024px) 240px, 30vw" width="1200" height="900" loading="lazy" decoding="async" alt="Puesto de bebidas de un mercado en Huanchaco, Perú, con botellas ordenadas en los estantes" />
+            <figcaption class="foto-pegada__pie">Puesto de mercado</figcaption>
+          </figure>
+        </div>
         <ul class="indice">
           <li><a class="indice__item" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i><span class="indice__nombre">Colegios, nidos y academias</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
           <li><a class="indice__item" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i><span class="indice__nombre">Clínicas dentales y consultorios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
@@ -423,6 +459,7 @@
           <li><a class="indice__item" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i><span class="indice__nombre">Talleres y servicio técnico</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
           <li><a class="indice__item" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i><span class="indice__nombre">Minimarkets y tiendas</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
         </ul>
+        </div>
       </div>
     </section>
 
