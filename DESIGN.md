@@ -63,11 +63,6 @@ typography:
     lineHeight: 1.2
     letterSpacing: "-0.01em"
     fontVariation: "\"wdth\" 108"
-  marca:
-    fontFamily: "Archivo, Schibsted Grotesk, sans-serif"
-    fontSize: "1.3rem"
-    fontWeight: 800
-    letterSpacing: "-0.01em"
     fontVariation: "\"wdth\" 120"
   body:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
@@ -274,9 +269,9 @@ Rechazo confirmado (contrato de dirección): la portada SaaS de titular a la izq
 Hoja fría casi blanca, tinta casi negra y una familia de azules de lapicero y de tapa, con dos acentos de marcador (rojo y amarillo) que tienen un solo uso cada uno.
 
 ### Primary
-- **Cobalto de tapa** (`cobalto`): la tapa del cuaderno. Fondo de las secciones `.tapa`, botón principal, botón flotante de WhatsApp, cabecera del panel «tu sistema» del comparador, manija del deslizador, botón del control deslizante y marca del logo. Es la única superficie de color saturado de la página.
+- **Cobalto de tapa** (`cobalto`): la tapa del cuaderno. Fondo de las secciones `.tapa`, botón principal, botón flotante de WhatsApp, cabecera del panel «tu sistema» del comparador, manija del deslizador, botón del control deslizante y casilla del logotipo. Es la única superficie de color saturado de la página.
 - **Cobalto oscuro** (`cobalto-osc`): solo el *hover* del botón principal y del botón flotante.
-- **Cobalto hondo** (`cobalto-hondo`): la contratapa (pie), el texto del botón etiqueta y el relleno interior del logo claro.
+- **Cobalto hondo** (`cobalto-hondo`): la contratapa (pie) y el texto del botón etiqueta.
 - **Azul sobre tapa** (`sobre-tapa`): texto de cuerpo encima de cobalto (≈7:1 sobre la tapa). Los titulares y los `<strong>` sobre la tapa van en blanco puro.
 
 ### Secondary
@@ -315,7 +310,7 @@ El comparador «Antes y después» usa a propósito una paleta ajena, la de una 
 
 **Character:** Archivo ensanchado y en 800 es la letra «en limpio» de los titulares: ancha, firme, casi de rótulo impreso. Schibsted Grotesk es el cuerpo legible y neutro. Kalam es el lapicero del dueño, siempre en azul `lapicero`. Las tres se cargan desde Google Fonts en una sola petición.
 
-El ancho de Archivo se fija con `font-stretch` y equivale al eje `wdth`. El valor cambia con el papel del texto: 108% en el título de paso, 110% en el titular de la portada (116% desde 1024px) y en el de caso, 112% en los títulos de sección y en las cifras de la calculadora, 116% en el precio y el cierre, y 120% en el logotipo.
+El ancho de Archivo se fija con `font-stretch` y equivale al eje `wdth`. El valor cambia con el papel del texto: 108% en el título de paso, 110% en el titular de la portada (116% desde 1024px) y en el de caso, 112% en los títulos de sección y en las cifras de la calculadora, y 116% en el precio y el cierre.
 
 ### Hierarchy
 - **Display** (800, `clamp(2.45rem, 1rem + 4.6vw, 4.75rem)`, 1.01, −0.028em, ancho 110→116%): solo el titular de la portada, con `text-wrap: balance` y un quiebre fijo antes de «se puede hacer solo.».
@@ -371,7 +366,7 @@ Profundidad de papel, no de interfaz. La hoja es plana. Lo que se pega encima le
 
 ## Shapes
 
-Esquinas casi rectas para lo que es papel y redondeo amable para lo que se pulsa. Los papeles pegados apenas se redondean: 3px la foto, 4px el precio y la casilla, 2px la barra pick. Los botones y el botón de menú usan 10px; las pestañas del comparador, 10px solo arriba. La etiqueta de nombre es la forma más blanda (18px), con una línea interior cobalto de 1.5px a 8px del borde y radio de 12px, como las etiquetas escolares impresas. El marco del comparador usa 14px, igual que el cuadrado del logo (rx 14 sobre 64). Los controles circulares (flotante, control del video, manija, perillas) son círculos completos.
+Esquinas casi rectas para lo que es papel y redondeo amable para lo que se pulsa. Los papeles pegados apenas se redondean: 3px la foto, 4px el precio y la casilla, 2px la barra pick. Los botones y el botón de menú usan 10px; las pestañas del comparador, 10px solo arriba. La etiqueta de nombre es la forma más blanda (18px), con una línea interior cobalto de 1.5px a 8px del borde y radio de 12px, como las etiquetas escolares impresas. El marco del comparador usa 14px. Los controles circulares (flotante, control del video, manija, perillas) son círculos completos.
 
 Formas propias del mundo:
 - **Rotación de papel pegado:** −1.4°, 1.2° y −0.8° en las fotos; −1.5° en la etiqueta y en la nota del Excel; 1.2° en el precio.
@@ -412,7 +407,7 @@ Trazo SVG ondulado en `rojo` de 2.6px y puntas redondas, que cubre el 106% del r
 Sección de ancho completo en `cobalto` con grano, brillo y lomo. El texto va en `sobre-tapa`, los titulares y énfasis en blanco y los separadores en `rgba(255,255,255,0.24)`. Se usa dos veces: «Por qué hago esto» y el cierre. La contratapa (pie) es la misma idea en `cobalto-hondo`, con lomo pero sin grano.
 
 ### Etiqueta de nombre
-La etiqueta escolar pegada en la tapa: papel blanco de 440px de ancho máximo, radio de 18px, línea interior cobalto y rotación de −1.5°. Arriba, la marca (logo de 44px, «Abiel» en Archivo 800 al 120% y «por mis dos hijos»), con filete de 2px en cobalto. Debajo, campos de formulario impreso: rótulo en Schibsted 700 a 0.78rem en mayúsculas con 0.06em de espaciado y `tinta-3`, y valor manuscrito en Kalam 700 a 1.35rem en `lapicero`, sobre una línea de 1.5px en `renglon`. Cierra con un botón principal a todo el ancho. Las mayúsculas pequeñas del rótulo son propias de esta etiqueta impresa y no son un estilo de rótulo general.
+La etiqueta escolar pegada en la tapa: papel blanco de 440px de ancho máximo, radio de 18px, línea interior cobalto y rotación de −1.5°. Arriba, la marca (logotipo de 38px de alto y «por mis dos hijos» debajo), con filete de 2px en cobalto. Debajo, campos de formulario impreso: rótulo en Schibsted 700 a 0.78rem en mayúsculas con 0.06em de espaciado y `tinta-3`, y valor manuscrito en Kalam 700 a 1.35rem en `lapicero`, sobre una línea de 1.5px en `renglon`. Cierra con un botón principal a todo el ancho. Las mayúsculas pequeñas del rótulo son propias de esta etiqueta impresa y no son un estilo de rótulo general.
 
 ### Foto con cinta
 Captura de un trabajo como foto pegada: marco blanco de 10px (12px abajo), radio de 3px, sombra «papel pegado», rotación leve y una o dos cintas adhesivas. El medio va a 4:3 con `object-fit: cover`. Si es video, un control circular blanco de 44px abajo a la derecha alterna reproducir, pausar y volver a ver.
@@ -426,8 +421,12 @@ Hoja incrustada de radio 14px y borde de 1.5px en `renglon` con dos capas: un Ex
 ### Inputs / Fields
 **La cuenta a mano (calculadora).** Cada fila tiene un operador Kalam de 1.9rem («+», «×»), una etiqueta, el número Kalam de 1.8rem en `lapicero` a la derecha y un control deslizante. El riel mide 4px, va en `#C5D3E8` y se rellena en `lapicero` hasta `--lleno`. La perilla es un círculo cobalto con borde blanco de 3px: 28px en WebKit y 22px en Firefox. Una raya de suma SVG cierra la cuenta y el resultado sale como cifra en Archivo.
 
+### Logotipo
+
+«La casilla marcada»: la palabra «abiel» en minúscula, trazada como vector, con el punto de la i convertido en una casilla cobalto (#1D3FAE) cuyo visto se sale del cuadro. Se usa siempre como imagen, nunca como texto: `assets/logo.svg` sobre fondo claro (tinta #111318) y `assets/logo-claro.svg` en blanco sobre cobalto; proporción 3,045:1, con `width` y `height` puestos. Alturas: 32px en cabecera y pie, 38px en la etiqueta. El isotipo (solo la casilla con el visto) es `assets/favicon.svg`, y de él salen `logo-512.png` (datos estructurados) y `apple-touch-icon.png`.
+
 ### Navigation
-**Nav-renglón.** El encabezado es el renglón de fecha de la hoja: fijo, de 64px, transparente sobre la cuadrícula y con borde inferior de 1.5px en `renglon`. Al bajar más de 8px toma fondo `hoja` y sombra suave (0.25 y 0.3s). Contiene el logo (cuadro cobalto de 30px y «Abiel» en Archivo 800 al 120%), «Fecha: dd/mm» en Kalam `lapicero` con la fecha real del día (oculto por debajo de 360px), los enlaces en Schibsted 600 con subrayado de 2px que aparece al pasar el cursor (visibles desde 1200px), el botón principal chico (desde 768px) y un botón de menú de 48px con borde en `renglon` y radio de 10px. El menú móvil es una lista de renglones sobre `hoja`, se cierra con Escape y termina en el botón principal.
+**Nav-renglón.** El encabezado es el renglón de fecha de la hoja: fijo, de 64px, transparente sobre la cuadrícula y con borde inferior de 1.5px en `renglon`. Al bajar más de 8px toma fondo `hoja` y sombra suave (0.25 y 0.3s). Contiene el logotipo (32px de alto), «Fecha: dd/mm» en Kalam `lapicero` con la fecha real del día (oculto por debajo de 360px), los enlaces en Schibsted 600 con subrayado de 2px que aparece al pasar el cursor (visibles desde 1200px), el botón principal chico (desde 768px) y un botón de menú de 48px con borde en `renglon` y radio de 10px. El menú móvil es una lista de renglones sobre `hoja`, se cierra con Escape y termina en el botón principal.
 
 ### Botón flotante
 Círculo cobalto de 58px con el logo de WhatsApp. Está oculto mientras se ve la primera pantalla o la sección de dolores, que ya tiene su propia barra de envío. Aparece subiendo 14px desde 0.92 de escala (opacidad 0.3s y transformación 0.4s con `--ease`).
