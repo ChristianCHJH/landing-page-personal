@@ -1,7 +1,16 @@
 /* Piezas del cuaderno para las páginas de rubro.
+   - primeraHoja(): lo que protagoniza la primera pantalla. Si el rubro declara «papel»
+     en rubros.json, dibuja el papel propio de su negocio con un renderer por familia
+     (libreta, agenda, talonario, carnet, cuenta). Si no, cae a demo().
    - demo(): la lista manuscrita del día que se pasa en limpio (una escena por renglón).
-   - hojaSistema(): la vista del sistema como papel pegado (tabla, agenda, mapa, tablero, panel o plano).
-   Los datos salen de herramientas/dispositivos.json. Todo es de ejemplo, con datos ficticios. */
+   - hojaSistema(): la vista del sistema como papel pegado (tabla, agenda, mapa, tablero,
+     plano, o una familia leída de una escena si el rubro declara «hoja»).
+   Los datos salen de herramientas/dispositivos.json. Todo es de ejemplo, con datos ficticios.
+
+   Contrato del «pasar en limpio» (lo lee rubro.js): cada paso lleva [data-paso]; dentro,
+   el tachón es svg[data-tachon], la versión en limpio es [data-limpio], el visto de una
+   casilla es .casilla path y el resaltador es .resalte. El HTML trae el estado final.
+   Agregar una familia nueva es escribir su renderer y sumarlo a PAPELES. */
 
 export const escapar = (texto) =>
   String(texto ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -29,9 +38,9 @@ export const demo = (rubro) => {
   const renglones = c.escenas
     .map((e, i) => {
       if (!e.mano) throw new Error(`Falta el renglón a mano de ${rubro.slug}, escena ${i + 1}`);
-      return `<li class="tarea">
-              <s class="tarea__mano">${escapar(e.mano)}<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="${TACHONES[i % TACHONES.length]}" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">${escapar(e.toast)}</span></span>${
+      return `<li class="tarea" data-paso>
+              <s class="tarea__mano">${escapar(e.mano)}<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="${TACHONES[i % TACHONES.length]}" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">${escapar(e.toast)}</span></span>${
                 e.hora ? `<span class="tarea__hora"><span class="tarea__sep"> · </span>${escapar(e.hora)}</span>` : ""
               }</span></span>
             </li>`;
@@ -47,6 +56,190 @@ export const demo = (rubro) => {
           <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="${total}">${total} de ${total}</span></p>
           <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
           <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+        </figure>`;
+};
+
+/* ---------- Papel propio del rubro: piezas comunes ---------- */
+// Visto de lapicero que sale de la casilla, el mismo trazo de la portada.
+const VISTO = "M7 18.5 C 9.5 20.5, 12 23.5, 14.2 27 C 18 18, 24 10.5, 32.5 3.5";
+
+// Lo anotado a mano que se tacha con lapicero rojo.
+const manoTachada = (texto, i = 0) =>
+  `<s class="mano-tacha">${escapar(texto)}<svg class="tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="${TACHONES[i % TACHONES.length]}" /></svg></s>`;
+
+// La versión en limpio; el resaltador va solo si lo hizo el sistema.
+const enLimpio = (texto, { resalte = true, hora = "", flecha = true } = {}) =>
+  `<span class="limpio" data-limpio>${flecha ? '<i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i>' : ""}<span>${
+    resalte ? `<span class="resalte">${escapar(texto)}</span>` : escapar(texto)
+  }${hora ? `<span class="limpio__hora"> · ${escapar(hora)}</span>` : ""}</span></span>`;
+
+const casilla = (marcada) =>
+  `<span class="casilla" aria-hidden="true">${marcada ? `<svg viewBox="0 0 36 34"><path pathLength="1" d="${VISTO}" /></svg>` : ""}</span>`;
+
+const escenaDe = (rubro, n) => {
+  const e = rubro.dispositivos.celular.escenas[n];
+  if (!e) throw new Error(`${rubro.slug}: no existe la escena ${n}`);
+  return e;
+};
+
+/* ---------- Familia «libreta»: cuaderno de pensiones, de crédito o de fiados ----------
+   Cada renglón es una fila de la escena (nombre, detalle, estado). Lo que cambió se
+   tacha y pasa en limpio; lo demás queda anotado a mano. */
+const libreta = (p, rubro, ids) => {
+  const e = escenaDe(rubro, p.escena);
+  const cambios = new Map((p.renglones || []).map((r) => [r.fila, r]));
+  const columna = p.nota ?? 2;
+  let trazo = 0;
+  const renglones = e.filas
+    .map((fila, i) => {
+      const c = cambios.get(i);
+      const nota = c?.mano ?? fila[columna];
+      if (!c) {
+        return `<li class="libreta__renglon"><span class="libreta__nombre">${escapar(fila[0])}</span><span class="libreta__nota"><span class="mano">${escapar(nota)}</span></span></li>`;
+      }
+      const tacha = c.tacha !== false;
+      return `<li class="libreta__renglon" data-paso><span class="libreta__nombre">${escapar(fila[0])}</span><span class="libreta__nota">${
+        tacha ? manoTachada(nota, trazo++) : `<span class="mano">${escapar(nota)}</span>`
+      }${enLimpio(c.limpio ?? fila[2], { resalte: c.resalte !== false })}</span></li>`;
+    })
+    .join("\n              ");
+  return `<div class="pieza libreta">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <div class="libreta__cabeza">
+              <p class="libreta__titulo" id="${ids.titulo}">${escapar(p.titulo ?? e.titulo)}</p>
+              <p class="pieza__negocio">${escapar(rubro.dispositivos.celular.negocio)}</p>
+            </div>
+            <ul class="libreta__lista">
+              ${renglones}
+            </ul>
+            <p class="libreta__pie">${escapar(e.etiqueta)} <strong>${escapar(e.valor)}</strong> · ${escapar(e.meta)}</p>
+          </div>`;
+};
+
+/* ---------- Familia «agenda»: las citas de mañana con su casilla ----------
+   La casilla de cada cita confirmada se marca; al pie, lo anotado a mano se tacha y
+   queda en limpio cuántos confirmaron. */
+const agendaPapel = (p, rubro, ids) => {
+  const e = escenaDe(rubro, p.escena);
+  const dias = (e.dias || [])
+    .map((d, i) => `<li${i === e.activo ? ' class="is-hoy"' : ""}>${escapar(d)}${
+      i === e.activo ? '<svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><path d="M44 6 C 30 1, 8 4, 4 18 C 1 31, 22 38, 38 35 C 54 32, 59 20, 52 10 C 48 5, 40 3, 33 4" /></svg>' : ""
+    }</li>`)
+    .join("");
+  const citas = e.citas
+    .map(([hora, nombre, detalle, tono, estadoTexto]) => {
+      const ok = tono === "ok";
+      return `<li class="agenda-papel__cita" data-paso>
+              <span class="agenda-papel__hora">${escapar(hora)}</span>
+              <span class="agenda-papel__quien"><span class="mano">${escapar(nombre)}</span><span class="agenda-papel__detalle">${escapar(detalle)}</span></span>
+              <span class="agenda-papel__estado">${enLimpio(estadoTexto, { resalte: false, flecha: false })}${casilla(ok)}</span>
+            </li>`;
+    })
+    .join("\n            ");
+  return `<div class="pieza agenda-papel">
+            <span class="cinta cinta--izq" aria-hidden="true"></span>
+            <div class="libreta__cabeza">
+              <p class="libreta__titulo" id="${ids.titulo}">${escapar(p.titulo ?? e.titulo)}</p>
+              <p class="pieza__negocio">${escapar(rubro.dispositivos.celular.negocio)}</p>
+            </div>
+            ${dias ? `<ol class="agenda-papel__dias" aria-label="Semana; mañana es ${escapar(e.dias[e.activo])}">${dias}</ol>` : ""}
+            <ol class="agenda-papel__lista">
+            ${citas}
+            </ol>
+            <p class="pieza__pendiente" data-paso>${manoTachada(e.mano, 1)}${enLimpio(e.toast, { hora: e.hora })}</p>
+          </div>`;
+};
+
+/* ---------- Familia «talonario»: nota de pedido, cotización o presupuesto ----------
+   La hoja del talonario ya sale en limpio; lo anotado a mano al pie se tacha y queda
+   en limpio lo que se hizo solo. */
+const talonario = (p, rubro, ids) => {
+  const e = escenaDe(rubro, p.escena);
+  const [tipo, ...numero] = String(e.encabezado).split(" ");
+  return `<div class="pieza talonario">
+            <div class="talonario__hoja">
+              <div class="talonario__cabeza">
+                <p class="talonario__tipo" id="${ids.titulo}">${escapar(tipo)}</p>
+                <p class="talonario__numero">N.° ${escapar(numero.join(" "))}</p>
+              </div>
+              <p class="talonario__cliente">${escapar(e.codigo)}</p>
+              <ul class="talonario__lineas">
+                ${(e.lineas || []).map(([concepto, monto]) => `<li><span>${escapar(concepto)}</span><span>${escapar(monto)}</span></li>`).join("\n                ")}
+              </ul>
+              ${e.total ? `<p class="talonario__total"><span>Total</span><span>${escapar(e.total)}</span></p>` : ""}
+              <p class="pieza__pendiente" data-paso>${manoTachada(e.mano, 2)}${enLimpio(e.sello, { hora: e.hora })}</p>
+            </div>
+          </div>`;
+};
+
+/* ---------- Familia «carnet»: el carnet del socio ----------
+   El estado anotado a mano se tacha y pasa en limpio. */
+const carnet = (p, rubro, ids) => {
+  const e = escenaDe(rubro, p.escena);
+  const [nombre, detalle, estadoTexto] = e.filas[p.fila];
+  return `<div class="pieza carnet">
+            <span class="cinta cinta--der" aria-hidden="true"></span>
+            <div class="carnet__cabeza">
+              <p class="carnet__marca"><i class="ph ph-${rubro.icono}" aria-hidden="true"></i>${escapar(e.marca ?? rubro.dispositivos.celular.negocio)}</p>
+              <p class="carnet__tipo" id="${ids.titulo}">${escapar(p.titulo ?? "Carnet de socio")}</p>
+            </div>
+            <dl class="carnet__campos">
+              <div><dt>Socio</dt><dd class="mano carnet__nombre">${escapar(nombre)}</dd></div>
+              <div><dt>Entrada</dt><dd class="mano">${escapar(detalle)}</dd></div>
+              <div data-paso><dt>Estado</dt><dd>${manoTachada(estadoTexto)}${enLimpio(p.limpio)}${
+                p.detalle ? `<span class="carnet__vence" data-limpio>${escapar(p.detalle)}</span>` : ""
+              }</dd></div>
+            </dl>
+          </div>`;
+};
+
+/* ---------- Familia «cuenta»: la cuenta a mano con raya de suma ----------
+   Cada parte es [concepto, monto]; un monto que empieza con «-» resta. */
+const cuentaMano = (e) => {
+  const filas = e.partes
+    .map(([concepto, monto], i) => {
+      const resta = /^\s*-/.test(monto);
+      const op = resta ? "−" : i === 0 ? "" : "+";
+      return `<li class="cuenta-mano__fila"><span class="cuenta-mano__op" aria-hidden="true">${op}</span><span class="cuenta-mano__concepto">${escapar(concepto)}</span><span class="cuenta-mano__num">${
+        resta ? '<span class="solo-lector">menos </span>' : ""
+      }${escapar(String(monto).replace(/^\s*-\s*/, ""))}</span></li>`;
+    })
+    .join("\n                ");
+  return `<div class="cuenta-mano">
+              <ol class="cuenta-mano__lista">
+                ${filas}
+              </ol>
+              <svg class="cuenta-mano__raya" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4.5 C 120 3, 260 6, 398 3.8" /><path d="M4 10.5 C 140 9.4, 280 11.6, 396 9.6" /></svg>
+              <p class="cuenta-mano__etiqueta">${escapar(e.etiqueta)}</p>
+              <p class="cuenta-mano__total">${escapar(e.total)}</p>
+              ${e.meta ? `<p class="cuenta-mano__meta">${escapar(e.meta)}</p>` : ""}
+              ${e.nota ? `<p class="cuenta-mano__nota"><i class="ph ph-check-circle" aria-hidden="true"></i><span><span class="resalte">${escapar(e.nota)}</span></span></p>` : ""}
+            </div>`;
+};
+
+// Un renderer por familia. Para sumar «cuenta», «plano» o «ruta» a la primera
+// pantalla basta con escribir su renderer y agregarlo aquí.
+const PAPELES = { libreta, agenda: agendaPapel, talonario, carnet };
+
+export const primeraHoja = (rubro) => {
+  if (!rubro.papel) return demo(rubro);
+  const piezas = [].concat(rubro.papel);
+  const html = piezas
+    .map((p, i) => {
+      const render = PAPELES[p.familia];
+      if (!render) throw new Error(`${rubro.slug}: familia de papel desconocida «${p.familia}»`);
+      return render(p, rubro, { titulo: i === 0 ? "demoTitulo" : `demoTitulo${i + 1}` });
+    })
+    .join("\n          ");
+  const familias = [...new Set(piezas.map((p) => `papel--${p.familia}`))].join(" ");
+  return `<figure class="papel ${familias}${piezas.length > 1 ? " papel--doble" : ""}" id="demo" aria-labelledby="demoTitulo">
+          <div class="papel__piezas">
+          ${html}
+          </div>
+          <div class="papel__pie">
+            <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+            <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
         </figure>`;
 };
 
@@ -86,27 +279,67 @@ const tabla = (t) => {
 };
 
 /* ---------- Hoja del sistema: agenda ---------- */
+// «3:00» de la tarde va después de «12:00»: las horas antes de las 7 son de la tarde.
+const minutos = (hora) => {
+  const [h, m = "0"] = String(hora).split(":");
+  const n = Number(h);
+  return (n < 7 ? n + 12 : n) * 60 + Number(m);
+};
+
+/* Cada hora ocupa dos filas de media hora. Si entre dos horas seguidas hay más de una
+   hora de diferencia (el refrigerio), se dibuja un corte: así 12:00 y 3:00 no parecen
+   estar a una hora de distancia. */
 const agenda = (t) => {
-  const filas = t.horas.length * 2;
-  return `<div class="hs-agenda" style="--cols:${t.columnas.length};grid-template-rows:auto repeat(${filas}, 26px)">
+  const cortes = t.horas.slice(1).flatMap((h, i) => (minutos(h) - minutos(t.horas[i]) > 60 ? [i + 1] : []));
+  const fila = (x, incluirCorteFinal = true) =>
+    2 + Math.round(x * 2) + cortes.filter((b) => (incluirCorteFinal ? b <= x : b < x)).length;
+  const alturas = t.horas.flatMap((_, i) => (cortes.includes(i) ? ["16px", "26px", "26px"] : ["26px", "26px"]));
+  return `<div class="hs-agenda" style="--cols:${t.columnas.length};grid-template-rows:auto ${alturas.join(" ")}">
               <span class="hs-agenda__esquina" aria-hidden="true"></span>
               ${t.columnas.map((c, i) => `<span class="hs-agenda__col" style="grid-column:${i + 2}">${escapar(c)}</span>`).join("")}
               ${t.horas
                 .map(
                   (h, i) =>
-                    `<span class="hs-agenda__linea" style="grid-row:${i * 2 + 2} / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:${i * 2 + 2}">${escapar(h)}</span>`,
+                    `<span class="hs-agenda__linea" style="grid-row:${fila(i)} / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:${fila(i)}">${escapar(h)}</span>`,
                 )
+                .join("\n              ")}
+              ${cortes
+                .map((b) => `<span class="hs-agenda__corte" style="grid-row:${fila(b) - 1}" aria-hidden="true"></span>`)
                 .join("\n              ")}
               ${t.bloques
                 .map(([col, inicio, dur, texto, tono], i) => {
                   const nuevo = i === t.nuevo;
-                  return `<span class="hs-agenda__cita hs-agenda__cita--${tono}${nuevo ? " is-nuevo" : ""}" style="grid-column:${col + 2};grid-row:${Math.round(inicio * 2) + 2} / span ${Math.max(1, Math.round(dur * 2))}"><span class="solo-lector">${escapar(t.columnas[col])}: </span>${
+                  const desde = fila(inicio);
+                  const hasta = fila(inicio + dur, false);
+                  return `<span class="hs-agenda__cita hs-agenda__cita--${tono}${nuevo ? " is-nuevo" : ""}" style="grid-column:${col + 2};grid-row:${desde} / span ${Math.max(1, hasta - desde)}"><span class="solo-lector">${escapar(t.columnas[col])}: </span>${
                     nuevo ? `<span class="resalte">${escapar(texto)}</span>` : escapar(texto)
                   }</span>`;
                 })
                 .join("\n              ")}
             </div>`;
 };
+
+/* ---------- Hoja del sistema: renglones en limpio ----------
+   «vivo» es el índice del renglón que hizo el sistema solo: solo ese lleva resaltador. */
+const listaFilas = (filas, vivo) =>
+  filas
+    .map(
+      ([nombre, detalle, tag, tono], i) => `<li>
+                  <span class="hs-lista__quien"><span class="hs-lista__nombre">${escapar(nombre)}</span><span class="hs-lista__detalle">${escapar(detalle)}</span></span>
+                  ${estado(tag, tono, i === vivo)}
+                </li>`,
+    )
+    .join("\n                ");
+
+// Una escena de tipo lista como hoja del sistema: cifra arriba, renglones y lo que se hizo solo.
+const listaEscena = (e) => `<div class="hs-escena">
+              <p class="hs-escena__cifra"><span>${escapar(e.etiqueta)}</span> <strong>${escapar(e.valor)}</strong></p>
+              <p class="hs-escena__meta">${escapar(e.meta)}</p>
+              <ul class="hs-lista">
+                ${listaFilas(e.filas)}
+              </ul>
+              <p class="hs-escena__solo"><i class="ph ph-check-circle" aria-hidden="true"></i><span><span class="resalte">${escapar(e.toast)}</span></span></p>
+            </div>`;
 
 /* ---------- Hoja del sistema: mapa ---------- */
 const FONDO_CIUDAD = `<g class="hs-mapa__calles">
@@ -135,14 +368,7 @@ const mapa = (t, slug) => `<div class="hs-mapa">
                   .join("\n                ")}
               </svg>
               <ul class="hs-lista">
-                ${t.lista
-                  .map(
-                    ([nombre, detalle, tag, tono]) => `<li>
-                  <span class="hs-lista__quien"><span class="hs-lista__nombre">${escapar(nombre)}</span><span class="hs-lista__detalle">${escapar(detalle)}</span></span>
-                  ${estado(tag, tono)}
-                </li>`,
-                  )
-                  .join("\n                ")}
+                ${listaFilas(t.lista, t.vivo)}
               </ul>
             </div>`;
 
@@ -162,18 +388,6 @@ const kanban = (t) => `<div class="hs-tablero">
               </div>`,
                 )
                 .join("\n              ")}
-            </div>`;
-
-/* ---------- Hoja del sistema: panel ---------- */
-const panel = (t) => `<div class="hs-panel">
-              <dl class="hs-panel__cifras">
-                ${t.stats.map(([label, valor]) => `<div><dt>${escapar(label)}</dt><dd>${escapar(valor)}</dd></div>`).join("")}
-              </dl>
-              <p class="hs-panel__rotulo">${escapar(t.barrasTitulo)}</p>
-              <div class="hs-panel__barras" aria-hidden="true">
-                ${t.barras.map((v, i) => `<span style="--h:${v}%"${i === t.barras.length - 1 ? ' class="is-ahora"' : ""}></span>`).join("")}
-              </div>
-              <div class="hs-panel__eje" aria-hidden="true">${t.ejes.map((e) => `<span>${escapar(e)}</span>`).join("")}</div>
             </div>`;
 
 /* ---------- Hoja del sistema: plano de lotes ---------- */
@@ -200,20 +414,38 @@ const plano = (t) => {
             </div>`;
 };
 
-const VISTAS = { tabla, agenda, mapa, kanban, panel, plano };
+const VISTAS = { tabla, agenda, mapa, kanban, plano };
+
+// Familias que la hoja del sistema puede leer de una escena (rubros.json, «hoja»).
+const HOJAS = { cuenta: cuentaMano, lista: listaEscena };
 
 export const hojaSistema = (rubro) => {
-  const t = rubro.dispositivos.tablet;
-  const render = VISTAS[t.tipo];
-  if (!render) throw new Error(`Vista desconocida: ${t.tipo}`);
-  return `<figure class="hs hs--${t.tipo}" id="hojaSistema" aria-labelledby="hsTitulo">
+  let tipo;
+  let titulo;
+  let cuerpo;
+  if (rubro.hoja) {
+    const e = escenaDe(rubro, rubro.hoja.escena);
+    const render = HOJAS[rubro.hoja.familia];
+    if (!render) throw new Error(`${rubro.slug}: familia de hoja desconocida «${rubro.hoja.familia}»`);
+    tipo = rubro.hoja.familia;
+    titulo = rubro.hoja.titulo ?? e.titulo;
+    cuerpo = render(e);
+  } else {
+    const t = rubro.dispositivos.tablet;
+    const render = VISTAS[t.tipo];
+    if (!render) throw new Error(`Vista desconocida: ${t.tipo}`);
+    tipo = t.tipo;
+    titulo = t.titulo;
+    cuerpo = render(t, rubro.slug);
+  }
+  return `<figure class="hs hs--${tipo}" id="hojaSistema" aria-labelledby="hsTitulo">
           <span class="cinta cinta--centro" aria-hidden="true"></span>
           <div class="hs__cabeza">
             <p class="hs__negocio"><i class="ph ph-${rubro.icono}" aria-hidden="true"></i>${escapar(rubro.dispositivos.celular.negocio)}</p>
-            <p class="hs__titulo" id="hsTitulo">${escapar(t.titulo)}</p>
+            <p class="hs__titulo" id="hsTitulo">${escapar(titulo)}</p>
           </div>
           <div class="hs__cuerpo">
-            ${render(t, rubro.slug)}
+            ${cuerpo}
           </div>
           <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
         </figure>`;

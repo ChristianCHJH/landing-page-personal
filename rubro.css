@@ -2,9 +2,28 @@
    Páginas de rubro Abiel · lo propio de cada rubro sobre el «Cuaderno de cuentas».
    Se carga después de portada.css, que pone la hoja, los tipos, los botones,
    el encabezado, la demo, los pasos, el precio, las preguntas, la tapa y el pie.
-   Aquí solo va lo que la portada no tiene: el titular largo del rubro, la línea
-   «Lo que te resuelvo» y la hoja del sistema pegada.
+   Aquí solo va lo que la portada no tiene: el titular largo del rubro, el papel
+   propio de cada negocio en la primera pantalla (libreta, agenda, talonario,
+   carnet), la línea «Lo que te resuelvo» y la hoja del sistema pegada.
    ========================================================================== */
+
+/* ---------- Tintes de papel del rubro ----------
+   Los tokens de la hoja viven en portada.css. Estos son los tintes claros que solo
+   usan los papeles del rubro y la hoja del sistema, todos de la familia
+   renglón/lapicero (documentados en DESIGN.md, «Tintes del rubro»). */
+:root {
+  --renglon-suave: var(--renglon-suave);   /* línea interior de tablas, listas y agenda sobre papel */
+  --papel-hover: #EAF0FF;     /* token de DESIGN.md: cita confirmada, fondo tenue de lapicero */
+  --papel-sombra: #F2F6FC;    /* columna del tablero: un papel apenas más hondo que el blanco */
+  --lapicero-claro: #8C9BD3;  /* contornos discontinuos: lo que todavía no se confirma */
+  --lapicero-seco: #4A5BA8;   /* token de DESIGN.md: segundo vehículo del mapa */
+  --mapa-fondo: #F3F7FD;
+  --mapa-calle: #DCE7F4;
+  --mapa-avenida: #CBDBEF;
+  --mapa-parque: #E4ECF8;
+  --mapa-cerro: #C6D6EA;
+  --mapa-rio: #A9C6E8;
+}
 
 /* ---------- Primera pantalla ---------- */
 /* Los ganchos de rubro son más largos que el de la portada: bajan de tamaño, no de peso. */
@@ -15,6 +34,425 @@
 @media (min-width: 1024px) {
   .hero__titulo--rubro { font-stretch: 110%; }
 }
+
+/* Ganchos largos (más de 52 caracteres): un escalón más chico y menos ancho,
+   para que el botón principal quede en la primera pantalla. */
+.hero__titulo--largo { font-size: clamp(2rem, 1.15rem + 2.3vw, 2.9rem); line-height: 1.05; }
+@media (min-width: 1024px) {
+  .hero__titulo--rubro.hero__titulo--largo { font-stretch: 108%; }
+}
+
+/* En el celular el papel sube pegado al botón; los tres datos bajan después. */
+@media (max-width: 479px) {
+  .pagina-rubro .hero__grid { display: flex; flex-direction: column; gap: 0; }
+  .pagina-rubro .hero__copy { display: contents; }
+  .pagina-rubro .hero__grid > .demo,
+  .pagina-rubro .hero__grid > .papel { order: 4; margin-top: 34px; }
+  .pagina-rubro .hero__datos { order: 5; margin-top: 26px; }
+  .pagina-rubro .hero__lugar { order: 6; }
+}
+
+/* Con papel propio, el papel pesa más que el texto en pantalla ancha. */
+@media (min-width: 1024px) {
+  .hero__grid--papel { grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); }
+}
+
+/* ---------- El papel del negocio ----------
+   Cada familia es un papel pegado en la hoja: blanco, con cinta, un poco torcido y
+   con la sombra «papel pegado». Lo anotado a mano va en Kalam y lapicero; lo que el
+   sistema resolvió, en limpio. */
+.papel { position: relative; min-width: 0; max-width: 620px; margin: 0; }
+.papel__piezas { display: grid; gap: 28px; }
+.papel__pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 16px;
+  margin-top: 12px;
+}
+.papel__pie .demo__otra { margin-top: 0; }
+.papel__pie .demo__nota { margin-top: 0; }
+
+.pieza {
+  position: relative;
+  min-width: 0;
+  padding: 20px 22px 18px;
+  border-radius: 3px;
+  background: var(--papel);
+  box-shadow: 0 20px 34px -22px rgba(17, 25, 60, 0.5), 0 2px 6px rgba(17, 25, 60, 0.12);
+}
+.mano { font-family: var(--f-mano); color: var(--lapicero); }
+.pieza__negocio { color: var(--tinta-3); font-size: 0.85rem; font-weight: 600; }
+
+/* Renglón a mano que se tacha: el mismo trazo rojo de la portada */
+.mano-tacha {
+  position: relative;
+  justify-self: start;
+  font-family: var(--f-mano);
+  font-size: clamp(1.08rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.35;
+  color: var(--lapicero);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.tachon {
+  position: absolute;
+  left: -3%;
+  top: calc(50% - 9px);
+  width: 106%;
+  height: 18px;
+  overflow: visible;
+  pointer-events: none;
+}
+.tachon path {
+  fill: none;
+  stroke: var(--rojo);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 0;
+}
+
+/* La versión en limpio, debajo de lo tachado */
+.limpio {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--tinta);
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.03rem);
+  font-weight: 600;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.limpio > i { flex: none; margin-top: 3px; font-size: 1.05rem; color: var(--tinta-3); }
+.limpio__hora { color: var(--tinta-3); font-weight: 500; white-space: nowrap; }
+
+.pieza__pendiente { display: grid; justify-items: start; gap: 2px; margin-top: 14px; }
+
+/* Casilla con visto de lapicero (la de los dolores de la portada) */
+.casilla {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--tinta-2);
+  border-radius: 4px;
+  background: var(--papel);
+}
+.casilla svg {
+  position: absolute;
+  left: -2px;
+  top: -10px;
+  width: 36px;
+  height: 34px;
+  overflow: visible;
+}
+.casilla path {
+  fill: none;
+  stroke: var(--lapicero);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 0;
+}
+
+/* Libreta: hoja rayada con su propio margen rojo */
+.libreta { padding-left: 54px; rotate: -0.8deg; }
+.libreta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 38px;
+  width: 1.5px;
+  background: var(--margen);
+  opacity: 0.8;
+}
+.libreta__cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 16px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--renglon);
+}
+.libreta__titulo {
+  font-family: var(--f-mano);
+  font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--lapicero);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.libreta__lista { margin: 0; padding: 0; list-style: none; }
+.libreta__renglon {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 2px 16px;
+  min-height: 54px;
+  padding: 11px 0 10px;
+  border-bottom: 1px solid var(--renglon);
+}
+.libreta__nombre {
+  font-family: var(--f-mano);
+  font-size: clamp(1.1rem, 1rem + 0.45vw, 1.32rem);
+  line-height: 1.35;
+  color: var(--lapicero);
+}
+.libreta__nota { display: grid; justify-items: start; gap: 1px; min-width: 0; }
+.libreta__nota > .mano { font-size: clamp(1.08rem, 1rem + 0.4vw, 1.3rem); line-height: 1.35; }
+.libreta__pie { margin-top: 14px; color: var(--tinta-2); font-size: 0.95rem; line-height: 1.5; }
+.libreta__pie strong { color: var(--tinta); font-weight: 700; }
+
+/* Agenda: la semana arriba, mañana encerrada a mano, y una casilla por cita */
+.agenda-papel { rotate: 0.7deg; }
+.agenda-papel__dias {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0 2px;
+  padding: 0;
+  list-style: none;
+}
+.agenda-papel__dias li {
+  position: relative;
+  flex: 1;
+  padding: 6px 0;
+  color: var(--tinta-3);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+.agenda-papel__dias .is-hoy { color: var(--lapicero); font-weight: 700; }
+.agenda-papel__dias svg {
+  position: absolute;
+  inset: -3px -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 6px);
+  overflow: visible;
+  pointer-events: none;
+}
+.agenda-papel__dias path { fill: none; stroke: var(--lapicero); stroke-width: 2; stroke-linecap: round; }
+.agenda-papel__lista { margin: 0; padding: 0; list-style: none; }
+.agenda-papel__cita {
+  display: grid;
+  grid-template-columns: 3.3rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 12px;
+  min-height: 58px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--renglon);
+}
+.agenda-papel__hora { color: var(--tinta-3); font-size: 0.92rem; font-weight: 600; }
+.agenda-papel__quien { display: grid; min-width: 0; line-height: 1.3; }
+.agenda-papel__quien .mano { font-size: clamp(1.1rem, 1rem + 0.45vw, 1.32rem); }
+.agenda-papel__detalle { font-family: var(--f-mano); font-size: 1rem; color: var(--lapicero-seco); }
+.agenda-papel__estado { display: flex; align-items: center; gap: 12px; }
+.agenda-papel__estado .limpio { font-size: 0.92rem; white-space: nowrap; }
+
+@media (max-width: 559px) {
+  .agenda-papel__cita { grid-template-columns: 2.9rem minmax(0, 1fr) auto; align-items: start; }
+  .agenda-papel__hora { padding-top: 4px; }
+  .agenda-papel__estado { display: contents; }
+  .agenda-papel__estado .limpio { grid-column: 2; grid-row: 2; }
+  .agenda-papel__estado .casilla { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+}
+
+/* Talonario: hoja con el borde de arriba picado, como recién arrancada */
+.talonario {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  filter: drop-shadow(0 14px 14px rgba(17, 25, 60, 0.2)) drop-shadow(0 2px 3px rgba(17, 25, 60, 0.12));
+  rotate: 1.2deg;
+}
+.talonario__hoja {
+  padding: 22px 22px 16px;
+  border-radius: 0 0 3px 3px;
+  background: var(--papel);
+  -webkit-mask: radial-gradient(circle 4px at 8px 0, transparent 97%, var(--tinta)) 0 0 / 16px 100% repeat-x;
+  mask: radial-gradient(circle 4px at 8px 0, transparent 97%, var(--tinta)) 0 0 / 16px 100% repeat-x;
+}
+.talonario__cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 16px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px dashed var(--renglon);
+}
+.talonario__tipo {
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.talonario__numero { color: var(--tinta-2); font-size: 0.95rem; font-weight: 700; }
+.talonario__cliente { margin: 10px 0 4px; font-weight: 700; }
+.talonario__lineas { margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+.talonario__lineas li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px dotted var(--renglon);
+}
+.talonario__lineas li span:last-child { flex: none; }
+.talonario__total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Dos piezas (libreta y talonario): el talonario se monta sobre el pie de la libreta */
+@media (min-width: 640px) {
+  .papel--doble .papel__piezas { gap: 0; }
+  /* La libreta deja un pie en blanco para que el talonario no tape su total */
+  .papel--doble .libreta { padding-bottom: 44px; }
+  .papel--doble .talonario {
+    z-index: 3;
+    justify-self: end;
+    width: min(100%, 400px);
+    margin-top: -30px;
+    margin-right: -12px;
+  }
+}
+
+/* Carnet de socio: tarjeta con banda de tapa arriba */
+.carnet { max-width: 480px; padding: 0; border-radius: 12px; rotate: -1.2deg; }
+.carnet__cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 16px;
+  padding: 16px 22px 14px;
+  border-radius: 12px 12px 0 0;
+  background: var(--cobalto);
+  color: #fff;
+}
+.carnet__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.1rem;
+}
+.carnet__marca i { font-size: 1.3rem; }
+.carnet__tipo { color: var(--sobre-tapa); font-size: 0.9rem; font-weight: 600; }
+.carnet__campos { margin: 0; padding: 6px 22px 18px; }
+.carnet__campos > div {
+  display: grid;
+  grid-template-columns: 5.6rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 4px 14px;
+  padding: 12px 0 11px;
+  border-bottom: 1px solid var(--renglon);
+}
+/* Rótulos impresos del carnet, como los de la etiqueta escolar */
+.carnet__campos dt {
+  color: var(--tinta-3);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.carnet__campos dd { display: grid; justify-items: start; gap: 2px; margin: 0; font-size: 1.2rem; line-height: 1.35; }
+.carnet__nombre { font-size: 1.45rem; font-weight: 700; }
+.carnet__vence { color: var(--tinta-2); font-size: 0.92rem; font-weight: 500; line-height: 1.45; padding-left: 22px; }
+
+@media (max-width: 479px) {
+  .pieza { padding: 18px 16px 16px; }
+  .libreta { padding-left: 40px; }
+  .libreta::before { left: 28px; }
+  .libreta__renglon { grid-template-columns: minmax(0, 1fr); }
+  .talonario { padding: 0; }
+  .talonario__hoja { padding: 20px 16px 14px; }
+  .carnet { padding: 0; }
+  .carnet__campos { padding-inline: 16px; }
+  .carnet__campos > div { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- La cuenta a mano (hoja del sistema) ---------- */
+.cuenta-mano { max-width: 540px; padding: 12px 4px 6px; }
+.cuenta-mano__lista { margin: 0; padding: 0; list-style: none; }
+.cuenta-mano__fila {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: 10px;
+  padding: 7px 0;
+}
+.cuenta-mano__op {
+  font-family: var(--f-mano);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--lapicero);
+}
+.cuenta-mano__concepto { font-weight: 600; line-height: 1.35; }
+.cuenta-mano__num {
+  font-family: var(--f-mano);
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: right;
+  color: var(--lapicero);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.cuenta-mano__raya { display: block; width: 100%; height: 14px; margin: 4px 0 12px; overflow: visible; }
+.cuenta-mano__raya path { fill: none; stroke: var(--lapicero); stroke-width: 2.2; stroke-linecap: round; }
+.cuenta-mano__etiqueta,
+.cuenta-mano__total,
+.cuenta-mano__meta,
+.cuenta-mano__nota { padding-left: 40px; }
+.cuenta-mano__etiqueta { color: var(--tinta-2); font-weight: 600; }
+.cuenta-mano__total {
+  margin: 2px 0 6px;
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: clamp(2.4rem, 1.8rem + 2.2vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.cuenta-mano__meta { color: var(--tinta-3); font-size: 0.92rem; }
+.cuenta-mano__nota { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; font-weight: 600; line-height: 1.45; }
+.cuenta-mano__nota i,
+.hs-escena__solo i { flex: none; margin-top: 2px; font-size: 1.15rem; color: var(--lapicero); }
+
+/* ---------- Una escena como hoja del sistema ---------- */
+.hs-escena { padding-top: 8px; }
+.hs-escena__cifra { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.hs-escena__cifra span { color: var(--tinta-2); font-weight: 600; }
+.hs-escena__cifra strong {
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 108%;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.hs-escena__meta { margin-bottom: 4px; color: var(--tinta-3); font-size: 0.92rem; }
+.hs-escena__solo { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; font-weight: 600; line-height: 1.45; }
 
 /* ---------- Lo que te resuelvo ---------- */
 .arreglos__grid { display: grid; gap: 8px; }
@@ -168,7 +606,7 @@
 .hs-tabla tbody th,
 .hs-tabla td {
   padding: 12px 10px;
-  border-bottom: 1px solid #E3E8F0;
+  border-bottom: 1px solid var(--renglon-suave);
   text-align: left;
   vertical-align: middle;
 }
@@ -183,7 +621,7 @@
   align-items: center;
   gap: 2px 12px;
   padding: 12px 0;
-  border-bottom: 1px solid #E3E8F0;
+  border-bottom: 1px solid var(--renglon-suave);
 }
 .hs-renglones__nombre { font-weight: 700; }
 .hs-renglones__datos { flex-basis: 100%; color: var(--tinta-2); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
@@ -210,7 +648,14 @@
 }
 .hs-agenda__esquina { grid-column: 1; }
 .hs-agenda__col { color: var(--tinta-2); font-size: 0.82rem; font-weight: 700; line-height: 1.25; }
-.hs-agenda__linea { grid-column: 1 / -1; border-top: 1px solid #E3E8F0; }
+.hs-agenda__linea { grid-column: 1 / -1; border-top: 1px solid var(--renglon-suave); }
+/* Corte del horario: entre 12:00 y 3:00 no hay una hora, hay un salto. */
+.hs-agenda__corte {
+  grid-column: 1 / -1;
+  align-self: center;
+  height: 8px;
+  border-block: 1.5px dashed var(--renglon);
+}
 .hs-agenda__hora {
   grid-column: 1;
   padding-top: 4px;
@@ -229,9 +674,9 @@
   overflow: hidden;
   overflow-wrap: anywhere;
 }
-.hs-agenda__cita--ok { background: #E6ECFF; color: var(--tinta); }
-.hs-agenda__cita--soon { background: var(--papel); border: 1.5px dashed #8C9BD3; color: var(--tinta); }
-.hs-agenda__cita--late { background: #F1F3F7; border: 1px solid #DADDE2; color: var(--tinta-2); }
+.hs-agenda__cita--ok { background: var(--papel-hover); color: var(--tinta); }
+.hs-agenda__cita--soon { background: var(--papel); border: 1.5px dashed var(--lapicero-claro); color: var(--tinta); }
+.hs-agenda__cita--late { background: var(--hoja); border: 1px solid var(--renglon); color: var(--tinta-2); }
 .hs-agenda__cita.is-nuevo { background: var(--papel); border: 1.5px solid var(--renglon); }
 
 /* Mapa */
@@ -241,20 +686,20 @@
   height: auto;
   aspect-ratio: 300 / 260;
   border-radius: 3px;
-  background: #F3F7FD;
+  background: var(--mapa-fondo);
 }
-.hs-mapa__calles path { fill: none; stroke: #DCE7F4; stroke-width: 9; }
-.hs-mapa__calles .hs-mapa__avenida { stroke: #CBDBEF; stroke-width: 13; }
-.hs-mapa__parque { fill: #E4ECF8; }
-.hs-mapa__cerros path { fill: none; stroke: #C6D6EA; stroke-width: 1.5; }
-.hs-mapa__rio { fill: none; stroke: #A9C6E8; stroke-width: 5; stroke-linecap: round; }
+.hs-mapa__calles path { fill: none; stroke: var(--mapa-calle); stroke-width: 9; }
+.hs-mapa__calles .hs-mapa__avenida { stroke: var(--mapa-avenida); stroke-width: 13; }
+.hs-mapa__parque { fill: var(--mapa-parque); }
+.hs-mapa__cerros path { fill: none; stroke: var(--mapa-cerro); stroke-width: 1.5; }
+.hs-mapa__rio { fill: none; stroke: var(--mapa-rio); stroke-width: 5; stroke-linecap: round; }
 .hs-mapa__ruta { fill: none; stroke: var(--lapicero); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
-.hs-mapa__ruta--otra { stroke: #8C9BD3; stroke-dasharray: 6 6; }
+.hs-mapa__ruta--otra { stroke: var(--lapicero-claro); stroke-dasharray: 6 6; }
 .hs-mapa__vehiculo { visibility: hidden; }
 .hs-mapa__vehiculo.is-listo { visibility: visible; }
 .hs-mapa__vehiculo circle { fill: var(--cobalto); stroke: #fff; stroke-width: 3; }
 .hs-mapa__vehiculo .hs-mapa__nucleo { fill: #fff; stroke: none; }
-.hs-mapa__vehiculo--otro circle { fill: var(--lapicero-seco, #4A5BA8); }
+.hs-mapa__vehiculo--otro circle { fill: var(--lapicero-seco); }
 
 .hs-lista { margin: 0; padding: 0; list-style: none; }
 .hs-lista li {
@@ -263,7 +708,7 @@
   align-items: center;
   gap: 4px 12px;
   padding: 12px 0;
-  border-bottom: 1px solid #E3E8F0;
+  border-bottom: 1px solid var(--renglon-suave);
 }
 .hs-lista__quien { display: grid; }
 .hs-lista__nombre { font-weight: 700; }
@@ -275,7 +720,7 @@
 
 /* Tablero */
 .hs-tablero { display: grid; gap: 12px; padding: 10px 0 4px; }
-.hs-tablero__col { padding: 10px; border-radius: 4px; background: #F2F6FC; }
+.hs-tablero__col { padding: 10px; border-radius: 4px; background: var(--papel-sombra); }
 .hs-tablero__titulo {
   display: flex;
   justify-content: space-between;
@@ -302,58 +747,6 @@
   .hs-tablero { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-/* Panel del día */
-.hs-panel { padding-top: 6px; }
-.hs-panel__cifras {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px 16px;
-  margin: 0;
-  padding: 10px 0 16px;
-  border-bottom: 1px solid #E3E8F0;
-}
-.hs-panel__cifras dt { color: var(--tinta-2); font-size: 0.86rem; line-height: 1.3; }
-.hs-panel__cifras dd {
-  margin: 4px 0 0;
-  font-family: var(--f-titular);
-  font-weight: 800;
-  font-stretch: 104%;
-  font-size: clamp(1.25rem, 0.9rem + 1vw, 1.6rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-}
-.hs-panel__rotulo { margin: 14px 0 10px; color: var(--tinta-2); font-size: 0.9rem; font-weight: 700; }
-.hs-panel__barras {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  height: 150px;
-  border-bottom: 1.5px solid var(--renglon);
-}
-.hs-panel__barras span { flex: 1; height: var(--h); border-radius: 3px 3px 0 0; background: #C5D3E8; }
-.hs-panel__barras .is-ahora { background: var(--lapicero); }
-.hs-panel__eje {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 6px;
-  color: var(--tinta-3);
-  font-size: 0.8rem;
-}
-
-@media (max-width: 559px) {
-  .hs-panel__cifras { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 4px; }
-  .hs-panel__cifras div {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 8px 0;
-  }
-  .hs-panel__cifras div + div { border-top: 1px solid #EEF1F6; }
-  .hs-panel__cifras dd { margin: 0; }
-}
-
 /* Plano de lotes */
 .hs-plano { display: grid; gap: 18px; padding: 12px 0 4px; }
 .hs-plano__lotes {
@@ -372,8 +765,8 @@
 }
 .lote--libre { background: var(--papel); box-shadow: inset 0 0 0 1.5px var(--renglon); }
 .lote--separado {
-  background: repeating-linear-gradient(45deg, #8C9BD3 0 2px, transparent 2px 6px), var(--papel);
-  box-shadow: inset 0 0 0 1.5px #8C9BD3;
+  background: repeating-linear-gradient(45deg, var(--lapicero-claro) 0 2px, transparent 2px 6px), var(--papel);
+  box-shadow: inset 0 0 0 1.5px var(--lapicero-claro);
 }
 .lote--vendido { background: var(--cobalto); }
 .lote.is-nuevo { background: var(--papel); box-shadow: inset 0 0 0 2px var(--lapicero); color: var(--tinta); }
@@ -402,7 +795,10 @@
 
 /* ---------- Ritmo vertical propio del rubro ---------- */
 /* En el rubro los pasos y las preguntas van sobre la hoja; el aire grande va antes de la tapa del cierre. */
-.pagina-rubro .pasos { padding-top: clamp(56px, 6vw, 80px); }
+.pagina-rubro .pasos { padding-top: clamp(56px, 6vw, 80px); padding-bottom: clamp(40px, 4.5vw, 60px); }
+/* La primera pantalla cierra pegada a la sección que sigue: sin un hueco de 150px. */
+.pagina-rubro .hero { padding-bottom: 8px; }
+.pagina-rubro .hero + .seccion { padding-top: clamp(48px, 5vw, 64px); }
 .pagina-rubro .faq { padding-bottom: clamp(40px, 4.5vw, 60px); }
 .pagina-rubro .rubros { padding-bottom: clamp(80px, 10vw, 128px); }
 .pagina-rubro .rubros__intro .enlace-mano { margin-top: -18px; margin-bottom: 18px; }

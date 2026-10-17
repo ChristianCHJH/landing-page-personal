@@ -201,23 +201,23 @@
           <p class="hero__lugar"><i class="ph ph-scissors" aria-hidden="true"></i> Para spas, salones y barberías</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
         <figure class="demo" id="demo" aria-labelledby="demoTitulo">
           <div class="demo__cabeza">
             <p class="demo__titulo" id="demoTitulo">Hoy en Salón Bella Lima</p>
           </div>
           <ol class="demo__lista">
-            <li class="tarea">
-              <s class="tarea__mano">Anotar el número de Patricia<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Los datos de Patricia quedan en tu salón</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:00</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Anotar el número de Patricia<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Los datos de Patricia quedan en tu salón</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:00</span></span></span>
             </li>
-            <li class="tarea">
-              <s class="tarea__mano">Sacar comisiones de la semana<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Comisiones calculadas solas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Sacar comisiones de la semana<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Comisiones calculadas solas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
             </li>
-            <li class="tarea">
-              <s class="tarea__mano">Confirmar a Marco Díaz<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Nueva reserva: Marco Díaz, 2:00 pm</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>10:30</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Confirmar a Marco Díaz<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Nueva reserva: Marco Díaz, 2:00 pm</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>10:30</span></span></span>
             </li>
           </ol>
           <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
@@ -227,7 +227,7 @@
       </div>
     </section>
 
-    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+        <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
     <section class="seccion arreglos" id="solucion">
       <div class="contenedor arreglos__grid">
         <div class="arreglos__intro">
@@ -323,7 +323,7 @@
             <p class="hs__titulo" id="hsTitulo">Agenda del sábado</p>
           </div>
           <div class="hs__cuerpo">
-            <div class="hs-agenda" style="--cols:3;grid-template-rows:auto repeat(12, 26px)">
+            <div class="hs-agenda" style="--cols:3;grid-template-rows:auto 26px 26px 26px 26px 26px 26px 26px 26px 26px 26px 26px 26px">
               <span class="hs-agenda__esquina" aria-hidden="true"></span>
               <span class="hs-agenda__col" style="grid-column:2">Kevin</span><span class="hs-agenda__col" style="grid-column:3">Andrea</span><span class="hs-agenda__col" style="grid-column:4">Rosa</span>
               <span class="hs-agenda__linea" style="grid-row:2 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:2">10:00</span>
@@ -332,6 +332,7 @@
               <span class="hs-agenda__linea" style="grid-row:8 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:8">1:00</span>
               <span class="hs-agenda__linea" style="grid-row:10 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:10">2:00</span>
               <span class="hs-agenda__linea" style="grid-row:12 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:12">3:00</span>
+              
               <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:2;grid-row:2 / span 2"><span class="solo-lector">Kevin: </span>Juan, corte</span>
               <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:2 / span 4"><span class="solo-lector">Andrea: </span>Andrea G., tinte</span>
               <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:6 / span 2"><span class="solo-lector">Andrea: </span>Patricia, corte</span>
@@ -401,6 +402,7 @@
         </ul>
       </div>
     </section>
+
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">

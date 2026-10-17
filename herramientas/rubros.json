@@ -30,6 +30,29 @@
       "Matrícula en línea",
       "Descuento por pronto pago",
       "Boletas SUNAT"
+    ],
+    "papel": {
+      "familia": "libreta",
+      "escena": 1,
+      "renglones": [
+        {
+          "fila": 0,
+          "mano": "Debe ago+set",
+          "limpio": "Aviso enviado"
+        },
+        {
+          "fila": 1,
+          "mano": "Debe set",
+          "limpio": "Pagó con Yape S/ 350"
+        }
+      ]
+    },
+    "orden": [
+      "sistema",
+      "proceso",
+      "solucion",
+      "preguntas",
+      "rubros"
     ]
   },
   {
@@ -63,6 +86,17 @@
       "Historial de cada paciente",
       "Aviso de limpieza cada 6 meses",
       "Boletas SUNAT"
+    ],
+    "papel": {
+      "familia": "agenda",
+      "escena": 0
+    },
+    "orden": [
+      "sistema",
+      "proceso",
+      "solucion",
+      "preguntas",
+      "rubros"
     ]
   },
   {
@@ -129,6 +163,31 @@
       "Tope de crédito por cliente",
       "Guía de remisión",
       "Qué producto deja más ganancia"
+    ],
+    "papel": [
+      {
+        "familia": "libreta",
+        "escena": 0,
+        "titulo": "Cuaderno de crédito",
+        "renglones": [
+          {
+            "fila": 0,
+            "mano": "Vencido, 20 días",
+            "limpio": "Recordatorio enviado"
+          }
+        ]
+      },
+      {
+        "familia": "talonario",
+        "escena": 2
+      }
+    ],
+    "orden": [
+      "sistema",
+      "proceso",
+      "solucion",
+      "preguntas",
+      "rubros"
     ]
   },
   {
@@ -163,7 +222,11 @@
       "Aviso de mantenimiento y SOAT",
       "Cobros por cliente"
     ],
-    "nota": "La guía de remisión electrónica ya es obligatoria. Tenerla lista antes de salir evita multas y cargas retenidas."
+    "nota": "La guía de remisión electrónica ya es obligatoria. Tenerla lista antes de salir evita multas y cargas retenidas.",
+    "hoja": {
+      "familia": "cuenta",
+      "escena": 0
+    }
   },
   {
     "slug": "inmobiliarias",
@@ -196,6 +259,13 @@
       "Interesados por vendedor",
       "Contratos y recibos automáticos",
       "Recordatorios por WhatsApp"
+    ],
+    "orden": [
+      "sistema",
+      "proceso",
+      "solucion",
+      "preguntas",
+      "rubros"
     ]
   },
   {
@@ -295,7 +365,18 @@
       "Reserva de clases",
       "Asistencia por socio",
       "Boletas SUNAT"
-    ]
+    ],
+    "papel": {
+      "familia": "carnet",
+      "escena": 0,
+      "fila": 1,
+      "limpio": "Renovó",
+      "detalle": "Membresía renovada hasta el 19 de octubre"
+    },
+    "hoja": {
+      "familia": "lista",
+      "escena": 2
+    }
   },
   {
     "slug": "spas",
@@ -361,6 +442,13 @@
       "Historial de cada vehículo",
       "Recordatorio del próximo mantenimiento",
       "Control de repuestos"
+    ],
+    "orden": [
+      "sistema",
+      "proceso",
+      "solucion",
+      "preguntas",
+      "rubros"
     ]
   },
   {
@@ -394,6 +482,27 @@
       "Boletas SUNAT",
       "Lo que más se vende",
       "Ganancia del día"
-    ]
+    ],
+    "papel": {
+      "familia": "libreta",
+      "escena": 1,
+      "nota": 1,
+      "renglones": [
+        {
+          "fila": 1,
+          "tacha": false,
+          "limpio": "Recordado"
+        },
+        {
+          "fila": 2,
+          "mano": "Debe S/ 18",
+          "limpio": "Pagó hoy"
+        }
+      ]
+    },
+    "hoja": {
+      "familia": "cuenta",
+      "escena": 0
+    }
   }
 ]

@@ -58,7 +58,8 @@ function setupFecha() {
 
 /* ------------------------------------------------------------------
    «Pasar en limpio»: cada renglón anotado a mano se tacha con lapicero
-   rojo y debajo aparece lo que se hizo solo, con el resaltador.
+   rojo (o se marca su casilla) y aparece en limpio lo que se hizo solo,
+   con el resaltador. Vale para la lista de hoy y para el papel del rubro.
    Corre una sola vez al verse; «Pasar en limpio otra vez» la repite.
    El HTML ya trae el estado final: sin JS o sin GSAP se ve completo.
    ------------------------------------------------------------------ */
@@ -67,46 +68,68 @@ function setupDemo() {
   const gsap = window.gsap;
   if (!demo || !gsap) return;
 
-  const tareas = Array.from(demo.querySelectorAll(".tarea"));
-  const trazos = tareas.map((t) => t.querySelector(".tarea__tachon path"));
-  const tachones = tareas.map((t) => t.querySelector(".tarea__tachon"));
-  const limpios = tareas.map((t) => t.querySelector(".tarea__limpio"));
-  const resaltes = tareas.map((t) => t.querySelector(".resalte"));
+  // Cada paso puede traer un tachón, una casilla con visto, su versión en limpio y el
+  // resaltador. Sirve igual para la lista de hoy y para cualquier familia de papel.
+  const pasos = Array.from(demo.querySelectorAll("[data-paso]")).map((paso) => {
+    const limpios = Array.from(paso.querySelectorAll("[data-limpio]"));
+    return {
+      tachon: paso.querySelector("[data-tachon]"),
+      trazo: paso.querySelector("[data-tachon] path"),
+      visto: paso.querySelector(".casilla path"),
+      limpios,
+      resaltes: limpios.flatMap((l) => Array.from(l.querySelectorAll(".resalte"))),
+    };
+  });
+  if (!pasos.length) return;
+
+  const todos = (clave) => pasos.flatMap((p) => [].concat(p[clave] || [])).filter(Boolean);
+  const fijar = (lista, valores) => { if (lista.length) gsap.set(lista, valores); };
   const cuenta = document.getElementById("demoCuenta");
   const otra = document.getElementById("demoOtra");
-  const total = tareas.length;
+  const total = pasos.length;
   const pintarCuenta = (n) => { if (cuenta) cuenta.textContent = `${n} de ${total}`; };
 
   let estadoInicial;
   const tl = gsap.timeline({ paused: true });
+  let t = prefersReducedMotion ? 0.3 : 0.6;
 
   if (prefersReducedMotion) {
     // Sin trazos ni desplazamientos: el estado final aparece por opacidad.
+    const vistos = todos("visto").map((v) => v.closest("svg"));
     estadoInicial = () => {
-      gsap.set([...tachones, ...limpios], { opacity: 0 });
+      fijar([...todos("tachon"), ...vistos, ...todos("limpios")], { opacity: 0 });
       pintarCuenta(0);
     };
     estadoInicial();
-    tareas.forEach((_, i) => {
-      const t = 0.3 + i * 0.7;
-      tl.to(tachones[i], { opacity: 1, duration: 0.3, ease: "none" }, t)
-        .to(limpios[i], { opacity: 1, duration: 0.4, ease: "none" }, t + 0.15)
-        .call(() => pintarCuenta(i + 1), null, t + 0.2);
+    pasos.forEach((p, i) => {
+      if (p.tachon) tl.to(p.tachon, { opacity: 1, duration: 0.3, ease: "none" }, t);
+      if (p.visto) tl.to(p.visto.closest("svg"), { opacity: 1, duration: 0.3, ease: "none" }, t);
+      if (p.limpios.length) tl.to(p.limpios, { opacity: 1, duration: 0.4, ease: "none" }, t + 0.15);
+      tl.call(() => pintarCuenta(i + 1), null, t + 0.2);
+      t += p.tachon ? 0.7 : 0.4;
     });
   } else {
     estadoInicial = () => {
-      gsap.set(trazos, { strokeDashoffset: 1 });
-      gsap.set(limpios, { clipPath: "inset(-10% 100% -10% 0)" });
-      gsap.set(resaltes, { backgroundSize: "0% 84%" });
+      fijar([...todos("trazo"), ...todos("visto")], { strokeDashoffset: 1 });
+      fijar(todos("limpios"), { clipPath: "inset(-10% 100% -10% 0)" });
+      fijar(todos("resaltes"), { backgroundSize: "0% 84%" });
       pintarCuenta(0);
     };
     estadoInicial();
-    tareas.forEach((_, i) => {
-      const t = 0.6 + i * 1.55;
-      tl.to(trazos[i], { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, t)
-        .to(limpios[i], { clipPath: "inset(-10% 0% -10% 0)", duration: 0.7, ease: "expo.out" }, t + 0.42)
-        .to(resaltes[i], { backgroundSize: "100% 84%", duration: 0.55, ease: "power2.out" }, t + 0.7)
-        .call(() => pintarCuenta(i + 1), null, t + 0.9);
+    pasos.forEach((p, i) => {
+      // Primero se tacha (o se marca la casilla), después se escribe en limpio y al final se resalta.
+      let limpio = t;
+      if (p.trazo) {
+        tl.to(p.trazo, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, t);
+        limpio = t + 0.42;
+      } else if (p.visto) {
+        tl.to(p.visto, { strokeDashoffset: 0, duration: 0.36, ease: "power2.inOut" }, t);
+        limpio = t + 0.2;
+      }
+      if (p.limpios.length) tl.to(p.limpios, { clipPath: "inset(-10% 0% -10% 0)", duration: 0.7, ease: "expo.out", stagger: 0.18 }, limpio);
+      if (p.resaltes.length) tl.to(p.resaltes, { backgroundSize: "100% 84%", duration: 0.55, ease: "power2.out" }, limpio + 0.28);
+      tl.call(() => pintarCuenta(i + 1), null, limpio + 0.5);
+      t += p.trazo ? 1.4 : 0.62;
     });
   }
   // Al terminar queda el estado final exacto.
@@ -158,7 +181,8 @@ function setupHojaSistema() {
     return;
   }
 
-  gsap.set(marcas, { backgroundSize: "0% 84%" });
+  // Algunas hojas (el mapa sin renglón resaltado) no tienen marcas: GSAP avisaría «target not found».
+  if (marcas.length) gsap.set(marcas, { backgroundSize: "0% 84%" });
   vehiculos.forEach((v) => {
     ubicar(v, 0);
     v.classList.add("is-listo");
@@ -167,7 +191,7 @@ function setupHojaSistema() {
   const observer = new IntersectionObserver(([entry]) => {
     if (!entry.isIntersecting) return;
     observer.disconnect();
-    gsap.to(marcas, { backgroundSize: "100% 84%", duration: 0.6, ease: "power2.out", stagger: 0.3, delay: 0.3 });
+    if (marcas.length) gsap.to(marcas, { backgroundSize: "100% 84%", duration: 0.6, ease: "power2.out", stagger: 0.3, delay: 0.3 });
     vehiculos.forEach((v, i) => {
       const avance = { f: 0 };
       gsap.to(avance, {

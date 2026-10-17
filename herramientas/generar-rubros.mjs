@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { demo, hojaSistema, escapar } from "./dispositivos.mjs";
+import { primeraHoja, hojaSistema, escapar } from "./dispositivos.mjs";
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITIO = "https://landing-page-personal-kappa.vercel.app";
@@ -42,13 +42,30 @@ const botonWhatsapp = (rubro, cta, clases = "btn btn--primario", texto = "Escrí
             <span>${texto}</span>
           </a>`;
 
-const ENLACES = [
-  ["#solucion", "Lo que resuelvo"],
-  ["#precio", "Precio"],
-  ["#sistema", "Cómo se ve"],
-  ["#preguntas", "Preguntas"],
-  ["#rubros", "Otros rubros"],
-];
+// Orden de las secciones bajo la primera pantalla. Cada rubro puede cambiarlo en
+// rubros.json («orden») para poner primero su prueba más fuerte. El cierre y el pie
+// van siempre al final.
+const ORDEN_BASE = ["solucion", "proceso", "sistema", "preguntas", "rubros"];
+
+const ordenDe = (rubro) => {
+  const orden = rubro.orden ?? ORDEN_BASE;
+  const completo = orden.length === ORDEN_BASE.length && ORDEN_BASE.every((s) => orden.includes(s));
+  if (!completo) throw new Error(`${rubro.slug}: «orden» debe tener una vez cada sección (${ORDEN_BASE.join(", ")})`);
+  return orden;
+};
+
+// Enlaces del encabezado: siguen el orden de las secciones del rubro.
+const ENLACE = {
+  solucion: ["#solucion", "Lo que resuelvo"],
+  proceso: ["#precio", "Precio"],
+  sistema: ["#sistema", "Cómo se ve"],
+  preguntas: ["#preguntas", "Preguntas"],
+  rubros: ["#rubros", "Otros rubros"],
+};
+const enlacesDe = (rubro) => ordenDe(rubro).map((s) => ENLACE[s]);
+
+// Los ganchos largos bajan de tamaño para que el botón quede en la primera pantalla.
+const GANCHO_LARGO = 52;
 
 const arreglo = ([dolor, respuesta, icono]) => `<li class="arreglo">
               <i class="ph ph-${icono} arreglo__icono" aria-hidden="true"></i>
@@ -109,6 +126,108 @@ const notaPrecio = (rubro) =>
     ? `<p class="precio__sunat"><i class="ph-fill ph-warning-circle" aria-hidden="true"></i><span>${escapar(rubro.nota)}</span></p>`
     : `<p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>`;
 
+// Secciones bajo la primera pantalla, en el orden que diga el rubro.
+const SECCIONES = {
+  solucion: (rubro) => `    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+    <section class="seccion arreglos" id="solucion">
+      <div class="contenedor arreglos__grid">
+        <div class="arreglos__intro">
+          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
+          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
+        </div>
+        <div>
+          <ol class="arreglos__lista">
+            ${rubro.soluciones.map(arreglo).join("\n            ")}
+          </ol>
+          <div class="extras">
+            <p class="extras__titulo">También puedo:</p>
+            <ul class="extras__lista">
+              ${rubro.extras.map((extra) => `<li><i class="ph ph-plus" aria-hidden="true"></i>${escapar(extra)}</li>`).join("\n              ")}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+`,
+  proceso: (rubro) => `    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          ${notaPrecio(rubro)}
+          ${botonWhatsapp(rubro, "precio")}
+        </aside>
+      </div>
+    </section>
+`,
+  // La frase del resaltador solo va si la hoja tiene algo resaltado.
+  sistema: (rubro, hoja = hojaSistema(rubro)) => `    <!-- Cómo se ve: la vista del sistema como papel pegado -->
+    <section class="seccion sistema" id="sistema">
+      <div class="contenedor sistema__grid">
+        <div class="sistema__intro">
+          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
+          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar.${hoja.includes('class="resalte"') ? " Lo amarillo es lo que se hizo solo." : ""}</p>
+          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
+        </div>
+        ${hoja}
+      </div>
+    </section>
+`,
+  preguntas: (rubro) => `    <!-- Preguntas frecuentes como renglones -->
+    <section class="seccion faq" id="preguntas">
+      <div class="contenedor faq__grid">
+        <h2 class="seccion__titulo">Lo que casi todos me preguntan</h2>
+        <div class="faq__lista">
+          ${PREGUNTAS.map(
+            ([pregunta, respuesta]) => `<details>
+            <summary>${escapar(pregunta)}<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>${escapar(respuesta)}</p>
+          </details>`,
+          ).join("\n          ")}
+        </div>
+      </div>
+    </section>
+`,
+  rubros: (rubro) => `    <!-- Otros rubros: el índice del cuaderno -->
+    <section class="seccion rubros" id="rubros">
+      <div class="contenedor rubros__grid">
+        <div class="rubros__intro">
+          <h2 class="seccion__titulo">¿Tienes otro negocio?</h2>
+          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
+          <a class="enlace-mano" href="/"><span>Ir a la portada</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="indice">
+          ${indiceRubros(rubro)}
+        </ul>
+      </div>
+    </section>
+`,
+};
+
 const pagina = (rubro) => `<!DOCTYPE html>
 <html lang="es-PE">
 <head>
@@ -159,7 +278,7 @@ ${datosEstructurados(rubro)}
       </a>
       <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
       <nav class="nav__enlaces" aria-label="Principal">
-        ${ENLACES.map(([href, texto]) => `<a href="${href}">${texto}</a>`).join("\n        ")}
+        ${enlacesDe(rubro).map(([href, texto]) => `<a href="${href}">${texto}</a>`).join("\n        ")}
       </nav>
       ${botonWhatsapp(rubro, "nav", "btn btn--primario btn--chico nav__cta")}
       <button class="nav__menu" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
@@ -167,7 +286,7 @@ ${datosEstructurados(rubro)}
       </button>
     </div>
     <div class="nav__movil" id="menuMovil" hidden>
-      ${ENLACES.map(([href, texto]) => `<a href="${href}">${texto}</a>`).join("\n      ")}
+      ${enlacesDe(rubro).map(([href, texto]) => `<a href="${href}">${texto}</a>`).join("\n      ")}
       <a href="/">Ir a la portada</a>
       ${botonWhatsapp(rubro, "menu")}
     </div>
@@ -176,9 +295,9 @@ ${datosEstructurados(rubro)}
   <main id="contenido">
     <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="contenedor hero__grid">
+      <div class="contenedor hero__grid${rubro.papel ? " hero__grid--papel" : ""}">
         <div class="hero__copy">
-          <h1 class="hero__titulo hero__titulo--rubro">${escapar(rubro.gancho)}</h1>
+          <h1 class="hero__titulo hero__titulo--rubro${rubro.gancho.length > GANCHO_LARGO ? " hero__titulo--largo" : ""}">${escapar(rubro.gancho)}</h1>
           <p class="hero__sub">${escapar(rubro.sub)}</p>
           <div class="hero__ctas">
             ${botonWhatsapp(rubro, "hero", "btn btn--primario btn--grande")}
@@ -191,107 +310,12 @@ ${datosEstructurados(rubro)}
           <p class="hero__lugar"><i class="ph ph-${rubro.icono}" aria-hidden="true"></i> ${escapar(rubro.pill)}</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
-        ${demo(rubro)}
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
+        ${primeraHoja(rubro)}
       </div>
     </section>
 
-    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
-    <section class="seccion arreglos" id="solucion">
-      <div class="contenedor arreglos__grid">
-        <div class="arreglos__intro">
-          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
-          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
-        </div>
-        <div>
-          <ol class="arreglos__lista">
-            ${rubro.soluciones.map(arreglo).join("\n            ")}
-          </ol>
-          <div class="extras">
-            <p class="extras__titulo">También puedo:</p>
-            <ul class="extras__lista">
-              ${rubro.extras.map((extra) => `<li><i class="ph ph-plus" aria-hidden="true"></i>${escapar(extra)}</li>`).join("\n              ")}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pasos en la columna del margen + precio como nota pegada -->
-    <section class="seccion pasos" id="proceso">
-      <div class="contenedor pasos__grid">
-        <div>
-          <h2 class="seccion__titulo">Empezar es fácil</h2>
-          <ol class="turnos">
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">1</span>
-              <h3>Me cuentas cómo trabajas hoy</h3>
-              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">2</span>
-              <h3>Te muestro cómo quedaría</h3>
-              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">3</span>
-              <h3>Lo implemento y me quedo contigo</h3>
-              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
-            </li>
-          </ol>
-        </div>
-
-        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
-          <span class="cinta cinta--centro" aria-hidden="true"></span>
-          <p class="precio__label" id="precioTitulo">Planes desde</p>
-          <p class="precio__valor">S/ 90 <span>al mes</span></p>
-          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
-          ${notaPrecio(rubro)}
-          ${botonWhatsapp(rubro, "precio")}
-        </aside>
-      </div>
-    </section>
-
-    <!-- Cómo se ve: la vista del sistema como papel pegado -->
-    <section class="seccion sistema" id="sistema">
-      <div class="contenedor sistema__grid">
-        <div class="sistema__intro">
-          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
-          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
-          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
-        </div>
-        ${hojaSistema(rubro)}
-      </div>
-    </section>
-
-    <!-- Preguntas frecuentes como renglones -->
-    <section class="seccion faq" id="preguntas">
-      <div class="contenedor faq__grid">
-        <h2 class="seccion__titulo">Lo que casi todos me preguntan</h2>
-        <div class="faq__lista">
-          ${PREGUNTAS.map(
-            ([pregunta, respuesta]) => `<details>
-            <summary>${escapar(pregunta)}<i class="ph ph-plus" aria-hidden="true"></i></summary>
-            <p>${escapar(respuesta)}</p>
-          </details>`,
-          ).join("\n          ")}
-        </div>
-      </div>
-    </section>
-
-    <!-- Otros rubros: el índice del cuaderno -->
-    <section class="seccion rubros" id="rubros">
-      <div class="contenedor rubros__grid">
-        <div class="rubros__intro">
-          <h2 class="seccion__titulo">¿Tienes otro negocio?</h2>
-          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
-          <a class="enlace-mano" href="/"><span>Ir a la portada</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-        <ul class="indice">
-          ${indiceRubros(rubro)}
-        </ul>
-      </div>
-    </section>
+    ${ordenDe(rubro).map((seccion) => SECCIONES[seccion](rubro)).join("\n")}
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">

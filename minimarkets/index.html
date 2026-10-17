@@ -183,7 +183,7 @@
   <main id="contenido">
     <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="contenedor hero__grid">
+      <div class="contenedor hero__grid hero__grid--papel">
         <div class="hero__copy">
           <h1 class="hero__titulo hero__titulo--rubro">Cierra la caja en minutos, con Yape y todo.</h1>
           <p class="hero__sub">Caja cuadrada por efectivo, Yape y Plin, fiados en el celular y aviso de qué reponer.</p>
@@ -201,33 +201,32 @@
           <p class="hero__lugar"><i class="ph ph-storefront" aria-hidden="true"></i> Para minimarkets y tiendas</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
-        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
-          <div class="demo__cabeza">
-            <p class="demo__titulo" id="demoTitulo">Hoy en Minimarket Doña Carmen</p>
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
+        <figure class="papel papel--libreta" id="demo" aria-labelledby="demoTitulo">
+          <div class="papel__piezas">
+          <div class="pieza libreta">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <div class="libreta__cabeza">
+              <p class="libreta__titulo" id="demoTitulo">Cuaderno de fiados</p>
+              <p class="pieza__negocio">Minimarket Doña Carmen</p>
+            </div>
+            <ul class="libreta__lista">
+              <li class="libreta__renglon"><span class="libreta__nombre">Sra. Rosa</span><span class="libreta__nota"><span class="mano">Debe S/ 64, hace 15 días</span></span></li>
+              <li class="libreta__renglon" data-paso><span class="libreta__nombre">Sra. Lucha</span><span class="libreta__nota"><span class="mano">Debe S/ 46</span><span class="limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span><span class="resalte">Recordado</span></span></span></span></li>
+              <li class="libreta__renglon" data-paso><span class="libreta__nombre">Don Pepe</span><span class="libreta__nota"><s class="mano-tacha">Debe S/ 18<svg class="tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s><span class="limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span><span class="resalte">Pagó hoy</span></span></span></span></li>
+            </ul>
+            <p class="libreta__pie">Por cobrar <strong>S/ 312</strong> · 9 vecinos</p>
           </div>
-          <ol class="demo__lista">
-            <li class="tarea">
-              <s class="tarea__mano">Cuadrar la caja con Yape<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Caja cuadrada en 2 minutos</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>10:00</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Cobrarle el fiado a Don Pepe<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Don Pepe pagó su fiado</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>6:15</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Ver qué falta reponer<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">El arroz se acaba mañana</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>7:00</span></span></span>
-            </li>
-          </ol>
-          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
-          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
-          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
+          <div class="papel__pie">
+            <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+            <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
         </figure>
       </div>
     </section>
 
-    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+        <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
     <section class="seccion arreglos" id="solucion">
       <div class="contenedor arreglos__grid">
         <div class="arreglos__intro">
@@ -316,22 +315,24 @@
           <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
           <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
         </div>
-        <figure class="hs hs--panel" id="hojaSistema" aria-labelledby="hsTitulo">
+        <figure class="hs hs--cuenta" id="hojaSistema" aria-labelledby="hsTitulo">
           <span class="cinta cinta--centro" aria-hidden="true"></span>
           <div class="hs__cabeza">
             <p class="hs__negocio"><i class="ph ph-storefront" aria-hidden="true"></i>Minimarket Doña Carmen</p>
-            <p class="hs__titulo" id="hsTitulo">Ventas de hoy</p>
+            <p class="hs__titulo" id="hsTitulo">Cierre de caja</p>
           </div>
           <div class="hs__cuerpo">
-            <div class="hs-panel">
-              <dl class="hs-panel__cifras">
-                <div><dt>Vendido hoy</dt><dd>S/ 1,284.50</dd></div><div><dt>Boletas emitidas</dt><dd>86</dd></div><div><dt>Fiados por cobrar</dt><dd>S/ 312</dd></div>
-              </dl>
-              <p class="hs-panel__rotulo">Ventas por hora</p>
-              <div class="hs-panel__barras" aria-hidden="true">
-                <span style="--h:18%"></span><span style="--h:30%"></span><span style="--h:44%"></span><span style="--h:36%"></span><span style="--h:28%"></span><span style="--h:40%"></span><span style="--h:62%"></span><span style="--h:80%"></span><span style="--h:54%" class="is-ahora"></span>
-              </div>
-              <div class="hs-panel__eje" aria-hidden="true"><span>7 am</span><span>10 am</span><span>1 pm</span><span>4 pm</span><span>7 pm</span><span>10 pm</span></div>
+            <div class="cuenta-mano">
+              <ol class="cuenta-mano__lista">
+                <li class="cuenta-mano__fila"><span class="cuenta-mano__op" aria-hidden="true"></span><span class="cuenta-mano__concepto">Yape</span><span class="cuenta-mano__num">S/ 811.00</span></li>
+                <li class="cuenta-mano__fila"><span class="cuenta-mano__op" aria-hidden="true">+</span><span class="cuenta-mano__concepto">Efectivo</span><span class="cuenta-mano__num">S/ 342.00</span></li>
+                <li class="cuenta-mano__fila"><span class="cuenta-mano__op" aria-hidden="true">+</span><span class="cuenta-mano__concepto">Plin</span><span class="cuenta-mano__num">S/ 131.50</span></li>
+              </ol>
+              <svg class="cuenta-mano__raya" viewBox="0 0 400 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4.5 C 120 3, 260 6, 398 3.8" /><path d="M4 10.5 C 140 9.4, 280 11.6, 396 9.6" /></svg>
+              <p class="cuenta-mano__etiqueta">Vendido hoy</p>
+              <p class="cuenta-mano__total">S/ 1,284.50</p>
+              <p class="cuenta-mano__meta">86 ventas, cierre a las 10:00 pm</p>
+              <p class="cuenta-mano__nota"><i class="ph ph-check-circle" aria-hidden="true"></i><span><span class="resalte">Todo cuadra con lo que llegó a tu cuenta</span></span></p>
             </div>
           </div>
           <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
@@ -395,6 +396,7 @@
         </ul>
       </div>
     </section>
+
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">

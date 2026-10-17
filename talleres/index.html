@@ -152,9 +152,9 @@
       </a>
       <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
       <nav class="nav__enlaces" aria-label="Principal">
-        <a href="#solucion">Lo que resuelvo</a>
-        <a href="#precio">Precio</a>
         <a href="#sistema">Cómo se ve</a>
+        <a href="#precio">Precio</a>
+        <a href="#solucion">Lo que resuelvo</a>
         <a href="#preguntas">Preguntas</a>
         <a href="#rubros">Otros rubros</a>
       </nav>
@@ -167,9 +167,9 @@
       </button>
     </div>
     <div class="nav__movil" id="menuMovil" hidden>
-      <a href="#solucion">Lo que resuelvo</a>
-      <a href="#precio">Precio</a>
       <a href="#sistema">Cómo se ve</a>
+      <a href="#precio">Precio</a>
+      <a href="#solucion">Lo que resuelvo</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#rubros">Otros rubros</a>
       <a href="/">Ir a la portada</a>
@@ -185,7 +185,7 @@
     <section class="hero" id="inicio">
       <div class="contenedor hero__grid">
         <div class="hero__copy">
-          <h1 class="hero__titulo hero__titulo--rubro">Que el cliente apruebe el presupuesto por WhatsApp. Cero reclamos.</h1>
+          <h1 class="hero__titulo hero__titulo--rubro hero__titulo--largo">Que el cliente apruebe el presupuesto por WhatsApp. Cero reclamos.</h1>
           <p class="hero__sub">Órdenes con fotos, presupuestos aprobados antes de trabajar y aviso cuando está listo.</p>
           <div class="hero__ctas">
             <a class="btn btn--primario btn--grande" data-cta="hero-talleres" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20taller.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
@@ -201,29 +201,108 @@
           <p class="hero__lugar"><i class="ph ph-car-profile" aria-hidden="true"></i> Para talleres mecánicos y servicio técnico</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
         <figure class="demo" id="demo" aria-labelledby="demoTitulo">
           <div class="demo__cabeza">
             <p class="demo__titulo" id="demoTitulo">Hoy en Taller Mecánico Chávez</p>
           </div>
           <ol class="demo__lista">
-            <li class="tarea">
-              <s class="tarea__mano">Presupuesto del Yaris<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">El cliente aprobó el presupuesto</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:10</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Presupuesto del Yaris<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">El cliente aprobó el presupuesto</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:10</span></span></span>
             </li>
-            <li class="tarea">
-              <s class="tarea__mano">Fotos de las pastillas del Rio<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Fotos del antes y después guardadas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:40</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Fotos de las pastillas del Rio<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Fotos del antes y después guardadas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:40</span></span></span>
             </li>
-            <li class="tarea">
-              <s class="tarea__mano">Llamar al Sr. Gómez<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Aviso enviado: el Kia Rio está listo</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>4:32</span></span></span>
+            <li class="tarea" data-paso>
+              <s class="tarea__mano">Llamar al Sr. Gómez<svg class="tarea__tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
+              <span class="tarea__limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Aviso enviado: el Kia Rio está listo</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>4:32</span></span></span>
             </li>
           </ol>
           <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
           <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
           <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
         </figure>
+      </div>
+    </section>
+
+        <!-- Cómo se ve: la vista del sistema como papel pegado -->
+    <section class="seccion sistema" id="sistema">
+      <div class="contenedor sistema__grid">
+        <div class="sistema__intro">
+          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
+          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
+          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
+        </div>
+        <figure class="hs hs--kanban" id="hojaSistema" aria-labelledby="hsTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <div class="hs__cabeza">
+            <p class="hs__negocio"><i class="ph ph-car-profile" aria-hidden="true"></i>Taller Mecánico Chávez</p>
+            <p class="hs__titulo" id="hsTitulo">Autos en el taller</p>
+          </div>
+          <div class="hs__cuerpo">
+            <div class="hs-tablero">
+              <div class="hs-tablero__col">
+                <p class="hs-tablero__titulo">Recibido<span>1</span></p>
+                <ul>
+                  <li>Hyundai Accent, revisión</li>
+                </ul>
+              </div>
+              <div class="hs-tablero__col">
+                <p class="hs-tablero__titulo">En trabajo<span>1</span></p>
+                <ul>
+                  <li>Toyota Yaris, afinamiento</li>
+                </ul>
+              </div>
+              <div class="hs-tablero__col">
+                <p class="hs-tablero__titulo">Listo<span>2</span></p>
+                <ul>
+                  <li>Nissan Sentra, aceite</li><li class="is-nuevo"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span class="resalte">Kia Rio, pastillas</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
+          <a class="btn btn--primario" data-cta="precio-talleres" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20taller.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
+        </aside>
       </div>
     </section>
 
@@ -267,85 +346,6 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Pasos en la columna del margen + precio como nota pegada -->
-    <section class="seccion pasos" id="proceso">
-      <div class="contenedor pasos__grid">
-        <div>
-          <h2 class="seccion__titulo">Empezar es fácil</h2>
-          <ol class="turnos">
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">1</span>
-              <h3>Me cuentas cómo trabajas hoy</h3>
-              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">2</span>
-              <h3>Te muestro cómo quedaría</h3>
-              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">3</span>
-              <h3>Lo implemento y me quedo contigo</h3>
-              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
-            </li>
-          </ol>
-        </div>
-
-        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
-          <span class="cinta cinta--centro" aria-hidden="true"></span>
-          <p class="precio__label" id="precioTitulo">Planes desde</p>
-          <p class="precio__valor">S/ 90 <span>al mes</span></p>
-          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
-          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
-          <a class="btn btn--primario" data-cta="precio-talleres" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20taller.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
-            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            <span>Escríbeme por WhatsApp</span>
-          </a>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Cómo se ve: la vista del sistema como papel pegado -->
-    <section class="seccion sistema" id="sistema">
-      <div class="contenedor sistema__grid">
-        <div class="sistema__intro">
-          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
-          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
-          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
-        </div>
-        <figure class="hs hs--kanban" id="hojaSistema" aria-labelledby="hsTitulo">
-          <span class="cinta cinta--centro" aria-hidden="true"></span>
-          <div class="hs__cabeza">
-            <p class="hs__negocio"><i class="ph ph-car-profile" aria-hidden="true"></i>Taller Mecánico Chávez</p>
-            <p class="hs__titulo" id="hsTitulo">Autos en el taller</p>
-          </div>
-          <div class="hs__cuerpo">
-            <div class="hs-tablero">
-              <div class="hs-tablero__col">
-                <p class="hs-tablero__titulo">Recibido<span>1</span></p>
-                <ul>
-                  <li>Hyundai Accent, revisión</li>
-                </ul>
-              </div>
-              <div class="hs-tablero__col">
-                <p class="hs-tablero__titulo">En trabajo<span>1</span></p>
-                <ul>
-                  <li>Toyota Yaris, afinamiento</li>
-                </ul>
-              </div>
-              <div class="hs-tablero__col">
-                <p class="hs-tablero__titulo">Listo<span>2</span></p>
-                <ul>
-                  <li>Nissan Sentra, aceite</li><li class="is-nuevo"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span class="resalte">Kia Rio, pastillas</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -405,6 +405,7 @@
         </ul>
       </div>
     </section>
+
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">

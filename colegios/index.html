@@ -152,9 +152,9 @@
       </a>
       <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
       <nav class="nav__enlaces" aria-label="Principal">
-        <a href="#solucion">Lo que resuelvo</a>
-        <a href="#precio">Precio</a>
         <a href="#sistema">Cómo se ve</a>
+        <a href="#precio">Precio</a>
+        <a href="#solucion">Lo que resuelvo</a>
         <a href="#preguntas">Preguntas</a>
         <a href="#rubros">Otros rubros</a>
       </nav>
@@ -167,9 +167,9 @@
       </button>
     </div>
     <div class="nav__movil" id="menuMovil" hidden>
-      <a href="#solucion">Lo que resuelvo</a>
-      <a href="#precio">Precio</a>
       <a href="#sistema">Cómo se ve</a>
+      <a href="#precio">Precio</a>
+      <a href="#solucion">Lo que resuelvo</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#rubros">Otros rubros</a>
       <a href="/">Ir a la portada</a>
@@ -183,7 +183,7 @@
   <main id="contenido">
     <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="contenedor hero__grid">
+      <div class="contenedor hero__grid hero__grid--papel">
         <div class="hero__copy">
           <h1 class="hero__titulo hero__titulo--rubro">Cobra tus pensiones sin perseguir a nadie.</h1>
           <p class="hero__sub">Aviso privado a cada padre, quién debe en un toque y comunicados que sí se leen.</p>
@@ -201,114 +201,33 @@
           <p class="hero__lugar"><i class="ph ph-student" aria-hidden="true"></i> Para colegios, nidos y academias</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
-        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
-          <div class="demo__cabeza">
-            <p class="demo__titulo" id="demoTitulo">Hoy en Colegio San Martín</p>
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
+        <figure class="papel papel--libreta" id="demo" aria-labelledby="demoTitulo">
+          <div class="papel__piezas">
+          <div class="pieza libreta">
+            <span class="cinta cinta--centro" aria-hidden="true"></span>
+            <div class="libreta__cabeza">
+              <p class="libreta__titulo" id="demoTitulo">Pensiones de setiembre</p>
+              <p class="pieza__negocio">Colegio San Martín</p>
+            </div>
+            <ul class="libreta__lista">
+              <li class="libreta__renglon" data-paso><span class="libreta__nombre">Familia Rojas</span><span class="libreta__nota"><s class="mano-tacha">Debe ago+set<svg class="tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s><span class="limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span><span class="resalte">Aviso enviado</span></span></span></span></li>
+              <li class="libreta__renglon" data-paso><span class="libreta__nombre">Familia Quispe</span><span class="libreta__nota"><s class="mano-tacha">Debe set<svg class="tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s><span class="limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span><span class="resalte">Pagó con Yape S/ 350</span></span></span></span></li>
+              <li class="libreta__renglon"><span class="libreta__nombre">Familia Huamán</span><span class="libreta__nota"><span class="mano">Pagó en banco</span></span></li>
+              <li class="libreta__renglon"><span class="libreta__nombre">Familia Torres</span><span class="libreta__nota"><span class="mano">Vence el 30</span></span></li>
+            </ul>
+            <p class="libreta__pie">Por cobrar <strong>S/ 4,200</strong> · 12 familias con aviso enviado</p>
           </div>
-          <ol class="demo__lista">
-            <li class="tarea">
-              <s class="tarea__mano">Cobrar pensión a Sra. Quispe<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Pago de la Familia Quispe registrado</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:14</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Ver qué familias deben<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Aviso privado enviado a 12 familias</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:20</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Avisar el Día de la Familia<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">142 padres ya leyeron el comunicado</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:00</span></span></span>
-            </li>
-          </ol>
-          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
-          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
-          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
+          <div class="papel__pie">
+            <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+            <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
         </figure>
       </div>
     </section>
 
-    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
-    <section class="seccion arreglos" id="solucion">
-      <div class="contenedor arreglos__grid">
-        <div class="arreglos__intro">
-          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
-          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
-        </div>
-        <div>
-          <ol class="arreglos__lista">
-            <li class="arreglo">
-              <i class="ph ph-bell-ringing arreglo__icono" aria-hidden="true"></i>
-              <div>
-                <p class="arreglo__antes">“Me deben 3 meses y yo igual pago planilla.”</p>
-                <p class="arreglo__ahora">Cada padre recibe un aviso privado por WhatsApp antes y después del vencimiento. Sin exponer a ningún alumno.</p>
-              </div>
-            </li>
-            <li class="arreglo">
-              <i class="ph ph-list-checks arreglo__icono" aria-hidden="true"></i>
-              <div>
-                <p class="arreglo__antes">“La secretaria se pasa el día revisando quién pagó.”</p>
-                <p class="arreglo__ahora">Ves quién debe, cuánto y desde cuándo en un toque, con los pagos de Yape y banco ya marcados.</p>
-              </div>
-            </li>
-            <li class="arreglo">
-              <i class="ph ph-megaphone arreglo__icono" aria-hidden="true"></i>
-              <div>
-                <p class="arreglo__antes">“El comunicado se pierde en el grupo de WhatsApp.”</p>
-                <p class="arreglo__ahora">Los avisos llegan a cada padre y sabes quién ya los leyó.</p>
-              </div>
-            </li>
-          </ol>
-          <div class="extras">
-            <p class="extras__titulo">También puedo:</p>
-            <ul class="extras__lista">
-              <li><i class="ph ph-plus" aria-hidden="true"></i>Matrícula en línea</li>
-              <li><i class="ph ph-plus" aria-hidden="true"></i>Descuento por pronto pago</li>
-              <li><i class="ph ph-plus" aria-hidden="true"></i>Boletas SUNAT</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pasos en la columna del margen + precio como nota pegada -->
-    <section class="seccion pasos" id="proceso">
-      <div class="contenedor pasos__grid">
-        <div>
-          <h2 class="seccion__titulo">Empezar es fácil</h2>
-          <ol class="turnos">
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">1</span>
-              <h3>Me cuentas cómo trabajas hoy</h3>
-              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">2</span>
-              <h3>Te muestro cómo quedaría</h3>
-              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
-            </li>
-            <li class="turno">
-              <span class="turno__num" aria-hidden="true">3</span>
-              <h3>Lo implemento y me quedo contigo</h3>
-              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
-            </li>
-          </ol>
-        </div>
-
-        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
-          <span class="cinta cinta--centro" aria-hidden="true"></span>
-          <p class="precio__label" id="precioTitulo">Planes desde</p>
-          <p class="precio__valor">S/ 90 <span>al mes</span></p>
-          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
-          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
-          <a class="btn btn--primario" data-cta="precio-colegios" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20colegio%20o%20academia%20y%20quiero%20ordenar%20el%20cobro%20de%20pensiones." target="_blank" rel="noopener">
-            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            <span>Escríbeme por WhatsApp</span>
-          </a>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Cómo se ve: la vista del sistema como papel pegado -->
+        <!-- Cómo se ve: la vista del sistema como papel pegado -->
     <section class="seccion sistema" id="sistema">
       <div class="contenedor sistema__grid">
         <div class="sistema__intro">
@@ -358,6 +277,87 @@
           </div>
           <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
+          <a class="btn btn--primario" data-cta="precio-colegios" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20colegio%20o%20academia%20y%20quiero%20ordenar%20el%20cobro%20de%20pensiones." target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+    <section class="seccion arreglos" id="solucion">
+      <div class="contenedor arreglos__grid">
+        <div class="arreglos__intro">
+          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
+          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
+        </div>
+        <div>
+          <ol class="arreglos__lista">
+            <li class="arreglo">
+              <i class="ph ph-bell-ringing arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Me deben 3 meses y yo igual pago planilla.”</p>
+                <p class="arreglo__ahora">Cada padre recibe un aviso privado por WhatsApp antes y después del vencimiento. Sin exponer a ningún alumno.</p>
+              </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-list-checks arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“La secretaria se pasa el día revisando quién pagó.”</p>
+                <p class="arreglo__ahora">Ves quién debe, cuánto y desde cuándo en un toque, con los pagos de Yape y banco ya marcados.</p>
+              </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-megaphone arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“El comunicado se pierde en el grupo de WhatsApp.”</p>
+                <p class="arreglo__ahora">Los avisos llegan a cada padre y sabes quién ya los leyó.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="extras">
+            <p class="extras__titulo">También puedo:</p>
+            <ul class="extras__lista">
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Matrícula en línea</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Descuento por pronto pago</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Boletas SUNAT</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -417,6 +417,7 @@
         </ul>
       </div>
     </section>
+
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">

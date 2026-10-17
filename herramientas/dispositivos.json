@@ -312,14 +312,14 @@
         ],
         [
           1,
-          0.5,
-          1.5,
+          3,
+          1,
           "Rosa Cárdenas, curación",
           "ok"
         ],
         [
           1,
-          3,
+          4,
           1,
           "Pedro Salas, evaluación",
           "ok"
@@ -1198,7 +1198,8 @@
           "Esperando",
           "soon"
         ]
-      ]
+      ],
+      "vivo": 0
     }
   },
   "gimnasios": {

@@ -300,6 +300,8 @@ Hoja fría casi blanca, tinta casi negra y una familia de azules de lapicero y d
 
 El comparador «Antes y después» usa a propósito una paleta ajena, la de una hoja de cálculo genérica (`#E1E4E8`, `#ECEEF1`, `#DADDE2`, `#EEF0F3`, `#F1EBDA`). Es material local del Excel de mentira, no forma parte del sistema y no se usa fuera de ese panel.
 
+**Tintes del rubro.** `rubro.css` declara en `:root` unos tintes claros que solo usan los papeles de rubro y la hoja del sistema, todos de la familia renglón/lapicero: `--renglon-suave` (`#E3E8F0`, línea interior de tablas, listas y agenda sobre papel), `--papel-hover` (`#EAF0FF`, cita confirmada), `--papel-sombra` (`#F2F6FC`, columna del tablero), `--lapicero-claro` (`#8C9BD3`, contornos discontinuos de lo que no se confirma), `--lapicero-seco` y los seis `--mapa-*` del mapa. La cita sin respuesta de la agenda usa `hoja` y `renglon`, no la paleta gris del Excel.
+
 ### Named Rules
 **The Un Marcador, Un Significado Rule.** El rojo solo tacha y el amarillo solo resalta lo que se hizo solo. Ninguno se usa para alertas, errores, etiquetas ni decoración. Si algo amarillo no lo hizo el sistema, sobra.
 
@@ -429,6 +431,14 @@ Hoja incrustada de radio 14px y borde de 1.5px en `renglon` con dos capas: un Ex
 
 ### Botón flotante
 Círculo cobalto de 58px con el logo de WhatsApp. Está oculto mientras se ve la primera pantalla o la sección de dolores, que ya tiene su propia barra de envío. Aparece subiendo 14px desde 0.92 de escala (opacidad 0.3s y transformación 0.4s con `--ease`).
+
+### Papel del rubro
+La primera pantalla de un rubro muestra el papel propio de su negocio en vez de la lista de hoy, cuando `rubros.json` le declara `papel` (`familia` + `escena` de `dispositivos.json`). Cada familia es un papel pegado (blanco, cinta, rotación entre −1.2° y 1.2°, sombra «papel pegado») con la mecánica «pasar en limpio»: lo anotado en Kalam se tacha en rojo, debajo aparece la línea en limpio y el resaltador va solo en lo que se hizo solo.
+- **Libreta:** hoja rayada con su propio margen rojo a 38px; título Kalam subrayado, nombre y nota a mano por renglón, pie en limpio con la cifra de la escena.
+- **Agenda:** semana con mañana encerrada a mano, hora en limpio, paciente a mano y casilla con visto por cita; al pie, el pendiente tachado y el total resaltado.
+- **Talonario:** hoja con el borde de arriba picado (máscara), número y líneas en limpio, total en Archivo y el pendiente tachado al pie. Con libreta, se monta sobre el pie de la libreta.
+- **Carnet:** tarjeta de radio 12px con banda cobalto, rótulos impresos en mayúsculas como la etiqueta y el estado tachado y pasado en limpio.
+La hoja del sistema puede leer también una escena (`hoja`): **cuenta** (cuenta a mano con operadores Kalam, raya de suma y total en Archivo) o **lista** (renglones en limpio con lo que se hizo solo resaltado). El orden de las secciones bajo la primera pantalla sale de `orden`; el precio queda siempre antes de la mitad de la página. La agenda del sistema dibuja un corte discontinuo cuando entre dos horas seguidas hay más de una hora.
 
 ### Movimiento
 - **Curva base:** `--ease: cubic-bezier(0.16, 1, 0.3, 1)` para todas las transiciones de CSS. En GSAP los equivalentes son `expo.out` para revelados, `power2.inOut` para trazos y `power2.out` para el resaltador.

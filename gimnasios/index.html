@@ -183,7 +183,7 @@
   <main id="contenido">
     <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="contenedor hero__grid">
+      <div class="contenedor hero__grid hero__grid--papel">
         <div class="hero__copy">
           <h1 class="hero__titulo hero__titulo--rubro">Que nadie entrene gratis en tu gimnasio.</h1>
           <p class="hero__sub">En la entrada ves quién está al día, el socio recibe un aviso antes del vencimiento y recuperas a los que se fueron.</p>
@@ -201,33 +201,31 @@
           <p class="hero__lugar"><i class="ph ph-barbell" aria-hidden="true"></i> Para gimnasios y centros deportivos</p>
         </div>
 
-        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
-        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
-          <div class="demo__cabeza">
-            <p class="demo__titulo" id="demoTitulo">Hoy en Gym Fuerza Norte</p>
+        <!-- El papel del negocio (o la lista de hoy), pasado en limpio -->
+        <figure class="papel papel--carnet" id="demo" aria-labelledby="demoTitulo">
+          <div class="papel__piezas">
+          <div class="pieza carnet">
+            <span class="cinta cinta--der" aria-hidden="true"></span>
+            <div class="carnet__cabeza">
+              <p class="carnet__marca"><i class="ph ph-barbell" aria-hidden="true"></i>Gym Fuerza Norte</p>
+              <p class="carnet__tipo" id="demoTitulo">Carnet de socio</p>
+            </div>
+            <dl class="carnet__campos">
+              <div><dt>Socio</dt><dd class="mano carnet__nombre">Lucía Ramos</dd></div>
+              <div><dt>Entrada</dt><dd class="mano">Intentó ingresar 7:20 am</dd></div>
+              <div data-paso><dt>Estado</dt><dd><s class="mano-tacha">Vencida<svg class="tachon" data-tachon viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s><span class="limpio" data-limpio><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span><span class="resalte">Renovó</span></span></span><span class="carnet__vence" data-limpio>Membresía renovada hasta el 19 de octubre</span></dd></div>
+            </dl>
           </div>
-          <ol class="demo__lista">
-            <li class="tarea">
-              <s class="tarea__mano">¿Carlos Vega está al día?<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Carlos Vega ingresó: membresía al día</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>6:12</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Cobrar renovación a Lucía<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Lucía Ramos renovó su membresía</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
-            </li>
-            <li class="tarea">
-              <s class="tarea__mano">Ver quién dejó de venir<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
-              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Lista de llamadas de hoy lista</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:00</span></span></span>
-            </li>
-          </ol>
-          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
-          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
-          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
+          <div class="papel__pie">
+            <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+            <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+          </div>
         </figure>
       </div>
     </section>
 
-    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+        <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
     <section class="seccion arreglos" id="solucion">
       <div class="contenedor arreglos__grid">
         <div class="arreglos__intro">
@@ -316,22 +314,31 @@
           <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
           <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
         </div>
-        <figure class="hs hs--panel" id="hojaSistema" aria-labelledby="hsTitulo">
+        <figure class="hs hs--lista" id="hojaSistema" aria-labelledby="hsTitulo">
           <span class="cinta cinta--centro" aria-hidden="true"></span>
           <div class="hs__cabeza">
             <p class="hs__negocio"><i class="ph ph-barbell" aria-hidden="true"></i>Gym Fuerza Norte</p>
-            <p class="hs__titulo" id="hsTitulo">Hoy en el gimnasio</p>
+            <p class="hs__titulo" id="hsTitulo">Socios por recuperar</p>
           </div>
           <div class="hs__cuerpo">
-            <div class="hs-panel">
-              <dl class="hs-panel__cifras">
-                <div><dt>Ingresaron hoy</dt><dd>148</dd></div><div><dt>Socios activos</dt><dd>612</dd></div><div><dt>Vencen esta semana</dt><dd>23</dd></div>
-              </dl>
-              <p class="hs-panel__rotulo">Ingresos por hora</p>
-              <div class="hs-panel__barras" aria-hidden="true">
-                <span style="--h:22%"></span><span style="--h:48%"></span><span style="--h:70%"></span><span style="--h:40%"></span><span style="--h:26%"></span><span style="--h:34%"></span><span style="--h:58%"></span><span style="--h:86%"></span><span style="--h:64%" class="is-ahora"></span>
-              </div>
-              <div class="hs-panel__eje" aria-hidden="true"><span>6 am</span><span>9 am</span><span>12 m</span><span>3 pm</span><span>6 pm</span><span>9 pm</span></div>
+            <div class="hs-escena">
+              <p class="hs-escena__cifra"><span>Dejaron de venir</span> <strong>9 socios</strong></p>
+              <p class="hs-escena__meta">Más de 2 semanas sin entrenar</p>
+              <ul class="hs-lista">
+                <li>
+                  <span class="hs-lista__quien"><span class="hs-lista__nombre">Diego Salas</span><span class="hs-lista__detalle">Sin venir hace 16 días</span></span>
+                  <span class="tag tag--debe"><i class="ph-fill ph-warning-circle" aria-hidden="true"></i>Llamar</span>
+                </li>
+                <li>
+                  <span class="hs-lista__quien"><span class="hs-lista__nombre">Fiorella Cruz</span><span class="hs-lista__detalle">Sin venir hace 14 días</span></span>
+                  <span class="tag tag--debe"><i class="ph-fill ph-warning-circle" aria-hidden="true"></i>Llamar</span>
+                </li>
+                <li>
+                  <span class="hs-lista__quien"><span class="hs-lista__nombre">Martín Rojas</span><span class="hs-lista__detalle">Volvió ayer</span></span>
+                  <span class="tag tag--ok"><i class="ph-fill ph-check-circle" aria-hidden="true"></i>Recuperado</span>
+                </li>
+              </ul>
+              <p class="hs-escena__solo"><i class="ph ph-check-circle" aria-hidden="true"></i><span><span class="resalte">Lista de llamadas de hoy lista</span></span></p>
             </div>
           </div>
           <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
@@ -395,6 +402,7 @@
         </ul>
       </div>
     </section>
+
 
     <!-- Cierre: la tapa del cuaderno -->
     <section class="tapa final" id="contacto">
