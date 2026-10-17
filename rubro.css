@@ -1,0 +1,413 @@
+/* ==========================================================================
+   Páginas de rubro Abiel · lo propio de cada rubro sobre el «Cuaderno de cuentas».
+   Se carga después de portada.css, que pone la hoja, los tipos, los botones,
+   el encabezado, la demo, los pasos, el precio, las preguntas, la tapa y el pie.
+   Aquí solo va lo que la portada no tiene: el titular largo del rubro, la línea
+   «Lo que te resuelvo» y la hoja del sistema pegada.
+   ========================================================================== */
+
+/* ---------- Primera pantalla ---------- */
+/* Los ganchos de rubro son más largos que el de la portada: bajan de tamaño, no de peso. */
+.hero__titulo--rubro {
+  font-size: clamp(2.15rem, 1.1rem + 3vw, 3.6rem);
+  line-height: 1.03;
+}
+@media (min-width: 1024px) {
+  .hero__titulo--rubro { font-stretch: 110%; }
+}
+
+/* ---------- Lo que te resuelvo ---------- */
+.arreglos__grid { display: grid; gap: 8px; }
+
+.arreglos__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--renglon);
+}
+.arreglo {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 20px 0 22px;
+  border-bottom: 1px solid var(--renglon);
+}
+.arreglo__icono { margin-top: 5px; font-size: 1.6rem; color: var(--lapicero); }
+/* Lo que dice el dueño va a mano; lo que hace el sistema, en limpio */
+.arreglo__antes {
+  margin-bottom: 6px;
+  font-family: var(--f-mano);
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--lapicero);
+  text-wrap: pretty;
+}
+.arreglo__ahora { max-width: 60ch; font-size: 1.0625rem; line-height: 1.6; text-wrap: pretty; }
+
+.extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  margin-top: 26px;
+}
+.extras__titulo {
+  font-family: var(--f-mano);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--lapicero);
+}
+.extras__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.extras__lista li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--tinta-2);
+  font-weight: 600;
+}
+.extras__lista i { flex: none; font-size: 1rem; color: var(--lapicero); }
+
+@media (min-width: 1024px) {
+  .arreglos__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 64px;
+    align-items: start;
+  }
+  .arreglos__intro { position: sticky; top: calc(var(--nav-h) + 32px); }
+}
+
+/* ---------- Así se ve: la hoja del sistema pegada ---------- */
+.sistema__grid { display: grid; gap: 36px; }
+.sistema__aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tinta-3);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 1024px) {
+  .sistema__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 64px;
+    align-items: center;
+  }
+}
+
+.hs {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 10px 14px;
+  border-radius: 3px;
+  background: var(--papel);
+  box-shadow: 0 20px 34px -22px rgba(17, 25, 60, 0.5), 0 2px 6px rgba(17, 25, 60, 0.12);
+  rotate: 0.6deg;
+}
+.hs__cabeza {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 14px 16px;
+  border-radius: 2px 2px 0 0;
+  background: var(--cobalto);
+  color: #fff;
+}
+.hs__negocio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sobre-tapa);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.hs__negocio i { font-size: 1.15rem; }
+.hs__titulo {
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+.hs__cuerpo { padding: 4px 12px 0; }
+.hs__pie {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 12px 2px;
+  color: var(--tinta-2);
+  font-size: 0.92rem;
+}
+.hs .tag { white-space: nowrap; }
+
+/* Tabla (en celular pasa a renglones) */
+.hs-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+.hs-tabla thead th {
+  padding: 12px 10px 8px;
+  border-bottom: 1.5px solid var(--renglon);
+  color: var(--tinta-3);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+.hs-tabla tbody th,
+.hs-tabla td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #E3E8F0;
+  text-align: left;
+  vertical-align: middle;
+}
+.hs-tabla tbody th { font-weight: 700; white-space: nowrap; }
+.hs-tabla thead th:last-child,
+.hs-tabla td:last-child { text-align: right; }
+
+.hs-renglones { display: none; margin: 0; padding: 0; list-style: none; }
+.hs-renglones li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #E3E8F0;
+}
+.hs-renglones__nombre { font-weight: 700; }
+.hs-renglones__datos { flex-basis: 100%; color: var(--tinta-2); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.hs-renglones__datos strong { color: var(--tinta); font-weight: 600; }
+
+@media (max-width: 767px) {
+  .hs-tabla { display: none; }
+  .hs-renglones { display: block; }
+}
+
+/* Agenda */
+.hs-agenda {
+  display: grid;
+  grid-template-columns: 3.2rem repeat(var(--cols), minmax(0, 1fr));
+  column-gap: 6px;
+  padding: 4px 0 6px;
+  font-size: 0.84rem;
+}
+.hs-agenda__esquina,
+.hs-agenda__col {
+  grid-row: 1;
+  padding: 10px 4px 8px;
+  border-bottom: 1.5px solid var(--renglon);
+}
+.hs-agenda__esquina { grid-column: 1; }
+.hs-agenda__col { color: var(--tinta-2); font-size: 0.82rem; font-weight: 700; line-height: 1.25; }
+.hs-agenda__linea { grid-column: 1 / -1; border-top: 1px solid #E3E8F0; }
+.hs-agenda__hora {
+  grid-column: 1;
+  padding-top: 4px;
+  color: var(--tinta-3);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.hs-agenda__cita {
+  z-index: 1;
+  min-width: 0;
+  margin: 3px 0;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.hs-agenda__cita--ok { background: #E6ECFF; color: var(--tinta); }
+.hs-agenda__cita--soon { background: var(--papel); border: 1.5px dashed #8C9BD3; color: var(--tinta); }
+.hs-agenda__cita--late { background: #F1F3F7; border: 1px solid #DADDE2; color: var(--tinta-2); }
+.hs-agenda__cita.is-nuevo { background: var(--papel); border: 1.5px solid var(--renglon); }
+
+/* Mapa */
+.hs-mapa { display: grid; gap: 4px; padding-top: 8px; }
+.hs-mapa__svg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 300 / 260;
+  border-radius: 3px;
+  background: #F3F7FD;
+}
+.hs-mapa__calles path { fill: none; stroke: #DCE7F4; stroke-width: 9; }
+.hs-mapa__calles .hs-mapa__avenida { stroke: #CBDBEF; stroke-width: 13; }
+.hs-mapa__parque { fill: #E4ECF8; }
+.hs-mapa__cerros path { fill: none; stroke: #C6D6EA; stroke-width: 1.5; }
+.hs-mapa__rio { fill: none; stroke: #A9C6E8; stroke-width: 5; stroke-linecap: round; }
+.hs-mapa__ruta { fill: none; stroke: var(--lapicero); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.hs-mapa__ruta--otra { stroke: #8C9BD3; stroke-dasharray: 6 6; }
+.hs-mapa__vehiculo { visibility: hidden; }
+.hs-mapa__vehiculo.is-listo { visibility: visible; }
+.hs-mapa__vehiculo circle { fill: var(--cobalto); stroke: #fff; stroke-width: 3; }
+.hs-mapa__vehiculo .hs-mapa__nucleo { fill: #fff; stroke: none; }
+.hs-mapa__vehiculo--otro circle { fill: var(--lapicero-seco, #4A5BA8); }
+
+.hs-lista { margin: 0; padding: 0; list-style: none; }
+.hs-lista li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #E3E8F0;
+}
+.hs-lista__quien { display: grid; }
+.hs-lista__nombre { font-weight: 700; }
+.hs-lista__detalle { color: var(--tinta-2); font-size: 0.9rem; }
+
+@media (min-width: 640px) {
+  .hs-mapa { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: 22px; }
+}
+
+/* Tablero */
+.hs-tablero { display: grid; gap: 12px; padding: 10px 0 4px; }
+.hs-tablero__col { padding: 10px; border-radius: 4px; background: #F2F6FC; }
+.hs-tablero__titulo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--tinta-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.hs-tablero__titulo span { color: var(--tinta-3); font-variant-numeric: tabular-nums; }
+.hs-tablero ul { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.hs-tablero li {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: var(--papel);
+  box-shadow: 0 1px 2px rgba(17, 25, 60, 0.12), 0 6px 12px -10px rgba(17, 25, 60, 0.45);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.hs-tablero li.is-nuevo { display: flex; align-items: flex-start; gap: 8px; }
+.hs-tablero li.is-nuevo i { flex: none; margin-top: 2px; font-size: 1.1rem; color: var(--lapicero); }
+
+@media (min-width: 560px) {
+  .hs-tablero { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Panel del día */
+.hs-panel { padding-top: 6px; }
+.hs-panel__cifras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin: 0;
+  padding: 10px 0 16px;
+  border-bottom: 1px solid #E3E8F0;
+}
+.hs-panel__cifras dt { color: var(--tinta-2); font-size: 0.86rem; line-height: 1.3; }
+.hs-panel__cifras dd {
+  margin: 4px 0 0;
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-stretch: 104%;
+  font-size: clamp(1.25rem, 0.9rem + 1vw, 1.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.hs-panel__rotulo { margin: 14px 0 10px; color: var(--tinta-2); font-size: 0.9rem; font-weight: 700; }
+.hs-panel__barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 150px;
+  border-bottom: 1.5px solid var(--renglon);
+}
+.hs-panel__barras span { flex: 1; height: var(--h); border-radius: 3px 3px 0 0; background: #C5D3E8; }
+.hs-panel__barras .is-ahora { background: var(--lapicero); }
+.hs-panel__eje {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6px;
+  color: var(--tinta-3);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 559px) {
+  .hs-panel__cifras { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 4px; }
+  .hs-panel__cifras div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .hs-panel__cifras div + div { border-top: 1px solid #EEF1F6; }
+  .hs-panel__cifras dd { margin: 0; }
+}
+
+/* Plano de lotes */
+.hs-plano { display: grid; gap: 18px; padding: 12px 0 4px; }
+.hs-plano__lotes {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 4px;
+}
+.lote {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.lote--libre { background: var(--papel); box-shadow: inset 0 0 0 1.5px var(--renglon); }
+.lote--separado {
+  background: repeating-linear-gradient(45deg, #8C9BD3 0 2px, transparent 2px 6px), var(--papel);
+  box-shadow: inset 0 0 0 1.5px #8C9BD3;
+}
+.lote--vendido { background: var(--cobalto); }
+.lote.is-nuevo { background: var(--papel); box-shadow: inset 0 0 0 2px var(--lapicero); color: var(--tinta); }
+.lote.is-nuevo .resalte { padding: 0 0.1em; margin: 0; font-size: 0.62rem; letter-spacing: -0.02em; white-space: nowrap; }
+@media (min-width: 640px) {
+  .lote.is-nuevo .resalte { font-size: 0.72rem; }
+}
+
+.hs-plano__cuenta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; }
+.hs-plano__cuenta div { display: flex; align-items: baseline; gap: 10px; }
+.hs-plano__cuenta dt { display: inline-flex; align-items: center; gap: 8px; color: var(--tinta-2); font-size: 0.92rem; }
+.hs-plano__cuenta dt .lote { display: inline-block; width: 14px; height: 14px; aspect-ratio: auto; }
+.hs-plano__cuenta dd {
+  margin: 0;
+  font-family: var(--f-titular);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 640px) {
+  .hs-plano { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px; }
+  .hs-plano__cuenta { display: grid; gap: 14px; }
+}
+
+/* ---------- Ritmo vertical propio del rubro ---------- */
+/* En el rubro los pasos y las preguntas van sobre la hoja; el aire grande va antes de la tapa del cierre. */
+.pagina-rubro .pasos { padding-top: clamp(56px, 6vw, 80px); }
+.pagina-rubro .faq { padding-bottom: clamp(40px, 4.5vw, 60px); }
+.pagina-rubro .rubros { padding-bottom: clamp(80px, 10vw, 128px); }
+.pagina-rubro .rubros__intro .enlace-mano { margin-top: -18px; margin-bottom: 18px; }
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hs-mapa__vehiculo { transition: none; }
+}

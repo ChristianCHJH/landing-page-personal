@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sistema para clínicas dentales y consultorios en Lima | Yanapay</title>
+  <title>Sistema para clínicas dentales y consultorios en Lima | Abiel</title>
   <meta name="description" content="Menos sillones vacíos y menos cuotas perdidas. Confirmación de citas por WhatsApp, saldo de cada tratamiento y seguimiento de presupuestos. Desde S/ 90 al mes." />
   <link rel="canonical" href="https://landing-page-personal-kappa.vercel.app/clinicas/" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FAFCFF" />
+  <meta name="color-scheme" content="light" />
+  <meta name="geo.region" content="PE-LIM" />
+  <meta name="geo.placename" content="Lima" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_PE" />
-  <meta property="og:site_name" content="Yanapay" />
+  <meta property="og:site_name" content="Abiel" />
   <meta property="og:url" content="https://landing-page-personal-kappa.vercel.app/clinicas/" />
   <meta property="og:title" content="Menos sillones vacíos, menos cuotas perdidas." />
   <meta property="og:description" content="Citas confirmadas por WhatsApp, saldos de tratamientos al día y presupuestos que no se olvidan." />
@@ -19,13 +22,16 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..800&family=Kalam:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/portada.css" />
+  <link rel="stylesheet" href="/rubro.css" />
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,6 +42,7 @@
       "serviceType": "Clínicas dentales y consultorios",
       "description": "Menos sillones vacíos y menos cuotas perdidas. Confirmación de citas por WhatsApp, saldo de cada tratamiento y seguimiento de presupuestos. Desde S/ 90 al mes.",
       "url": "https://landing-page-personal-kappa.vercel.app/clinicas/",
+      "image": "https://landing-page-personal-kappa.vercel.app/assets/og/clinicas.jpg",
       "areaServed": [
         {
           "@type": "City",
@@ -49,7 +56,7 @@
       "provider": {
         "@type": "ProfessionalService",
         "@id": "https://landing-page-personal-kappa.vercel.app/#negocio",
-        "name": "Yanapay",
+        "name": "Abiel",
         "telephone": "+51913412590"
       },
       "offers": {
@@ -65,7 +72,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Yanapay",
+          "name": "Abiel",
           "item": "https://landing-page-personal-kappa.vercel.app/"
         },
         {
@@ -75,374 +82,368 @@
           "item": "https://landing-page-personal-kappa.vercel.app/clinicas/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber de computación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Funciona en el celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa con lo que ya tengo en Excel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Emite boletas y facturas electrónicas SUNAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no uso un sistema que ya existe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
 </head>
-<body class="page-rubro">
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+<body class="pagina-rubro">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
 
+  <!-- Encabezado: el renglón de arriba de la hoja del cuaderno -->
   <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="/" class="logo" aria-label="Yanapay, ir al inicio">
-        <span class="logo__mark" aria-hidden="true">Y</span>
-        <span class="logo__text">Yanapay</span>
+    <div class="contenedor nav__fila">
+      <a href="/" class="logo" aria-label="Abiel, ir a la portada">
+        <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" fill="#fff" /></svg>
+        <span class="logo__texto">Abiel</span>
       </a>
-      <nav class="nav__links" aria-label="Principal">
-        <a href="#solucion">Lo que hacemos</a>
+      <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
+      <nav class="nav__enlaces" aria-label="Principal">
+        <a href="#solucion">Lo que resuelvo</a>
         <a href="#precio">Precio</a>
-        <a href="/#rubros">Otros rubros</a>
+        <a href="#sistema">Cómo se ve</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#rubros">Otros rubros</a>
       </nav>
-      <a class="btn btn--primary btn--sm nav__cta" data-cta="nav-clinicas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+      <a class="btn btn--primario btn--chico nav__cta" data-cta="nav-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+      <button class="nav__menu" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
         <i class="ph ph-list" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="nav__mobile" id="menuMovil" hidden>
-      <a href="#solucion">Lo que hacemos</a>
+    <div class="nav__movil" id="menuMovil" hidden>
+      <a href="#solucion">Lo que resuelvo</a>
       <a href="#precio">Precio</a>
-      <a href="/#rubros">Otros rubros</a>
+      <a href="#sistema">Cómo se ve</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#rubros">Otros rubros</a>
+      <a href="/">Ir a la portada</a>
+      <a class="btn btn--primario" data-cta="menu-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
     </div>
   </header>
 
   <main id="contenido">
+    <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="container hero__grid">
+      <div class="contenedor hero__grid">
         <div class="hero__copy">
-          <p class="hero__pill"><i class="ph ph-tooth" aria-hidden="true"></i> Para clínicas dentales y consultorios</p>
-          <h1 class="hero__title hero__title--rubro">Menos sillones vacíos, menos cuotas perdidas.</h1>
+          <h1 class="hero__titulo hero__titulo--rubro">Menos sillones vacíos, menos cuotas perdidas.</h1>
           <p class="hero__sub">Citas confirmadas por WhatsApp, saldos de tratamientos al día y presupuestos que no se olvidan.</p>
           <div class="hero__ctas">
-            <a class="btn btn--primary btn--lg" data-cta="hero-clinicas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+            <a class="btn btn--primario btn--grande" data-cta="hero-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-            <a class="btn btn--ghost btn--lg" href="#solucion">Ver lo que hacemos</a>
           </div>
+          <ul class="hero__datos">
+            <li>Primera conversación gratis</li>
+            <li>Lo ves funcionando antes de pagar</li>
+            <li>Desde S/ 90 al mes</li>
+          </ul>
+          <p class="hero__lugar"><i class="ph ph-tooth" aria-hidden="true"></i> Para clínicas dentales y consultorios</p>
         </div>
 
-        <div class="hero__visual hero__visual--devices">
-          <div class="devices">
-            <div class="devices__stage">
-          <div class="tablet" aria-hidden="true">
-            <div class="tablet__screen">
-              <div class="tablet__bar">
-                <span class="tablet__brand"><i class="ph ph-tooth"></i>Consultorio Dental Sonrisa</span>
-                <span class="tablet__title">Agenda del jueves</span>
-              </div>
-              <div class="tablet__body">
-          <div class="ag" style="--cols:2;--rows:6">
-            <div class="ag__head"><span></span><span>Dra. Paredes</span><span>Dr. Ruiz</span></div>
-            <div class="ag__body">
-              <div class="ag__hours"><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>3:00</span><span>4:00</span></div>
-              <div class="ag__grid">
-                <span class="ag__block ag__block--ok" style="--c:0;--s:0;--d:1">Ana Torres, limpieza</span>
-                <span class="ag__block ag__block--late" style="--c:0;--s:1.5;--d:1">Luis Medina, ortodoncia</span>
-                <span class="ag__block ag__block--ok" style="--c:1;--s:0.5;--d:1.5">Rosa Cárdenas, curación</span>
-                <span class="ag__block ag__block--ok" style="--c:1;--s:3;--d:1">Pedro Salas, evaluación</span>
-                <span class="ag__block ag__block--soon ag__block--nuevo" style="--c:0;--s:4;--d:1">Nueva cita: Carla Ríos</span>
-              </div>
-            </div>
+        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
+        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
+          <div class="demo__cabeza">
+            <p class="demo__titulo" id="demoTitulo">Hoy en Consultorio Dental Sonrisa</p>
           </div>
+          <ol class="demo__lista">
+            <li class="tarea">
+              <s class="tarea__mano">Confirmar citas de mañana<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">7 de 9 pacientes ya confirmaron</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Cobrar cuota a Luis Medina<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Recordatorio de cuota enviado a Luis Medina</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:30</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Seguir presupuesto de Ramos<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Hoy toca llamar a Jorge Ramos</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:00</span></span></span>
+            </li>
+          </ol>
+          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
+          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+    <section class="seccion arreglos" id="solucion">
+      <div class="contenedor arreglos__grid">
+        <div class="arreglos__intro">
+          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
+          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
+        </div>
+        <div>
+          <ol class="arreglos__lista">
+            <li class="arreglo">
+              <i class="ph ph-calendar-check arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“El paciente no viene y el sillón se queda vacío.”</p>
+                <p class="arreglo__ahora">Cada cita se confirma por WhatsApp un día antes y te avisa quién no respondió.</p>
               </div>
-            </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-hand-coins arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Empieza la ortodoncia, deja de pagar y desaparece.”</p>
+                <p class="arreglo__ahora">Ves el saldo de cada tratamiento y el paciente recibe el recordatorio de su cuota.</p>
+              </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-phone-call arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Le doy el presupuesto y nunca me contesta.”</p>
+                <p class="arreglo__ahora">Te recuerda a quién volver a llamar para que ningún presupuesto se enfríe.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="extras">
+            <p class="extras__titulo">También puedo:</p>
+            <ul class="extras__lista">
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Historial de cada paciente</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Aviso de limpieza cada 6 meses</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Boletas SUNAT</li>
+            </ul>
           </div>
-          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
-            <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--scenes">
-              <div class="app__top">
-                <div>
-                  <p class="app__hello">Hola, Dra. Paredes</p>
-                  <p class="app__biz">Consultorio Dental Sonrisa</p>
-                </div>
-                <span class="app__avatar" aria-hidden="true"><i class="ph ph-tooth"></i></span>
-              </div>
-              <div class="scenes">
-      <div class="scene is-on" data-toast="7 de 9 pacientes ya confirmaron" data-toast-icon="check-circle">
-        <p class="scene__title">Citas de mañana</p>
-        <div class="cal">
-          <div class="cal__days">
-            <span class="cal__day"><small>L</small>15</span><span class="cal__day"><small>M</small>16</span><span class="cal__day"><small>M</small>17</span><span class="cal__day is-on"><small>J</small>18</span><span class="cal__day"><small>V</small>19</span><span class="cal__day"><small>S</small>20</span>
-          </div>
-          <ul class="cal__slots">
-            <li class="slot slot--ok">
-              <span class="slot__time">9:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Ana Torres</p>
-                <p class="slot__detail">Limpieza</p>
-              </div>
-              <span class="tag tag--ok">Confirmó</span>
-            </li>
-            <li class="slot slot--late">
-              <span class="slot__time">10:30</span>
-              <div class="slot__info">
-                <p class="slot__name">Luis Medina</p>
-                <p class="slot__detail">Ortodoncia</p>
-              </div>
-              <span class="tag tag--late">Sin respuesta</span>
-            </li>
-            <li class="slot slot--ok">
-              <span class="slot__time">12:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Rosa Cárdenas</p>
-                <p class="slot__detail">Curación</p>
-              </div>
-              <span class="tag tag--ok">Confirmó</span>
-            </li>
-            <li class="slot slot--ok">
-              <span class="slot__time">3:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Pedro Salas</p>
-                <p class="slot__detail">Evaluación</p>
-              </div>
-              <span class="tag tag--ok">Confirmó</span>
-            </li>
-          </ul>
         </div>
       </div>
-      <div class="scene" aria-hidden="true" data-toast="Recordatorio de cuota enviado a Luis Medina" data-toast-icon="check-circle">
-        <p class="scene__title">Tratamientos en curso</p>
-        <div class="app__total">
-          <p class="app__label">Cuotas por cobrar</p>
-          <p class="app__amount">S/ 3,480</p>
-          <p class="app__meta">Este mes, 11 pacientes</p>
+    </section>
+
+    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
         </div>
-        <ul class="app__list">
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Luis Medina</p>
-              <p class="row__detail">Ortodoncia, cuota 6 de 18</p>
+
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
+          <a class="btn btn--primario" data-cta="precio-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Cómo se ve: la vista del sistema como papel pegado -->
+    <section class="seccion sistema" id="sistema">
+      <div class="contenedor sistema__grid">
+        <div class="sistema__intro">
+          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
+          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
+          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
+        </div>
+        <figure class="hs hs--agenda" id="hojaSistema" aria-labelledby="hsTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <div class="hs__cabeza">
+            <p class="hs__negocio"><i class="ph ph-tooth" aria-hidden="true"></i>Consultorio Dental Sonrisa</p>
+            <p class="hs__titulo" id="hsTitulo">Agenda del jueves</p>
+          </div>
+          <div class="hs__cuerpo">
+            <div class="hs-agenda" style="--cols:2;grid-template-rows:auto repeat(12, 26px)">
+              <span class="hs-agenda__esquina" aria-hidden="true"></span>
+              <span class="hs-agenda__col" style="grid-column:2">Dra. Paredes</span><span class="hs-agenda__col" style="grid-column:3">Dr. Ruiz</span>
+              <span class="hs-agenda__linea" style="grid-row:2 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:2">9:00</span>
+              <span class="hs-agenda__linea" style="grid-row:4 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:4">10:00</span>
+              <span class="hs-agenda__linea" style="grid-row:6 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:6">11:00</span>
+              <span class="hs-agenda__linea" style="grid-row:8 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:8">12:00</span>
+              <span class="hs-agenda__linea" style="grid-row:10 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:10">3:00</span>
+              <span class="hs-agenda__linea" style="grid-row:12 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:12">4:00</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:2;grid-row:2 / span 2"><span class="solo-lector">Dra. Paredes: </span>Ana Torres, limpieza</span>
+              <span class="hs-agenda__cita hs-agenda__cita--late" style="grid-column:2;grid-row:5 / span 2"><span class="solo-lector">Dra. Paredes: </span>Luis Medina, ortodoncia</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:3 / span 3"><span class="solo-lector">Dr. Ruiz: </span>Rosa Cárdenas, curación</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:8 / span 2"><span class="solo-lector">Dr. Ruiz: </span>Pedro Salas, evaluación</span>
+              <span class="hs-agenda__cita hs-agenda__cita--soon is-nuevo" style="grid-column:2;grid-row:10 / span 2"><span class="solo-lector">Dra. Paredes: </span><span class="resalte">Nueva cita: Carla Ríos</span></span>
             </div>
-            <span class="tag tag--soon">Aviso enviado</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Carmen Vela</p>
-              <p class="row__detail">Implante, cuota 2 de 4</p>
-            </div>
-            <span class="tag tag--ok">Pagó</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Diego Ramos</p>
-              <p class="row__detail">Ortodoncia, cuota 3 de 18</p>
-            </div>
-            <span class="tag tag--late">Atrasada</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Sofía León</p>
-              <p class="row__detail">Blanqueamiento</p>
-            </div>
-            <span class="tag tag--ok">Pagó</span>
-          </li>
+          </div>
+          <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes como renglones -->
+    <section class="seccion faq" id="preguntas">
+      <div class="contenedor faq__grid">
+        <h2 class="seccion__titulo">Lo que casi todos me preguntan</h2>
+        <div class="faq__lista">
+          <details>
+            <summary>¿Necesito saber de computación?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en el celular?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa con lo que ya tengo en Excel?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero.</p>
+          </details>
+          <details>
+            <summary>¿Emite boletas y facturas electrónicas SUNAT?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no uso un sistema que ya existe?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otros rubros: el índice del cuaderno -->
+    <section class="seccion rubros" id="rubros">
+      <div class="contenedor rubros__grid">
+        <div class="rubros__intro">
+          <h2 class="seccion__titulo">¿Tienes otro negocio?</h2>
+          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
+          <a class="enlace-mano" href="/"><span>Ir a la portada</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="indice">
+          <li><a class="indice__item" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i><span class="indice__nombre">Colegios, nidos y academias</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i><span class="indice__nombre">Veterinarias y pet shops</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i><span class="indice__nombre">Ferreterías y distribuidoras</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i><span class="indice__nombre">Transporte de carga</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/inmobiliarias/"><i class="ph ph-map-trifold" aria-hidden="true"></i><span class="indice__nombre">Inmobiliarias y venta de lotes</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i><span class="indice__nombre">Condominios y edificios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i><span class="indice__nombre">Movilidad escolar</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i><span class="indice__nombre">Gimnasios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/spas/"><i class="ph ph-scissors" aria-hidden="true"></i><span class="indice__nombre">Spas, salones y barberías</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i><span class="indice__nombre">Talleres y servicio técnico</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i><span class="indice__nombre">Minimarkets y tiendas</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
         </ul>
       </div>
-      <div class="scene" aria-hidden="true" data-toast="Hoy toca llamar a Jorge Ramos" data-toast-icon="check-circle">
-        <p class="scene__title">Presupuestos por seguir</p>
-        <div class="app__total">
-          <p class="app__label">Sin respuesta</p>
-          <p class="app__amount">4 presupuestos</p>
-          <p class="app__meta">S/ 6,900 que no se deben enfriar</p>
-        </div>
-        <ul class="app__list">
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Jorge Ramos</p>
-              <p class="row__detail">Implante, enviado hace 7 días</p>
-            </div>
-            <span class="tag tag--late">Llamar hoy</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">María Salas</p>
-              <p class="row__detail">Ortodoncia, hace 3 días</p>
-            </div>
-            <span class="tag tag--soon">Esperar</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Iván Chávez</p>
-              <p class="row__detail">Carillas, hace 1 día</p>
-            </div>
-            <span class="tag tag--soon">Esperar</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Lucía Paz</p>
-              <p class="row__detail">Endodoncia</p>
-            </div>
-            <span class="tag tag--ok">Aceptó</span>
-          </li>
-        </ul>
-      </div>
-              </div>
-              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
-                <button type="button" class="scene-dot is-on" aria-label="Ver Citas de mañana"></button><button type="button" class="scene-dot" aria-label="Ver Tratamientos en curso"></button><button type="button" class="scene-dot" aria-label="Ver Presupuestos por seguir"></button>
-              </div>
-            </div>
-            <div class="toast" role="status" aria-live="polite">
-              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
-              <span></span>
-            </div>
-          </div>
-            </div>
-          </div>
-          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
-            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="El paciente no viene y el sillón se queda vacío.">
-              <i class="ph ph-calendar-check" aria-hidden="true"></i>Sillón vacío
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Empieza la ortodoncia, deja de pagar y desaparece.">
-              <i class="ph ph-hand-coins" aria-hidden="true"></i>Cuotas perdidas
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Le doy el presupuesto y nunca me contesta.">
-              <i class="ph ph-phone-call" aria-hidden="true"></i>Presupuestos
-            </button>
-          </div>
-          <p class="problems__quote" aria-live="polite">“El paciente no viene y el sillón se queda vacío.”</p>
-        </div>
-      </div>
     </section>
 
-    <section class="section fixes" id="solucion">
-      <div class="container">
-        <h2 class="section__title">Lo que te resolvemos</h2>
-        <p class="section__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
-        <ol class="fixes__list">
-          <li class="fix">
-            <p class="fix__pain">“El paciente no viene y el sillón se queda vacío.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-calendar-check" aria-hidden="true"></i></span>
-              <p>Cada cita se confirma por WhatsApp un día antes y te avisa quién no respondió.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Empieza la ortodoncia, deja de pagar y desaparece.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-hand-coins" aria-hidden="true"></i></span>
-              <p>Ves el saldo de cada tratamiento y el paciente recibe el recordatorio de su cuota.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Le doy el presupuesto y nunca me contesta.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-phone-call" aria-hidden="true"></i></span>
-              <p>Te recuerda a quién volver a llamar para que ningún presupuesto se enfríe.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="extras">
-          <p class="extras__label">También podemos:</p>
-          <ul class="extras__list">
-            <li>Historial de cada paciente</li>
-            <li>Aviso de limpieza cada 6 meses</li>
-            <li>Boletas SUNAT</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section steps" id="proceso">
-      <div class="container">
-        <h2 class="section__title">Empezar es fácil</h2>
-        <ol class="steps__list">
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-chats-circle" aria-hidden="true"></i></span>
-            <h3>Conversamos 30 minutos</h3>
-            <p>Por WhatsApp o videollamada, gratis. Me cuentas cómo trabajas hoy y qué te quita tiempo.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-presentation-chart" aria-hidden="true"></i></span>
-            <h3>Te mostramos cómo quedaría</h3>
-            <p>Ves tu sistema antes de pagar nada, con un precio cerrado por escrito.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-rocket-launch" aria-hidden="true"></i></span>
-            <h3>Lo usas y te acompañamos</h3>
-            <p>Pasamos tu Excel al sistema, capacitamos a tu equipo y seguimos disponibles.</p>
-          </li>
-        </ol>
-
-        <div class="price" id="precio">
-          <div class="price__main">
-            <p class="price__label">Planes desde</p>
-            <p class="price__value">S/ 90 <span>al mes</span></p>
-            <p class="price__note">El precio final depende de lo que necesite tu negocio. Te lo damos cerrado y por escrito después de la primera conversación.</p>
-          </div>
-          <div class="price__side">
-            <p class="price__sunat price__sunat--ok"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
-            <a class="btn btn--primary" data-cta="precio-clinicas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+    <!-- Cierre: la tapa del cuaderno -->
+    <section class="tapa final" id="contacto">
+      <div class="contenedor final__fila">
+        <h2 class="final__titulo">Cuéntame cómo trabajas hoy.</h2>
+        <div class="final__accion">
+          <p class="final__sub">Escríbeme y lo vemos juntos. Te respondo hoy mismo. La primera conversación es gratis y sin compromiso.</p>
+          <a class="btn btn--etiqueta btn--grande" data-cta="final-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final" id="contacto">
-      <div class="container final__inner">
-        <h2 class="final__title">Cuéntanos cómo trabajas hoy.</h2>
-        <p class="final__sub">Te respondemos hoy mismo. La primera conversación es gratis y sin compromiso.</p>
-        <a class="btn btn--light btn--lg" data-cta="final-clinicas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
-            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
-          </a>
-      </div>
-    </section>
-
-    <section class="section others" aria-label="Otros rubros">
-      <div class="container">
-        <p class="others__label">También trabajamos con</p>
-        <div class="others__list">
-          <a class="other" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i>Colegios, nidos y academias</a>
-          <a class="other" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i>Veterinarias y pet shops</a>
-          <a class="other" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i>Ferreterías y distribuidoras</a>
-          <a class="other" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i>Transporte de carga</a>
-          <a class="other" href="/inmobiliarias/"><i class="ph ph-map-trifold" aria-hidden="true"></i>Inmobiliarias y venta de lotes</a>
-          <a class="other" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i>Condominios y edificios</a>
-          <a class="other" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i>Movilidad escolar</a>
-          <a class="other" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i>Gimnasios</a>
-          <a class="other" href="/spas/"><i class="ph ph-scissors" aria-hidden="true"></i>Spas, salones y barberías</a>
-          <a class="other" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i>Talleres y servicio técnico</a>
-          <a class="other" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i>Minimarkets y tiendas</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
+  <footer class="pie">
+    <div class="contenedor pie__fila">
       <div>
-        <a href="/" class="logo">
-          <span class="logo__mark" aria-hidden="true">Y</span>
-          <span class="logo__text">Yanapay</span>
+        <a href="/" class="logo logo--claro" aria-label="Abiel, ir a la portada">
+          <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" /></svg>
+          <span class="logo__texto">Abiel</span>
         </a>
-        <p class="footer__tag">Sistemas a la medida para negocios peruanos.</p>
+        <p class="pie__frase">Automatizo el trabajo manual y repetitivo de negocios peruanos.</p>
       </div>
-      <nav class="footer__links" aria-label="Pie de página">
-        <a href="/">Inicio</a>
-        <a href="/#rubros">Rubros</a>
-        <a href="/#preguntas">Preguntas</a>
+      <nav class="pie__enlaces" aria-label="Pie de página">
+        <a href="/">Portada</a>
+        <a href="/#rubros">Todos los rubros</a>
+        <a href="#precio">Precio</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-      <div class="footer__contact">
-        <a href="https://wa.me/51913412590" target="_blank" rel="noopener">+51 913 412 590</a>
+      <div class="pie__contacto">
+        <a href="https://wa.me/51913412590" data-cta="pie-clinicas" target="_blank" rel="noopener">+51 913 412 590</a>
         <span>Lima, Perú</span>
       </div>
     </div>
-    <p class="footer__legal container">© <span id="anio">2026</span> Yanapay</p>
+    <p class="pie__legal contenedor">© <span id="anio">2026</span> Abiel</p>
   </footer>
 
-  <a class="fab" id="fab" data-cta="flotante-clinicas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <a class="fab" id="fab" data-cta="flotante-clinicas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
     <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
   </a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="/main.js" defer></script>
+  <script src="/rubro.js" defer></script>
 </body>
 </html>

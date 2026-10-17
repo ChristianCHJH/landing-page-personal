@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sistema para spas, salones de belleza y barberías en Lima | Yanapay</title>
+  <title>Sistema para spas, salones de belleza y barberías en Lima | Abiel</title>
   <meta name="description" content="Tus clientes son tuyos, no de tu estilista. Datos de cada cliente en el negocio, comisiones que se calculan solas y reservas con recordatorio. Desde S/ 90 al mes." />
   <link rel="canonical" href="https://landing-page-personal-kappa.vercel.app/spas/" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FAFCFF" />
+  <meta name="color-scheme" content="light" />
+  <meta name="geo.region" content="PE-LIM" />
+  <meta name="geo.placename" content="Lima" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_PE" />
-  <meta property="og:site_name" content="Yanapay" />
+  <meta property="og:site_name" content="Abiel" />
   <meta property="og:url" content="https://landing-page-personal-kappa.vercel.app/spas/" />
   <meta property="og:title" content="Tus clientes son tuyos, no de tu estilista." />
   <meta property="og:description" content="Clientes guardados en tu negocio, comisiones sin peleas y reservas que sí llegan." />
@@ -19,13 +22,16 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..800&family=Kalam:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/portada.css" />
+  <link rel="stylesheet" href="/rubro.css" />
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,6 +42,7 @@
       "serviceType": "Spas, salones y barberías",
       "description": "Tus clientes son tuyos, no de tu estilista. Datos de cada cliente en el negocio, comisiones que se calculan solas y reservas con recordatorio. Desde S/ 90 al mes.",
       "url": "https://landing-page-personal-kappa.vercel.app/spas/",
+      "image": "https://landing-page-personal-kappa.vercel.app/assets/og/spas.jpg",
       "areaServed": [
         {
           "@type": "City",
@@ -49,7 +56,7 @@
       "provider": {
         "@type": "ProfessionalService",
         "@id": "https://landing-page-personal-kappa.vercel.app/#negocio",
-        "name": "Yanapay",
+        "name": "Abiel",
         "telephone": "+51913412590"
       },
       "offers": {
@@ -65,7 +72,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Yanapay",
+          "name": "Abiel",
           "item": "https://landing-page-personal-kappa.vercel.app/"
         },
         {
@@ -75,358 +82,369 @@
           "item": "https://landing-page-personal-kappa.vercel.app/spas/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber de computación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Funciona en el celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa con lo que ya tengo en Excel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Emite boletas y facturas electrónicas SUNAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no uso un sistema que ya existe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
 </head>
-<body class="page-rubro">
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+<body class="pagina-rubro">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
 
+  <!-- Encabezado: el renglón de arriba de la hoja del cuaderno -->
   <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="/" class="logo" aria-label="Yanapay, ir al inicio">
-        <span class="logo__mark" aria-hidden="true">Y</span>
-        <span class="logo__text">Yanapay</span>
+    <div class="contenedor nav__fila">
+      <a href="/" class="logo" aria-label="Abiel, ir a la portada">
+        <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" fill="#fff" /></svg>
+        <span class="logo__texto">Abiel</span>
       </a>
-      <nav class="nav__links" aria-label="Principal">
-        <a href="#solucion">Lo que hacemos</a>
+      <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
+      <nav class="nav__enlaces" aria-label="Principal">
+        <a href="#solucion">Lo que resuelvo</a>
         <a href="#precio">Precio</a>
-        <a href="/#rubros">Otros rubros</a>
+        <a href="#sistema">Cómo se ve</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#rubros">Otros rubros</a>
       </nav>
-      <a class="btn btn--primary btn--sm nav__cta" data-cta="nav-spas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+      <a class="btn btn--primario btn--chico nav__cta" data-cta="nav-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+      <button class="nav__menu" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
         <i class="ph ph-list" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="nav__mobile" id="menuMovil" hidden>
-      <a href="#solucion">Lo que hacemos</a>
+    <div class="nav__movil" id="menuMovil" hidden>
+      <a href="#solucion">Lo que resuelvo</a>
       <a href="#precio">Precio</a>
-      <a href="/#rubros">Otros rubros</a>
+      <a href="#sistema">Cómo se ve</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#rubros">Otros rubros</a>
+      <a href="/">Ir a la portada</a>
+      <a class="btn btn--primario" data-cta="menu-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
     </div>
   </header>
 
   <main id="contenido">
+    <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="container hero__grid">
+      <div class="contenedor hero__grid">
         <div class="hero__copy">
-          <p class="hero__pill"><i class="ph ph-scissors" aria-hidden="true"></i> Para spas, salones y barberías</p>
-          <h1 class="hero__title hero__title--rubro">Tus clientes son tuyos, no de tu estilista.</h1>
+          <h1 class="hero__titulo hero__titulo--rubro">Tus clientes son tuyos, no de tu estilista.</h1>
           <p class="hero__sub">Clientes guardados en tu negocio, comisiones sin peleas y reservas que sí llegan.</p>
           <div class="hero__ctas">
-            <a class="btn btn--primary btn--lg" data-cta="hero-spas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+            <a class="btn btn--primario btn--grande" data-cta="hero-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-            <a class="btn btn--ghost btn--lg" href="#solucion">Ver lo que hacemos</a>
           </div>
+          <ul class="hero__datos">
+            <li>Primera conversación gratis</li>
+            <li>Lo ves funcionando antes de pagar</li>
+            <li>Desde S/ 90 al mes</li>
+          </ul>
+          <p class="hero__lugar"><i class="ph ph-scissors" aria-hidden="true"></i> Para spas, salones y barberías</p>
         </div>
 
-        <div class="hero__visual hero__visual--devices">
-          <div class="devices">
-            <div class="devices__stage">
-          <div class="tablet" aria-hidden="true">
-            <div class="tablet__screen">
-              <div class="tablet__bar">
-                <span class="tablet__brand"><i class="ph ph-scissors"></i>Salón Bella Lima</span>
-                <span class="tablet__title">Agenda del sábado</span>
-              </div>
-              <div class="tablet__body">
-          <div class="ag" style="--cols:3;--rows:6">
-            <div class="ag__head"><span></span><span>Kevin</span><span>Andrea</span><span>Rosa</span></div>
-            <div class="ag__body">
-              <div class="ag__hours"><span>10:00</span><span>11:00</span><span>12:00</span><span>1:00</span><span>2:00</span><span>3:00</span></div>
-              <div class="ag__grid">
-                <span class="ag__block ag__block--ok" style="--c:0;--s:0;--d:1">Juan, corte</span>
-                <span class="ag__block ag__block--ok" style="--c:1;--s:0;--d:2">Andrea G., tinte</span>
-                <span class="ag__block ag__block--ok" style="--c:1;--s:2;--d:1">Patricia, corte</span>
-                <span class="ag__block ag__block--ok" style="--c:2;--s:1;--d:1">Lucía, manicure</span>
-                <span class="ag__block ag__block--ok" style="--c:2;--s:3;--d:1.5">Sofía, pedicure</span>
-                <span class="ag__block ag__block--soon ag__block--nuevo" style="--c:0;--s:4;--d:1">Nueva: Marco, barba</span>
-              </div>
-            </div>
+        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
+        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
+          <div class="demo__cabeza">
+            <p class="demo__titulo" id="demoTitulo">Hoy en Salón Bella Lima</p>
           </div>
-              </div>
-            </div>
-          </div>
-          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
-            <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--scenes">
-              <div class="app__top">
-                <div>
-                  <p class="app__hello">Hola, Sra. Milagros</p>
-                  <p class="app__biz">Salón Bella Lima</p>
-                </div>
-                <span class="app__avatar" aria-hidden="true"><i class="ph ph-scissors"></i></span>
-              </div>
-              <div class="scenes">
-      <div class="scene is-on" data-toast="Los datos de Patricia quedan en tu salón" data-toast-icon="check-circle">
-        <p class="scene__title">Ficha de la clienta</p>
-        <div class="pet">
-          <div class="pet__head">
-            <span class="pet__avatar"><i class="ph ph-user"></i></span>
-            <div>
-              <p class="pet__name">Patricia Montes</p>
-              <p class="row__detail">Clienta desde 2023, viene cada 5 semanas</p>
-            </div>
-          </div>
-          <p class="pet__label">Su historial</p>
-          <ul class="pet__items">
-            <li class="pet__item pet__item--ok">
-              <i class="ph-fill ph-check-circle"></i>
+          <ol class="demo__lista">
+            <li class="tarea">
+              <s class="tarea__mano">Anotar el número de Patricia<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Los datos de Patricia quedan en tu salón</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:00</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Sacar comisiones de la semana<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Comisiones calculadas solas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Confirmar a Marco Díaz<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Nueva reserva: Marco Díaz, 2:00 pm</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>10:30</span></span></span>
+            </li>
+          </ol>
+          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
+          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+    <section class="seccion arreglos" id="solucion">
+      <div class="contenedor arreglos__grid">
+        <div class="arreglos__intro">
+          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
+          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
+        </div>
+        <div>
+          <ol class="arreglos__lista">
+            <li class="arreglo">
+              <i class="ph ph-users-three arreglo__icono" aria-hidden="true"></i>
               <div>
-                <p class="row__name">Corte y brushing</p>
-                <p class="row__detail">Hace 5 semanas, con Andrea</p>
+                <p class="arreglo__antes">“Mis estilistas se van y se llevan a mis clientas.”</p>
+                <p class="arreglo__ahora">Los datos de cada cliente quedan en tu negocio, no en el celular del estilista.</p>
               </div>
             </li>
-            <li class="pet__item pet__item--ok">
-              <i class="ph-fill ph-check-circle"></i>
+            <li class="arreglo">
+              <i class="ph ph-calculator arreglo__icono" aria-hidden="true"></i>
               <div>
-                <p class="row__name">Tinte castaño 6.3</p>
-                <p class="row__detail">Julio, con Andrea</p>
+                <p class="arreglo__antes">“Siempre hay pelea por las comisiones.”</p>
+                <p class="arreglo__ahora">La comisión de cada uno se calcula sola con lo que atendió.</p>
               </div>
             </li>
-            <li class="pet__item pet__item--soon">
-              <i class="ph-fill ph-clock"></i>
+            <li class="arreglo">
+              <i class="ph ph-calendar-check arreglo__icono" aria-hidden="true"></i>
               <div>
-                <p class="row__name">Le toca su corte</p>
-                <p class="row__detail">Esta semana</p>
+                <p class="arreglo__antes">“Me reservan y no llegan.”</p>
+                <p class="arreglo__ahora">El cliente reserva y recibe su recordatorio por WhatsApp.</p>
               </div>
             </li>
-          </ul>
+          </ol>
+          <div class="extras">
+            <p class="extras__titulo">También puedo:</p>
+            <ul class="extras__lista">
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Aviso de te toca tu corte</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Control de productos</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Cierre de caja con Yape</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="scene" aria-hidden="true" data-toast="Comisiones calculadas solas" data-toast-icon="check-circle">
-        <p class="scene__title">Comisiones de la semana</p>
-        <div class="app__total">
-          <p class="app__label">A pagar el sábado</p>
-          <p class="app__amount">S/ 2,960</p>
-          <p class="app__meta">Según lo que atendió cada uno</p>
+    </section>
+
+    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
         </div>
-        <ul class="app__list">
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Kevin</p>
-              <p class="row__detail">18 cortes, 4 barbas</p>
+
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
+          <a class="btn btn--primario" data-cta="precio-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Cómo se ve: la vista del sistema como papel pegado -->
+    <section class="seccion sistema" id="sistema">
+      <div class="contenedor sistema__grid">
+        <div class="sistema__intro">
+          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
+          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
+          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
+        </div>
+        <figure class="hs hs--agenda" id="hojaSistema" aria-labelledby="hsTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <div class="hs__cabeza">
+            <p class="hs__negocio"><i class="ph ph-scissors" aria-hidden="true"></i>Salón Bella Lima</p>
+            <p class="hs__titulo" id="hsTitulo">Agenda del sábado</p>
+          </div>
+          <div class="hs__cuerpo">
+            <div class="hs-agenda" style="--cols:3;grid-template-rows:auto repeat(12, 26px)">
+              <span class="hs-agenda__esquina" aria-hidden="true"></span>
+              <span class="hs-agenda__col" style="grid-column:2">Kevin</span><span class="hs-agenda__col" style="grid-column:3">Andrea</span><span class="hs-agenda__col" style="grid-column:4">Rosa</span>
+              <span class="hs-agenda__linea" style="grid-row:2 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:2">10:00</span>
+              <span class="hs-agenda__linea" style="grid-row:4 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:4">11:00</span>
+              <span class="hs-agenda__linea" style="grid-row:6 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:6">12:00</span>
+              <span class="hs-agenda__linea" style="grid-row:8 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:8">1:00</span>
+              <span class="hs-agenda__linea" style="grid-row:10 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:10">2:00</span>
+              <span class="hs-agenda__linea" style="grid-row:12 / span 2" aria-hidden="true"></span><span class="hs-agenda__hora" style="grid-row:12">3:00</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:2;grid-row:2 / span 2"><span class="solo-lector">Kevin: </span>Juan, corte</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:2 / span 4"><span class="solo-lector">Andrea: </span>Andrea G., tinte</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:3;grid-row:6 / span 2"><span class="solo-lector">Andrea: </span>Patricia, corte</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:4;grid-row:4 / span 2"><span class="solo-lector">Rosa: </span>Lucía, manicure</span>
+              <span class="hs-agenda__cita hs-agenda__cita--ok" style="grid-column:4;grid-row:8 / span 3"><span class="solo-lector">Rosa: </span>Sofía, pedicure</span>
+              <span class="hs-agenda__cita hs-agenda__cita--soon is-nuevo" style="grid-column:2;grid-row:10 / span 2"><span class="solo-lector">Kevin: </span><span class="resalte">Nueva: Marco, barba</span></span>
             </div>
-            <span class="tag tag--ok">S/ 590</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Andrea</p>
-              <p class="row__detail">6 tintes, 9 cortes</p>
-            </div>
-            <span class="tag tag--ok">S/ 1,120</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Rosa</p>
-              <p class="row__detail">14 manicures</p>
-            </div>
-            <span class="tag tag--ok">S/ 420</span>
-          </li>
+          </div>
+          <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes como renglones -->
+    <section class="seccion faq" id="preguntas">
+      <div class="contenedor faq__grid">
+        <h2 class="seccion__titulo">Lo que casi todos me preguntan</h2>
+        <div class="faq__lista">
+          <details>
+            <summary>¿Necesito saber de computación?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en el celular?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa con lo que ya tengo en Excel?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero.</p>
+          </details>
+          <details>
+            <summary>¿Emite boletas y facturas electrónicas SUNAT?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no uso un sistema que ya existe?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otros rubros: el índice del cuaderno -->
+    <section class="seccion rubros" id="rubros">
+      <div class="contenedor rubros__grid">
+        <div class="rubros__intro">
+          <h2 class="seccion__titulo">¿Tienes otro negocio?</h2>
+          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
+          <a class="enlace-mano" href="/"><span>Ir a la portada</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="indice">
+          <li><a class="indice__item" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i><span class="indice__nombre">Colegios, nidos y academias</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i><span class="indice__nombre">Clínicas dentales y consultorios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i><span class="indice__nombre">Veterinarias y pet shops</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i><span class="indice__nombre">Ferreterías y distribuidoras</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i><span class="indice__nombre">Transporte de carga</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/inmobiliarias/"><i class="ph ph-map-trifold" aria-hidden="true"></i><span class="indice__nombre">Inmobiliarias y venta de lotes</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i><span class="indice__nombre">Condominios y edificios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i><span class="indice__nombre">Movilidad escolar</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i><span class="indice__nombre">Gimnasios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i><span class="indice__nombre">Talleres y servicio técnico</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i><span class="indice__nombre">Minimarkets y tiendas</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
         </ul>
       </div>
-      <div class="scene" aria-hidden="true" data-toast="Nueva reserva: Marco Díaz, 2:00 pm" data-toast-icon="check-circle">
-        <p class="scene__title">Reservas con recordatorio</p>
-        <div class="cal">
-          <div class="cal__days">
-            <span class="cal__day"><small>L</small>15</span><span class="cal__day"><small>M</small>16</span><span class="cal__day"><small>M</small>17</span><span class="cal__day"><small>J</small>18</span><span class="cal__day"><small>V</small>19</span><span class="cal__day is-on"><small>S</small>20</span>
-          </div>
-          <ul class="cal__slots">
-            <li class="slot slot--ok">
-              <span class="slot__time">10:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Juan Pérez</p>
-                <p class="slot__detail">Corte con Kevin</p>
-              </div>
-              <span class="tag tag--ok">Confirmó</span>
-            </li>
-            <li class="slot slot--ok">
-              <span class="slot__time">11:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Patricia Montes</p>
-                <p class="slot__detail">Corte con Andrea</p>
-              </div>
-              <span class="tag tag--ok">Confirmó</span>
-            </li>
-            <li class="slot slot--soon">
-              <span class="slot__time">2:00</span>
-              <div class="slot__info">
-                <p class="slot__name">Marco Díaz</p>
-                <p class="slot__detail">Barba con Kevin</p>
-              </div>
-              <span class="tag tag--soon">Nueva</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-              </div>
-              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
-                <button type="button" class="scene-dot is-on" aria-label="Ver Ficha de la clienta"></button><button type="button" class="scene-dot" aria-label="Ver Comisiones de la semana"></button><button type="button" class="scene-dot" aria-label="Ver Reservas con recordatorio"></button>
-              </div>
-            </div>
-            <div class="toast" role="status" aria-live="polite">
-              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
-              <span></span>
-            </div>
-          </div>
-            </div>
-          </div>
-          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
-            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Mis estilistas se van y se llevan a mis clientas.">
-              <i class="ph ph-users-three" aria-hidden="true"></i>Se llevan a mis clientas
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Siempre hay pelea por las comisiones.">
-              <i class="ph ph-calculator" aria-hidden="true"></i>Peleas por comisión
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Me reservan y no llegan.">
-              <i class="ph ph-calendar-check" aria-hidden="true"></i>Reservan y no llegan
-            </button>
-          </div>
-          <p class="problems__quote" aria-live="polite">“Mis estilistas se van y se llevan a mis clientas.”</p>
-        </div>
-      </div>
     </section>
 
-    <section class="section fixes" id="solucion">
-      <div class="container">
-        <h2 class="section__title">Lo que te resolvemos</h2>
-        <p class="section__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
-        <ol class="fixes__list">
-          <li class="fix">
-            <p class="fix__pain">“Mis estilistas se van y se llevan a mis clientas.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-users-three" aria-hidden="true"></i></span>
-              <p>Los datos de cada cliente quedan en tu negocio, no en el celular del estilista.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Siempre hay pelea por las comisiones.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-calculator" aria-hidden="true"></i></span>
-              <p>La comisión de cada uno se calcula sola con lo que atendió.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Me reservan y no llegan.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-calendar-check" aria-hidden="true"></i></span>
-              <p>El cliente reserva y recibe su recordatorio por WhatsApp.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="extras">
-          <p class="extras__label">También podemos:</p>
-          <ul class="extras__list">
-            <li>Aviso de te toca tu corte</li>
-            <li>Control de productos</li>
-            <li>Cierre de caja con Yape</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section steps" id="proceso">
-      <div class="container">
-        <h2 class="section__title">Empezar es fácil</h2>
-        <ol class="steps__list">
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-chats-circle" aria-hidden="true"></i></span>
-            <h3>Conversamos 30 minutos</h3>
-            <p>Por WhatsApp o videollamada, gratis. Me cuentas cómo trabajas hoy y qué te quita tiempo.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-presentation-chart" aria-hidden="true"></i></span>
-            <h3>Te mostramos cómo quedaría</h3>
-            <p>Ves tu sistema antes de pagar nada, con un precio cerrado por escrito.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-rocket-launch" aria-hidden="true"></i></span>
-            <h3>Lo usas y te acompañamos</h3>
-            <p>Pasamos tu Excel al sistema, capacitamos a tu equipo y seguimos disponibles.</p>
-          </li>
-        </ol>
-
-        <div class="price" id="precio">
-          <div class="price__main">
-            <p class="price__label">Planes desde</p>
-            <p class="price__value">S/ 90 <span>al mes</span></p>
-            <p class="price__note">El precio final depende de lo que necesite tu negocio. Te lo damos cerrado y por escrito después de la primera conversación.</p>
-          </div>
-          <div class="price__side">
-            <p class="price__sunat price__sunat--ok"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
-            <a class="btn btn--primary" data-cta="precio-spas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+    <!-- Cierre: la tapa del cuaderno -->
+    <section class="tapa final" id="contacto">
+      <div class="contenedor final__fila">
+        <h2 class="final__titulo">Cuéntame cómo trabajas hoy.</h2>
+        <div class="final__accion">
+          <p class="final__sub">Escríbeme y lo vemos juntos. Te respondo hoy mismo. La primera conversación es gratis y sin compromiso.</p>
+          <a class="btn btn--etiqueta btn--grande" data-cta="final-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final" id="contacto">
-      <div class="container final__inner">
-        <h2 class="final__title">Cuéntanos cómo trabajas hoy.</h2>
-        <p class="final__sub">Te respondemos hoy mismo. La primera conversación es gratis y sin compromiso.</p>
-        <a class="btn btn--light btn--lg" data-cta="final-spas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
-            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
-          </a>
-      </div>
-    </section>
-
-    <section class="section others" aria-label="Otros rubros">
-      <div class="container">
-        <p class="others__label">También trabajamos con</p>
-        <div class="others__list">
-          <a class="other" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i>Colegios, nidos y academias</a>
-          <a class="other" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i>Clínicas dentales y consultorios</a>
-          <a class="other" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i>Veterinarias y pet shops</a>
-          <a class="other" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i>Ferreterías y distribuidoras</a>
-          <a class="other" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i>Transporte de carga</a>
-          <a class="other" href="/inmobiliarias/"><i class="ph ph-map-trifold" aria-hidden="true"></i>Inmobiliarias y venta de lotes</a>
-          <a class="other" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i>Condominios y edificios</a>
-          <a class="other" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i>Movilidad escolar</a>
-          <a class="other" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i>Gimnasios</a>
-          <a class="other" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i>Talleres y servicio técnico</a>
-          <a class="other" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i>Minimarkets y tiendas</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
+  <footer class="pie">
+    <div class="contenedor pie__fila">
       <div>
-        <a href="/" class="logo">
-          <span class="logo__mark" aria-hidden="true">Y</span>
-          <span class="logo__text">Yanapay</span>
+        <a href="/" class="logo logo--claro" aria-label="Abiel, ir a la portada">
+          <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" /></svg>
+          <span class="logo__texto">Abiel</span>
         </a>
-        <p class="footer__tag">Sistemas a la medida para negocios peruanos.</p>
+        <p class="pie__frase">Automatizo el trabajo manual y repetitivo de negocios peruanos.</p>
       </div>
-      <nav class="footer__links" aria-label="Pie de página">
-        <a href="/">Inicio</a>
-        <a href="/#rubros">Rubros</a>
-        <a href="/#preguntas">Preguntas</a>
+      <nav class="pie__enlaces" aria-label="Pie de página">
+        <a href="/">Portada</a>
+        <a href="/#rubros">Todos los rubros</a>
+        <a href="#precio">Precio</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-      <div class="footer__contact">
-        <a href="https://wa.me/51913412590" target="_blank" rel="noopener">+51 913 412 590</a>
+      <div class="pie__contacto">
+        <a href="https://wa.me/51913412590" data-cta="pie-spas" target="_blank" rel="noopener">+51 913 412 590</a>
         <span>Lima, Perú</span>
       </div>
     </div>
-    <p class="footer__legal container">© <span id="anio">2026</span> Yanapay</p>
+    <p class="pie__legal contenedor">© <span id="anio">2026</span> Abiel</p>
   </footer>
 
-  <a class="fab" id="fab" data-cta="flotante-spas" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <a class="fab" id="fab" data-cta="flotante-spas" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20un%20spa%2C%20sal%C3%B3n%20o%20barber%C3%ADa.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
     <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
   </a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="/main.js" defer></script>
+  <script src="/rubro.js" defer></script>
 </body>
 </html>

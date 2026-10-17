@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sistema para inmobiliarias y venta de lotes en Lima | Yanapay</title>
+  <title>Sistema para inmobiliarias y venta de lotes en Lima | Abiel</title>
   <meta name="description" content="Que ningún lote se venda dos veces. Plano con lotes libres y vendidos, cuotas al día y comisiones que se calculan solas. Desde S/ 90 al mes." />
   <link rel="canonical" href="https://landing-page-personal-kappa.vercel.app/inmobiliarias/" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#F5F5F2" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FAFCFF" />
+  <meta name="color-scheme" content="light" />
+  <meta name="geo.region" content="PE-LIM" />
+  <meta name="geo.placename" content="Lima" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_PE" />
-  <meta property="og:site_name" content="Yanapay" />
+  <meta property="og:site_name" content="Abiel" />
   <meta property="og:url" content="https://landing-page-personal-kappa.vercel.app/inmobiliarias/" />
   <meta property="og:title" content="Que ningún lote se venda dos veces y ninguna cuota se escape." />
   <meta property="og:description" content="Plano al día, cuotas de cada cliente bajo control y comisiones sin peleas." />
@@ -19,13 +22,16 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,700..800&family=Kalam:wght@400;700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/portada.css" />
+  <link rel="stylesheet" href="/rubro.css" />
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,6 +42,7 @@
       "serviceType": "Inmobiliarias y venta de lotes",
       "description": "Que ningún lote se venda dos veces. Plano con lotes libres y vendidos, cuotas al día y comisiones que se calculan solas. Desde S/ 90 al mes.",
       "url": "https://landing-page-personal-kappa.vercel.app/inmobiliarias/",
+      "image": "https://landing-page-personal-kappa.vercel.app/assets/og/inmobiliarias.jpg",
       "areaServed": [
         {
           "@type": "City",
@@ -49,7 +56,7 @@
       "provider": {
         "@type": "ProfessionalService",
         "@id": "https://landing-page-personal-kappa.vercel.app/#negocio",
-        "name": "Yanapay",
+        "name": "Abiel",
         "telephone": "+51913412590"
       },
       "offers": {
@@ -65,7 +72,7 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Yanapay",
+          "name": "Abiel",
           "item": "https://landing-page-personal-kappa.vercel.app/"
         },
         {
@@ -75,333 +82,364 @@
           "item": "https://landing-page-personal-kappa.vercel.app/inmobiliarias/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber de computación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Funciona en el celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa con lo que ya tengo en Excel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Emite boletas y facturas electrónicas SUNAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no uso un sistema que ya existe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
 </head>
-<body class="page-rubro">
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+<body class="pagina-rubro">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
 
+  <!-- Encabezado: el renglón de arriba de la hoja del cuaderno -->
   <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="/" class="logo" aria-label="Yanapay, ir al inicio">
-        <span class="logo__mark" aria-hidden="true">Y</span>
-        <span class="logo__text">Yanapay</span>
+    <div class="contenedor nav__fila">
+      <a href="/" class="logo" aria-label="Abiel, ir a la portada">
+        <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" fill="#fff" /></svg>
+        <span class="logo__texto">Abiel</span>
       </a>
-      <nav class="nav__links" aria-label="Principal">
-        <a href="#solucion">Lo que hacemos</a>
+      <p class="nav__fecha">Fecha: <span id="navFecha">hoy</span></p>
+      <nav class="nav__enlaces" aria-label="Principal">
+        <a href="#solucion">Lo que resuelvo</a>
         <a href="#precio">Precio</a>
-        <a href="/#rubros">Otros rubros</a>
+        <a href="#sistema">Cómo se ve</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#rubros">Otros rubros</a>
       </nav>
-      <a class="btn btn--primary btn--sm nav__cta" data-cta="nav-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+      <a class="btn btn--primario btn--chico nav__cta" data-cta="nav-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+      <button class="nav__menu" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
         <i class="ph ph-list" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="nav__mobile" id="menuMovil" hidden>
-      <a href="#solucion">Lo que hacemos</a>
+    <div class="nav__movil" id="menuMovil" hidden>
+      <a href="#solucion">Lo que resuelvo</a>
       <a href="#precio">Precio</a>
-      <a href="/#rubros">Otros rubros</a>
+      <a href="#sistema">Cómo se ve</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#rubros">Otros rubros</a>
+      <a href="/">Ir a la portada</a>
+      <a class="btn btn--primario" data-cta="menu-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
     </div>
   </header>
 
   <main id="contenido">
+    <!-- Primera pantalla: la hoja de hoy del negocio -->
     <section class="hero" id="inicio">
-      <div class="container hero__grid">
+      <div class="contenedor hero__grid">
         <div class="hero__copy">
-          <p class="hero__pill"><i class="ph ph-map-trifold" aria-hidden="true"></i> Para inmobiliarias y venta de lotes</p>
-          <h1 class="hero__title hero__title--rubro">Que ningún lote se venda dos veces y ninguna cuota se escape.</h1>
+          <h1 class="hero__titulo hero__titulo--rubro">Que ningún lote se venda dos veces y ninguna cuota se escape.</h1>
           <p class="hero__sub">Plano al día, cuotas de cada cliente bajo control y comisiones sin peleas.</p>
           <div class="hero__ctas">
-            <a class="btn btn--primary btn--lg" data-cta="hero-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+            <a class="btn btn--primario btn--grande" data-cta="hero-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
-            <a class="btn btn--ghost btn--lg" href="#solucion">Ver lo que hacemos</a>
           </div>
-        </div>
-
-        <div class="hero__visual hero__visual--devices">
-          <div class="devices">
-            <div class="devices__stage">
-          <div class="tablet" aria-hidden="true">
-            <div class="tablet__screen">
-              <div class="tablet__bar">
-                <span class="tablet__brand"><i class="ph ph-map-trifold"></i>Lotes Valle Sur</span>
-                <span class="tablet__title">Plano en vivo, etapa 2</span>
-              </div>
-              <div class="tablet__body">
-          <div class="tplan">
-            <div class="plan plan--lg">
-          <div class="plan__grid" style="--cols:10">
-            <span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre lot--cambia">B-14</span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span>
-          </div>
-          <div class="plan__legend">
-            <span><i class="lot lot--libre"></i>Libre</span>
-            <span><i class="lot lot--separado"></i>Separado</span>
-            <span><i class="lot lot--vendido"></i>Vendido</span>
-          </div>
-        </div>
-            <div class="tplan__side">
-              <div class="tplan__stat"><i class="lot lot--libre"></i><p class="pn__value">17</p><p class="row__detail">Libres</p></div><div class="tplan__stat"><i class="lot lot--separado"></i><p class="pn__value">7</p><p class="row__detail">Separados</p></div><div class="tplan__stat"><i class="lot lot--vendido"></i><p class="pn__value">26</p><p class="row__detail">Vendidos</p></div>
-            </div>
-          </div>
-              </div>
-            </div>
-          </div>
-          <div class="phone phone--tall" aria-label="Ejemplo de cómo se vería tu sistema en el celular">
-            <div class="phone__notch" aria-hidden="true"></div>
-            <div class="app app--scenes">
-              <div class="app__top">
-                <div>
-                  <p class="app__hello">Hola, Sra. Vargas</p>
-                  <p class="app__biz">Lotes Valle Sur</p>
-                </div>
-                <span class="app__avatar" aria-hidden="true"><i class="ph ph-map-trifold"></i></span>
-              </div>
-              <div class="scenes">
-      <div class="scene is-on" data-toast="Carla separó el lote B-14" data-toast-icon="check-circle">
-        <p class="scene__title">Plano de la etapa 2</p>
-        <div class="plan plan--ruta-inmobiliarias-0">
-          <div class="plan__grid" style="--cols:6">
-            <span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre lot--cambia">B-14</span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--libre"></span><span class="lot lot--separado"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--libre"></span><span class="lot lot--vendido"></span><span class="lot lot--vendido"></span><span class="lot lot--separado"></span><span class="lot lot--libre"></span>
-          </div>
-          <div class="plan__legend">
-            <span><i class="lot lot--libre"></i>Libre</span>
-            <span><i class="lot lot--separado"></i>Separado</span>
-            <span><i class="lot lot--vendido"></i>Vendido</span>
-          </div>
-        </div>
-      </div>
-      <div class="scene" aria-hidden="true" data-toast="Estado de cuenta enviado al Sr. Mendoza" data-toast-icon="check-circle">
-        <p class="scene__title">Cliente: Sr. Mendoza</p>
-        <div class="app__total">
-          <p class="app__label">Cuotas pagadas</p>
-          <p class="app__amount">8 de 24</p>
-          <p class="app__meta">Próxima: S/ 850 el 5 de octubre</p>
-        </div>
-        <ul class="app__list">
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Cuota 8</p>
-              <p class="row__detail">Pagada el 5 de setiembre</p>
-            </div>
-            <span class="tag tag--ok">Pagada</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Cuota 9</p>
-              <p class="row__detail">Vence el 5 de octubre</p>
-            </div>
-            <span class="tag tag--soon">Aviso listo</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Estado de cuenta</p>
-              <p class="row__detail">Al día, sin moras</p>
-            </div>
-            <span class="tag tag--ok">Enviado</span>
-          </li>
-        </ul>
-      </div>
-      <div class="scene" aria-hidden="true" data-toast="Comisiones calculadas solas" data-toast-icon="check-circle">
-        <p class="scene__title">Comisiones de setiembre</p>
-        <div class="app__total">
-          <p class="app__label">A pagar este mes</p>
-          <p class="app__amount">S/ 2,250</p>
-          <p class="app__meta">Solo sobre lo que ya se cobró</p>
-        </div>
-        <ul class="app__list">
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Jorge</p>
-              <p class="row__detail">3 ventas cobradas</p>
-            </div>
-            <span class="tag tag--ok">S/ 1,350</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Carla</p>
-              <p class="row__detail">2 ventas cobradas</p>
-            </div>
-            <span class="tag tag--ok">S/ 900</span>
-          </li>
-          <li class="row row--tag">
-            <div class="row__who">
-              <p class="row__name">Miguel</p>
-              <p class="row__detail">1 venta por cobrar</p>
-            </div>
-            <span class="tag tag--soon">Pendiente</span>
-          </li>
-        </ul>
-      </div>
-              </div>
-              <div class="scene-dots" role="tablist" aria-label="Pantallas de ejemplo">
-                <button type="button" class="scene-dot is-on" aria-label="Ver Plano de la etapa 2"></button><button type="button" class="scene-dot" aria-label="Ver Cliente: Sr. Mendoza"></button><button type="button" class="scene-dot" aria-label="Ver Comisiones de setiembre"></button>
-              </div>
-            </div>
-            <div class="toast" role="status" aria-live="polite">
-              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
-              <span></span>
-            </div>
-          </div>
-            </div>
-          </div>
-          <div class="problems" role="tablist" aria-label="Problemas que resolvemos">
-            <button type="button" role="tab" class="problem is-on" aria-selected="true" data-quote="Dos vendedores separaron el mismo lote.">
-              <i class="ph ph-map-trifold" aria-hidden="true"></i>Lote vendido dos veces
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Tengo cientos de cuotas en Excel.">
-              <i class="ph ph-calendar-check" aria-hidden="true"></i>Cuotas en Excel
-            </button>
-            <button type="button" role="tab" class="problem" aria-selected="false" data-quote="Los vendedores pelean por la comisión.">
-              <i class="ph ph-calculator" aria-hidden="true"></i>Peleas por comisión
-            </button>
-          </div>
-          <p class="problems__quote" aria-live="polite">“Dos vendedores separaron el mismo lote.”</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fixes" id="solucion">
-      <div class="container">
-        <h2 class="section__title">Lo que te resolvemos</h2>
-        <p class="section__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
-        <ol class="fixes__list">
-          <li class="fix">
-            <p class="fix__pain">“Dos vendedores separaron el mismo lote.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-map-trifold" aria-hidden="true"></i></span>
-              <p>Un plano con colores: libre, separado y vendido, que se actualiza al momento.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Tengo cientos de cuotas en Excel.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-calendar-check" aria-hidden="true"></i></span>
-              <p>Cada cliente con su cronograma, aviso de vencimiento y estado de cuenta al instante.</p>
-            </div>
-          </li>
-          <li class="fix">
-            <p class="fix__pain">“Los vendedores pelean por la comisión.”</p>
-            <div class="fix__answer">
-              <span class="fix__icon"><i class="ph ph-calculator" aria-hidden="true"></i></span>
-              <p>La comisión de cada vendedor se calcula sola sobre lo que ya se cobró.</p>
-            </div>
-          </li>
-        </ol>
-        <div class="extras">
-          <p class="extras__label">También podemos:</p>
-          <ul class="extras__list">
-            <li>Interesados por vendedor</li>
-            <li>Contratos y recibos automáticos</li>
-            <li>Recordatorios por WhatsApp</li>
+          <ul class="hero__datos">
+            <li>Primera conversación gratis</li>
+            <li>Lo ves funcionando antes de pagar</li>
+            <li>Desde S/ 90 al mes</li>
           </ul>
+          <p class="hero__lugar"><i class="ph ph-map-trifold" aria-hidden="true"></i> Para inmobiliarias y venta de lotes</p>
+        </div>
+
+        <!-- Demo: lo que se anotó a mano hoy, pasado en limpio -->
+        <figure class="demo" id="demo" aria-labelledby="demoTitulo">
+          <div class="demo__cabeza">
+            <p class="demo__titulo" id="demoTitulo">Hoy en Lotes Valle Sur</p>
+          </div>
+          <ol class="demo__lista">
+            <li class="tarea">
+              <s class="tarea__mano">¿Sigue libre el lote B-14?<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 10.5 C 18 8.2, 34 11.6, 52 9.4 S 84 8.1, 99 8.9" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Carla separó el lote B-14</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>11:20</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Estado de cuenta a Mendoza<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0.5 8.6 C 15 10.6, 38 7.4, 55 9.8 S 86 10.6, 99.5 7.6" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Estado de cuenta enviado al Sr. Mendoza</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>9:00</span></span></span>
+            </li>
+            <li class="tarea">
+              <s class="tarea__mano">Sacar comisiones del mes<svg class="tarea__tachon" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1.2 9.8 C 22 7.8, 41 11.2, 63 8.8 S 90 10.2, 99 9.2" /></svg></s>
+              <span class="tarea__limpio"><i class="ph ph-arrow-elbow-down-right" aria-hidden="true"></i><span class="tarea__linea"><span class="tarea__texto"><span class="resalte">Comisiones calculadas solas</span></span><span class="tarea__hora"><span class="tarea__sep"> · </span>8:00</span></span></span>
+            </li>
+          </ol>
+          <p class="demo__total">En limpio: <span class="demo__ahorro" id="demoCuenta" data-total="3">3 de 3</span></p>
+          <button class="demo__otra" id="demoOtra" type="button" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i><span>Pasar en limpio otra vez</span></button>
+          <figcaption class="demo__nota">Ejemplo con datos ficticios</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lo que resuelvo: lo que dice el dueño y lo que hace el sistema -->
+    <section class="seccion arreglos" id="solucion">
+      <div class="contenedor arreglos__grid">
+        <div class="arreglos__intro">
+          <h2 class="seccion__titulo">Lo que te resuelvo</h2>
+          <p class="seccion__sub">Tres cosas puntuales. Lo demás lo vemos juntos, según cómo trabajas.</p>
+        </div>
+        <div>
+          <ol class="arreglos__lista">
+            <li class="arreglo">
+              <i class="ph ph-map-trifold arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Dos vendedores separaron el mismo lote.”</p>
+                <p class="arreglo__ahora">Un plano con colores: libre, separado y vendido, que se actualiza al momento.</p>
+              </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-calendar-check arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Tengo cientos de cuotas en Excel.”</p>
+                <p class="arreglo__ahora">Cada cliente con su cronograma, aviso de vencimiento y estado de cuenta al instante.</p>
+              </div>
+            </li>
+            <li class="arreglo">
+              <i class="ph ph-calculator arreglo__icono" aria-hidden="true"></i>
+              <div>
+                <p class="arreglo__antes">“Los vendedores pelean por la comisión.”</p>
+                <p class="arreglo__ahora">La comisión de cada vendedor se calcula sola sobre lo que ya se cobró.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="extras">
+            <p class="extras__titulo">También puedo:</p>
+            <ul class="extras__lista">
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Interesados por vendedor</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Contratos y recibos automáticos</li>
+              <li><i class="ph ph-plus" aria-hidden="true"></i>Recordatorios por WhatsApp</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section steps" id="proceso">
-      <div class="container">
-        <h2 class="section__title">Empezar es fácil</h2>
-        <ol class="steps__list">
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-chats-circle" aria-hidden="true"></i></span>
-            <h3>Conversamos 30 minutos</h3>
-            <p>Por WhatsApp o videollamada, gratis. Me cuentas cómo trabajas hoy y qué te quita tiempo.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-presentation-chart" aria-hidden="true"></i></span>
-            <h3>Te mostramos cómo quedaría</h3>
-            <p>Ves tu sistema antes de pagar nada, con un precio cerrado por escrito.</p>
-          </li>
-          <li class="step">
-            <span class="step__icon"><i class="ph ph-rocket-launch" aria-hidden="true"></i></span>
-            <h3>Lo usas y te acompañamos</h3>
-            <p>Pasamos tu Excel al sistema, capacitamos a tu equipo y seguimos disponibles.</p>
-          </li>
-        </ol>
+    <!-- Pasos en la columna del margen + precio como nota pegada -->
+    <section class="seccion pasos" id="proceso">
+      <div class="contenedor pasos__grid">
+        <div>
+          <h2 class="seccion__titulo">Empezar es fácil</h2>
+          <ol class="turnos">
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">1</span>
+              <h3>Me cuentas cómo trabajas hoy</h3>
+              <p>30 minutos por WhatsApp o videollamada, gratis.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">2</span>
+              <h3>Te muestro cómo quedaría</h3>
+              <p>Lo ves funcionando antes de pagar, con precio cerrado por escrito.</p>
+            </li>
+            <li class="turno">
+              <span class="turno__num" aria-hidden="true">3</span>
+              <h3>Lo implemento y me quedo contigo</h3>
+              <p>Paso tu Excel al sistema, capacito a tu equipo y sigo disponible.</p>
+            </li>
+          </ol>
+        </div>
 
-        <div class="price" id="precio">
-          <div class="price__main">
-            <p class="price__label">Planes desde</p>
-            <p class="price__value">S/ 90 <span>al mes</span></p>
-            <p class="price__note">El precio final depende de lo que necesite tu negocio. Te lo damos cerrado y por escrito después de la primera conversación.</p>
-          </div>
-          <div class="price__side">
-            <p class="price__sunat price__sunat--ok"><i class="ph-fill ph-seal-check" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
-            <a class="btn btn--primary" data-cta="precio-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
+        <aside class="precio" id="precio" aria-labelledby="precioTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <p class="precio__label" id="precioTitulo">Planes desde</p>
+          <p class="precio__valor">S/ 90 <span>al mes</span></p>
+          <p class="precio__nota">El precio final depende de lo que necesite tu negocio. Te lo doy cerrado y por escrito después de la primera conversación.</p>
+          <p class="precio__sunat"><i class="ph-fill ph-chat-teardrop-text" aria-hidden="true"></i><span>Hablas directo con quien construye tu sistema. Sin call center y sin palabras raras.</span></p>
+          <a class="btn btn--primario" data-cta="precio-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
             <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
+            <span>Escríbeme por WhatsApp</span>
           </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Cómo se ve: la vista del sistema como papel pegado -->
+    <section class="seccion sistema" id="sistema">
+      <div class="contenedor sistema__grid">
+        <div class="sistema__intro">
+          <h2 class="seccion__titulo">Así se ve tu negocio en limpio</h2>
+          <p class="seccion__sub">Lo que hoy anotas a mano queda ordenado en un solo lugar. Lo amarillo es lo que se hizo solo.</p>
+          <p class="sistema__aviso"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios.</p>
+        </div>
+        <figure class="hs hs--plano" id="hojaSistema" aria-labelledby="hsTitulo">
+          <span class="cinta cinta--centro" aria-hidden="true"></span>
+          <div class="hs__cabeza">
+            <p class="hs__negocio"><i class="ph ph-map-trifold" aria-hidden="true"></i>Lotes Valle Sur</p>
+            <p class="hs__titulo" id="hsTitulo">Plano en vivo, etapa 2</p>
           </div>
+          <div class="hs__cuerpo">
+            <div class="hs-plano">
+              <div class="hs-plano__lotes" style="--cols:10" aria-hidden="true">
+                <span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--libre"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--separado is-nuevo"><span class="resalte">B-14</span></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--libre"></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--separado"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--vendido"></span><span class="lote lote--libre"></span><span class="lote lote--vendido"></span><span class="lote lote--separado"></span><span class="lote lote--vendido"></span>
+              </div>
+              <dl class="hs-plano__cuenta">
+                <div><dt><i class="lote lote--libre" aria-hidden="true"></i>Libres</dt><dd>17</dd></div>
+                <div><dt><i class="lote lote--separado" aria-hidden="true"></i>Separados</dt><dd>7</dd></div>
+                <div><dt><i class="lote lote--vendido" aria-hidden="true"></i>Vendidos</dt><dd>26</dd></div>
+              </dl>
+              <p class="solo-lector">El lote B-14 se acaba de separar.</p>
+            </div>
+          </div>
+          <figcaption class="hs__pie"><i class="ph ph-device-mobile" aria-hidden="true"></i> Lo ves tú, lo ve tu equipo, desde el celular.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes como renglones -->
+    <section class="seccion faq" id="preguntas">
+      <div class="contenedor faq__grid">
+        <h2 class="seccion__titulo">Lo que casi todos me preguntan</h2>
+        <div class="faq__lista">
+          <details>
+            <summary>¿Necesito saber de computación?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>No. Si sabes usar WhatsApp, sabes usar tu sistema. Lo diseño con las palabras que ya usas en tu negocio y te enseño a ti y a tu equipo.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en el celular?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Lo abres desde el celular, la tablet o la computadora, sin instalar nada. Ves tus cobros y ventas desde donde estés.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa con lo que ya tengo en Excel?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Lo paso al sistema por ti. Clientes, deudas, productos e historial. No empiezas de cero.</p>
+          </details>
+          <details>
+            <summary>¿Emite boletas y facturas electrónicas SUNAT?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Sí. Conecto tu sistema con la facturación electrónica para que la boleta o factura salga sola cuando registras la venta o el cobro.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto cuesta?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los planes empiezan desde S/ 90 al mes. El precio final depende de lo que necesites, y te lo doy cerrado y por escrito después de la primera conversación, que es gratis.</p>
+          </details>
+          <details>
+            <summary>¿Por qué no uso un sistema que ya existe?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <p>Los sistemas genéricos te obligan a cambiar tu forma de trabajar. El tuyo se adapta a cómo ya trabajas y crece contigo cuando lo necesites.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <section class="final" id="contacto">
-      <div class="container final__inner">
-        <h2 class="final__title">Cuéntanos cómo trabajas hoy.</h2>
-        <p class="final__sub">Te respondemos hoy mismo. La primera conversación es gratis y sin compromiso.</p>
-        <a class="btn btn--light btn--lg" data-cta="final-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener">
-            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-            Escríbenos por WhatsApp
-          </a>
+    <!-- Otros rubros: el índice del cuaderno -->
+    <section class="seccion rubros" id="rubros">
+      <div class="contenedor rubros__grid">
+        <div class="rubros__intro">
+          <h2 class="seccion__titulo">¿Tienes otro negocio?</h2>
+          <p class="seccion__sub">Toca el tuyo y mira lo que haría por tu negocio.</p>
+          <a class="enlace-mano" href="/"><span>Ir a la portada</span> <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="indice">
+          <li><a class="indice__item" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i><span class="indice__nombre">Colegios, nidos y academias</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i><span class="indice__nombre">Clínicas dentales y consultorios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i><span class="indice__nombre">Veterinarias y pet shops</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i><span class="indice__nombre">Ferreterías y distribuidoras</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i><span class="indice__nombre">Transporte de carga</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i><span class="indice__nombre">Condominios y edificios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i><span class="indice__nombre">Movilidad escolar</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i><span class="indice__nombre">Gimnasios</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/spas/"><i class="ph ph-scissors" aria-hidden="true"></i><span class="indice__nombre">Spas, salones y barberías</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i><span class="indice__nombre">Talleres y servicio técnico</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+          <li><a class="indice__item" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i><span class="indice__nombre">Minimarkets y tiendas</span><span class="indice__puntos" aria-hidden="true"></span><i class="ph ph-arrow-right indice__ir" aria-hidden="true"></i></a></li>
+        </ul>
       </div>
     </section>
 
-    <section class="section others" aria-label="Otros rubros">
-      <div class="container">
-        <p class="others__label">También trabajamos con</p>
-        <div class="others__list">
-          <a class="other" href="/colegios/"><i class="ph ph-student" aria-hidden="true"></i>Colegios, nidos y academias</a>
-          <a class="other" href="/clinicas/"><i class="ph ph-tooth" aria-hidden="true"></i>Clínicas dentales y consultorios</a>
-          <a class="other" href="/veterinarias/"><i class="ph ph-paw-print" aria-hidden="true"></i>Veterinarias y pet shops</a>
-          <a class="other" href="/ferreterias/"><i class="ph ph-wrench" aria-hidden="true"></i>Ferreterías y distribuidoras</a>
-          <a class="other" href="/transporte/"><i class="ph ph-truck" aria-hidden="true"></i>Transporte de carga</a>
-          <a class="other" href="/condominios/"><i class="ph ph-buildings" aria-hidden="true"></i>Condominios y edificios</a>
-          <a class="other" href="/movilidad-escolar/"><i class="ph ph-bus" aria-hidden="true"></i>Movilidad escolar</a>
-          <a class="other" href="/gimnasios/"><i class="ph ph-barbell" aria-hidden="true"></i>Gimnasios</a>
-          <a class="other" href="/spas/"><i class="ph ph-scissors" aria-hidden="true"></i>Spas, salones y barberías</a>
-          <a class="other" href="/talleres/"><i class="ph ph-car-profile" aria-hidden="true"></i>Talleres y servicio técnico</a>
-          <a class="other" href="/minimarkets/"><i class="ph ph-storefront" aria-hidden="true"></i>Minimarkets y tiendas</a>
+    <!-- Cierre: la tapa del cuaderno -->
+    <section class="tapa final" id="contacto">
+      <div class="contenedor final__fila">
+        <h2 class="final__titulo">Cuéntame cómo trabajas hoy.</h2>
+        <div class="final__accion">
+          <p class="final__sub">Escríbeme y lo vemos juntos. Te respondo hoy mismo. La primera conversación es gratis y sin compromiso.</p>
+          <a class="btn btn--etiqueta btn--grande" data-cta="final-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+            <span>Escríbeme por WhatsApp</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
+  <footer class="pie">
+    <div class="contenedor pie__fila">
       <div>
-        <a href="/" class="logo">
-          <span class="logo__mark" aria-hidden="true">Y</span>
-          <span class="logo__text">Yanapay</span>
+        <a href="/" class="logo logo--claro" aria-label="Abiel, ir a la portada">
+          <svg class="logo__marca" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" /><path fill-rule="evenodd" d="M27 16h10l11 32h-8.5l-2.1-6.5H26.6L24.5 48H16zM32 25l-3 9h6z" /></svg>
+          <span class="logo__texto">Abiel</span>
         </a>
-        <p class="footer__tag">Sistemas a la medida para negocios peruanos.</p>
+        <p class="pie__frase">Automatizo el trabajo manual y repetitivo de negocios peruanos.</p>
       </div>
-      <nav class="footer__links" aria-label="Pie de página">
-        <a href="/">Inicio</a>
-        <a href="/#rubros">Rubros</a>
-        <a href="/#preguntas">Preguntas</a>
+      <nav class="pie__enlaces" aria-label="Pie de página">
+        <a href="/">Portada</a>
+        <a href="/#rubros">Todos los rubros</a>
+        <a href="#precio">Precio</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-      <div class="footer__contact">
-        <a href="https://wa.me/51913412590" target="_blank" rel="noopener">+51 913 412 590</a>
+      <div class="pie__contacto">
+        <a href="https://wa.me/51913412590" data-cta="pie-inmobiliarias" target="_blank" rel="noopener">+51 913 412 590</a>
         <span>Lima, Perú</span>
       </div>
     </div>
-    <p class="footer__legal container">© <span id="anio">2026</span> Yanapay</p>
+    <p class="pie__legal contenedor">© <span id="anio">2026</span> Abiel</p>
   </footer>
 
-  <a class="fab" id="fab" data-cta="flotante-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Yanapay%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20saber%20c%C3%B3mo%20me%20pueden%20ayudar." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <a class="fab" id="fab" data-cta="flotante-inmobiliarias" href="https://wa.me/51913412590?text=Hola%20Christian%2C%20tengo%20una%20inmobiliaria.%20%C2%BFC%C3%B3mo%20me%20puedes%20ayudar%3F" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
     <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
   </a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="/main.js" defer></script>
+  <script src="/rubro.js" defer></script>
 </body>
 </html>
