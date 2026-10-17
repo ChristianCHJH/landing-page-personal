@@ -1,4 +1,4 @@
-# Estrategia comercial de la landing Yanapay.tech
+# Estrategia comercial de la landing Abiel
 
 Fecha: 2026-09-19. Ver en local: `docker compose up -d` → http://localhost:8080
 
@@ -81,7 +81,7 @@ Técnico (se hace en el código):
 2. Open Graph + imagen 1200×630 (se ve bonito al compartir por WhatsApp).
 3. JSON-LD: `ProfessionalService` (Lima, teléfono, horario) + `FAQPage`.
 4. Imágenes WebP < 200 KB, `loading="lazy"`, `width/height` fijos.
-5. `robots.txt`, `sitemap.xml`, canonical, dominio `yanapay.tech` en Search Console.
+5. `robots.txt`, `sitemap.xml`, canonical, dominio propio (por registrar) en Search Console.
 
 Palabras clave objetivo (intención de compra):
 
@@ -101,7 +101,7 @@ Fuera del código (lo que más clientes trae al inicio):
 - **Facturalaya**: mejor referente local. Dolores concretos, precios visibles (S/ 97-139/mes), todo CTA a WhatsApp.
 - **Bsale / OkFac**: contadores de clientes, casos con nombre, OkFac muestra precios (S/ 140-350/mes).
 - **Doctocliq** (dental): muchos testimonios con foto y cifra de resultado.
-- **Colegios (SieWeb, JSedu)**: hablan de UGEL/MINEDU; la morosidad de pensiones no es protagonista. **Hueco para Yanapay.**
+- **Colegios (SieWeb, JSedu)**: hablan de UGEL/MINEDU; la morosidad de pensiones no es protagonista. **Hueco para Abiel.**
 - Referencia de precio a medida en Lima (Metasoft): web app con panel desde S/ 12,000.
 
 ## 7. Lo que se construyó (v2)

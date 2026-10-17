@@ -10,7 +10,7 @@ Dueños y administradores de negocios pequeños y medianos en Perú: dueños de 
 
 ## Product Purpose
 
-Yanapay.tech ofrece software a medida para negocios peruanos: sistemas de gestión, automatización de procesos, integración de pagos (Niubiz) y facturación electrónica SUNAT. La landing existe para captar leads — dueños de negocio que entren, entiendan el valor en segundos y soliciten una asesoría por WhatsApp. El éxito es que el visitante diga "esto es exactamente lo que necesito" antes de llegar al CTA.
+Abiel ofrece software a medida para negocios peruanos: sistemas de gestión, automatización de procesos, integración de pagos (Niubiz) y facturación electrónica SUNAT. La landing existe para captar leads — dueños de negocio que entren, entiendan el valor en segundos y soliciten una asesoría por WhatsApp. El éxito es que el visitante diga "esto es exactamente lo que necesito" antes de llegar al CTA.
 
 ## Brand Personality
 
