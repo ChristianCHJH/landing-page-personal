@@ -9,3 +9,5 @@ foto_portda.png
 .playwright-mcp
 .impeccable
 *.webp.json
+.claude
+.agents
