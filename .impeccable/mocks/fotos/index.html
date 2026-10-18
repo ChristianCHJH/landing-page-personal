@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Automatiza las tareas manuales de tu negocio | Abiel</title>
+  <meta name="description" content="Prototipo: portada con fotos de negocios del Perú, su problema de siempre y cómo se vería en el celular. Desde S/ 90 al mes." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#141210" />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Solo se precarga la foto de la primera pantalla; la versión depende de la orientación -->
+  <link rel="preload" as="image" href="img/a-mano-800.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/a-mano-1600.webp" media="(min-aspect-ratio: 801/1000)" fetchpriority="high" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <a class="saltar" href="#negocios">Saltar a los negocios</a>
+
+  <!-- 1. Primera pantalla: el mensaje general, con cuatro fotos del trabajo a mano -->
+  <header class="inicio" id="inicio">
+    <div class="fotos fotos--inicio" id="fotosInicio" aria-hidden="true">
+      <!-- La primera foto carga ya; las otras tres las carga app.js cuando la página está quieta -->
+      <figure class="foto activa" data-i="0">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" srcset="img/a-mano-800.webp" width="800" height="1400" />
+          <img src="img/a-mano-1600.webp" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" style="--foco: 50% 40%" />
+        </picture>
+      </figure>
+      <figure class="foto" data-i="1">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-cobrar-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-cobrar-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 50% 45%" />
+        </picture>
+      </figure>
+      <figure class="foto" data-i="2">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-boletas-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-boletas-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 40% 50%" />
+        </picture>
+      </figure>
+      <figure class="foto" data-i="3">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-stock-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-stock-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 72% 35%" />
+        </picture>
+      </figure>
+    </div>
+    <div class="velo velo--inicio" aria-hidden="true"></div>
+
+    <div class="barra">
+      <a class="logo" href="#inicio" aria-label="Abiel, inicio">
+        <img src="../../../assets/logo-claro.svg" alt="Abiel" width="102" height="34" />
+      </a>
+      <a class="barra__precio" href="#precio">Desde <strong>S/ 90</strong> al mes</a>
+    </div>
+
+    <div class="inicio__pie">
+      <h1 class="inicio__titulo"><span class="pal"><span class="pal__in" style="--k:0">Deja</span></span> <span class="pal"><span class="pal__in" style="--k:1">de</span></span> <span class="pal"><span class="pal__in" style="--k:2">hacer</span></span> <span class="pal"><span class="pal__in" style="--k:3">a</span></span> <span class="pal"><span class="pal__in" style="--k:4">mano</span></span> <span class="pal"><span class="pal__in" style="--k:5">lo</span></span> <span class="pal"><span class="pal__in" style="--k:6">que</span></span> <span class="pal"><span class="pal__in" style="--k:7">se</span></span> <span class="pal"><span class="pal__in" style="--k:8">repite</span></span> <span class="pal"><span class="pal__in" style="--k:9">en</span></span> <span class="pal"><span class="pal__in" style="--k:10">tu</span></span> <span class="pal"><span class="pal__in" style="--k:11">negocio.</span></span></h1>
+      <div class="tareas-fila">
+        <ul class="tareas" id="tareas" aria-label="Lo que se repite">
+          <li data-i="0" style="--k:0">Pasar datos al Excel</li>
+          <li data-i="1" style="--k:1">Cobrar uno por uno</li>
+          <li data-i="2" style="--k:2">Hacer boletas</li>
+          <li data-i="3" style="--k:3">Revisar el stock</li>
+        </ul>
+        <button class="pausa pausa--inicio" id="pausaInicio" type="button" aria-label="Pausar las fotos" aria-pressed="false">
+          <i class="ph-fill ph-pause" aria-hidden="true"></i>
+        </button>
+      </div>
+      <a class="wa wa--inicio" data-wa-general href="https://wa.me/51913412590" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+        <span>Cuéntame qué haces a mano</span>
+      </a>
+      <div class="inicio__pie-fila">
+        <p class="inicio__calma">Primera conversación gratis. Lo ves funcionando antes de pagar.</p>
+        <a class="bajar" href="#negocios"><span>Busca tu negocio</span> <i class="ph ph-arrow-down" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </header>
+  <script>
+    /* Muestra la primera pantalla cuando llega la fuente (o a los 1,5 s): sin saltos por el cambio de fuente */
+    (function () {
+      var h = document.documentElement, listo = function () { h.classList.add("fuentes"); };
+      if (!document.fonts || !document.fonts.load) return listo();
+      Promise.all([document.fonts.load('780 1em "Bricolage Grotesque"'), document.fonts.load('600 1em "Bricolage Grotesque"')]).then(listo, listo);
+      setTimeout(listo, 1500);
+    })();
+  </script>
+
+  <!-- 2. Negocios: fotos que se turnan, con su problema de siempre -->
+  <section class="portada" id="negocios" aria-labelledby="eligeTitulo">
+    <div class="fotos" id="fotos" aria-hidden="true">
+      <!-- La primera foto va en el HTML (con carga diferida); las demás las agrega app.js -->
+      <figure class="foto activa" data-i="0">
+        <picture>
+          <source media="(max-aspect-ratio: 4/5)" srcset="img/colegios-800.webp" width="800" height="1400" />
+          <img src="img/colegios-1600.webp" width="1600" height="1067" alt="" loading="lazy" decoding="async" style="--foco: 50% 50%" />
+        </picture>
+      </figure>
+    </div>
+    <div class="velo" aria-hidden="true"></div>
+
+    <div class="elige">
+      <div class="elige__cabeza">
+        <h2 class="elige__titulo" id="eligeTitulo">¿Qué negocio tienes?</h2>
+        <button class="pausa" id="pausa" type="button" aria-label="Pausar las fotos" aria-pressed="false">
+          <i class="ph-fill ph-pause" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="chips" id="chips" role="group" aria-labelledby="eligeTitulo"></div>
+      <p class="tambien" id="tambien"></p>
+    </div>
+
+    <div class="portada__pie">
+      <div class="dolores" id="dolores" aria-live="off">
+        <blockquote class="dolor activa" data-i="0">
+          <p class="dolor__frase">«Me deben 3 meses y yo igual pago planilla.»</p>
+          <footer class="dolor__quien">Colegios, nidos y academias</footer>
+        </blockquote>
+      </div>
+
+      <a class="wa wa--portada" id="waPortada" data-wa href="https://wa.me/51913412590" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+        <span>Escríbeme por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <main>
+    <!-- 2b. Comparativa: Hoy a mano frente a Con Abiel en el celular -->
+    <section class="celular" id="celular" aria-labelledby="celularTitulo">
+      <div class="celular__texto">
+        <h2 class="celular__titulo" id="celularTitulo"><span class="pal"><span class="pal__in" style="--k:0">Así</span></span> <span class="pal"><span class="pal__in" style="--k:1">se</span></span> <span class="pal"><span class="pal__in" style="--k:2">vería</span></span> <span class="pal"><span class="pal__in" style="--k:3">en</span></span> <span class="pal"><span class="pal__in" style="--k:4">tu</span></span> <span class="pal"><span class="pal__in" style="--k:5">celular</span></span></h2>
+        <label class="negocio">
+          <span class="negocio__rotulo">Tu negocio</span>
+          <span class="negocio__caja">
+            <select id="negocio"></select>
+            <i class="ph ph-caret-down" aria-hidden="true"></i>
+          </span>
+        </label>
+        <p class="celular__dolor" id="celularDolor">«Me deben 3 meses y yo igual pago planilla.»</p>
+      </div>
+
+      <figure class="celular__escena">
+        <div class="comparar" id="comparar" style="--pos: 50%">
+          <span class="lado lado--hoy" aria-hidden="true">Hoy</span>
+          <span class="lado lado--abiel" aria-hidden="true">Con Abiel</span>
+          <div class="capa capa--hoy" id="capaHoy" aria-label="Hoy, a mano"></div>
+          <div class="capa capa--app" id="capaApp" aria-label="Con Abiel, en el celular"></div>
+          <div class="divisor" id="divisor" role="slider" tabindex="0" aria-label="Comparar Hoy y Con Abiel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Mitad y mitad">
+            <span class="divisor__agarre"><i class="ph ph-arrows-left-right" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <div class="vista" role="group" aria-label="Qué mostrar">
+          <button type="button" class="vista__btn" id="verHoy" aria-pressed="false">Hoy</button>
+          <button type="button" class="vista__btn" id="verAbiel" aria-pressed="false">Con Abiel</button>
+        </div>
+        <figcaption class="ficticio"><i class="ph ph-info" aria-hidden="true"></i> Ejemplo con datos ficticios</figcaption>
+      </figure>
+
+      <div class="celular__accion">
+        <a class="wa wa--celular" data-wa href="https://wa.me/51913412590" target="_blank" rel="noopener">
+          <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+          <span>Escríbeme por WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. Casos reales: lo que ya hice (mismos textos y capturas que la portada en producción) -->
+    <section class="casos" id="casos" aria-labelledby="casosTitulo">
+      <div class="casos__cabeza">
+        <h2 class="casos__titulo" id="casosTitulo">Ya lo hice para otros negocios</h2>
+        <p class="casos__aviso"><i class="ph ph-info" aria-hidden="true"></i> Imágenes con datos de ejemplo.</p>
+      </div>
+
+      <div class="casos__lista">
+        <article class="caso caso--grande">
+          <figure class="caso__foto caso__foto--video">
+            <!-- En celular: captura fija del plano, recortada para que se lea; en escritorio: el video -->
+            <picture class="caso__movil">
+              <source media="(min-width: 900px)" srcset="../../../assets/casos/inmobiliaria.webp" width="1200" height="900" />
+              <img class="caso__media" src="img/inmobiliaria-plano-movil.webp" width="1000" height="735" loading="lazy" decoding="async" alt="Plano de lotes de la inmobiliaria coloreado por estado de venta, con datos de ejemplo" />
+            </picture>
+            <video class="caso__media caso__video" id="videoInmobiliaria" width="960" height="720" muted playsinline loop preload="none" poster="../../../assets/casos/inmobiliaria.webp" aria-label="Plano de lotes de la inmobiliaria, con datos de ejemplo">
+              <source data-src="../../../assets/casos/inmobiliaria.webm" type="video/webm" />
+              <source data-src="../../../assets/casos/inmobiliaria.mp4" type="video/mp4" />
+            </video>
+            <button class="caso__control" id="videoControl" type="button" aria-label="Reproducir el video" hidden><i class="ph-fill ph-play" aria-hidden="true"></i></button>
+          </figure>
+          <div class="caso__texto">
+            <h3 class="caso__titulo">Inmobiliaria de venta de lotes en Lima</h3>
+            <p class="caso__antes"><span class="caso__rotulo">Antes:</span> el plano de lotes se pintaba a mano y se mandaba en PDF; los morosos estaban repartidos en varios Excel.</p>
+            <p class="caso__ahora"><span class="caso__rotulo">Ahora:</span> el plano <span class="resalte">se actualiza solo</span> con cada venta y la lista de morosos <span class="resalte">se arma sola</span>, con el aviso por WhatsApp.</p>
+          </div>
+        </article>
+
+        <article class="caso">
+          <figure class="caso__foto">
+            <img class="caso__media" src="../../../assets/casos/movilidad.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Pantalla del sistema de movilidad escolar, con datos de ejemplo" />
+          </figure>
+          <div class="caso__texto">
+            <h3 class="caso__titulo">Movilidad escolar</h3>
+            <p class="caso__antes"><span class="caso__rotulo">Antes:</span> llamadas y mensajes de “¿ya salió el bus?”.</p>
+            <p class="caso__ahora"><span class="caso__rotulo">Ahora:</span> los padres <span class="resalte">reciben aviso</span> cuando su hijo sube al bus, cuando está por llegar y cuando llega al colegio.</p>
+          </div>
+        </article>
+
+        <article class="caso">
+          <figure class="caso__foto">
+            <img class="caso__media" src="../../../assets/casos/tienda.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Catálogo de la tienda en el celular, con datos de ejemplo" />
+          </figure>
+          <div class="caso__texto">
+            <h3 class="caso__titulo">Tienda</h3>
+            <p class="caso__antes"><span class="caso__rotulo">Antes:</span> mandar fotos sueltas de cada producto por WhatsApp.</p>
+            <p class="caso__ahora"><span class="caso__rotulo">Ahora:</span> el dueño sube sus productos con foto desde el celular y comparte su catálogo <span class="resalte">con un solo enlace</span>.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Precio + WhatsApp -->
+    <section class="precio" id="precio" aria-labelledby="precioTitulo">
+      <h2 class="precio__titulo" id="precioTitulo"><span class="pal"><span class="pal__in" style="--k:0">Desde</span></span> <span class="pal"><span class="pal__in" style="--k:1"><span class="precio__monto">S/ 90</span></span></span> <span class="pal"><span class="pal__in" style="--k:2">al</span></span> <span class="pal"><span class="pal__in" style="--k:3">mes</span></span></h2>
+      <p class="precio__nota">Te doy el precio cerrado y por escrito después de la primera conversación.</p>
+      <a class="wa wa--precio" data-wa href="https://wa.me/51913412590" target="_blank" rel="noopener">
+        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+        <span>Escríbeme por WhatsApp</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <img src="../../../assets/logo-claro.svg" alt="Abiel" width="78" height="26" />
+    <a href="https://wa.me/51913412590" target="_blank" rel="noopener">+51 913 412 590</a>
+    <span>Lima, Perú</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
