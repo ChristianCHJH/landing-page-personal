@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abiel · Listo para despachar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Permanent+Marker&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --kraft: #C8A377;
+    --etiqueta: #FBFAF6;
+    --tinta: #1A1714;
+    --bermellon: #D2381F;
+    --cinta: #E9D9A8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1440px; height: 900px; }
+  body {
+    background: var(--kraft);
+    color: var(--tinta);
+    font-family: "Archivo", sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Cabecera */
+  .cabeza { position: absolute; left: 72px; right: 72px; top: 40px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { height: 38px; width: auto; display: block; }
+  .cabeza__precio { font-size: 18px; font-weight: 600; font-variation-settings: "wdth" 90; letter-spacing: .01em; }
+
+  /* Titular */
+  .titular {
+    position: absolute; left: 72px; top: 118px; width: 1010px;
+    font-size: 94px; line-height: .95; font-weight: 820;
+    font-variation-settings: "wdth" 100; letter-spacing: -0.025em;
+  }
+  .sub {
+    position: absolute; left: 76px; top: 434px; width: 640px;
+    font-size: 19px; line-height: 1.45; font-weight: 450;
+  }
+
+  /* Foto pegada con cinta */
+  .foto { position: absolute; left: 1150px; top: 112px; width: 216px; transform: rotate(2.4deg); background: var(--etiqueta); padding: 9px 9px 9px; box-shadow: 0 1px 0 rgba(26,23,20,.15), 0 10px 22px -12px rgba(26,23,20,.45); }
+  .foto img { display: block; width: 100%; height: 252px; object-fit: cover; }
+  .foto::before { content: ""; position: absolute; left: 50%; top: -16px; width: 118px; height: 32px; transform: translateX(-50%) rotate(-4deg); background: var(--cinta); opacity: .82; }
+
+  /* Hilo: cinta de embalaje que une toda la fila con el botón */
+  .hilo { position: absolute; left: 0; top: 774px; width: 1100px; height: 30px; background: var(--cinta); opacity: .55; }
+
+  .rotulo {
+    position: absolute; left: 72px; top: 556px;
+    font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--bermellon); border: 2px solid var(--bermellon); padding: 3px 8px; border-radius: 3px;
+  }
+
+  /* Fila en registro fijo: nota a plumón y etiqueta comparten lugar y escala */
+  .casilla { position: absolute; top: 596px; width: 300px; height: 196px; }
+  .k1 { left: 72px; }
+  .k2 { left: 396px; }
+  .k3 { left: 720px; }
+  .plumon {
+    position: absolute; inset: 0; padding: 22px 20px;
+    font-family: "Permanent Marker", cursive; font-size: 31px; line-height: 1.15; color: var(--tinta);
+    border: 2px dashed rgba(26,23,20,.35); border-radius: 4px;
+  }
+  .impresa {
+    position: absolute; inset: 0; background: var(--etiqueta); border-radius: 4px;
+    padding: 18px 20px; display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 0 1px 0 rgba(26,23,20,.12), 0 8px 16px -10px rgba(26,23,20,.5);
+  }
+  .impresa__cab { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-variation-settings: "wdth" 80; }
+  .impresa__texto { font-size: 27px; line-height: 1.08; font-weight: 760; font-variation-settings: "wdth" 88; letter-spacing: -0.01em; }
+  .barras { height: 22px; width: 150px; background: repeating-linear-gradient(90deg, var(--tinta) 0 2px, transparent 2px 4px, var(--tinta) 4px 5px, transparent 5px 8px, var(--tinta) 8px 11px, transparent 11px 12px); }
+  /* Segunda etiqueta: a medio pegar */
+  .a-medias .impresa { clip-path: polygon(0 0, 64% 0, 58% 100%, 0 100%); }
+  .a-medias .pliegue { position: absolute; top: 0; left: 57%; width: 22px; height: 100%; background: linear-gradient(90deg, rgba(26,23,20,.18), rgba(251,250,246,.95) 60%); transform: skewX(-3.5deg); transform-origin: top; }
+
+  .sello {
+    position: absolute; left: 150px; top: 738px; transform: rotate(-9deg);
+    border: 3px solid var(--bermellon); color: var(--bermellon); border-radius: 6px;
+    font-size: 22px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; padding: 2px 10px;
+    font-variation-settings: "wdth" 110; opacity: .9; mix-blend-mode: multiply;
+  }
+
+  /* Etiqueta de envío = botón */
+  .envio {
+    position: absolute; left: 1050px; top: 560px; width: 334px; height: auto;
+    background: var(--etiqueta); color: var(--tinta); text-decoration: none;
+    border-radius: 5px; transform: rotate(-1.8deg);
+    box-shadow: 0 2px 0 rgba(26,23,20,.15), 0 18px 30px -16px rgba(26,23,20,.6);
+    display: flex; flex-direction: column;
+  }
+  .envio::before { content: ""; position: absolute; left: -30px; top: 196px; width: 70px; height: 40px; background: var(--cinta); opacity: .75; transform: rotate(2deg); }
+  .envio__banda { background: var(--tinta); color: var(--etiqueta); padding: 9px 18px; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; border-radius: 5px 5px 0 0; display: flex; justify-content: space-between; }
+  .envio__cuerpo { padding: 14px 18px 14px; flex: 1; display: flex; flex-direction: column; gap: 4px; border: 2px solid var(--tinta); border-top: 0; border-radius: 0 0 5px 5px; }
+  .envio__campo { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+  .envio__destino { white-space: nowrap; font-size: 40px; line-height: 1; font-weight: 860; letter-spacing: -0.02em; font-variation-settings: "wdth" 96; }
+  .envio__accion { margin-top: 10px; display: flex; align-items: center; gap: 10px; background: var(--bermellon); color: var(--etiqueta); padding: 12px 14px; border-radius: 4px; font-size: 20px; font-weight: 780; font-variation-settings: "wdth" 78; white-space: nowrap; }
+  .envio__accion svg { width: 26px; height: 26px; flex: none; }
+  .envio__pie { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; font-weight: 600; white-space: nowrap; gap: 10px; }
+  .envio .barras { width: 110px; height: 16px; }
+
+  .pie { position: absolute; left: 72px; top: 846px; font-size: 16px; font-weight: 550; display: flex; gap: 28px; }
+  .pie span::before { content: "■ "; color: var(--bermellon); font-size: 10px; vertical-align: 2px; }
+</style>
+</head>
+<body>
+
+<header class="cabeza">
+  <svg class="logo" role="img" aria-label="Abiel" xmlns="http://www.w3.org/2000/svg" viewBox="3.8 -92.33 284.8 93.53"><path d="M27 1.20L27 1.20Q22.10 1.20 17.85 0.50Q13.60-0.20 10.45-1.95Q7.30-3.70 5.55-6.75Q3.80-9.80 3.80-14.50L3.80-14.50Q3.80-20.80 7.20-24.45Q10.60-28.10 16.90-29.75Q23.20-31.40 31.75-31.85Q40.30-32.30 50.60-32.30L50.60-32.30L50.60-33.90Q50.60-37 49.05-38.80Q47.50-40.60 44.55-41.40Q41.60-42.20 37.20-42.20L37.20-42.20Q34-42.20 31-41.70Q28-41.20 26.10-40.15Q24.20-39.10 24.20-37.30L24.20-37.30L24.20-36.50L5.50-36.50Q5.40-36.90 5.40-37.20Q5.40-37.50 5.40-38L5.40-38Q5.40-42.70 9.10-46.30Q12.80-49.90 20.10-51.95Q27.40-54 38.10-54L38.10-54Q48.10-54 55-52.25Q61.90-50.50 65.45-46.65Q69-42.80 69-36.30L69-36.30L69-15.20Q69-13.50 69.80-12.40Q70.60-11.30 72.30-11.30L72.30-11.30L77.60-11.30L77.60-0.70Q76.20-0.10 73.10 0.55Q70 1.20 66.50 1.20L66.50 1.20Q61.60 1.20 58.60 0.20Q55.60-0.80 54.15-2.55Q52.70-4.30 52.10-6.40L52.10-6.40L51.30-6.40Q48.50-4.10 44.75-2.35Q41-0.60 36.60 0.30Q32.20 1.20 27 1.20ZM32.20-10.50L32.20-10.50Q34.50-10.50 37.55-11.05Q40.60-11.60 43.60-12.70Q46.60-13.80 48.60-15.55Q50.60-17.30 50.60-19.80L50.60-19.80L50.60-22.80Q40.70-22.80 34.40-22Q28.10-21.20 25.10-19.55Q22.10-17.90 22.10-15.30L22.10-15.30Q22.10-13.30 23.55-12.25Q25-11.20 27.35-10.85Q29.70-10.50 32.20-10.50ZM122.10 1.20L122.10 1.20Q116.10 1.20 110.70-0.90Q105.30-3 101.40-8.20L101.40-8.20L100.50-8.20L99.10 0L84.10 0L84.10-72.50L102.60-72.50L102.60-46.50L103.40-46.50Q105.60-49.10 108.75-50.75Q111.90-52.40 115.50-53.20Q119.10-54 122.60-54L122.60-54Q130.40-54 136.55-51Q142.70-48 146.25-41.90Q149.80-35.80 149.80-26.40L149.80-26.40Q149.80-17 146.25-10.85Q142.70-4.70 136.45-1.75Q130.20 1.20 122.10 1.20ZM116.80-12.60L116.80-12.60Q121.50-12.60 124.70-14.20Q127.90-15.80 129.50-18.75Q131.10-21.70 131.10-25.50L131.10-25.50L131.10-27.20Q131.10-31.10 129.50-34Q127.90-36.90 124.75-38.55Q121.60-40.20 116.90-40.20L116.90-40.20Q113.30-40.20 110.60-39.20Q107.90-38.20 106.10-36.45Q104.30-34.70 103.40-32.20Q102.50-29.70 102.50-26.70L102.50-26.70L102.50-26Q102.50-22 104.10-19Q105.70-16 108.90-14.30Q112.10-12.60 116.80-12.60ZM179.10 0L160.60 0L160.60-52.80L179.10-52.80L179.10 0ZM225.50 1.20L225.50 1.20Q214.70 1.20 206.70-1.70Q198.70-4.60 194.25-10.75Q189.80-16.90 189.80-26.40L189.80-26.40Q189.80-35.60 194.15-41.75Q198.50-47.90 206.35-50.95Q214.20-54 224.70-54L224.70-54Q235.70-54 243.45-51Q251.20-48 255.30-42Q259.40-36 259.40-27L259.40-27L259.40-22.70L209.20-22.70Q209.40-18.50 211.40-15.80Q213.40-13.10 217.05-11.85Q220.70-10.60 225.70-10.60L225.70-10.60Q228.40-10.60 230.90-11.15Q233.40-11.70 235.45-12.70Q237.50-13.70 238.75-15.20Q240.00-16.70 240.20-18.50L240.20-18.50L259.20-18.50Q259.20-14 256.70-10.35Q254.20-6.70 249.70-4.10Q245.20-1.50 239.00-0.15Q232.80 1.20 225.50 1.20ZM209.20-32.50L209.20-32.50L239.70-32.50Q239.70-34.70 238.65-36.50Q237.60-38.30 235.65-39.55Q233.70-40.80 231.05-41.50Q228.40-42.20 225.30-42.20L225.30-42.20Q220.60-42.20 217.15-41Q213.70-39.80 211.70-37.60Q209.70-35.40 209.20-32.50ZM288.60 0L270.10 0L270.10-72.50L288.60-72.50L288.60 0Z" fill="#1A1714"/><defs><mask id="hueco-kraft" maskUnits="userSpaceOnUse" x="-600" y="-600" width="2400" height="2400"><rect x="-600" y="-600" width="2400" height="2400" fill="#fff"/><path d="M161.55 -72.93 Q164.74 -71.01 167.62 -66.54 Q176.23 -80.59 192.83 -90.16" fill="none" stroke-width="4.21" stroke-linecap="round" stroke-linejoin="round" stroke="#000"/></mask><mask id="fuera-kraft" maskUnits="userSpaceOnUse" x="-600" y="-600" width="2400" height="2400"><rect x="-600" y="-600" width="2400" height="2400" fill="#fff"/><rect x="157.09" y="-86.33" width="25.53" height="25.53" rx="5.11" fill="#000"/></mask></defs><rect x="157.09" y="-86.33" width="25.53" height="25.53" rx="5.11" fill="#D2381F" mask="url(#hueco-kraft)"/><path d="M161.55 -72.93 Q164.74 -71.01 167.62 -66.54 Q176.23 -80.59 192.83 -90.16" fill="none" stroke-width="4.21" stroke-linecap="round" stroke-linejoin="round" stroke="#D2381F" mask="url(#fuera-kraft)"/></svg>
+  <p class="cabeza__precio">Desde S/ 90 al mes</p>
+</header>
+
+<h1 class="titular">Deja de hacer a mano lo que se repite en tu negocio.</h1>
+<p class="sub">Encuentro las tareas que te quitan horas cada semana (cobrar uno por uno, pasar datos al Excel, hacer boletas, revisar el stock) y las automatizo a la medida de tu negocio. Tú lo ves todo desde el celular.</p>
+
+<figure class="foto">
+  <img src="../../../assets/fotos/bodega-mostrador-600.webp" alt="Interior de una bodega con estantes llenos y el mostrador" />
+</figure>
+
+<div class="hilo" aria-hidden="true"></div>
+<p class="rotulo">Ejemplo</p>
+
+<div class="casilla k1">
+  <p class="plumon">Cobro uno por uno por WhatsApp</p>
+  <div class="impresa">
+    <p class="impresa__cab"><span>Pendiente 01</span><span>8:00</span></p>
+    <p class="impresa__texto">Cobranza con recordatorios por WhatsApp</p>
+    <div class="barras"></div>
+  </div>
+</div>
+<div class="casilla k2 a-medias">
+  <p class="plumon">Hago boletas y facturas a mano</p>
+  <div class="impresa">
+    <p class="impresa__cab"><span>Pendiente 02</span><span>8:01</span></p>
+    <p class="impresa__texto">Boletas y facturas SUNAT automáticas</p>
+    <div class="barras"></div>
+  </div>
+  <span class="pliegue" aria-hidden="true"></span>
+</div>
+<div class="casilla k3">
+  <p class="plumon">Me quedo sin stock y no me entero</p>
+</div>
+
+<p class="sello">Despachado</p>
+
+<a class="envio" href="https://wa.me/51913412590">
+  <span class="envio__banda"><span>Envío</span><span>Abiel</span></span>
+  <span class="envio__cuerpo">
+    <span class="envio__campo">Destino</span>
+    <span class="envio__destino">tu WhatsApp</span>
+    <span class="envio__accion"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.6 7.6c.3-.6.6-.6.9-.6h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .5-.1.6l-.6.7c-.1.2-.2.4 0 .6.5.9 1.2 1.7 2.1 2.3.3.2.6.3.8.4.2.1.4 0 .5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.2-.6 1.6-.5.4-1.3.7-2.1.5-1.4-.3-3-1.1-4.4-2.6C8.7 12.2 8 10.7 7.8 9.6c-.1-.8.3-1.5.8-2z" fill="currentColor"/></svg>Cuéntame qué haces a mano</span>
+    <span class="envio__pie"><span>Primera conversación gratis</span><span class="barras"></span></span>
+  </span>
+</a>
+
+<p class="pie"><span>Lo ves funcionando antes de pagar</span><span>Para negocios pequeños de todo el Perú</span></p>
+
+</body>
+</html>

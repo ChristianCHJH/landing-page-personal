@@ -1,0 +1,133 @@
+{
+  "title": "Nueva dirección visual para Abiel",
+  "question": "El sorteo asignó «Listo para despachar». Quédatela, toma otra o vuelve a sortear.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Listo para despachar",
+      "kicker": "THE ROLL",
+      "lineage": "Cajas de despacho, etiquetas de envío y sellos de los negocios peruanos",
+      "thesis": "Cada pendiente sale como un paquete listo: lo que escribiste a plumón, el sistema lo tapa con su etiqueta impresa.",
+      "palette": ["#C8A377", "#FBFAF6", "#1A1714", "#D2381F", "#E9D9A8"],
+      "materials": ["cartón kraft liso", "etiquetas adhesivas impresas", "plumón negro", "sello de goma bermellón", "cinta de embalaje"],
+      "viewport": "Kraft liso de borde a borde; titular grande en grotesca negra; debajo, una fila de notas a plumón que una etiqueta impresa va tapando una por una; al final, la etiqueta de envío «Destino: tu WhatsApp» es el botón.",
+      "risk": "El kraft puede leerse artesanal (cafetería, panadería gourmet) y una textura de cartón recargaría; debe ser kraft liso con mucho aire.",
+      "raised": [
+        {"from": "challenger-shareware", "raise": "Un solo camino: cada sección empuja al mismo siguiente paso, la etiqueta de envío a WhatsApp, sin desvíos."},
+        {"from": "challenger-botanica", "raise": "Registro fijo: la nota a plumón y su etiqueta impresa ocupan el mismo lugar y escala; el cambio se lee sin buscarlo."},
+        {"from": "challenger-cuarto-oscuro", "raise": "Una sola revelación continua por pantalla en vez de animaciones sueltas."},
+        {"from": "challenger-procedencia", "raise": "Un solo hilo de lectura recorre la página de arriba abajo y une las secciones."},
+        {"from": "challenger-horizonte", "raise": "Aire: una pieza protagonista por pantalla y el resto kraft limpio (responde a «se ve cargado»)."}
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "label": "Cartel de bodega",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Carteles de cartulina fosforescente escritos a plumón en bodegas y mercados",
+      "thesis": "La portada habla como anuncia el negocio peruano: cartulina fosforescente a plumón, «HOY», «YA SE COBRÓ».",
+      "palette": ["#FFFFFF", "#121212", "#F4EE2A", "#7CF25B", "#FF4FA3"],
+      "materials": ["cartulina fosforescente", "plumón grueso", "cinta masking"],
+      "viewport": "Fondo blanco liso; titular en grotesca negra; tres carteles fosforescentes pegados con masking, cada uno un pendiente a plumón que se tacha y se pasa en limpio; el botón es un cartel verde «Escríbeme».",
+      "risk": "Es la más reconocible para el dueño de bodega y también la lectura más previsible del comercio peruano; con más de un cartel por pantalla se vuelve chillona.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-riso",
+      "label": "Impresión en dos tintas",
+      "verdict": "competitive",
+      "lineage": "Impresión risográfica",
+      "thesis": "La portada impresa en dos tintas planas: lo pendiente en una, lo ya hecho en otra, con un leve desfase de registro.",
+      "palette": ["#F7F7F2", "#FF48B0", "#00A95C", "#141414"],
+      "materials": ["tinta plana fluorescente", "grano de impresión", "papel blanco"],
+      "viewport": "Titular en una tinta y la demo en dos: las notas en rosa se cubren con el texto en verde cuando el sistema las resuelve; botón en verde pleno.",
+      "case": "Se fusiona bien con el mecanismo (dos tintas = antes y después); pierde en identificación: el dueño de negocio no reconoce la riso.",
+      "risk": "Puede leerse como fanzine de diseño, la anti-referencia «agencia creativa».",
+      "hero": "https://impeccable.style/worlds/cards/risograph-web-system-hero.webp",
+      "html": ".impeccable/mocks/decision/challenger-riso.html"
+    },
+    {
+      "id": "challenger-shareware",
+      "label": "Instalador de shareware",
+      "verdict": "declined",
+      "lineage": "Asistentes de instalación de los 90",
+      "thesis": "La portada como asistente de instalación lineal.",
+      "palette": ["#C0C0C0", "#000080", "#FFFFFF"],
+      "materials": ["cromo gris biselado", "banner en mapa de bits"],
+      "viewport": "Un diálogo gris centrado con barra de progreso.",
+      "risk": "Nostalgia informática que el dueño de negocio no comparte.",
+      "case": "Se fusiona mal: nadie del público se identifica con un instalador.",
+      "kept": "Un solo camino lineal hasta WhatsApp.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-shareware-installer-screens-hero.webp"
+    },
+    {
+      "id": "challenger-botanica",
+      "label": "Folio botánico",
+      "verdict": "declined",
+      "lineage": "Láminas botánicas por estación",
+      "thesis": "Una planta por etapas, a escala fija.",
+      "palette": ["#F3EAD8", "#3F6B3A", "#B3261E"],
+      "materials": ["láminas grabadas", "filetes sepia"],
+      "viewport": "Cinco láminas alineadas sobre una misma base.",
+      "risk": "Lejano al comercio y en crema, la lectura por defecto.",
+      "case": "Se fusiona mal: no habla del negocio.",
+      "kept": "Registro fijo entre el antes y el después.",
+      "hero": "https://impeccable.style/worlds/cards/editorial-sequence-montage-botanical-folio-season-hero.webp"
+    },
+    {
+      "id": "challenger-cuarto-oscuro",
+      "label": "Cuarto oscuro",
+      "verdict": "declined",
+      "lineage": "Laboratorio fotográfico con luz de seguridad",
+      "thesis": "La imagen que aparece en la cubeta.",
+      "palette": ["#7A2E0E", "#E8A33D", "#111111"],
+      "materials": ["luz ámbar", "papel fotográfico húmedo"],
+      "viewport": "Fondo ámbar y una revelación lenta.",
+      "risk": "Oscuro y dramático para un público que busca algo simple.",
+      "case": "Se fusiona mal: el público no se ve ahí.",
+      "kept": "Una revelación continua, no efectos sueltos.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay-hero.webp"
+    },
+    {
+      "id": "challenger-procedencia",
+      "label": "Cinta de procedencia",
+      "verdict": "declined",
+      "lineage": "Curaduría de museo",
+      "thesis": "Una cinta roja sigue la vida de un objeto.",
+      "palette": ["#E9DFC9", "#B3261E", "#6B6B6B"],
+      "materials": ["seda roja", "sellos de archivo"],
+      "viewport": "Una columna guiada por la cinta.",
+      "risk": "Se siente de museo, no de negocio.",
+      "case": "Se fusiona mal en identificación y en claridad.",
+      "kept": "Un solo hilo de lectura une la página.",
+      "hero": "https://impeccable.style/worlds/cards/exhibition-museum-curation-provenance-ribbon-hero.webp"
+    },
+    {
+      "id": "challenger-horizonte",
+      "label": "Disco de acreción",
+      "verdict": "declined",
+      "lineage": "Astrofísica",
+      "thesis": "Materia que cruza un umbral sin retorno.",
+      "palette": ["#000000", "#D9E4FF", "#E0A030"],
+      "materials": ["luz curvada", "anillos"],
+      "viewport": "Negro con un disco brillante.",
+      "risk": "Espectacular y ajeno al negocio.",
+      "case": "Se fusiona mal: no comunica la oferta.",
+      "kept": "Centro vacío: una sola cosa por pantalla.",
+      "hero": "https://impeccable.style/worlds/cards/galaxies-nebulae-deep-time-accretion-disk-threshold-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code"},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "La landing de servicio típica, bien hecha: fondo blanco, celular con el chat y verde WhatsApp.",
+    "palette": ["#FFFFFF", "#111827", "#25D366"],
+    "materials": ["grilla limpia", "maqueta de celular"],
+    "viewport": "Titular a la izquierda, celular con el chat a la derecha, botón verde.",
+    "risk": "Igual a la competencia, por diseño."
+  },
+  "steer": true
+}
