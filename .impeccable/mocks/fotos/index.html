@@ -11,8 +11,8 @@
   <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml" />
 
   <!-- Solo se precarga la foto de la primera pantalla; la versión depende de la orientación -->
-  <link rel="preload" as="image" href="img/a-mano-800.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high" />
-  <link rel="preload" as="image" href="img/a-mano-1600.webp" media="(min-aspect-ratio: 801/1000)" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/inicio-excel-800.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/inicio-excel-1600.webp" media="(min-aspect-ratio: 801/1000)" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,26 +30,26 @@
       <!-- La primera foto carga ya; las otras tres las carga app.js cuando la página está quieta -->
       <figure class="foto activa" data-i="0">
         <picture>
-          <source media="(max-aspect-ratio: 4/5)" srcset="img/a-mano-800.webp" width="800" height="1400" />
-          <img src="img/a-mano-1600.webp" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" style="--foco: 50% 40%" />
+          <source media="(max-aspect-ratio: 4/5)" srcset="img/inicio-excel-800.webp" width="800" height="1400" />
+          <img src="img/inicio-excel-1600.webp" width="1600" height="1067" alt="" fetchpriority="high" decoding="async" style="--foco: 50% 40%" />
         </picture>
       </figure>
       <figure class="foto" data-i="1">
         <picture>
-          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-cobrar-800.webp" width="800" height="1400" />
-          <img data-src="img/inicio-cobrar-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 50% 45%" />
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-cobro-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-cobro-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 60% 35%" />
         </picture>
       </figure>
       <figure class="foto" data-i="2">
         <picture>
-          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-boletas-800.webp" width="800" height="1400" />
-          <img data-src="img/inicio-boletas-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 40% 50%" />
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-boleta-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-boleta-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 70% 40%" />
         </picture>
       </figure>
       <figure class="foto" data-i="3">
         <picture>
-          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-stock-800.webp" width="800" height="1400" />
-          <img data-src="img/inicio-stock-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 72% 35%" />
+          <source media="(max-aspect-ratio: 4/5)" data-srcset="img/inicio-almacen-800.webp" width="800" height="1400" />
+          <img data-src="img/inicio-almacen-1600.webp" width="1600" height="1067" alt="" decoding="async" style="--foco: 70% 40%" />
         </picture>
       </figure>
     </div>
